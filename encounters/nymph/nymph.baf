@@ -1,0 +1,615 @@
+//-----------------------------------------------------------------------------
+// BG2 Throne of Bhaal
+// Script file used by the nymph summoned by the level 4 druid spell CALL_WOODLAND_BEINGS
+// Upload Version: 1.0
+// Date          : Dec 2001
+// Written by    : Göran Rimén
+//*****************************************************************************
+// DESCRIPTION:
+// CALL_WOODLAND_BEINGS will summon a level 5 Fairy Nymph. The Nymph will last for
+// 3 turns or 30 rounds or 180 sec.
+
+// After 160 sec, before being unsummoned she will cast Mass_Cure at the most damaged PC
+// When using Mass_Cure she will teleport to the  MostDamaged in the team and then
+// teleport back to the summoner.
+
+// She will attack the furthest not disabled spellcaster first.
+
+
+//*****************************************************************************
+// STRUCTURE:
+// SECTION: CONSTANTS, VARIABLES AND TIMERS USED
+// SECTION: SPELLS USED
+// SECTION: RESET COMBAT TIMERS AND VARIABLES
+// ******** COMBAT WITH SPECIAL WEAPONS
+// SECTION: HEALING PARTY
+// SECTION: COMBAT PROTECTION SELF
+// ******** PERFORMANCE SAVER
+// SECTION: COMBAT SELECT A TARGET
+// SECTION: COMBAT ATTACKING SPECIAL TARGETS
+// SECTION: COMBAT DISABLING ATTACKS
+// SECTION: COMBAT LONG RANGE ATTACKS
+// SECTION: COMBAT CLOSE RANGE ATTACKS
+//*****************************************************************************
+// SECTION: CONSTANTS, VARIABLES AND TIMERS USED
+//*****************************************************************************
+// SetGlobal("prep","LOCALS",1)
+// SetGlobal("castConfusion","LOCALS",1)
+
+// SetGlobalTimer("UsedSpell","LOCALS",6)
+// SetGlobalTimer("NymphCreated","LOCALS",160)
+//*****************************************************************************
+// SECTION: SPELLS USED
+//*****************************************************************************
+// *1202 CLERIC_BARKSKIN 1                  // SECTION: COMBAT PROTECTION SELF ok
+// *1514 CLERIC_MASS_CURE 1                 // SECTION: HEALING PARTY ok
+
+// *3704 NYMPH_CONFUSION 1                  // SECTION: COMBAT DISABLING ATTACKS ok
+// *2507 WIZARD_HOLD_MONSTER 1              // SECTION: COMBAT DISABLING ATTACKS ok
+// *1405 CLERIC_MENTAL_DOMINATION 1         // SECTION: COMBAT DISABLING ATTACKS ok
+// *1208 CLERIC_HOLD_PERSON 2               // SECTION: COMBAT DISABLING ATTACKS ok
+
+// *1414 CLERIC_CAUSE_SERIOUS_WOUNDS 1      // SECTION: COMBAT LONG RANGE ATTACKS ok
+// *1310 CLERIC_MISCAST_MAGIC 1             // SECTION: COMBAT ATTACKING SPECIAL TARGETS ok
+// *1302 CLERIC_CALL_LIGHTNING 1            // SECTION: COMBAT LONG RANGE ATTACKS outdoor only not tested
+
+//*****************************************************************************
+// SECTION: RESET COMBAT TIMERS AND VARIABLES
+//*****************************************************************************
+IF
+      OnCreation()
+THEN
+      RESPONSE #1
+            SetGlobalTimer("NymphCreated","LOCALS",160)
+            SetGlobalTimer("UsedSpell","LOCALS",0)
+            SetGlobal("prep","LOCALS",0)
+            SetGlobal("castConfusion","LOCALS",0)
+END
+//-----------------------------------------------------------------------------
+// COMBAT WITH SPECIAL WEAPONS
+// CLERIC_CAUSE_SERIOUS_WOUNDS
+IF
+      See(NearestEnemyOf(Myself))
+      HasItem("SERIOUS",Myself)
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            AttackOneRound(NearestEnemyOf())
+            Wait(1)
+            ForceSpell(LastSummonerOf(),WIZARD_DIMENSION_DOOR)
+END
+//-----------------------------------------------------------------------------
+// Keep a close distance to the Player that summoned me
+//IF
+//      !Exists([ENEMY])
+//      ActionListEmpty()
+//      !Range(LastSummonerOf(),6)
+//THEN
+//      RESPONSE #1
+//            MoveToObject(LastSummonerOf())
+//END
+//*****************************************************************************
+// SECTION: HEALING PARTY
+//*****************************************************************************
+// 1514 CLERIC_MASS CURE
+
+IF
+      HaveSpell(CLERIC_MASS_CURE)
+      !Range(MostDamagedOf(),4)
+      HPPercentLT(MostDamagedOf(),60)
+THEN
+      RESPONSE #1
+            ForceSpell(MostDamagedOf(),WIZARD_DIMENSION_DOOR)
+            Wait(1)
+            Spell(MostDamagedOf(),CLERIC_MASS_CURE)
+            Wait(1)
+            ForceSpell(LastSummonerOf(),WIZARD_DIMENSION_DOOR)
+END
+IF
+      HaveSpell(CLERIC_MASS_CURE)
+      !Range(MostDamagedOf(),4)
+      GlobalTimerExpired("NymphCreated","LOCALS")
+THEN
+      RESPONSE #1
+            ForceSpell(MostDamagedOf(),WIZARD_DIMENSION_DOOR)
+            Wait(1)
+            Spell(MostDamagedOf(),CLERIC_MASS_CURE)
+            Wait(1)
+            ForceSpell(LastSummonerOf(),WIZARD_DIMENSION_DOOR)
+END
+IF
+      HaveSpell(CLERIC_MASS_CURE)
+      Range(MostDamagedOf(),4)
+      GlobalTimerExpired("NymphCreated","LOCALS")
+THEN
+      RESPONSE #1
+            Spell(MostDamagedOf(),CLERIC_MASS_CURE)
+END
+//*****************************************************************************
+// SECTION: COMBAT PROTECTION SELF
+//*****************************************************************************
+// 1202 CLERIC_BARKSKIN
+// Range 1,CT5, Duration 4 rounds + 1/level, AoE: Creature touched
+IF
+      //HaveSpell(CLERIC_BARKSKIN)
+      OR(2)
+            AttackedBy([ANYTHING],DEFAULT)
+            Range(NearestEnemyOf(),8)
+      Global("prep","LOCALS",0)
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",3)
+            ApplySpell(Myself,CLERIC_BARKSKIN)
+            SetGlobal("prep","LOCALS",1)
+END
+//-----------------------------------------------------------------------------
+// ******** PERFORMANCE SAVER
+//-----------------------------------------------------------------------------
+// Execute the combat sections below only when an enemy is present
+IF
+        !Exists([ENEMY])
+THEN
+        RESPONSE # 0
+END
+//***************************************************************
+// SECTION: COMBAT SELECT A TARGET
+//***************************************************************
+// This targets has the lowest priority.
+// Select the furthest target that is not disabled
+IF
+      Exists([ENEMY])
+      !StateCheck(NearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(NearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(NearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(NearestEnemyOf(),STATE_BLIND)
+      !StateCheck(NearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(NearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(NearestEnemyOf(),STATE_PANIC)
+      !StateCheck(NearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(NearestEnemyOf(),0,HELD)
+      HPPercentGT(NearestEnemyOf(),60)
+      See(NearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+
+IF
+      Exists([ENEMY])
+      !StateCheck(SecondNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(SecondNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(SecondNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(SecondNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(SecondNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(SecondNearestEnemyOf(),0,HELD)
+      HPPercentGT(SecondNearestEnemyOf(),60)
+      See(SecondNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+IF
+      Exists([ENEMY])
+      !StateCheck(ThirdNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(ThirdNearestEnemyOf(),0,HELD)
+      HPPercentGT(ThirdNearestEnemyOf(),60)
+      See(ThirdNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+IF
+      Exists([ENEMY])
+      !StateCheck(FourthNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(FourthNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(FourthNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(FourthNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(FourthNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(FourthNearestEnemyOf(),0,HELD)
+      HPPercentGT(FourthNearestEnemyOf(),60)
+      See(FourthNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+// ** Attack any spell caster first
+IF
+      Exists([ENEMY])
+      OR(4)
+            Class(NearestEnemyOf(),DRUID_ALL)
+            Class(NearestEnemyOf(),BARD_ALL)
+            Class(NearestEnemyOf(),CLERIC_ALL)
+            Class(NearestEnemyOf(),MAGE_ALL)
+      !StateCheck(NearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(NearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(NearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(NearestEnemyOf(),STATE_BLIND)
+      !StateCheck(NearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(NearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(NearestEnemyOf(),STATE_PANIC)
+      !StateCheck(NearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(NearestEnemyOf(),0,HELD)
+      HPPercentGT(NearestEnemyOf(),60)
+      See(NearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+IF
+      Exists([ENEMY])
+      OR(4)
+            Class(SecondNearestEnemyOf(),DRUID_ALL)
+            Class(SecondNearestEnemyOf(),BARD_ALL)
+            Class(SecondNearestEnemyOf(),CLERIC_ALL)
+            Class(SecondNearestEnemyOf(),MAGE_ALL)
+      !StateCheck(SecondNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(SecondNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(SecondNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(SecondNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(SecondNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(SecondNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(SecondNearestEnemyOf(),0,HELD)
+      HPPercentGT(SecondNearestEnemyOf(),60)
+      See(SecondNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+IF
+      Exists([ENEMY])
+      OR(4)
+            Class(ThirdNearestEnemyOf(),DRUID_ALL)
+            Class(ThirdNearestEnemyOf(),BARD_ALL)
+            Class(ThirdNearestEnemyOf(),CLERIC_ALL)
+            Class(ThirdNearestEnemyOf(),MAGE_ALL)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(ThirdNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(ThirdNearestEnemyOf(),0,HELD)
+      HPPercentGT(ThirdNearestEnemyOf(),60)
+      See(ThirdNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+IF
+      Exists([ENEMY])
+      OR(4)
+            Class(FourthNearestEnemyOf(),DRUID_ALL)
+            Class(FourthNearestEnemyOf(),BARD_ALL)
+            Class(FourthNearestEnemyOf(),CLERIC_ALL)
+            Class(FourthNearestEnemyOf(),MAGE_ALL)
+      !StateCheck(FourthNearestEnemyOf(),STATE_CONFUSED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_CHARMED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_HELPLESS)
+      !StateCheck(FourthNearestEnemyOf(),STATE_BLIND)
+      !StateCheck(FourthNearestEnemyOf(),STATE_SLEEPING)
+      !StateCheck(FourthNearestEnemyOf(),STATE_STUNNED)
+      !StateCheck(FourthNearestEnemyOf(),STATE_PANIC)
+      !StateCheck(FourthNearestEnemyOf(),STATE_FEEBLEMINDED)
+      !CheckStatGT(FourthNearestEnemyOf(),0,HELD)
+      HPPercentGT(FourthNearestEnemyOf(),60)
+      See(FourthNearestEnemyOf())
+      False()
+THEN
+      RESPONSE #0
+END
+//-----------------------------------------------------------------------------
+// Note. This is the last targeting module and you can not use the
+// trigger See in any of the following modules
+//-----------------------------------------------------------------------------
+// Check that this is a valid target
+// Don’t attack a party member, an innocent or a summoned
+IF
+      Exists([ENEMY])
+      Global("CombatMode","LOCALS",0)
+      OR(3)
+            InParty(LastSeenBy())
+            Class(LastSeenBy(),INNOCENT)
+            Allegiance(LastSeenBy(),GOODCUTOFF)
+THEN
+      RESPONSE #1
+            ClearActions(Myself)
+END
+//*****************************************************************************
+// SECTION: COMBAT ATTACKING SPECIAL TARGETS
+//*****************************************************************************
+// 1310 CLERIC_MISCAST_MAGIC
+// Range 35, CT5, AoE: One target, Duration: 1 turn
+// Any spellcasting creature that is affected by this spell has its casting
+// ability severely disabled.  When the creature attempts to cast a spell it
+// has an 80% chance of failure.  Creatures can save vs spells to avoid the
+// affect, but do so at -2.
+IF
+      Exists([ENEMY])
+      HaveSpell(CLERIC_MISCAST_MAGIC)
+      !Range(NearestEnemyOf(),4)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      OR(4)
+            Class(LastSeenBy(),DRUID_ALL)
+            Class(LastSeenBy(),BARD_ALL)
+            Class(LastSeenBy(),CLERIC_ALL)
+            Class(LastSeenBy(),MAGE_ALL)
+      !HasItem("MAGEAMUL",LastSeenBy())// Not immune to spell levels 1-3
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+        RESPONSE #1
+                SetGlobalTimer("UsedSpell","LOCALS",6)
+                Spell(LastSeenBy(),CLERIC_MISCAST_MAGIC)
+END
+//*****************************************************************************
+// SECTION: COMBAT DISABLING ATTACKS
+//*****************************************************************************
+// 3704 NYMPH_CONFUSION
+// Range 45, CT7, AoE:  Up to 60-foot cube , Duration 84 sec
+// This spell causes confusion in one or more creatures within the area, creating
+// indecision and the inability to take effective action. All creatures within
+// the area of effect are allowed saving throws vs. spell with - 2 penalties.
+// Those successfully saving are unaffected by the spell.
+
+IF
+      Exists([ENEMY])
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      !Range(NearestEnemyOf(),4)
+      NumCreatureGT([ENEMY],2)
+      !HasItemEquiped("RING99",LastSeenBy())
+      !HasItemEquiped("RING98",LastSeenBy())
+      !HasItemEquiped("RING95",LastSeenBy())
+      !HasItemEquiped("RING94",LastSeenBy())
+      !HasItemEquiped("RINGDEMN",LastSeenBy())
+      !HasItemEquiped("RINGKORA",LastSeenBy())
+      !HasItemEquiped("TROLLIMM",LastSeenBy())
+      !HasItemEquiped("UMBER01",LastSeenBy())
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      Global("castConfusion","LOCALS",0)
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",6)
+            SpellNoDec(LastSeenBy(),NYMPH_CONFUSION)
+            SetGlobal("castConfusion","LOCALS",1)
+END
+//-----------------------------------------------------------------------------
+// 2507 WIZARD_HOLD_MONSTER
+// Range 40, CT5, AoE: 5 foot radius around target, Duration 1round/lvl
+// This spell holds 1d4 creatures of any type rigidly immobile
+// and in place for nine or more rounds, unless a save vs. spells is made
+// with a -2 penalty. The effect is centered on the victim selected by
+// the caster.  Any enemies within 5 feet of the target are also affected.
+// Those who succeed on their saving throws are totally unaffected by
+// the spell. Undead creatures cannot be held.
+// Held creatures cannot move or speak, but they remain aware of events
+// around them and can use abilities not requiring motion or speech.
+// Being held does not prevent the worsening of the subjects' condition
+// due to wounds, disease, or poison.
+
+IF
+      Exists([ENEMY])
+      HaveSpell(WIZARD_HOLD_MONSTER)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      !Range(NearestEnemyOf(),4)
+      !General(LastSeenBy(Myself),UNDEAD)
+      !HasItemEquiped("RING99",LastSeenBy(Myself))
+      !HasItemEquiped("RING98",LastSeenBy(Myself))
+      !HasItemEquiped("RING97",LastSeenBy(Myself))
+      !HasItemEquiped("RING95",LastSeenBy(Myself))
+      !HasItemEquiped("RING94",LastSeenBy(Myself))
+      !HasItemEquiped("RINGKORA",LastSeenBy(Myself))
+      !HasItemEquiped("TROLLIMM",LastSeenBy(Myself))
+      !HasItemEquiped("TROLLALL",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG1",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG2",LastSeenBy(Myself))
+      !HasItemEquiped("BEHOLDER",LastSeenBy(Myself))
+      !HasItemEquiped("KUORING",LastSeenBy(Myself))
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",3)
+            Spell(LastSeenBy(Myself),WIZARD_HOLD_MONSTER)
+END
+//-----------------------------------------------------------------------------
+// 1405 CLERIC_MENTAL_DOMINATION
+// Range 40, CT4, AoE:1 creature , Duration: 8 rounds
+// When cast upon a subject, he must make a save vs. spell at a -2 penalty in
+// order to avoid the priest entering his mind.  The effects of this spell are
+// similar to the wizard spell domination, with a few minor differences.
+// Most notably, this spell gives the priest no access to the subject's thoughts,
+// memory, or sensory apparatus.  The priest simply is able to command the subject
+// to perform certain tasks or functions during the spell duration.  To control
+// the subject, the priest must be within range and must be able to see the subject.
+// This control will last until dispelled or for the duration of the spell.
+IF
+      Exists([ENEMY])
+      HaveSpell(CLERIC_MENTAL_DOMINATION)
+      !Range(NearestEnemyOf(),4)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      CheckStatGT(LastSeenBy(),8,SAVEVSSPELL)
+      !HasBounceEffects(LastSeenBy(Myself))
+      !HasItemEquiped("RING98",LastSeenBy())
+      !HasItemEquiped("RING95",LastSeenBy())
+      !HasItemEquiped("RINGDEMN",LastSeenBy())
+      !HasItemEquiped("TROLLIMM",LastSeenBy())
+      !HasItemEquiped("VAMPREG",LastSeenBy())
+      !HasItemEquiped("VAMPREG1",LastSeenBy())
+      !HasItemEquiped("VAMPREG2",LastSeenBy())
+      !HasItemEquiped("IMMCHS",LastSeenBy())
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",3)
+            Spell(LastSeenBy(),CLERIC_MENTAL_DOMINATION)
+END
+//-----------------------------------------------------------------------------
+// 1208 CLERIC_HOLD_PERSON
+// Range 35, CT5, AoE:Target, and anyone within 5 feet, Duration:1 turn
+// This spell holds one or more humans, demihumans, or humanoid creatures rigidly
+// immobile and in place for one turn.  This includes: brownies, dryads, dwarves,
+// elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins,
+// humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others.
+// Thus, a 10th-level fighter could be held, while an ogre could not.
+// The effect is centered on the victim selected by the caster.  Every enemy within
+// 5 feet of the target is also affected.  Those who succeed on their saving throws
+// are totally unaffected by the spell. Undead creatures cannot be held.
+IF
+      Exists([ENEMY])
+      HaveSpell(CLERIC_HOLD_PERSON)
+      General(LastSeenBy(),HUMANOID)
+      !Range(NearestEnemyOf(),4)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      CheckStatGT(LastSeenBy(),8,SAVEVSSPELL)
+      !HasBounceEffects(LastSeenBy(Myself))
+// Check if target has any Immun effects vs hold
+      !HasItemEquiped("RING99",LastSeenBy(Myself))
+      !HasItemEquiped("RING98",LastSeenBy(Myself))
+      !HasItemEquiped("RING97",LastSeenBy(Myself))
+      !HasItemEquiped("RING95",LastSeenBy(Myself))
+      !HasItemEquiped("RING94",LastSeenBy(Myself))
+      !HasItemEquiped("RINGKORA",LastSeenBy(Myself))
+      !HasItemEquiped("TROLLIMM",LastSeenBy(Myself))
+      !HasItemEquiped("TROLLALL",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG1",LastSeenBy(Myself))
+      !HasItemEquiped("VAMPREG2",LastSeenBy(Myself))
+      !HasItemEquiped("BEHOLDER",LastSeenBy(Myself))
+      !HasItemEquiped("KUORING",LastSeenBy(Myself))
+
+      !HasItem("MAGEAMUL",LastSeenBy())// Not immune to spell levels 1-3
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",3)
+            Spell(LastSeenBy(),CLERIC_HOLD_PERSON)
+END
+//*****************************************************************************
+// SECTION: COMBAT LONG RANGE ATTACKS
+//*****************************************************************************
+// 1302 CLERIC_CALL_LIGHTNING
+// Range 80, CT9, AoE:360-foot radius, Duration: 1 turn/ 4 levels
+// When a call lightning spell is cast, it must be cast outside, otherwise it
+// will not work and the spell is wasted. The caster is able to call down bolts
+// of lightning. The caster can call down one bolt per turn.  The spell has a
+// duration of one turn for every four levels of the caster. Each bolt causes
+// 2d8 points of electrical damage, plus an additional 1d8 points for each of
+// the caster's experience levels. Thus, a 8th-level caster will call down two
+// bolts, each doing 10d8 (2d8 + 8d8) damage.
+// The bolt of lightning flashes down in a vertical stroke at any of the priest's
+// enemies.  The first enemy struck by the lightning will be the enemy targeted.
+// After that any enemy (but not allies) may be struck by the ensuing lightning storm.
+IF
+      Exists([ENEMY])
+      AreaType(OUTDOOR)
+      HaveSpell(CLERIC_CALL_LIGHTNING)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      !Range(NearestEnemyOf(),4)
+      CheckStatLT(LastSeenBy(),50,RESISTELECTRICITY)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      CheckStatGT(LastSeenBy(),8,SAVEVSSPELL)
+      !HasItem("MAGEAMUL",LastSeenBy())// Not immune to spell levels 1-3
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",3)
+            Spell(LastSeenBy(),CLERIC_CALL_LIGHTNING)
+END
+//*****************************************************************************
+// SECTION: COMBAT CLOSE RANGE ATTACKS
+//*****************************************************************************
+// 1414 CLERIC_CAUSE_SERIOUS_WOUNDS
+// Range 1, CT7, AoE:Creature touched, Duration: Permanent
+// This spell is the reverse of cure serious wounds.  Instead of healing the
+// creature touched, it causes damage.  On a successful touch from the priest,
+// the spell inflicts 17 damage upon the target.  The next attack that the priest
+// makes will inflict this effect, however he only has 2 rounds to make the attack
+// before the spell fizzles.
+// Also, if the priest misses the target creature the spell is wasted. There is no saving throw.
+IF
+      Exists([ENEMY])
+      HaveSpell(CLERIC_CAUSE_SERIOUS_WOUNDS)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      !Range(NearestEnemyOf(),4)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",6)
+            Spell(Myself,CLERIC_CAUSE_SERIOUS_WOUNDS)
+            Wait(1)
+            ForceSpell(LastSeenBy(),WIZARD_DIMENSION_DOOR)
+END
+IF
+      Exists([ENEMY])
+      HaveSpell(CLERIC_CAUSE_SERIOUS_WOUNDS)
+      CheckStatLT(Myself,25,SPELLFAILUREPRIEST)
+      Range(NearestEnemyOf(),4)
+      Range(LastSeenBy(),4)
+      CheckStatLT(LastSeenBy(),50,RESISTMAGIC)
+      !HasItem("LICH",LastSeenBy())// Not immune to spell levels 1-5
+      !HasItem("RAKRING",LastSeenBy())// Not immune to spell levels 1-7
+      !HasItem("DEMILICH",LastSeenBy())// Not immune to spell levels 1-9
+      !GlobalTimerNotExpired("UsedSpell","LOCALS")
+THEN
+      RESPONSE #1
+            SetGlobalTimer("UsedSpell","LOCALS",6)
+            Spell(Myself,CLERIC_CAUSE_SERIOUS_WOUNDS)
+END
+//-----------------------------------------------------------------------------
+// Nymph weapon: 1d6 Crushing not enchanted
+IF
+      Exists([ENEMY])
+      Range(NearestEnemyOf(),4)
+      Global("prep","LOCALS",1)
+      !HasItem("IMMUNE1",LastSeenBy())
+      !HasItem("IMMUNE2",LastSeenBy())
+      !HasItem("IMMUNE3",LastSeenBy())
+      !HasItem("IMMUNE4",LastSeenBy())
+      !HasItem("IMMUNE10",LastSeenBy())
+THEN
+    RESPONSE #1
+        AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+

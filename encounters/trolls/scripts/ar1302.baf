@@ -1,0 +1,15 @@
+IF
+	Global("VP_Enhanced_Keep","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Enhanced_Keep","MYAREA",1)
+		CreateCreature("TROLL01",[634.933],13)  // Troll
+		CreateCreature("TROLL01",[700.979],13)  // Troll
+		CreateCreature("TROLL01",[1155.1257],5)  // Troll
+		CreateCreature("TROLL01",[1182.1296],5)  // Troll
+		CreateCreature("TROLL01",[1181.937],2)  // Troll
+		CreateCreature("TROLL01",[1217.966],2)  // Troll
+		CreateCreature("TROLL01",[1255.997],2)  // Troll
+		CreateCreature("TROLL01",[1638.1279],2)  // Troll
+		CreateCreature("TROLL01",[1691.1246],10)  // Troll
+END

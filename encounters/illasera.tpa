@@ -1,0 +1,174 @@
+COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/illasera.baf~
+COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/zilmag01.baf~
+
+COPY ~%MOD_FOLDER%/encounters/illasera/bam~ ~override~
+
+COPY_EXISTING ~ILLASERA.CRE~ ~override~
+ WRITE_LONG 0x14 20000 // XP Value
+ WRITE_SHORT 0x24 298 // Current HP
+ WRITE_SHORT 0x26 298 // Total HP
+ WRITE_SHORT 0x46 0xfffa // AC Natural
+ WRITE_SHORT 0x48 0xfffa // AC Effective
+ WRITE_SHORT 0x4c 20 // AC Missile
+ WRITE_SHORT 0x4e 20 // AC Piercing
+ WRITE_BYTE 0x52 0xf6 // THAC0
+ WRITE_BYTE 0x53 4 // APR
+ WRITE_BYTE 0x54 6 // Save vs. Death
+ WRITE_BYTE 0x55 2 // Save vs. Wands
+ WRITE_BYTE 0x56 4 // Save vs. Polymorph
+ WRITE_BYTE 0x57 6 // Save vs. Breath
+ WRITE_BYTE 0x58 3 // Save vs. Spell
+ WRITE_BYTE 0x59 50 // Fire Resistance
+ WRITE_BYTE 0x5a 50 // Cold Resistance
+ WRITE_BYTE 0x5b 50 // Elec Resistance
+ WRITE_BYTE 0x5c 50 // Acid Resistance
+ WRITE_BYTE 0x5d 70 // Magic Resistance
+ WRITE_BYTE 0x5e 30 // Magic Fire Resistance
+ WRITE_BYTE 0x5f 30 // Magic Cold Resistance
+ WRITE_BYTE 0x60 20 // Slashing Resistance
+ WRITE_BYTE 0x62 40 // Piercing Resistance
+ WRITE_BYTE 0x63 60 // Missile Resistance
+ WRITE_BYTE 0x234 28 // First Class Level
+ WRITE_BYTE 0x23a 16 // INT
+ WRITE_BYTE 0x23c 18 // Dexterity
+ WRITE_BYTE 0x23d 17 // Constitution
+ WRITE_BYTE 0x23e 15 //Alignment
+ REMOVE_CRE_ITEM ~ring06~ ~dagg15~ ~chan14~
+ ADD_CRE_ITEM ~ring95~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~
+ ADD_CRE_ITEM ~leat08~ #0 #0 #0 ~none~ ~armor~
+ ADD_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ ADD_CRE_ITEM ~vprithsw~ #0 #0 #0 ~none~ ~shield~
+ ADD_CRE_ITEM ~immune4~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~ 
+BUT_ONLY
+
+COPY_EXISTING ~ZILARC01.CRE~ ~override~
+ WRITE_SHORT 0x24 171 // Current HP
+ WRITE_SHORT 0x26 171 // Total HP
+ WRITE_SHORT 0x46 0xfff6 // AC Natural
+ WRITE_SHORT 0x48 0xfff6 // AC Effective
+ WRITE_BYTE 0x52 0xfa // THAC0
+ WRITE_BYTE 0x53 4 // APR
+ WRITE_BYTE 0x038 17 // STR
+ WRITE_BYTE 0x23a 17 // INT
+ WRITE_BYTE 0x23b 13 // WIS
+ WRITE_BYTE 0x23c 19 // Dexterity
+ WRITE_BYTE 0x23d 17 // Constitution
+ WRITE_BYTE 0x23e 14 // CHR
+ REMOVE_CRE_ITEM ~bow02~ ~arow02~ ~helm13~ ~leat01~
+ ADD_CRE_ITEM ~bow12~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ ADD_CRE_ITEM ~arow16~ #20 #0 #0 ~none~ ~quiver1~
+ ADD_CRE_ITEM ~arow05~ #20 #0 #0 ~none~ ~quiver2~
+ ADD_CRE_ITEM ~arow15~ #20 #0 #0 ~none~ ~quiver3~
+ ADD_CRE_ITEM ~helm26~ #0 #0 #0 ~none~ ~helmet~
+ ADD_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~
+ ADD_CRE_ITEM ~potn05~ #1 #0 #0 ~none~ ~inv16~
+ ADD_CRE_ITEM ~potn07~ #1 #0 #0 ~none~ ~inv15~
+ ADD_CRE_ITEM ~potn11~ #2 #0 #0 ~none~ ~inv14~
+ ADD_CRE_ITEM ~potn14~ #2 #0 #0 ~none~ ~qitem1~
+ ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem2~
+ ADD_CRE_ITEM ~potn53~  #5 #0 #0 ~none~ ~qitem3~
+BUT_ONLY
+
+COPY_EXISTING ~ZILFGT01.CRE~ ~override~
+ WRITE_SHORT 0x24 182 // Current HP
+ WRITE_SHORT 0x26 182 // Total HP
+ WRITE_SHORT 0x46 0xfff8 // AC Natural
+ WRITE_SHORT 0x48 0xfff8 // AC Effective
+ WRITE_BYTE 0x52 0xf9 // THAC0
+ WRITE_BYTE 0x53 4 // APR
+ REMOVE_CRE_ITEM ~dagg02~ ~sw1h22~
+ ADD_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~weapon1 weapon2~ EQUIP
+ ADD_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~shield~
+BUT_ONLY
+
+COPY_EXISTING ~ZILMAG01.CRE~ ~override~
+ WRITE_LONG 0x14 9000 // XP Value
+ WRITE_SHORT 0x24 125 // Current HP
+ WRITE_SHORT 0x26 125 // Total HP
+ WRITE_SHORT 0x46 0xfffd // AC Natural
+ WRITE_SHORT 0x48 0xfffd // AC Effective
+ WRITE_BYTE 0x52 0xff // THAC0
+ WRITE_BYTE 0x53 3 // APR
+ WRITE_BYTE 0x234 27
+ WRITE_BYTE 0x23a 17 // INT
+ WRITE_BYTE 0x23c 19 // Dexterity
+ WRITE_BYTE 0x23d 16 // Constitution
+ REMOVE_KNOWN_SPELL ~spwi523~ ~spwi714~
+ ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
+ ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+ ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
+ ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+ ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
+ ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
+ ADD_KNOWN_SPELL ~spwi405~ #3 ~wizard~
+ ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+ ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
+ ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+ ADD_KNOWN_SPELL ~spwi605~ #5 ~wizard~
+ ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+ ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
+ ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
+ ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
+ ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
+ REMOVE_MEMORIZED_SPELLS
+ ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
+ ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+ ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
+ ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi405~ #3 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
+ ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
+ ADD_MEMORIZED_SPELL ~spwi523~ #4 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
+ ADD_MEMORIZED_SPELL ~spwi605~ #5 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+ ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi897~ #7 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
+ ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
+ REMOVE_CRE_ITEM ~clck14~ ~staf02~
+ ADD_CRE_ITEM ~ring41~ #0 #0 #0 ~none~ ~lring rring~
+ ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~
+ ADD_CRE_ITEM ~scrl7g~ #0 #0 #0 ~none~ ~inv16~
+ ADD_CRE_ITEM ~ring09~ #0 #0 #0 ~none~ ~lring rring~
+BUT_ONLY
+
+COPY ~%MOD_FOLDER%/encounters/illasera/itm/vprithsw.itm~ ~override~
+ SAY NAME2 ~Rithtellium Short Sword +5~
+ SAY DESC ~This short sword is extremely light and give off a shimmering blue hue. Closer examination reveals that it is made from *rithtellium*, a mystical alloy, the forging of which is a closely guarded secret, known only to those who forge it. It requires both mage and smith to forge weapons from rithtellium, the end result being weapons with a shimmering blue hue which are usable by wizards as if proficient in their use.
+
+Combat Abilities:
+– 3 extra attacks per round
+– Spell Strike on each hit
+
+Equipped abilities:
+– Armor class: +2
+– Saving throws: +2
+– Magic Resistance: +10%
+– Immunity to poison
+– The wearer can memorize 2 extra 7th-level-, 2 extra 8th-level-, and 2 extra 9th-level arcane spells
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d6+5, +3 poison damage
+Damage type: Slashing
+Speed Factor: 12
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~

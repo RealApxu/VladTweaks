@@ -1,0 +1,21 @@
+COMPILE ~%MOD_FOLDER%/quests/twistedrune_quest/dialogue/dialogue.d~
+
+EXTEND_TOP ~ar0313.bcs~ ~%MOD_FOLDER%/quests/twistedrune_quest/scripts/ar0313.baf~
+EXTEND_TOP ~ar0906.bcs~ ~%MOD_FOLDER%/quests/twistedrune_quest/scripts/ar0906.baf~
+
+COPY_EXISTING ~TRAN1008.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+        ~PartyHasItem("MISC45")~
+        ~PartyHasItem("SCRL3IBD") PartyHasItem("MISC45")~
+        REPLACE_TEXTUALLY
+        ~!PartyHasItem("MISC45")~
+        ~OR(2) !PartyHasItem("SCRL3IBD") !PartyHasItem("MISC45")~
+    END
+    BUT_ONLY
+
+COPY ~%MOD_FOLDER%/quests/twistedrune_quest/itm/SCRL3IBD.itm~ ~override~
+
+COPY_EXISTING ~HLKOSHI.CRE~ ~override~
+    ADD_CRE_ITEM ~scrl3ibd~ #0 #0 #0 ~none~ ~inv16~
+BUT_ONLY

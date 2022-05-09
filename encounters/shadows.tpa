@@ -1,0 +1,208 @@
+COPY ~%MOD_FOLDER%/encounters/shadows/cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/shadows/itm~ ~override~
+
+COPY_EXISTING ~ICBONE01.CRE~ ~override~
+    WRITE_SHORT 0x24 270 // Current HP
+    WRITE_SHORT 0x26 270 // Total HP
+    WRITE_SHORT 0x46 "-2" // AC Natural
+    WRITE_SHORT 0x48 "-2" // AC Effective
+    WRITE_BYTE 0x52 5 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x23c 14 // Dexterity
+    WRITE_BYTE 0x23d 20 // Constitution
+    REPLACE_CRE_ITEM ~vps38m3~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA01.CRE~ ~override~
+    WRITE_SHORT 0x24 160 // Current HP
+    WRITE_SHORT 0x26 160 // Total HP
+    WRITE_SHORT 0x46 "-5" // AC Natural
+    WRITE_SHORT 0x48 "-5" // AC Effective
+    WRITE_BYTE 0x52 "-5" // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x234 14 // Level First Class
+    WRITE_BYTE 0x238 17
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 17 // 
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA02.CRE~ ~override~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA2D.CRE~ ~override~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA03.CRE~ ~override~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA03.CRE~ ~override~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~RNGSHA04.CRE~ ~override~
+    WRITE_LONG 0x14 7500 // XP Value
+    WRITE_SHORT 0x24 160 // Current HP
+    WRITE_SHORT 0x26 160 // Total HP
+    WRITE_SHORT 0x46 "-5" // AC Natural
+    WRITE_SHORT 0x48 "-5" // AC Effective
+    WRITE_BYTE 0x52 "-5" // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x234 15 // Level First Class
+    WRITE_BYTE 0x238 17 // STR
+    WRITE_BYTE 0x239 12 // STR
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 17 // Constitution
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHADEL.CRE~ ~override~
+    WRITE_SHORT 0x24 185 // Current HP
+    WRITE_SHORT 0x26 185 // Total HP
+    REMOVE_CRE_ITEM ~ring95~
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpp312m4~ #0 #0 #0 ~none~ ~weapon1~
+BUT_ONLY
+
+COPY_EXISTING ~SHADELD.CRE~ ~override~
+    WRITE_SHORT 0x24 185 // Current HP
+    WRITE_SHORT 0x26 185 // Total HP
+BUT_ONLY
+
+COPY_EXISTING ~SHADFI01.CRE~ ~override~
+    WRITE_LONG 0x14 5500
+    WRITE_SHORT 0x24 89 // Current HP
+    WRITE_SHORT 0x26 89 // Total HP
+    WRITE_SHORT 0x4a 20
+    WRITE_SHORT 0x50 20
+    WRITE_BYTE 0x52 "-4"
+    WRITE_BYTE 0x234 15
+    WRITE_BYTE 0x238 17
+    WRITE_BYTE 0x23c 18
+    WRITE_BYTE 0x23d 16
+    WRITE_BYTE 0x234 15
+    REPLACE_CRE_ITEM ~immune2~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vps38m3~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHADFI02.CRE~ ~override~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpwrth1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHADOW01.CRE~ ~override~
+    WRITE_LONG 0x14 4500 // XP Value
+    WRITE_SHORT 0x24 95 // Current HP
+    WRITE_SHORT 0x26 95 // Total HP
+    WRITE_SHORT 0x46 "-4" // AC Natural
+    WRITE_SHORT 0x48 "-4" // AC Effective
+    WRITE_BYTE 0x52 "-7" // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x234 13 // Level First Class
+    WRITE_BYTE 0x238 17 // STR
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 15 // Constitution
+    REPLACE_CRE_ITEM ~immune2~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHADOWSU.CRE~ ~override~
+    WRITE_LONG 0x14 4500 // XP Value
+    WRITE_SHORT 0x24 95 // Current HP
+    WRITE_SHORT 0x26 95 // Total HP
+    WRITE_SHORT 0x46 "-4" // AC Natural
+    WRITE_SHORT 0x48 "-4" // AC Effective
+    WRITE_BYTE 0x52 "-7" // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x234 13 // Level First Class
+    WRITE_BYTE 0x238 17 // STR
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 15 // Constitution
+    REPLACE_CRE_ITEM ~immune2~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpring95~ #0 #0 #0 ~none~ ~rring~
+BUT_ONLY
+
+COPY_EXISTING ~SHADRA01.CRE~ ~override~
+    WRITE_SHORT 0x24 260 // Current HP
+    WRITE_SHORT 0x26 260 // Total HP
+    WRITE_SHORT 0x46 "-14" // AC Natural
+    WRITE_SHORT 0x48 "-14" // AC Effective
+    WRITE_BYTE 0x52 "-10" // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    REPLACE_CRE_ITEM ~vpdrblaw~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHAWOL01.CRE~ ~override~
+    WRITE_LONG 0x14 5500 // XP Value
+    WRITE_SHORT 0x24 145 // Current HP
+    WRITE_SHORT 0x26 145 // Total HP
+    WRITE_SHORT 0x46 "-6" // AC Natural
+    WRITE_SHORT 0x48 "-6" // AC Effective
+    WRITE_BYTE 0x52 "-5" // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x59 20 // Fire Resistance
+    WRITE_BYTE 0x5a 100 // Cold Resistance
+    WRITE_BYTE 0x5c 20 // Acid Resistance
+    WRITE_BYTE 0x5e 20 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 100 // Magic Cold Resistance
+    WRITE_BYTE 0x60 10 // Slashing Resistance
+    WRITE_BYTE 0x61 10 // Crushing Resistance
+    WRITE_BYTE 0x62 10 // Piercing Resistance
+    WRITE_BYTE 0x63 40 // Missile Resistance
+    WRITE_BYTE 0x234 14 // Level First Class
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vpshadwp~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~SHAWOL02.CRE~ ~override~
+    WRITE_SHORT 0x24 165 // Current HP
+    WRITE_SHORT 0x26 165 // Total HP
+    WRITE_SHORT 0x46 "-6" // AC Natural
+    WRITE_SHORT 0x48 "-6" // AC Effective
+    WRITE_SHORT 0x4a 40 // AC Crushing
+    WRITE_SHORT 0x50 40 // AC Slashing
+    WRITE_BYTE 0x52 "-6" // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x59 30 // Fire Resistance
+    WRITE_BYTE 0x5a 100 // Cold Resistance
+    WRITE_BYTE 0x5c 100 // Acid Resistance
+    WRITE_BYTE 0x5d 50 // Magic Fire Resistance
+    WRITE_BYTE 0x5e 50 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 100 // Magic Cold Resistance
+    WRITE_BYTE 0x60 20 // Slashing Resistance
+    WRITE_BYTE 0x61 20 // Crushing Resistance
+    WRITE_BYTE 0x62 20 // Piercing Resistance
+    WRITE_BYTE 0x63 50 // Missile Resistance
+    WRITE_BYTE 0x234 15 // Level First Class
+    WRITE_BYTE 0x239 94 // Ecs. STR
+    WRITE_BYTE 0x23c 19 // Dexterity
+    WRITE_BYTE 0x23d 21 // Constitution
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring~
+    REPLACE_CRE_ITEM ~vps38m3~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+BUT_ONLY
+
+// Change Shadows in the Unseeing Eye Lair
+
+COPY_EXISTING ~AR0202.ARE~ ~override~
+    READ_LONG 0x54 a_o
+    READ_SHORT 0x58 a_n
+    FOR (i=0 ; i<a_n ; i+=1) BEGIN
+        READ_ASCII a_o+0x110*i+0x80 cre_name
+        PATCH_IF cre_name STR_CMP ~shadow01~ BEGIN
+            WRITE_ASCII a_o+0x110*i+0x80 ~vpshfi03~
+        END
+    END
+BUT_ONLY

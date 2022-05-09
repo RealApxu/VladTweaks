@@ -1,0 +1,376 @@
+IF
+	See([PC])
+	Allegiance(Myself,ENEMY)
+	Global("SPRITE_IS_DEADgromg08","GLOBAL",0)
+	Global("VP_Karun_Multiplies","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Karun_Multiplies","GLOBAL",1)
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
+END
+
+IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("VP_Fake_Karun_Dead","GLOBAL",1)
+		DestroySelf()
+END
+
+IF
+	RandomNum(9,1)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",1)
+		JumpToPoint([643.791])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)  // SPWI808.SPL (Improved Mantle)
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		DisplayString(Myself,39968)  // Spell Trigger—Fired
+		DisplayString(Myself,43046)  // Spell Trigger—Mislead
+		ReallyForceSpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+		DisplayString(Myself,43047)  // Spell Trigger—Fire Shield Red
+		ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Fire Shield (Red))
+		DisplayString(Myself,40245)  // Spell Trigger—Globe of Invulnerability
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)  // SPWI602.SPL (Globe of Invulnerability)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",1)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([760.678])
+		Continue()
+END
+
+IF
+	RandomNum(9,2)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",2)
+		JumpToPoint([760.678])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_DISINTEGRATE)  // SPWI616.SPL (Disintegrate)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",2)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([498.481])
+		Continue()
+END
+
+IF
+	RandomNum(9,3)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",3)
+		JumpToPoint([498.481])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",3)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([370.559])
+		Continue()
+END
+
+IF
+	RandomNum(9,4)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",4)
+		JumpToPoint([370.559])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",4)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([539.868])
+		Continue()
+END
+
+IF
+	RandomNum(9,5)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",5)
+		JumpToPoint([539.868])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",5)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ApplySpell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+		ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+		DisplayString(Myself,39968)  // Spell Trigger—Fired
+		DisplayString(Myself,3302)  // Chain Contingency—Spell Turning
+		DisplayString(Myself,43050)  // Chain Contingency—Improved Mantle
+		ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)  // SPWI808.SPL (Improved Mantle)
+		DisplayString(Myself,40240)  // Chain Contingency—Mislead
+		ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+		DisplayString(Myself,40252)  // Contingency—Protection From Magical Weapons
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",5)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([866.768])
+		Continue()
+END
+
+IF
+	RandomNum(9,6)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",6)
+		JumpToPoint([866.768])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",6)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",6)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([922.492])
+		Continue()
+END
+
+IF
+	RandomNum(9,7)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",7)
+		JumpToPoint([922.492])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",7)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",7)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([672.517])
+		Continue()
+END
+
+IF
+	RandomNum(9,8)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",8)
+		JumpToPoint([672.517])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",8)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",8)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([497.696])
+		Continue()
+END
+
+IF
+	RandomNum(9,9)
+	OR(2)
+		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",9)
+		JumpToPoint([497.696])
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",9)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		ApplySpell(NearestEnemyOf(Myself),WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Prismatic Spray)
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLESH_TO_STONE)  // SPWI604.SPL (Flesh to Stone)
+		ApplySpell(SecondNearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol, Stun)
+		ApplySpell(ThirdNearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol, Fear)
+		ApplySpell(FourthNearestEnemyOf(Myself),WIZARD_WAIL_OF_THE_BANSHEE)  // SPWI913.SPL (Wail of the Banshee)
+		Continue()
+END
+
+IF
+	Global("VP_Jump","LOCALS",9)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Jump","LOCALS",0)
+		MoveToPoint([233.726])
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+	Global("Summon","LOCALS",0)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+		SetGlobal("Summon","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	HPPercentLT(Myself,25)
+	HPGT(Myself,1)
+	HPGT(Myself,0)
+	Global("Whined","LOCALS",0)
+	See(NearestMyGroupOfType)
+	Allegiance(Myself,ENEMY)
+	HPGT(LastSeenBy(Myself),0)
+THEN
+	RESPONSE #100
+		SetGlobal("Whined","LOCALS",1)
+		Shout(153)
+		DisplayStringHead(Myself,46151)  // Help!
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!HaveAnySpells()
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END

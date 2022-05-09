@@ -1,0 +1,29 @@
+
+// Items
+/*
+COPY ~NeJE/bdash/edwin/MISC89.ITM~ ~override~
+ SAY DESC ~This is Edwin's birthright, inlaid with his family stone.
+
+STATISTICS:
+
+Equipped Abilities:
+ Max Hit Points: +25
+ Magic Resistance: +15%
+ Resistance to Magic Damage: +50% (magic attacks will do half of full damage)
+ Fire Resistance Bonus: +50%
+ Complete Mind Shield
+ (Immunity to any mind-alterating effects)
+
+Special Abilities:
+ Grants three extra spells of each level
+ Improves Casting Speed by x3 factor
+ Vocalize 
+
+Armor Class Bonus: +2
+THAC0 Bonus: +2
+Saving Throws Bonus: +2
+
+Weight: 3
+Usable By:
+ Edwin~
+*/

@@ -1,0 +1,31 @@
+ACTION_IF GAME_IS ~bgee~ BEGIN
+    PRINT ~BG:EE install detected~
+    OUTER_SPRINT "AREA0516" "AR0516"
+    OUTER_SPRINT "AREA1005" "AR1005"
+  END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+    PRINT ~EET install detected~
+      OUTER_SPRINT "AREA0700" "BG0516"
+      OUTER_SPRINT "AREA7228" "BG1005"
+  END ELSE BEGIN
+    FAIL ~Please install on BG:EE or EET.~
+  END
+
+// Dialogue
+
+COMPILE ~quests/keystoeternity/dialogue/dialogue.d~
+
+// Scripts
+
+EXTEND_TOP ~%AREA0516%.bcs~ ~quests/keystoeternity/scripts/ar0516.baf~
+
+COPY_EXISTING ~%AREA1005%.ARE~ ~override~
+WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
+BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~quests/keystoeternity/scripts/%AREA1005%.baf~
+
+// Creatures
+
+COPY ~quests/keystoeternity/cre/vpginny.cre~ ~override~
+ SAY NAME1 ~Ginny~
+ SAY NAME2 ~Ginny~

@@ -1,0 +1,213 @@
+// Spells
+
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR202 destination = ~VPAERI01~ END // Barkskin
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR204 destination = ~VPAERI03~ END // Charm Person
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR305 destination = ~VPAERI04~ END // Hold Animal
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR318 destination = ~VPAERI05~ END // Zone of Sweet Air
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR307 destination = ~VPAERI06~ END // Summon Insects
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR402 destination = ~VPAERI07~ END // Animal Summoning I
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR410 destination = ~VPAERI08~ END // Call Woodland Beings
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR416 destination = ~VPAERI09~ END // Cloak of Fear
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR501 destination = ~VPAERI10~ END // Animal Summoning II
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR105 destination = ~VPAERI11~ END // Entangle
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR516 destination = ~VPAERI12~ END // Pixie Dust
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR517 destination = ~VPAERI13~ END // Insect Plague
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR602 destination = ~VPAERI14~ END // Animal Summoning III
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR604 destination = ~VPAERI15~ END // Conjure Animals
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR605 destination = ~VPAERI16~ END // Conjure Fire Elemental
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR606 destination = ~VPAERI17~ END // Fire Seeds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR605 destination = ~VPAERI18~ END // Conjure Earth Elemental
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR709 destination = ~VPAERI19~ END // Confusion
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination = ~VPAERI20~ END // Creeping Doom
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR723 destination = ~VPAERI21~ END // Elemental Summoning
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR724 destination = ~VPAERI22~ END // Greater Elemental Summoning
+
+COPY ~%MOD_FOLDER%/kits/aerie/bam~ ~override~
+
+COPY ~%MOD_FOLDER%/kits/aerie/spl/vpaeri02.spl~ ~override~
+SAY NAME1 ~Baervan's Bilberries~
+SAY NAME2 ~Baervan's Bilberries~
+SAY 0x50 ~Baervan's Bilberries (Alteration, Evocation)
+Level: 2
+Sphere: Plant
+Range: Touch
+Duration: Permanent
+Casting Time: 1 round
+Area of Effect: Special
+Saving Throw: None
+
+Casting a Baervan's Bilberries spell creates five magical berries that the caster can carry with him. These berries cure 20 points of physical damage for each one eaten.~
+SAY 0x54 ~Baervan's Bilberries (Alteration, Evocation) 
+Level: 2
+Sphere: Plant 
+Range: Touch 
+Duration: Permanent
+Casting Time: 1 round 
+Area of Effect: Special 
+Saving Throw: None 
+
+Casting a Baervan's Bilberries spell creates five magical berries that the caster can carry with him. These berries cure 20 points of physical damage for each one eaten.~
+
+COPY ~%MOD_FOLDER%/kits/aerie/spl/vpaeri99.spl~ ~override~
+
+// New kit
+
+ADD_KIT ~VP_WILDWANDERER_OF_BAERVAN~
+
+~VP_WILDWANDERER_OF_BAERVAN 0 0 1 1 0 1 0 0~
+
+~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 13 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 0 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 17 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 15 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 1 0 0 1 0 0 1 0 0~
+ 
+~VP_WILDWANDERER_OF_BAERVAN 1 0 1 1 0 1~
+ 
+~%MOD_FOLDER%/kits/aerie\rules\vpaeclab.2da~
+ 
+~~
+ 
+~0x00000000 3~
+ 
+~Cl0~
+ 
+~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLING05 DAGG05,40 STAF20~
+ 
+SAY ~wildwanderer of baervan~
+ 
+SAY ~Wildwanderer of Baervan~
+ 
+SAY ~WILWANDERER OF BAERVAN: This cleric kit was especially created for Aerie to reflect her unique personality.
+
+Baervan Wildwanderer (BAY-ur-van WILD-WAN-der-er) is the god of forest-dwelling gnomes and their communities, travel, and the outdoors. He loves oak trees and all forest animals and is guardian of the wild. Baervan gifted forest gnomes with the ability to communicate with forest animals, and taught them to how to hide in and move through wooded environments without being detected. The Masked Leaf is the patron god of forest gnomes, but he is well loved by all of the gnome subraces. He is even revered by the svirfneblin as the Father of Fish and Fungus. Baervan is worshiped by those who love the woodlands, as well as many wanderers, thieves, fighter/thieves, and fighters, particularly those who prefer living in the outdoors rather than in a city all the time.
+
+Baervan's friend and constant companion in his escapades is a giant raccoon named Chiktikka Fastpaws, who is highly intelligent but prone to act before he thinks. Many stories are told of the adventures that this duo has shared, often started by Chiktikka's humorous ability to get into trouble by borrowing something valuable, such as a minor artifact. Baervan is closely allied with the other gods of the gnome pantheon, with the notable exception of Urdlen. He works closely with Segojan Earthcaller, for both gods are concerned with the natural world.
+
+Traditionally, their portfolios are divided between caring for forest animals and plants for Baervan, and burrowing animals for Segojan. Baervan sometimes accompanies Garl, or even Baravar, on their mischievous escapades, and the trio's shared interest in mischief embodies and encourages this aspect of the gnome psyche. Baervan's carefree nature and penchant for jests strains the patience of Gaerdal Ironhand, albeit not to the extent that the pranks of Baravar Cloakshadow do. Baervan is closely allied with many of the sylvan powers of the Seelie Court. His passion for oak trees has led to his endless, if so far fruitless, pursuit of Verenestra's affections. The Masked Leaf is a frequent participant in the councils of Emmantiensien, Rillifane Rallathil, and Silvanus, though he rarely has the patience to sit through an entire discussion with these slow-speaking woodland giants. Baervan has few foes aside from Urdlen, although the Beastlord has earned his ire for hunting forest gnomes under the Masked Leaf's protection.
+
+Baervan is gentle, good-natured, and mischievous. His penchant for good-natured pranks rivals Garl Glittergold. Except for Chiktikka's company, he tends to keep to himself. Though Baervan sometimes plays jokes on others, it is hard not to like him. The Masked Leaf's tricks are often designed to serve some purpose, unlike the mischief typical of Forgotten Folk. If Baervan wants to send someone a message, he does so in the form of a joke. Baervan dispatches avatars to help repair severe damage to nature, though sometimes just to create mischief.
+
+The Masked Leaf may manifest as an amber radiance to settle over a worshiper or any type of plant. This manifestation can confer upon a favored worshiper the benefits of a spell such as 'barkskin', locate plants and animals, pass without trace, plant door, speak with plants, or tree or coalesce into a handful of goodberries. Baervan’s manifestation can animate a tree as a treant for up to seven rounds, create a spike growth effect, or act as combined entangle and plant growth spells.
+
+Baervan is served by forest animals of all types (particularly raccoons and giant raccoons), amber dragons, dryads, earth elementals, faerie dragons, feystags, hamadryads, hybsils, leprechauns, nature elementals, singing trees, sprites, swanmays, treants, wild stags, and wood giants. He demonstrates his favor by permitting his faithful to discover acorns, pieces of amber, emeralds, oak leaves or the sudden growth of plants on a welltrodden trail where such would seem out of place. The Masked Leaf indicates his displeasure by causing a tree branch to gently strike the target of his disaffection or by causing small animals to behave oddly (like pelting a gnome with acorns).
+
+The church of the Masked Leaf is well regarded among most gnome communities, particularly forest gnomes, for Baervan and his followers are a likable bunch. Baervan's penchant for getting into trouble has long been a source of amusement and pride for the Forgotten Folk, and they generally embrace his mischievous nature as portrayed in the behavior of his clergy. Among other races, the church of Baervan is little known save among other elven and sylvan deities. The Fair Folk, particularly the Sy-Tel'Ques-sir, view the cult of the forest gnomes with great affection, as they do the followers of the Seelie Court.
+
+Baervan's worshipers assemble in forest clearings to venerate their god, preferably sylvan glades ringed by a circle of ancient oaks, although such arboreal menhirs are not required. Longstanding shrines of the Masked Leaf are transformed into woodland chapels with the circle of broad trunks growing closer together and the canopy of intertwined limbs and leaves forming a natural roof.
+
+Novices of Baervan are known as Acorns. Full priests of the Masked Leaf are known as Wildwanderers.
+ 
+Advantages:
+- Wildwanderers of Baervan have an exceptional dexterity
+- They can specialise in any weapon that a cleric can use
+- Wildwanderers have a natural mind shield embedded in one of their personal items, i.e. they cannot be charmed, confused or affected by any mind-altering effects including pisonics
+- They can cast a limited number of spells relating to their forest and animal loving nature, which become available from their innate slots as they advance levels:
+ At 2nd, 4th and 6th level, wildwanderers can cast Barkskin, Entangle and Baervan's Bilberries
+ At 3rd, 5th and 8th level, wildwanderers can cast Charm Person or Mammal, Hold Animal and Zone of Sweet Air
+ At 7th, 9th and 11th level, wildwanderers can cast Summon Insects, Call Woodland Beings and Animal Summoning I
+ At 10th, 12th and 14th level, wildwanderers can cast Cloak of Fear and Animal Summoning II
+ At 13th, 16th and 18th level, wildwanderers can cast Pixie Dust, Insect Plague and Animal Summoning III
+ At 17th, 19th and 21st level, wildwanderers can cast Conjure Animals, Conjure Fire Elemental and Fire Seeds
+ At 20th, 23rd and 26th level, wildwanderers can cast Conjure Earth Elemental, Confusion and Creeping Doom
+ At 22nd, 25th and 28th level, wildwanderers can cast Elemental Summoning and Greater Elemental Summoning
+
+At level 15, Wildwanderers of Baervan receive a Holy Symbol of Baervan.
+
+Disadvantages:
+- None~
+
+LAF fl#add_kit_ee
+STR_VAR
+    kit_name = VP_WILDWANDERER_OF_BAERVAN
+END
+
+COPY ~%MOD_FOLDER%/kits/aerie\itm\vpaeclck.itm~ ~override~
+ SAY NAME2 ~Aerie's Cloak~
+ SAY DESC ~Aerie's Cloak
+
+This is the very powerfull cloak of unknown origin worn by Aerie. She states that Baervan himself granted this cloak to her. The abilities conferred by this cloak attest to the fact that Aerie, being an avariel, has been grown and eductaed by gnomes, and that she's a true servant of light. The cloak is equally enhancing the naural beauty of Aerie and her ability to summon beautiful creatures. In addition, the cloak helps Aerie to concentrate and develop her spell casting abilities by creating a complete mind shield.
+
+STATISTICS:
+
+Charge abilities:
+– Aerial Servant twice per day
+  Duration: 20 turns
+– Summon Woodland Beings twice per day
+  Duration: 3 turns
+– Nature's Beauty twice per day
+  Area of Effect: 15-ft. radius
+
+Equipped abilities:
+– Armor Class: +2
+– THAC0: +2
+– Saving Throws: +2
+– Charisma: +2
+– Improves Casting Speed by 4
+– Fire Resistance: +75%
+– Magic Resistance: +25%
+– Immunity to any mind-alterating effects
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/kits/aerie\itm\vpaering.itm~ ~override~
+ SAY NAME2 ~Holy Symbol of Baervan~
+ SAY DESC ~Only those most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols which provide essential protections and increase the amount of priest high-level spells they can memorise. This particular ring has a signet with a raccon's face. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– THAC0: +2
+– Constitution: +2
+– Wisdom: +2
+– Regenerate 1 HP/round
+– Immunity to acid and poison
+– Immunity to any slowing, holding and paralyzation effects
+– The wearer can memorize 3 extra 6th-level- and 3 extra 7th-level divine spells
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/kits/aerie\itm\vpaeri02.itm~ ~override~
+ SAY NAME1 ~Baervan's Bilberry~
+ SAY NAME2 ~Baervan's Bilberry~
+ SAY UNIDENTIFIED_DESC ~This very special bilberry created by Aerie will heal 20 points of damage instantly for each berry eaten.
+ 
+STATISTICS:
+
+Special: Heals 20 Hit Points
+
+Weight: 0~
+ SAY DESC ~This very special bilberry created by Aerie will heal 20 points of damage instantly for each berry eaten.
+
+STATISTICS:
+
+Special: Heals 20 Hit Points
+
+Weight: 0~
+
+//Creature files
+
+ACTION_FOR_EACH aerie IN aerbod01 aerie aerie6 aerie7 aerie9 aerie10 aerie11 aerie12 BEGIN
+ ACTION_IF FILE_EXISTS_IN_GAME ~%aerie%.cre~ THEN BEGIN
+  COPY_EXISTING ~%aerie%.cre~ ~override~
+    WRITE_BYTE 0x273 3
+   WRITE_SHORT 0x246 IDS_OF_SYMBOL (~kit~ ~VP_WILDWANDERER_OF_BAERVAN~)
+   ADD_CRE_ITEM ~vpaeclck~ #0 #0 #0 ~IDENTIFIED~ ~cloak~
+ END
+END
+
+// 2da Appends
+
+APPEND ~item_use.2da~
+~vpaeclck aerie 9382 2 99999~
+UNLESS ~vpaeclck~
+
+COPY_EXISTING ~item_use.2da~ ~override~
+REPLACE ~99999~ #9184

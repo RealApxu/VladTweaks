@@ -1,0 +1,135 @@
+// Scripts
+
+COPY_EXISTING ~AMBUSH2.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR01"~ ~"VPIMPTH1"~
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR02"~ ~"VPIMPTH2"~
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR03"~ ~"VPIMPTH1"~
+    END
+    BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ARNSPW2.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR03"~ ~"VPIMPTH1"~
+    END
+    BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ARNSPW3.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR01"~ ~"VPIMPTH1"~
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR02"~ ~"VPIMPTH2"~
+    END
+    BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ARNSPW3.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR01"~ ~"VPIMPTH1"~
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR02"~ ~"VPIMPTH2"~
+        REPLACE_TEXTUALLY EXACT_MATCH ~"ARNWAR03"~ ~"VPIMPTH1"~
+    END
+    BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~%MOD_FOLDER%/encounters/thieves/scripts/vpmag14v.baf~
+
+EXTEND_BOTTOM ~AR0329.BCS~ ~%MOD_FOLDER%/encounters/thieves/scripts/ar0329.baf~
+
+// Thieves Ambushes
+
+EXTEND_TOP ~AMNTRP01.BCS~ ~%MOD_FOLDER%/encounters/thieves/scripts/amntrp.baf~
+EXTEND_TOP ~AMNTRP02.BCS~ ~%MOD_FOLDER%/encounters/thieves/scripts/amntrp.baf~
+EXTEND_TOP ~AMNTRP03.BCS~ ~%MOD_FOLDER%/encounters/thieves/scripts/amntrp.baf~
+EXTEND_TOP ~BODHITRP.BCS~ ~%MOD_FOLDER%/encounters/thieves/scripts/amntrp.baf~
+
+// Creature Edits
+
+COPY_EXISTING ~STDEATH.CRE~ ~override~
+    WRITE_SHORT 0x24 120
+    WRITE_SHORT 0x26 120
+    WRITE_SHORT 0x46 6
+    WRITE_SHORT 0x48 6
+    WRITE_BYTE 0x52 0xff
+    WRITE_ASCII 0x268 ~WTASIGHT~
+    WRITE_ASCII 0x280 ~stdeath~
+BUT_ONLY
+
+COPY_EXISTING ~ARNWAR06.CRE~ ~override~
+    WRITE_SHORT 0x24 98
+    WRITE_SHORT 0x26 98
+    WRITE_SHORT 0x46 1
+    WRITE_SHORT 0x48 1
+    WRITE_BYTE 0x52 6
+    WRITE_BYTE 0x53 3
+    WRITE_BYTE 0x64 100
+    WRITE_BYTE 0x66 90
+    WRITE_BYTE 0x6e 2
+    WRITE_BYTE 0x6f 2
+    WRITE_BYTE 0x70 2
+    WRITE_BYTE 0x71 2
+    WRITE_BYTE 0x72 5
+    WRITE_BYTE 0x73 5
+    WRITE_BYTE 0x74 2
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x238 15
+    WRITE_BYTE 0x23a 18
+    WRITE_BYTE 0x23b 16
+    WRITE_ASCII 0x250 ~vpmag14v~
+    WRITE_LONG 0x258 0x00000000
+    REMOVE_KNOWN_SPELLS
+    REMOVE_MEMORIZED_SPELLS
+    ADD_KNOWN_SPELL ~spwi112~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi118~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi306~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi316~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi411~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi423~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi508~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi601~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi602~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi605~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi704~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi899~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi112~ #0 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi118~ #0 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi302~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi306~ #2 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi316~ #2 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi408~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi411~ #3 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi423~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi508~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi601~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi602~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi605~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi611~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi704~ #6 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
+    REPLACE_CRE_ITEM ~staf21~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
+    ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~
+    ADD_CRE_ITEM ~brac15~ #0 #0 #0 ~none~ ~gloves~
+BUT_ONLY
+
+// New Creatures
+
+COPY ~%MOD_FOLDER%/encounters/thieves/cre~ ~override~

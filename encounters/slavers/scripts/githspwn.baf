@@ -1,0 +1,87 @@
+IF
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0900")
+	Detect([PC])
+	Range([PC],20)
+	CombatCounter(0)
+	GlobalLT("Chapter","GLOBAL",4)
+	!Global("CopperGuards","GLOBAL",0)
+	!GlobalTimerExpired("VP_Slavers_AttackT","GLOBAL")
+	!TimeGT(24)
+	!TimeLT(DAWN_START)
+	Global("VP_Summon_Slavers","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Slavers","GLOBAL",1)
+		SetGlobalTimer("VP_Slavers_AttackT","GLOBAL",3600)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+		CreateCreatureObject("ccguard2",Myself,0,0,0)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+END
+
+IF
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0900")
+	Detect([PC])
+	Range([PC],20)
+	CombatCounter(0)
+	GlobalLT("Chapter","GLOBAL",4)
+	!Global("CopperGuards","GLOBAL",0)
+	Global("VP_Summon_Slavers","GLOBAL",1)
+	GlobalTimerExpired("VP_Slavers_AttackT","GLOBAL")
+	!TimeGT(24)
+	!TimeLT(DAWN_START)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Slavers","GLOBAL",2)
+		SetGlobalTimer("VP_Slavers_AttackT","GLOBAL",3600)
+		CreateCreatureObject("ccguard2",Myself,0,0,0)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+		CreateCreatureObject("ccguard2",Myself,0,0,0)
+END
+
+IF
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0900")
+	Detect([PC])
+	Range([PC],20)
+	CombatCounter(0)
+	GlobalLT("Chapter","GLOBAL",4)
+	!Global("CopperGuards","GLOBAL",0)
+	Global("VP_Summon_Slavers","GLOBAL",2)
+	GlobalTimerExpired("VP_Slavers_AttackT","GLOBAL")
+	!TimeGT(24)
+	!TimeLT(DAWN_START)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Slavers","GLOBAL",3)
+		SetGlobalTimer("VP_Slavers_AttackT","GLOBAL",3600)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+END
+
+IF
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0900")
+	Detect([PC])
+	Range([PC],20)
+	CombatCounter(0)
+	GlobalLT("Chapter","GLOBAL",4)
+	!Global("CopperGuards","GLOBAL",0)
+	Global("VP_Summon_Slavers","GLOBAL",3)
+	GlobalTimerExpired("VP_Slavers_AttackT","GLOBAL")
+	!TimeGT(24)
+	!TimeLT(DAWN_START)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Slavers","GLOBAL",1)
+		SetGlobalTimer("VP_Slavers_AttackT","GLOBAL",3600)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+		CreateCreatureObject("ccguard2",Myself,0,0,0)
+		CreateCreatureObject("ccguard1",Myself,0,0,0)
+END

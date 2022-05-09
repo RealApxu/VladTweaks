@@ -1,0 +1,205 @@
+// Splash Screens
+
+COPY ~%MOD_FOLDER%/quests/thirdpath/2da/vpscen04.2da~ ~override~
+REPLACE ~vpscen04~ ~CHAPTER THREE
+
+Allies are expensive in the City of Coin, and you have decided to invest in none of them. You have assassinated Gaelan Bayle and obtained a key from the lair of Aran Linvail, Shadowmaster of Athkatla. As ominous as that may sound, you have now little other choice but to plan an assault on Aran's lair to find any clue in your search for Irenicus.~ [theme4]
+
+// Script changes
+
+COPY_EXISTING ~AR0300.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("BodhiJob","GLOBAL",0)~
+            ~Global("BodhiJob","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~AR0312.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~SetGlobal("ArledHostile","GLOBAL",1)~
+            ~SetGlobal("ArledHostile","AR0312",1)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~AR0329.bcs~ ~override~
+    REPLACE_BCS_BLOCK ~%MOD_FOLDER%/quests/thirdpath/scripts/o1AR0329.baf~ ~%MOD_FOLDER%/quests/thirdpath/scripts/n1AR0329.baf~
+    REPLACE_BCS_BLOCK ~%MOD_FOLDER%/quests/thirdpath/scripts/o2AR0329.baf~ ~%MOD_FOLDER%/quests/thirdpath/scripts/n2AR0329.baf~
+
+COPY_EXISTING ~AR0400.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("BrusShow3","GLOBAL",0)~
+            ~Global("BrusShow3","GLOBAL",0) InMyArea(Player1) Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~AR0800.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("Movie02","GLOBAL",0)~
+            ~Global("Movie02","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+        REPLACE_TEXTUALLY
+            ~Global("BodhiAppear","GLOBAL",1)~
+            ~Global("BodhiAppear","GLOBAL",1)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~STGUARD1.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("AttackedThieves","GLOBAL",0)~
+            ~Global("AttackedThieves","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+        REPLACE_TEXTUALLY
+            ~SetGlobal("StGuardAttack","AR0300",1)~
+            ~SetGlobal("StGuardAttack","AR0300",1)
+            SetGlobal("VP_Guild_Attacked","GLOBAL",1)~
+        REPLACE_TEXTUALLY
+            ~SetGlobal("AttackedThieves","GLOBAL",1)~
+            ~SetGlobal("AttackedThieves","GLOBAL",1)
+            SetGlobal("VP_Guild_Attacked","GLOBAL",1)~
+    END
+BUT_ONLY_IF_IT_CHANGES
+    
+COPY_EXISTING ~Baldur.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("ImTooSexyForThisBrus","GLOBAL",0)~
+            ~Global("ImTooSexyForThisBrus","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+        REPLACE_TEXTUALLY
+            ~GlobalTimerExpired("ValenAppearTimer","GLOBAL")~
+            ~Global("VP_Guild_Attacked","GLOBAL",0) GlobalTimerExpired("ValenAppearTimer","GLOBAL")~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~C6SPWN3.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("C6messSpawn","GLOBAL",0)~
+            ~Global("C6messSpawn","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~C6SPWN4.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("C6messSpawn","GLOBAL",0)~
+            ~Global("C6messSpawn","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~C6SPWN5.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("C6messSpawn","GLOBAL",0)~
+            ~Global("C6messSpawn","GLOBAL",0)
+            Global("VP_Guild_Attacked","GLOBAL",0)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~GAELAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~Global("GaelanMove2","GLOBAL",0)~
+            ~Global("Attacked","LOCALS",0)~
+        REPLACE_TEXTUALLY
+            ~AttackedBy([GOODCUTOFF],DEFAULT)~
+            ~AttackedBy([ANYONE],DEFAULT)~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~YOSHIMO.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~!Global("WorkingForBodhi","GLOBAL",1)~
+            ~!Global("WorkingForBodhi","GLOBAL",1) !Global("VP_Guild_Attacked","GLOBAL",1)~
+    END
+BUT_ONLY
+
+// Sailoff Scripts
+
+COPY_EXISTING ~MOVIE03B.BCS~ ~override/vpmov03b.bcs~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY ~\("Movie03d"\)~ ~"vpmov03d"~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~MOVIE03D.BCS~ ~override/vpmov03d.bcs~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY ~\("Cut41b"\)~ ~"vp41dt"~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CUT41B.BCS~ ~override/vp41dt.bcs~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH CASE_INSENSITIVE
+            ~ActionOverride("ppsime",DestroySelf())~
+            ~~
+        REPLACE_TEXTUALLY EXACT_MATCH CASE_INSENSITIVE
+            ~ActionOverride("aran",DestroySelf())~
+            ~~
+        REPLACE_TEXTUALLY EXACT_MATCH CASE_INSENSITIVE
+            ~CreateCreature("ppsime",[821.2804],S)~
+            ~~
+    END
+BUT_ONLY
+
+COPY_EXISTING ~CUT41E.BCS~ ~override/vp41et.bcs~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY EXACT_MATCH
+            ~ActionOverride("ppsime",StartDialogNoSet(Player1))~
+            ~EndCutSceneMode()~
+    END
+BUT_ONLY
+
+// Scripts
+
+EXTEND_TOP ~AR0300.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/ar0300.baf~
+EXTEND_TOP ~AR0311.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/ar0311.baf~
+EXTEND_TOP ~AR0312.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/ar0312.baf~
+EXTEND_TOP ~AR0313.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/ar0313.BAF~
+EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/baldur.baf~
+EXTEND_TOP ~STGUARD1.BCS~ ~%MOD_FOLDER%/quests/thirdpath/scripts/stguard.baf~
+
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/scripts/killpc.baf~
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/scripts/MVALLY.baf~
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/scripts/MVALLY2.baf~
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/scripts/STDEATH.baf~
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/scripts/VPThirdP.baf~
+
+// Dialogue
+
+COMPILE ~%MOD_FOLDER%/quests/thirdpath/dialogue/dialogue.d~
+
+// Creatures
+
+COPY_EXISTING ~ARAN.CRE~ ~override~
+    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv16~
+
+COPY_EXISTING ~ARAN02.CRE~ ~override~
+    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv16~
+
+// Items
+
+COPY ~%MOD_FOLDER%/quests/thirdpath/itm/vparlett.itm~ ~override~
+ SAY NAME1 ~Aran's Letter~
+ SAY NAME2 ~Aran's Letter~
+ SAY UNIDENTIFIED_DESC ~Aran,
+
+All is set, and the ship will be ready to depart for Brynnlaw in ten days. Once <CHARNAME> brings money, let's meet in the Sea Bounty Tavern for the final arrangement, as per our agreement.
+
+See you there,
+
+Saemon.
+
+STATISTICS:
+
+Weight: 0~

@@ -1,0 +1,59 @@
+IF
+	Global("GaelanSpawn2","GLOBAL",0)
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	!InMyArea("gaelan2")
+	!Dead("gaelan2")
+THEN
+	RESPONSE #100
+		SetGlobal("GaelanSpawn2","GLOBAL",1)
+		ActionOverride("Gaelan",DestroySelf())
+		CreateCreature("GAELAN2",[479.328],3) // Gaelan Bayle
+END
+
+IF
+	PartyHasItem("misc4s") // Shadow Thief Cellar Key
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("WorkingForBodhi","GLOBAL",0)
+	Global("AranKeyJournalEntry","AR0311",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AranKeyJournalEntry","AR0311",1)
+		EraseJournalEntry(34183)
+		EraseJournalEntry(34187)
+		AddJournalEntry(@1,INFO) 
+
+END
+
+IF
+	PartyHasItem("misc4s") // Shadow Thief Cellar Key
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	GlobalGT("WorkingForBodhi","GLOBAL",0)
+	Global("AranKeyJournalEntry2","AR0311",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AranKeyJournalEntry2","AR0311",1)
+		EraseJournalEntry(34183)
+		EraseJournalEntry(34187)
+		AddJournalEntry(7014,QUEST)  // Perform Bodhi's tasks to receive her aid. I now have the key to Aran Linvail's lair beneath the Shadow Thief headquarters.  Now it is time to go to the Docks District and confront the Shadowlord personally.
+END
+
+IF
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	OR(2)
+		Global("AranKeyJournalEntry","AR0311",1)
+		Global("AranKeyJournalEntry2","AR0311",1)
+	Global("Movie02","GLOBAL",0)
+	Global("Movie01","AR0311",4)
+THEN
+	RESPONSE #100
+		SetGlobal("Movie02","GLOBAL",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		FadeToColor([30.0],0)
+		Wait(2)
+		EndCutSceneMode()
+		TextScreen("vpscen04")
+		SmallWait(1)
+		StartCutSceneMode()
+		StartCutScene("Movie02a")
+END

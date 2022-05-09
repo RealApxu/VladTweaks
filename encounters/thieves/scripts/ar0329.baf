@@ -1,0 +1,9 @@
+IF
+    Global("VPAranGuards","AR0329",0)
+THEN
+    RESPONSE #100
+        SetGlobal("VPAranGuards","AR0329",1)
+        CreateCreature("vpimpth2",[4268.1778],0)
+        CreateCreature("vpimpth2",[4229.2155],0)
+        CreateCreature("vpimpth2",[4802.2227],0)
+END

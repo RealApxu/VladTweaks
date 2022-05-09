@@ -1,0 +1,39 @@
+IF
+    PartyHasItem("misc84")
+    !Global("VP_Boo","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("VP_Boo","GLOBAL",1)
+END
+
+IF
+    !PartyHasItem("misc84")
+    GlobalTimerExpired("VP_NoBoo","GLOBAL")
+    Global("VP_Boo","GLOBAL",2)
+THEN
+    RESPONSE #100
+        SetGlobal("VP_Boo","GLOBAL",1)
+        GiveItemCreate("misc84",Myself,0,0,0)
+END
+
+IF
+    !PartyHasItem("misc84")
+    Global("VP_Boo","GLOBAL",0)
+    !GlobalTimerNotExpired("VP_NoBoo","GLOBAL")
+    !InMyArea("vpboo")
+THEN
+    RESPONSE #100
+        MoveGlobalObject("vpboo","Minsc")
+        ChangeEnemyAlly("vpboo",CONTROLLED)
+        Continue()
+END
+
+IF
+    Global("VP_BooRest","GLOBAL",0)
+    PartyRested()
+    Detect("vpboo")
+THEN
+    RESPONSE #100
+        SetGlobal("VP_BooRest","GLOBAL",1)
+        Continue()
+END

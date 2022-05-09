@@ -1,0 +1,74 @@
+IF
+	Delay(10)
+	Range([PC],20)
+	!AreaCheck("AR0400")
+	!AreaCheck("AR0900")
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0500")
+	!StateCheck([PC],STATE_INVISIBLE)
+	!StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("VP_Summon_Thieves","GLOBAL",0)
+	!GlobalTimerNotExpired("VP_Aran_VengeanceT","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Thieves","GLOBAL",1)
+		SetGlobalTimer("VP_Aran_VengeanceT","GLOBAL",3600)
+		Wait(3)
+		DisplayString(Myself,61776) //  Care to dance?
+		CreateCreatureObject("STHIEF1",Myself,0,0,0) // Thief
+		DisplayString(Myself,61774) //  Prepare to be eviscerated, fool.
+		CreateCreatureObject("STHIEF2",Myself,0,0,0) // Thief
+		Wait(3600)
+END
+
+IF
+	Delay(10)
+	Range([PC],20)
+	!AreaCheck("AR0400")
+	!AreaCheck("AR0900")
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0500")
+	!StateCheck([PC],STATE_INVISIBLE)
+	!StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+	!GlobalTimerNotExpired("VP_Aran_VengeanceT","GLOBAL")
+	Global("VP_Guild_Attacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("VP_Aran_VengeanceT","GLOBAL",3600)
+		Wait(3)
+		DisplayString(Myself,61778) //  You will suffer... oh, yes.
+		CreateCreatureObject("STHIEF1",Myself,0,0,0) // Thief
+		DisplayString(Myself,61779) //  Plant a blade in your innards, I will!
+		CreateCreatureObject("STHIEF2",Myself,0,0,0) // Thief
+		DisplayString(Myself,61777) //  This will be a slow and painful process.
+		CreateCreatureObject("STHIEF2",Myself,0,0,0) // Thief
+		Wait(3600)
+END
+
+IF
+	Delay(10)
+	Range([PC],20)
+	!AreaCheck("AR0400")
+	!AreaCheck("AR0900")
+	!AreaCheck("AR0020")
+	!AreaCheck("AR1000")
+	!AreaCheck("AR0500")
+	!StateCheck([PC],STATE_INVISIBLE)
+	!StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+	!GlobalTimerNotExpired("VP_Aran_VengeanceT","GLOBAL")
+	Global("VP_Summon_Thieves","GLOBAL",0)
+	Global("VP_Guild_Attacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Summon_Thieves","GLOBAL",1)
+		SetGlobalTimer("VP_Aran_VengeanceT","GLOBAL",3600)
+		Wait(3)
+		DisplayString(Myself,61774) //  Prepare to be eviscerated, fool.
+		CreateCreatureObject("STHIEF1",Myself,0,0,0) // Thief
+		DisplayString(Myself,61778) //  You will suffer... oh, yes.
+		CreateCreatureObject("STHIEF2",Myself,0,0,0) // Thief
+		Wait(3600)
+END

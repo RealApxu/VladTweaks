@@ -1,0 +1,66 @@
+IF
+    Global("VP_BooRest","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("VP_BooRest","GLOBAL",0)
+        ApplySpell(Myself,CLERIC_HEAL)
+        ApplySpellRES("vpboo13",Myself)
+END
+
+IF
+    HPLT(Myself,2)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("VP_NoBoo","GLOBAL",7200)
+        DropInventory()
+        SetGlobal("VP_Boo","GLOBAL",2)
+        SetGlobal("VP_BooRest","GLOBAL",1)
+        DestroySelf()
+END
+
+IF
+    Dead("Minsc")
+    InPartyAllowDead("Minsc")
+THEN
+    RESPONSE #100
+        SetGlobal("VP_Boo","GLOBAL",1)
+        GiveItemCreate("vpboo",Player1,0,0,0)
+        DestroySelf()
+END
+
+IF
+	HPPercentLT("Minsc",60)
+	Global("VP_Boo_Heals","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Boo_Heals","GLOBAL",1)
+		MoveToObject("Minsc")
+		ApplySpell("Minsc",CLERIC_HEAL)
+END
+
+IF
+	ActionListEmpty()
+	CombatCounter(0)
+	!See("Minsc")
+	NotStateCheck("Minsc",STATE_INVISIBLE)
+	NotStateCheck("Minsc",STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		MoveToObjectFollow("Minsc")
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	CombatCounter(0)
+	!See("Minsc")
+	!Dead("Minsc")
+THEN
+	RESPONSE #100
+		MoveToObject("Minsc")
+END

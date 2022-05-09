@@ -1,0 +1,159 @@
+COPY ~NeJE\bdash\dakkon\WA2DAK.ITM~ ~override~
+ SAY NAME2 ~Dak'kon's Zerth Blade~
+ SAY DESC ~Dak'kon's Zerth Blade +2
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'. 
+ 
+STATISTICS:
+
+Equipped abilities:
+ Armor Class: +2
+
+Special abilities
+ Able to memorize one extra 1st, 2nd, 3rd, and 4th level mage spell
+
+THAC0: +2 bonus
+Damage: 1D10 +2
+Damage type: slashing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric~
+
+COPY_EXISTING ~WA2DAK.ITM~ ~override~
+ READ_LONG 0x6a "eff_offset"
+ READ_SHORT 0x70 "glob_eff_cnt"
+ SET ccc=0
+ FOR( cnt=0; cnt<"%glob_eff_cnt%"; cnt=cnt+1 ) BEGIN
+ WRITE_BYTE ("%eff_offset%"+cnt*0x30)+13 0 //Not dispell\Bypass resistance
+ END
+BUT_ONLY_IF_IT_CHANGES
+ 
+COPY ~NeJE\bdash\dakkon\WA2DAK2.ITM~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +2
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'. 
+ 
+STATISTICS:
+
+Equipped abilities:
+ Armor Class: +2
+
+Special abilities
+ Able to memorize two extra 1st- to 4th-level mage spells
+
+Combat Abilities:
+ Each hit lowers opponents' Magic Resistance by 15%
+ 
+THAC0: +2 bonus
+Damage: 1D10 +2
+Damage type: slashing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric~
+ 
+COPY ~NeJE\bdash\dakkon\WA2DAK3.ITM~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +3
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'. 
+ 
+STATISTICS:
+
+Equipped abilities:
+ Armor Class: +3
+ Magic Resistance: +5%
+ Death Ward
+ (Immunity to all forms of death magic)
+
+Special abilities
+ Able to memorize three extra 3rd-, two extra 4th- and one extra 5th- and 6th-level mage spells
+
+Combat Abilities:
+ Each hit lowers opponents' Magic Resistance by 15%
+
+THAC0: +3 bonus
+Damage: 1D10 +3
+Damage type: slashing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric~
+ 
+COPY ~NeJE\bdash\dakkon\WA2DAK4.ITM~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +4
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'. 
+ 
+STATISTICS:
+
+Equipped abilities:
+ Armor Class: +4
+ Magic Resistance: +10%
+ Death Ward
+ (Immunity to all forms of death magic)
+
+Special abilities
+ Able to memorize three extra 3rd-, two extra 4th- to 6th-, and one extra 7th-level mage spells
+
+Combat Abilities:
+ Each hit lowers opponents' Magic Resistance by 15%
+ Each hit opponent must save vs. death (with a -5 penalty) or lose 1 level
+
+THAC0: +4 bonus
+Damage: 1D10 +4
+Damage type: slashing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric~
+ 
+COPY ~NeJE\bdash\dakkon\WA2DAK5.ITM~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +5
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the 'Nameless One'. After the Nameless One's battle with the powerful entity, he restored Dak'kon to life and freed him of the oath he had to the Nameless One. This is the blade that was formed after Dak'kon was free from his oath.
+ 
+STATISTICS:
+
+Equipped abilities:
+ Armor Class: +5
+ Magic Resistance: +15%
+ Death Ward
+ (Immunity to all forms of death magic)
+
+Special abilities
+ Able to memorize three extra 3rd- and two extra 4th- to 9th-level mage spells
+
+Combat Abilities:
+ Dispels magic whenever the blade strikes an opponent
+ Each hit lowers opponents' Magic Resistance by 15%
+ Each hit opponent must save vs. death (with a -5 penalty) or lose 1 level
+
+THAC0: +5 bonus
+Damage: 1D10 +5
+Damage type: slashing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric~
+
+COPY ~NeJE\bdash\dakkon\scripts~ ~override~

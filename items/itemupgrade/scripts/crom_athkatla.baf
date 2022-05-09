@@ -1,0 +1,8 @@
+IF
+	Global("VP_CreateCromwell","MYAREA",0)
+	GlobalGT("ASYLUMPLOT","GLOBAL",54)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_CreateCromwell","MYAREA",1)
+		CreateCreature("wsmith01",[413.357],15)
+END

@@ -1,0 +1,25 @@
+IF
+    Global("VPImprovedSlaverSpawn","MYAREA",0)
+THEN
+    RESPONSE #100
+        SetGlobal("VPImprovedSlaverSpawn","MYAREA",1)
+        CreateCreature("slarch1",[1887.1206],0)
+        CreateCreature("slarch1",[1455.1550],12)
+        CreateCreature("slarch1",[1950.1293],12)
+        CreateCreature("slarch1",[2012.1325],12)
+        CreateCreature("slarch1",[1532.1620],12)
+        CreateCreature("slarch1",[1560.1574],12)
+        CreateCreature("slarch1",[1118.669],13)
+        CreateCreature("slarch1",[1186.629],14)
+        CreateCreature("slarch1",[753.1048],10)
+        CreateCreature("slarch1",[600.975],13)
+        CreateCreature("slarch1",[805.797],13)
+        CreateCreature("slarch1",[986.907],9)
+        CreateCreature("slarch1",[383.1365],14)
+        CreateCreature("slarch1",[511.1299],14)
+        CreateCreature("slarch1",[458.1399],14)
+        CreateCreature("slarch1",[521.1362],14)
+        CreateCreature("slarch1",[583.1334],14)
+        CreateCreature("slarch1",[423.1167],14)
+        CreateCreature("slarch1",[342.1228],14)
+END

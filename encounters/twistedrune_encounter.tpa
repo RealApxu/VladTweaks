@@ -1,0 +1,128 @@
+COPY_EXISTING ~DEMMAG.CRE~ ~override~
+    WRITE_BYTE 0x234 18 // Level First Class
+    WRITE_BYTE 0x23a 18 // INT
+    WRITE_BYTE 0x23b 16 // WIS
+    WRITE_BYTE 0x23c 10 // Dexterity
+    WRITE_BYTE 0x23d 11 // Constitution
+    WRITE_BYTE 0x23e 10 // Constitution
+    WRITE_ASCII 0x258 ~MAGE18E~
+    REMOVE_KNOWN_SPELLS
+    ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi415~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi604~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi714~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi717~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi804~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi812~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi813~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi898~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi909~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi913~ #8 ~wizard~
+    REMOVE_MEMORIZED_SPELLS
+    ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
+    ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi405~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi523~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi714~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi813~ #7 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
+    REMOVE_CRE_ITEM ~brac02~
+    ADD_CRE_ITEM ~brac15~ #0 #0 #0 ~none~ ~gloves~
+    ADD_CRE_ITEM ~misc45~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~
+    ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~lring rring~
+    ADD_CRE_ITEM ~staf12~ #0 #0 #0 ~none~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~FSDRAGON.CRE~ ~override~
+    REMOVE_CRE_ITEM ~sw1h70~
+    ADD_CRE_ITEM ~rndtre5~ #0 #0 #0 ~none~ ~inv16~
+BUT_ONLY
+
+COPY_EXISTING ~HLKETTA.CRE~ ~override~
+    WRITE_SHORT 0x24 102 // Current HP
+    WRITE_SHORT 0x26 102 // Total HP
+    WRITE_SHORT 0x46 1 // AC Natural
+    WRITE_SHORT 0x48 1 // AC Effective
+    WRITE_BYTE 0x52 0xff // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x6e 5
+    WRITE_BYTE 0x6f 5
+    REMOVE_CRE_ITEM ~sw1h09~
+    ADD_CRE_ITEM ~sw1h74~ #0 #0 #0 ~none~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
+    ADD_CRE_ITEM ~sw1h75~ #0 #0 #0 ~none~ ~shield~
+BUT_ONLY
+
+COPY_EXISTING ~HLKETTA2.CRE~ ~override~
+    WRITE_SHORT 0x24 122 // Current HP
+    WRITE_SHORT 0x26 122 // Total HP
+    WRITE_SHORT 0x46 1 // AC Natural
+    WRITE_SHORT 0x48 1 // AC Effective
+    WRITE_BYTE 0x52 0xff // THAC0
+    WRITE_BYTE 0x53 5 // APR
+    ADD_CRE_ITEM ~sw1h75~ #0 #0 #0 ~none~ ~shield~
+BUT_ONLY
+
+COPY_EXISTING ~HLKOSHI.CRE~ ~override~
+    WRITE_LONG 0x14 18000 // XP Value
+    WRITE_LONG 0x1c 2500 // Gold
+    WRITE_SHORT 0x24 134 // Current HP
+    WRITE_SHORT 0x26 134 // Total HP
+    WRITE_SHORT 0x46 0xfffe // AC Natural
+    WRITE_SHORT 0x48 0xfffe // AC Effective
+    WRITE_BYTE 0x52 0xff // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x54 2 // Save vs. Death
+    WRITE_BYTE 0x55 4 // Save vs. Wands
+    WRITE_BYTE 0x56 3 // Save vs. Polymorph
+    WRITE_BYTE 0x57 2 // Save vs. Breath
+    WRITE_BYTE 0x58 5 // Save vs. Spell
+    WRITE_BYTE 0x59 20 // Fire Resistance
+    WRITE_BYTE 0x5a 20 // Cold Resistance
+    WRITE_BYTE 0x5b 50 // Elec Resistance
+    WRITE_BYTE 0x6d 2 // Luck
+    WRITE_BYTE 0x234 18 // Level first class
+    WRITE_BYTE 0x23a 15 // INT
+    WRITE_BYTE 0x23d 15 // CON
+    REPLACE_CRE_ITEM ~sw1h70~ #0 #0 #0 ~none~ ~shield~
+BUT_ONLY
