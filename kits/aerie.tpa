@@ -94,7 +94,7 @@ Traditionally, their portfolios are divided between caring for forest animals an
 
 Baervan is gentle, good-natured, and mischievous. His penchant for good-natured pranks rivals Garl Glittergold. Except for Chiktikka's company, he tends to keep to himself. Though Baervan sometimes plays jokes on others, it is hard not to like him. The Masked Leaf's tricks are often designed to serve some purpose, unlike the mischief typical of Forgotten Folk. If Baervan wants to send someone a message, he does so in the form of a joke. Baervan dispatches avatars to help repair severe damage to nature, though sometimes just to create mischief.
 
-The Masked Leaf may manifest as an amber radiance to settle over a worshiper or any type of plant. This manifestation can confer upon a favored worshiper the benefits of a spell such as 'barkskin', locate plants and animals, pass without trace, plant door, speak with plants, or tree or coalesce into a handful of goodberries. Baervan’s manifestation can animate a tree as a treant for up to seven rounds, create a spike growth effect, or act as combined entangle and plant growth spells.
+The Masked Leaf may manifest as an amber radiance to settle over a worshiper or any type of plant. This manifestation can confer upon a favored worshiper the benefits of a spell such as 'barkskin', locate plants and animals, pass without trace, plant door, speak with plants, or tree or coalesce into a handful of goodberries. Baervan's manifestation can animate a tree as a treant for up to seven rounds, create a spike growth effect, or act as combined entangle and plant growth spells.
 
 Baervan is served by forest animals of all types (particularly raccoons and giant raccoons), amber dragons, dryads, earth elementals, faerie dragons, feystags, hamadryads, hybsils, leprechauns, nature elementals, singing trees, sprites, swanmays, treants, wild stags, and wood giants. He demonstrates his favor by permitting his faithful to discover acorns, pieces of amber, emeralds, oak leaves or the sudden growth of plants on a welltrodden trail where such would seem out of place. The Masked Leaf indicates his displeasure by causing a tree branch to gently strike the target of his disaffection or by causing small animals to behave oddly (like pelting a gnome with acorns).
 
@@ -199,7 +199,7 @@ ACTION_FOR_EACH aerie IN aerbod01 aerie aerie6 aerie7 aerie9 aerie10 aerie11 aer
   COPY_EXISTING ~%aerie%.cre~ ~override~
     WRITE_BYTE 0x273 3
    WRITE_SHORT 0x246 IDS_OF_SYMBOL (~kit~ ~VP_WILDWANDERER_OF_BAERVAN~)
-   ADD_CRE_ITEM ~vpaeclck~ #0 #0 #0 ~IDENTIFIED~ ~cloak~
+   ADD_CRE_ITEM ~vpaeclck~ #0 #0 #0 ~none~ ~cloak~
  END
 END
 
