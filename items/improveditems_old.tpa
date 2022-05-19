@@ -1,42 +1,51 @@
+// Holy Symbol of Lathander
 COPY ~NeJE\bdash\Aerie\itm\BELT12.ITM~ ~override~
-SAY DESC ~Only those most worthy and devoted servants of the Dawnbringer are granted these powerful holy symbols which provide essential protections and increase the amount of priest high-level spells they can memorise. 
+SAY DESC ~Only the most worthy and devoted servants of the Dawnbringer are granted these powerful holy symbols. It provides essential protections and increases the amount of high-level spells a priest can memorise.
 
 STATISTICS:
 
-Grants three additional 6th and 7th level spells
-Negative Plane Protection
+Equipped abilities:
+– Armor Class: +2
+– Strength: +2
+– Dexterity: +2
+– Negative Plane Protection
+– Can memorize three extra 6th- and 7th-level Cleric spell
 
-Armor Class:  +2 bonus
-Strength: +2 bonus
-Dexterity: +2 bonus
-
-Usable By:
-Clerics of Good alignment~
+Weight: 0~
 
 //Improved Horns of Valhalla
 COPY ~NeJE\bdash\itm\MISC3I.ITM~ ~override~
-SAY DESC ~Silver Horn of Valhalla
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 12th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
 
-In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a twelveth level warrior who will fight for the summoner for one minute. The horn may be used once per day.
+STATISTICS:
 
-Not Usable By:
-Wizard Slayer~
+Charge abilities:
+– Summon 12th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
 
 COPY ~NeJE\bdash\itm\MISC3J.ITM~ ~override~
-SAY DESC ~Bronze Horn of Valhalla
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 15th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
 
-In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a fifteenth level warrior who will fight for the summoner for one minute. The horn may be used once per day.
+STATISTICS:
 
-Not Usable By:
-Wizard Slayer~
+Charge abilities:
+– Summon 15th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
 
 COPY ~NeJE\bdash\itm\MISC3K.ITM~ ~override~
-SAY DESC ~Iron Horn of Valhalla
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 18th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
 
-In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth an eighteenth level warrior who will fight for the summoner for one minute. The horn may be used once per day.
+STATISTICS:
 
-Not Usable By:
-Wizard Slayer~
+Charge abilities:
+– Summon 18th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
 
 
 //Update for Aec'Letec
@@ -59,26 +68,23 @@ THEN BEGIN
 //////ONLY FOR BGT//////
 COPY ~NeJE/bdash/BGTComp/itm/VPSword.itm~ ~override~
 SAY NAME2 ~The Answerer +2~
-SAY DESC ~The last swing of a battle is more important than the first. Such is the philosophy embodied in this powerful weapon. Although the strange design of The Answerer makes it difficult to take the initiative in combat, with each hit it makes an opponent more vulnerable to subsequent attacks. 
+SAY DESC ~The last swing of a battle is more important than the first. Such is the philosophy embodied in this powerful weapon. Although the strange design of the Answerer makes it difficult to take the initiative in combat, with each hit it makes an opponent more vulnerable to subsequent attacks. 
 
 STATISTICS:
 
-Each hit lowers opponents' Magic Resistance by 5%
-Each hit applies a penalty of -1 to opponents' AC 
+Combat abilities:
+– Each hit lowers the target's Magic Resistance by 5% for 4 rounds
+– Each hit penalizes the target's Armor Class by 1 for 4 rounds
 
-THAC0: +2 bonus
-Damage: 1D8 + 2
-Damage type: slashing
-Weight: 2
+THAC0: +2
+Damage: 1d8+2 (slashing)
 Speed Factor: 9
 Proficiency Type: Long Sword
-Type: 1-handed
-Requires: 6 Strength
-Not Usable By:
-Druid
-Cleric
-Mage
-Beast Master~
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
 
 COPY ~NeJE/bdash/BGTComp/itm/bgsw2h07.itm~ ~override~
 SAY NAME2 ~The World's Edge +3~
@@ -86,22 +92,19 @@ SAY DESC ~This is a legendary weapon of heroic proportions, especially among the
 
 STATISTICS:
 
-Equipped Abilities:
-Armour Class bonus: +2
-Constitution bonus: +2
+Equipped abilities:
+– Armour Class: +2
+– Constitution: +2
 
-Damage: 1D12 + 3
-THAC0: +3 bonus
-Damage Type: slashing
-Weight: 9
+THAC0: +3
+Damage: 1d12+3 (slashing)
 Speed Factor: 7
-Proficiency Type: Two Handed Sword
-Type: 2-handed
-Not usable by:
-Druid
-Cleric
-Mage
-Thief~
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 9~
 
 COPY_EXISTING ~ARD000.ARE~ ~override~
 READ_LONG 0x78 item_off
@@ -130,113 +133,89 @@ END
 
 COPY ~NeJE/jah/itm/SPER07.ITM~ ~override~
 SAY NAME2 ~Spear of the Unicorn +4~ 
-SAY DESC ~Spear of the Unicorn +4
-This graceful spear is carved to resemble the elongated horn of the unicorn. Wielders of this spear are protected from evil, just as a unicorn might be. Whether the horn is or isn't an actual unicorn horn is the subject of much debate.
+SAY DESC ~This graceful spear is carved to resemble the elongated horn of the unicorn. Wielders of this spear are immune to charm and hold spells, just as a unicorn might be. Whether the horn is or isn't an actual unicorn horn is the subject of much debate.
 
-Equipped Abilities:
-+10% Magic Resistance
-+3 to all saves vs. death
+STATISTICS:
 
-Special Abilities:
-Protection from Evil
+Equipped abilities: 
+– Protection from Evil
+– Magic Resistance: +10%
+– Save vs. Death: +3
 
-STATISTICS
-
-THAC0: +4 bonus
-Damage: 1D8 + 4
-Damage type: piercing
-Weight: 3
+THAC0: +4
+Damage: 1d8+4 (piercing)
 Speed Factor: 4
 Proficiency Type: Spear
-Type: 2-handed
-Requires: 5 Strength
-Not Usable By: 
-Cleric 
-Mage 
-Thief
-Monk
-Beast Master~ 
+Type: Two-handed
+Requires:
+ 5 Strength
 
-
+Weight: 3~
 
 COPY ~NeJE\bdash\itm\SHLD21.ITM~ ~override~
 SAY NAME2 ~Dragon Scale Shield +5~
-SAY DESC ~Another powerful item created by the warlock Wormsor, this shield consists of red dragon skin stretched over a steel frame. Green and white dragon scales adorn the red background in a pattern that, when looked in the right way, reveals the face of an ancient dragon.
+SAY DESC ~Another powerful item created by the warlock Wormsor, this shield consists of red dragon skin stretched over a steel frame. Green and white dragon scales adorn the red background in a pattern that, when looked at in the right way, reveals the face of an ancient dragon.
 
 STATISTICS:
 
-Equipped Abilities:
-Fire, Cold and Electrical Resistance: +50%
+Equipped abilities:
+– Armor Class: +6
+– Cold Resistance: +50%
+– Fire Resistance: +50%
+– Electrical Resistance: +50%
 
-Armor Class Bonus: 6
-Weight: 5
-Requires: 12 Strength
-Not Usable By:
-Bard
-Druid
-Mage
-Thief
-Monk
-Kensai~
+Requires:
+ 12 Strength
+
+Weight: 5~
 
 COPY ~NeJE\bdash\itm\SW1H31.ITM~ ~override~
 SAY DESC ~Sunblade: Daystar
-Whether created specifically for use in the service of Torm or appropriated at some point in the long history of the church, Paladins of the Loyal Fury have made good use of Daystar in their battles against evil undead. Through magic or blessing it is empowered with the Sunray, a force of pure life energy so potent that it slays both living and unliving.
+Whether created specifically for use in the service of Torm or appropriated at some point in the long history of the church, paladins of the Loyal Fury have made good use of Daystar in their battles against evil undead. Through magic or blessing it is empowered with the Sunray, a force of pure life energy so potent that it slays both living and unliving.
 
 STATISTICS:
-Special Abilities (twice per day):
-Sunray
-Damage: 3D6 (save vs. spells or be blinded for 10 rounds)
-Undead: an additional 1d6 points of damage per level of caster (save vs. spells or be destroyed)
-Range: 20 ft
-Area: 20 ft radius
 
-Always considered to be of +4 enchantment when determining what it can hit.
-THAC0: +4 bonus, +4 vs. evil creatures
-Damage: 2D6 + 4, +4 vs. evil creatures, does double damage against undead
-Damage type: slashing
-Weight: 2
+Charge abilities:
+– Sunray once per day
+ Damage: 3d6 (Save vs. Spell or be blinded for 1 turn)
+ Undead: An additional 1d6 points of damage per level of caster (Save vs. Spell or be destroyed)
+ Range: 20 ft.
+ Area: 15-ft. radius
+
+THAC0: +4, +4 vs. evil creatures
+Damage: 2d6+4, +4 vs. evil creatures, does double damage against undead
+Damage type: Slashing
 Speed Factor: 3
-Proficiency Type: Long sword
-Type: 1-handed
-Requires: 6 Strength
-Not Usable By:
-Druid
-Cleric
-Mage
-Beast Master~
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
 
+Weight: 2~
 COPY ~NeJE\bdash\itm\SW1H35.ITM~ ~override~
 SAY NAME2 ~Adjatha the Drinker +4~
-SAY DESC ~This blade belonged to Dabbar, a long dead servant of Bhaal that exercised control over his minions in the most brutal of ways. In addition to strengthening the mind against the guile of others, the sword absorbs life energy from an opponent with each successful hit, healing the user. Dabbar considered it a failure of his officers if he returned from battle in less than perfect health, and as the rest of the company watched, he would administer beatings until fully healed. 
+SAY DESC ~This blade belonged to Dabbar, a long-dead servant of Bhaal that exercised control over his minions in the most brutal of ways. In addition to strengthening the mind against the guile of others, the sword absorbs life energy from an opponent with each successful hit, healing the user. Dabbar considered it a failure of his officers if he returned from battle in less than perfect health, and as the rest of the company watched, he would administer beatings until fully healed.
 
 STATISTICS:
 
-Equipped Abilities:
-Armour Class Bonus: +2
-Saving Throws Bonus: +2
-Complete Mind Shield
-(Immunity to any mind-alterating effects and psionics)
+Equipped abilities:
+– Armour Class: +2
+– Saving Throws: +2
+– Immunity to any mind-alterating effects
 
-Combat Abilities:
-Larloch's Minor Drain
-(Each successful hit drains 6 HP from a target and adds it to the wielder with no save)
-Level Drain
-(10% chance to drain one level from the opponent with every hit) 
+Combat abilities:
+– Each hit drains 6 hit points from a target and adds it to the wielder (no save)
+– 10% chance to drain one level from the opponent with every hit
 
-THAC0: +4 bonus
-Damage: 1D8 + 4
-Damage type: slashing
-Weight: 3
+THAC0: +4
+Damage: 1d8+4 (slashing)
 Speed Factor: 3
-Proficiency Type: Long sword
-Type: 1-handed
-Requires: 6 Strength
-Not Usable By:
-Druid
-Cleric
-Mage
-Beast Master~
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
 
 COPY ~NeJE\bdash\itm\SW1H51.ITM~ ~override~
 SAY DESC ~Katana +4
