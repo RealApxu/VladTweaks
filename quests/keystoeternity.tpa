@@ -19,7 +19,7 @@ COMPILE ~quests/keystoeternity/dialogue/dialogue.d~
 EXTEND_TOP ~%AREA0516%.bcs~ ~quests/keystoeternity/scripts/ar0516.baf~
 
 COPY_EXISTING ~%AREA1005%.ARE~ ~override~
-WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
+  WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
 BUT_ONLY_IF_IT_CHANGES
 
 COMPILE ~quests/keystoeternity/scripts/%AREA1005%.baf~
