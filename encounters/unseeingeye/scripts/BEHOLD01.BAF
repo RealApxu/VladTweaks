@@ -1,0 +1,187 @@
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,70)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_PARALYZATION)  // SPIN990.SPL (Paralyze)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,65)
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_CHARM_PERSON)  // SPIN980.SPL (Charm Person)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,55)
+THEN
+	RESPONSE #100
+		FaceObject(SecondNearest([PC]))
+		ForceSpell(SecondNearest([PC]),BEHOLDER_FEAR)  // SPIN981.SPL (Fear)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See(LeastDamagedOf(Myself))
+	HPGT(Myself,45)
+THEN
+	RESPONSE #100
+		FaceObject(LeastDamagedOf(Myself))
+		ForceSpell(LeastDamagedOf(Myself),BEHOLDER_CAUSE_SERIOUS_WOUNDS)  // SPIN986.SPL (Cause Serious Wounds)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	!See(LeastDamagedOf(Myself))
+	HPGT(Myself,40)
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_CAUSE_SERIOUS_WOUNDS)  // SPIN986.SPL (Cause Serious Wounds)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,25)
+THEN
+	RESPONSE #100
+		FaceObject(ThirdNearest([PC]))
+		ForceSpell(ThirdNearest([PC]),BEHOLDER_FLESH_TO_STONE)  // SPIN984.SPL (Flesh to Stone)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	See([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)  // SPIN992.SPL (Anti-Magic Ray)
+		SetGlobal("BeholderBehavior","LOCALS",1)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",0)
+	See([PC])
+	!See([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_ANTIMAGIC_RAY)  // SPIN992.SPL (Anti-Magic Ray)
+		SetGlobal("BeholderBehavior","LOCALS",1)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_PARALYZATION)  // SPIN990.SPL (Paralyze)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	HPGT(Myself,15)
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_DOMINATION)  // SPIN985.SPL (Domination)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	HPGT(Myself,35)
+THEN
+	RESPONSE #100
+		FaceObject(SecondNearest([PC]))
+		ForceSpell(SecondNearest([PC]),BEHOLDER_SLOW)  // SPIN983.SPL (Slow)
+		Continue()
+END
+
+IF
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+	Global("summon","LOCALS",0)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_PARALYZATION)  // SPIN990.SPL (Paralyze)
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+		SetGlobal("summon","LOCALS",1)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	HPGT(Myself,5)
+THEN
+	RESPONSE #100
+		FaceObject(ThirdNearest([PC]))
+		ForceSpell(ThirdNearest([PC]),BEHOLDER_CAUSE_SERIOUS_WOUNDS)  // SPIN986.SPL (Cause Serious Wounds)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See(LeastDamagedOf(Myself))
+THEN
+	RESPONSE #100
+		FaceObject(LeastDamagedOf(Myself))
+		ForceSpell(LeastDamagedOf(Myself),BEHOLDER_DEATH_RAY)  // SPIN991.SPL (Death Ray)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	!See(LeastDamagedOf(Myself))
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],BEHOLDER_DEATH_RAY)  // SPIN991.SPL (Death Ray)
+		Continue()
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	See([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)  // SPIN992.SPL (Anti-Magic Ray)
+		SetGlobal("BeholderBehavior","LOCALS",0)
+		Wait(2)
+END
+
+IF
+	Global("BeholderBehavior","LOCALS",1)
+	See([PC])
+	!See([PC.0.0.MAGE])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)  // SPIN992.SPL (Anti-Magic Ray)
+		SetGlobal("BeholderBehavior","LOCALS",0)
+END
+

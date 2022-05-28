@@ -1,0 +1,10 @@
+IF
+	Entered([ANYONE])
+THEN
+	RESPONSE #100
+		CreateCreature("MISTVA01",[3332.704],S)  // Vampiric Mist
+		CreateCreature("MISTVA01",[3413.643],S)  // Vampiric Mist
+		CreateCreature("MISTVA01",[3638.762],S)  // Vampiric Mist
+		CreateCreature("MISTVA01",[3557.831],S)  // Vampiric Mist
+END
+

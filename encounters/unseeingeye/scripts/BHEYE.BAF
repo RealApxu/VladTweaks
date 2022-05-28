@@ -1,0 +1,122 @@
+IF
+	Delay(12)
+	See([PC])
+THEN
+	RESPONSE #100
+		ForceSpell(SecondNearest([PC]),BEHOLDER_FEAR)  // SPIN981.SPL (Fear)
+		Wait(1)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("cowledwizard","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)  // SPWI808.SPL (Improved Mantle)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)  // SPWI803.SPL (Protection From Energy)
+		ApplySpell(Myself,SPELL_DEFLECTION_NO_VISUAL)  // SPIN710.SPL (Spell Deflection)
+		SetGlobal("cowledwizard","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(0)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),0)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+	HPLT(LastSeenBy(Myself),60)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+	HaveSpell(WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Power Word, Stun)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Power Word, Stun)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	See([0.0.0.0.0.SUMMONED])
+	HaveSpell(WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		Spell([0.0.0.0.0.SUMMONED],WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+END
+
+IF
+	See([PC])
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ForceSpell(LastSeenBy(Myself),BEHOLDER_PARALYZATION)  // SPIN990.SPL (Paralyze)
+		Continue()
+END
+
+IF
+	See([PC])
+	!StateCheck(SecondNearest([PC]),STATE_PANIC)
+THEN
+	RESPONSE #100
+		FaceObject(SecondNearest([PC]))
+		ForceSpell(SecondNearest([PC]),BEHOLDER_FEAR)  // SPIN981.SPL (Fear)
+		Continue()
+END
+
+IF
+	See([PC])
+	!StateCheck(ThirdNearest([PC]),STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+		FaceObject(ThirdNearest([PC]))
+		ForceSpell(ThirdNearest([PC]),BEHOLDER_FLESH_TO_STONE)  // SPIN984.SPL (Flesh to Stone)
+		Continue()
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		ForceSpell([PC],WIZARD_CONFUSION)  // SPWI401.SPL (Confusion)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+	HPLT(LastSeenBy(Myself),60)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+	HaveSpell(WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Power Word, Stun)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Power Word, Stun)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
