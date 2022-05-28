@@ -1,23 +1,45 @@
+<<<<<<< HEAD
 EXTEND_TOP ~AR0334.bcs~ ~NeJE/bdash/cromwell/eAR0334.baf~
  
 //1. Enhanced King Strohm Mask
 COPY ~NeJE/bdash/cromwell/KingMask.ITM~ ~override~
+=======
+//  Items Upgrade - August 2017, May 2018
+
+EXTEND_TOP ~AR0334.bcs~ ~%MOD_FOLDER%/items/itemupgrade/eAR0334.baf~
+ 
+//1. Enhanced King Strohm Mask
+COPY ~%MOD_FOLDER%/items/itemupgrade/KingMask.ITM~ ~override~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY NAME2 ~Enhanced Mask of King Strohm III~
  SAY DESC ~The original mask of King Strohm III that was reconstructed in the Firkraag's dungeon has now been forged by Cromwell into a special helmet. In addition to being now a helmet, it bestows upon you several essential protections including the Immunity to Poison and Backstab, and Complete Mind Shield. Moreover, it has an Infravision and X-Ray Vision abilities allowing you to see something that you hadn't been able to see before. Finally, casting the Aura of Terror makes your enemies flee in terror unless save vs spell at -2 has been thrown.
 
 STATISTICS:
 
+<<<<<<< HEAD
 Equipped Abilities:
  Immunity to Poison
  Immunity to Backstab
  Infravision (up to 120 ft)
  Complete Mind Shield
  (Immunity to Panic, Fear, Confusion, Charm and Psionics)
+=======
+Equipped abilities:
+– Armor Class: +2
+– Hit Points: +10
+– Saving Throws: +2
+– Immunity to Poison
+– Immunity to Backstab
+– Infravision up to 120 ft.
+– Immunity to Panic, Fear, Confusion, Charm and Psionics
+– Protects against critical hits
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
-Special Abilities:
- Aura of Terror (thrice per day)
- X-Ray Vision (thrice per day)
+Charge abilities:
+– Aura of Terror three times per day (Save vs. Spell at -2 to negate)
+  Duration:
 
+<<<<<<< HEAD
 Armor Class Bonus: +2
 Hit Point Max: +10
 Saving Throws: +2 bonus
@@ -35,11 +57,24 @@ COPY ~NeJE/bdash/cromwell/LILARCO2.ITM~ ~override/LILARCO2.ITM~
  SAY NAME2 ~Enhanced Carsomyr~
  SAY DESC ~The Holy Avenger: Carsomyr
 Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerun, though its origin and history is thought purposefully forgotten, such that the sword itself never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue, and requires as much from any paladin that would hope to wield it. The evils of the Realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil and chaos, and such creatures must fear additional damage from its touch in battle. 
+=======
+– X-Ray Vision three times per day
+  Duration:
+
+Weight: 2~
+
+//2. Enhanced Carsomyr
+COPY ~%MOD_FOLDER%/items/itemupgrade/LILARCO2.ITM~ ~override~
+ SAY NAME2 ~Enhanced Carsomyr +6~
+ SAY DESC ~The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerûn, though its origin and history is thought purposefully forgotten so that the sword itself shall never overshadow the importance of the struggles that must be fought today. It is infused with the very essence of virtue and requires as much from any Paladin who would hope to wield it. The evils of the realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease. Carsomyr also harbors a special distaste for the forces of evil and chaos, and such creatures must fear additional damage from its touch in battle.
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 This enhanced Carsomyr was forged by Cromwell by combining the original Lilarcor with the powerful Carsomyr that only paladins could use. The enhanced Carsomyr is made even greater than the original Carsomyr and may be used by any fighting class.
 
 STATISTICS:
 
+<<<<<<< HEAD
 Equipped Abilities: 
  50% Magic Resistance
  Complete Mind Shield
@@ -71,15 +106,42 @@ COPY ~NeJE/bdash/cromwell/SIMACE3.ITM~ ~override/SIMACE3.ITM~
  SAY DESC ~A weapon once owned by a grief-stricken high priestess of the Moonmaiden, Selune’s Promise has a short and sad history. Fassa the Melancholy (as she is now known) was the head of a band of Selunite adventurers dedicated to destroying undead creatures wherever they found them. The band was initially quite successful, rarely suffering any casualties. Tymora’s luck could not stay with them forever, though.
 
 In 1156, Fassa and her band entered the Sepulcher of the Dim. The band knew the Sepulcher was rumored to contain a "leak" to the Negative Material Plane, but they had no idea just how many undead creations were inside. Mixed in with the seemingly harmless poltergeists and phantoms were powerful spectres and wraiths. Over a short and chillingly quiet period of several minutes, almost all of Fassa’s allies had their vital energy drained away. Fassa and her remaining companions fled and tried to form a plan of attack. When they returned on the following night, all of Fassa’s former companions had been turned into slave spectres under the control of the master. She and her few remaining comrades destroyed the master spectre and eventually destroyed the souls of her tormented brethren. In the end, Fassa was the only one left alive.
+=======
+Equipped abilities: 
+– Magic Resistance: +50%
+– Immunity to Panic, Fear, Confusion, Charm and Psionics
+
+Combat abilities: 
+– Dispel Magic at level 30 whenever the sword strikes an opponent
+
+THAC0: +6
+Damage: 1d12+6, +5 extra vs. chaotic evil
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+//3. Selune's Promise +5
+COPY ~%MOD_FOLDER%/items/itemupgrade/SIMACE3.ITM~ ~override~
+ SAY NAME2 ~Selune's Promise +5~
+ SAY DESC ~A weapon once owned by a grief-stricken high priestess of the Moonmaiden, Selune's Promise has a short and sad history. Fassa the Melancholy (as she is now known) was the head of a band of Selunite adventurers dedicated to destroying undead creatures wherever they found them. The band was initially quite successful, rarely suffering any casualties. Tymora's luck could not stay with them forever, though.
+
+In 1156, Fassa and her band entered the Sepulcher of the Dim. The band knew the Sepulcher was rumored to contain a "leak" to the Negative Material Plane, but they had no idea just how many undead creations were inside. Mixed in with the seemingly harmless poltergeists and phantoms were powerful spectres and wraiths. Over a short and chillingly quiet period of several minutes, almost all of Fassa's allies had their vital energy drained away. Fassa and her remaining companions fled and tried to form a plan of attack. When they returned on the following night, all of Fassa's former companions had been turned into slave spectres under the control of the master. She and her few remaining comrades destroyed the master spectre and eventually destroyed the souls of her tormented brethren. In the end, Fassa was the only one left alive.
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 Fassa returned to her temple in misery and prayed to Selune that she never forget the agony of that night. Selune granted her request by causing a ghostly white and blue mace to appear on her bed when the next full moon rose. Carved into the shaft of the club were two words: Never Forget.
 
-Fassa became almost fanatical in her undead hunting in later years. At the age of thirty-three, tired and bitter, Fassa fell into decline. On the night of a full moon, she renounced her faith to Selune in front of her superiors and fellow clergy. Hours later, she threw herself into the Moonsea from a high cliff. The mace was found in her room and reluctantly kept in the church. Many years later, the new high priest of the temple decided to bestow this unique weapon to a new promising priestess. This mace was the favourite weapon of Sime’s mother.
+Fassa became almost fanatical in her undead hunting in later years. At the age of thirty-three, tired and bitter, Fassa fell into decline. On the night of a full moon, she renounced her faith to Selune in front of her superiors and fellow clergy. Hours later, she threw herself into the Moonsea from a high cliff. The mace was found in her room and reluctantly kept in the church. Many years later, the new high priest of the temple decided to bestow this unique weapon to a new promising priestess. This mace was the favourite weapon of Sime's mother.
 
 It turns to be that Cromwell inherited the secret knowledge from his ancestors of rithelium weapons and how to forge them. This mace that he reforged with rithelium and with your assistance is extremely light and gives off a shimmering blue hue. It is usable by wizards as if proficient in their use, grants magical resistance to the wearer and can strike through magical defences of the enemies.
 
 STATISTICS:
 
+<<<<<<< HEAD
 Equipped Abilities:
  Improved Alacrity
  
@@ -116,6 +178,41 @@ Not Usable By:
 //4. Enhanced Robe of Armory
 COPY ~NeJE/bdash/cromwell/ROBEARM2.SPL~ ~override/ROBEARM2.SPL~
 COPY ~NeJE/bdash/cromwell/ROBEARM2.ITM~ ~override/ROBEARM2.ITM~
+=======
+Equipped abilities:
+– Improved Alacrity
+ 
+Combat abilities:
+– Dispel Magic at level 30 whenever the mace strikes an opponent
+– Drain one point of strength whenever the mace strikes an opponent
+– 3 extra attacks per round
+
+Special Damage:
+– Double damage against undead and outer planar creatures
+  Undead:
+  1-4 Hit Dice: automatically destroyed
+  5 Hit Dice: 95% chance of being destroyed
+  6 Hit Dice: 80%
+  7 Hit Dice: 65%
+  8-9 Hit Dice: 50%
+  10 Hit Dice: 35%
+  11+ Hit Dice: 20%
+  Outer Planar Creatures:
+  5% chance of being destroyed
+
+THAC0: +5
+Damage: 1d6+5, +1d6 acid
+Damage type: Crushing
+Speed Factor: 4
+Proficiency Type: Mace
+Type: One-handed
+
+Weight: 5~
+
+//4. Enhanced Robe of Armory
+COPY ~%MOD_FOLDER%/items/itemupgrade/ROBEARM2.SPL~ ~override~
+COPY ~%MOD_FOLDER%/items/itemupgrade/ROBEARM2.ITM~ ~override~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY NAME2 ~Enhanced Robe of Armory~
  SAY DESC ~There are a small number of these valuable robes floating around the Realms, and all of them are the creation of an abjurer named Delgam of the Many Hands - so called for his extensive use of the expression "on the other hand..." Delgam eschewed imbuing his items with offensive powers or other miscellaneous magic effects. Instead, he focused on what abjurers tend to focus on: defense. His robes were extremely popular, so much so that mages were coming to him from all over the world to demand that he make more for them. Delgam decided to fade into obscurity rather than cater to packs of power-hungry wizards. His robes are his most well known legacy.
 
@@ -123,23 +220,32 @@ This particular robe was enhanced by Cromwell.
 
 STATISTICS:
 
-Equipped Abilities:
- Immunity to backstab
- Immunity to normal weapons
- Non-detection
+Equipped abilities:
+– Immunity to backstab
+– Immunity to normal weapons
+– Non-detection
+– Piercing Resistance: +20%
+– Missile Resistance: +20%
 
-Resistances:
- +20% Resistance to Piercing and Missile attacks
+Charge abilities:
+– Improved invisibility three times per day
+  Duration: 
 
+<<<<<<< HEAD
 Special Abilities:
  Improved invisibility (thrice per day)
  Protective Mode (thrice per day)
  (simultaneously casts Stoneskin and Simulacrum on the user)
+=======
+– Protective Mode three times per day
+  Casts Stoneskin and Simulacrum on the wearer
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
-Combat Abilities:
- Each successful hit on the wearer inflicts 2D4 points of electric damage to the attacker
+Combat abilities:
+– Each successful hit on the wearer inflicts 2d4 points of electric damage to the attacker
  
 Armor Class: 0
+<<<<<<< HEAD
 Weight: 5
 Only Usable By:
  Mage (Single, Dual-, and Multi-)~
@@ -148,20 +254,29 @@ Only Usable By:
 COPY ~NeJE/bdash/cromwell/STAFFBE2.ITM~ ~override/STAFFBE2.ITM~
  SAY NAME2 ~Staff of Besieging~
  SAY DESC ~A favorite among transmuters, this particular staff was created by a wizard named Gulph the Tiny. A diminutive human mage, Gulph didn‘t want to be stuck in a situation where he would have to rely on his physical abilities. This staff helped him have the upper hand in magical duels. Gulph met his end when he foolishly went looking for Ibenian Mushrooms in a grove full of quicklings. The staff remained among the quicklings for several years until a passing party of adventurers slaughtered the evil fae creatures and took the staff as their own.
+=======
+
+Weight: 5~
+
+//5. Enhanced Staff of Besieging
+COPY ~%MOD_FOLDER%/items/itemupgrade/STAFFBE2.ITM~ ~override~
+ SAY NAME2 ~Staff of Besieging~
+ SAY DESC ~A favorite among transmuters, this particular staff was created by a wizard named Gulph the Tiny. A diminutive human mage, Gulph didn't want to be stuck in a situation where he would have to rely on his physical abilities. This staff helped him have the upper hand in magical duels. Gulph met his end when he foolishly went looking for Ibenian Mushrooms in a grove full of quicklings. The staff remained among the quicklings for several years until a passing party of adventurers slaughtered the evil fae creatures and took the staff as their own.
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 This staff was combined with the Staff of Super Power and enhanced further by Cromwell.
 
 Combat Ability:
  10% chance Spell Strike (no save)
  10% chance Energy Drain (no save)
- Light and Quick (4 attacks per round)
+– 3 extra attacks per round
 
 Equipped Bonuses:
- Armour class: +1
+ Armor class: +1
  Saving throws: +1 
  Magic Resistance: +10%
 
-Equipped Abilities:
+Equipped abilities:
  Improved Alacrity
  Non-detection
  Regeneration (1 HP per round)
@@ -169,6 +284,7 @@ Equipped Abilities:
  
 STATISTICS:
 
+<<<<<<< HEAD
 Damage: 2D4 +5
 THAC0: +5
 Damage Type: Crushing
@@ -183,6 +299,20 @@ Only Usable By:
 COPY ~NeJE/bdash/cromwell/BOWMESS2.ITM~ ~override/BOWMESS2.ITM~
  SAY NAME2 ~Enhanced Messenger of Sseth~
  SAY DESC ~This wicked bow was crafted thousands of years ago for a powerful yuan-ti archer named Apali. The number of men, women, and children Apali killed with the aid of the bow is almost unbelievable, as the soldier waged war against humans for hundreds of years before he was finally laid low in Chessenta by a priest of Assuran, god of vengeance. Apali had killed the priest‘s great-great grandfather in Chult over a hundred years earlier. The item is easily recognized because of the red and black banding on the grip and the carved snake heads at the ends of the bow. The red and black bandings represent Apali‘s family, from a caste of priests. The snake heads represent Sseth, the god of the yuan-ti.
+=======
+THAC0: +5
+Damage: 2d4+5 (crushing)
+Speed Factor: 3
+Proficiency Type: Quarter Staves
+Type: Two-handed
+
+Weight: 2~
+
+//6. Enhanced Messenger of Sseth
+COPY ~%MOD_FOLDER%/items/itemupgrade/BOWMESS2.ITM~ ~override~
+ SAY NAME2 ~Enhanced Messenger of Sseth~
+ SAY DESC ~This wicked bow was crafted thousands of years ago for a powerful yuan-ti archer named Apali. The number of men, women, and children Apali killed with the aid of the bow is almost unbelievable, as the soldier waged war against humans for hundreds of years before he was finally laid low in Chessenta by a priest of Assuran, god of vengeance. Apali had killed the priest's great-great grandfather in Chult over a hundred years earlier. The item is easily recognized because of the red and black banding on the grip and the carved snake heads at the ends of the bow. The red and black bandings represent Apali's family, from a caste of priests. The snake heads represent Sseth, the god of the yuan-ti.
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 Cromwell combined the three most powerfull bows into one to forge this unique composite long bow for you.
 
@@ -191,14 +321,19 @@ STATISTICS:
 Combat Abilities:
  Strike Shot
  (An archer can increase bow's aim to an additional +10 to hit for one turn thrice per day)
+<<<<<<< HEAD
  Very Fast
  (Four attacks per round)
+=======
+– 3 extra attacks per round
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 Damage: +5 (missile)
 THAC0: +5
 Weight: 3
 Speed Factor: 3
 Proficiency Type: Composite Long Bow
+<<<<<<< HEAD
 Type: 2-handed
 Minimum Strength of 17 required
 Minimum Dexterity of 17 required
@@ -211,6 +346,14 @@ Not Usable By:
  
 //7. Enhanced Firetooth
 COPY ~NeJE/bdash/cromwell/XBOW15EN.ITM~ ~override/XBOW15EN.ITM~
+=======
+Type: Two-handed
+Minimum Strength of 17 required
+Minimum Dexterity of 17 required~
+ 
+//7. Enhanced Firetooth
+COPY ~%MOD_FOLDER%/items/itemupgrade/XBOW15EN.ITM~ ~override~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY NAME2 ~Enhanced Firetooth~
  SAY DESC ~One of the most powerful crossbows in the realms, Firetooth has no need for ammunition as it automatically launches magical arrows of fire. Enhanced by Cromwell, its missiles are now more accurate and more powerful. Firetooth can fire these enchanted missiles, so there is no need for ammunition. 
  
@@ -222,10 +365,11 @@ Combat Abilities:
  (four shots per round)
 
 THAC0: +8 bonus (+6 crossbow, +2 fire bolts)
-Damage: 1D8 +6, +2 fire damage
+Damage: 1d8 +6, +2 fire damage
 Weight: 5
 Speed Factor: 1
 Proficiency Type: Crossbow
+<<<<<<< HEAD
 Type: 2-handed
 Not Usable By:
  Druid
@@ -238,6 +382,13 @@ Not Usable By:
 //9. Enhanced Sebastian‘s Dagger
 COPY ~NeJE/bdash/cromwell/DAGSEB2.ITM~ ~override/DAGSEB2.ITM~
  SAY NAME2 ~Sebastian‘s Dagger (Enhanced)~
+=======
+Type: Two-handed~ 
+
+//9. Enhanced Sebastian's Dagger
+COPY ~%MOD_FOLDER%/items/itemupgrade/DAGSEB2.ITM~ ~override~
+ SAY NAME2 ~Sebastian's Dagger (Enhanced)~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY DESC ~This dagger weighs heavily in your hand, and is warm to the touch. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know. This particular dagger is magical, having special bonuses to its speed, accuracy, and damage it causes. Also, since it is magical, is it capable of striking opponents that are immune to normal weapons, such as vampires, elementals and mummies.
 
 STATISTICS:
@@ -251,18 +402,28 @@ Special abilities:
  Memorize 1 additional 8th level Mage spell 
  Memorize 1 additional 9th level Mage spell
  
+<<<<<<< HEAD
 Damage: 2D4 +5
+=======
+Damage: 2d4 +5
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 THAC0: +5
 Damage Type: Piercing
 Weight: 1
 Speed Factor: 2 
 Proficiency Type: Dagger
+<<<<<<< HEAD
 Type: 1-handed
 Only usable by:
  Mage (single, dual, & multi-class)~
  
 /*Rithelium Swords
 COPY ~/cromwell/RiSw1H01.itm~ ~override/RiSw1H01.itm~
+=======
+Type: One-handed~
+
+COPY ~/cromwell/RiSw1H01.itm~ ~override~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY NAME2 ~Rithtellium Long Sword +5~
  SAY DESC ~This long sword is extremely light and give off a shimmering blue hue. Closer examination reveals that it is made from *rithtellium*, a mystical alloy, the forging of which is a closely guarded secret, known only to those who forge it. It turns to be that Cromwell inherited this secret knowledge from his ancestors of rithelium weapons and how to forge them. This sword that he reforged with rithelium and with your assistance is extremely light and gives off a shimmering blue hue. It is usable by wizards as if proficient in their use, grants magical resistance to the wearer and can strike through magical defences of the enemies.
 
@@ -270,8 +431,8 @@ Combat Abilities:
  Dispel Magic whenever strikes an opponent (no save)
  Very Fast (4 attacks per round) 
 
-Equipped Abilities:
- Armour class: +1
+Equipped abilities:
+ Armor class: +1
  Saving throws: +1
  Magic Resistance: +10%
  Protection from Poison
@@ -283,19 +444,31 @@ Special abilities:
 
 STATISTICS:
 
+<<<<<<< HEAD
 Damage: 1D8 +5, +3 poison
+=======
+Damage: 1d8 +5, +3 poison
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 THAC0: +5 bonus
 Damage type: Slashing
 Weight: 4
 Speed Factor: 4
+<<<<<<< HEAD
 Type: 1-handed
+=======
+Type: One-handed
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Not Usable By:
  Druid
  Cleric
  Mage
  Beast Master~
 
+<<<<<<< HEAD
 COPY ~NeJ3/cromwell/RiSw1H02.itm~ ~override/RiSw1H02.itm~
+=======
+COPY ~NeJ3/cromwell/RiSw1H02.itm~ ~override~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  SAY NAME2 ~Rithtellium Short Sword +5~
  SAY DESC ~This short sword is extremely light and give off a shimmering blue hue. Closer examination reveals that it is made from *rithtellium*, a mystical alloy, the forging of which is a closely guarded secret, known only to those who forge it. It turns to be that Cromwell inherited this secret knowledge from his ancestors of rithelium weapons and how to forge them. This sword that he reforged with rithelium and with your assistance is extremely light and gives off a shimmering blue hue. It is usable by wizards as if proficient in their use, grants magical resistance to the wearer and can strike through magical defences of the enemies.
 
@@ -303,8 +476,8 @@ Combat Abilities:
  Spell Strike (whenever strikes an opponent)
  Very Fast (4 attacks per round) 
 
-Equipped Abilities:
- Armour class +1
+Equipped abilities:
+ Armor class +1
  Saving throws +1
  Magic Resistance: +5%
  Free Action
@@ -317,17 +490,29 @@ Special abilities:
  
 STATISTICS:
 
+<<<<<<< HEAD
 Damage: 1D6 +5
+=======
+Damage: 1d6 +5
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 THAC0: +5 bonus
 Damage type: Slashing
 Weight: 2
 Speed Factor: 12
+<<<<<<< HEAD
 Type: 1-handed
+=======
+Type: One-handed
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Not Usable By:
  Druid
  Cleric
  Mage
+<<<<<<< HEAD
  Beast Master~*/
+=======
+ Beast Master~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
 //Improved Holy Symbol of Helm
 COPY ~NeJE\bdash\itm\BELT13.ITM~ ~override~
@@ -335,20 +520,17 @@ COPY ~NeJE\bdash\itm\BELT13.ITM~ ~override~
 
 STATISTICS:
 
-Constitution: +2 bonus
-Wisdom: +2 bonus
-Magic Resistance Bonus: +10%
+Constitution: +2
+Wisdom: +2
+Magic Resistance: +10%
 Grants three additional 6th and 7th level spells
 Death Ward
  (Immunity to all forms of death magic)
 
-Armor Class Bonus: +2
-Saving Throws Bonus: +2
-Base THAC0 Bonus: +2
-Extra Attacks: +1 per round
-
-Usable By:
-Clerics of Neutral alignment~
+Armor Class: +2
+Saving Throws: +2
+Base THAC0: +2
+Extra Attacks: +1 per round~
 
 //Improved Foebane
 COPY ~NeJE\bdash\itm\SW1H62.ITM~ ~override~
@@ -361,11 +543,16 @@ Combat Abilities:
  (Each hit may stun an opponent for four rounds with a 10% chance unless a saving throw vs spell is made at -4 penalty)
  
 THAC0: +5 bonus
+<<<<<<< HEAD
 Damage: 2D4 + 5, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+=======
+Damage: 2d4 + 5, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 7
 Speed Factor: 5
 Proficiency Type: Bastard Sword
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 11 Strength
 Not Usable By:
@@ -373,6 +560,10 @@ Not Usable By:
  Cleric
  Mage
  Thief~
+=======
+Type: One-handed
+Requires: 11 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\SW1H63.ITM~ ~override~
  SAY NAME2 ~Foebane +6~
@@ -387,11 +578,16 @@ Combat Abilities:
  (Each hit may stun an opponent for four rounds with a 25% chance unless a saving throw vs spell is made at -4 penalty)
 
 THAC0: +6 bonus
+<<<<<<< HEAD
 Damage: 2D4 + 6, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+=======
+Damage: 2d4 + 6, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 5
 Speed Factor: 3
 Proficiency Type: Bastard Sword
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 11 Strength
 Not Usable By:
@@ -401,6 +597,10 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed
+Requires: 11 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\CHAN20.ITM~ ~override~
  SAY DESC ~Not surprisingly, this full plate armor created from the scales of a young Ice Dragon provides the wearer with protection from cold and ice. Lightweight and natural-source, it can be worn by more classes than other similarly protective armors.
@@ -408,8 +608,8 @@ COPY ~NeJE\bdash\itm\CHAN20.ITM~ ~override~
 STATISTICS:
 
 Bonuses:
- Dexterity Bonus: +2
- Constitution Bonus: +2
+ Dexterity: +2
+ Constitution: +2
  Cold Resistance: +80%
  Magic Resistance: +20%
  Immunity to Normal and Enhanted +1 Weapons
@@ -422,25 +622,26 @@ Special Abilities:
  Cast Cone of Cold 3 times per day
  
 Armor Class: -4
-Saving Throws Bonus: +4
+Saving Throws: +4
 Weight: 15
-Requires: 8 Strength
-Not Usable By:
- Mage
- Monk
- Shapeshifter
- Avenger
- Kensai~
+Requires: 8 Strength~
 
 COPY ~NeJE\bdash\itm\HELM32.ITM~ ~override~
  SAY DESC ~With the addition of the horns, the Helm of the Rock is even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
 
 STATISTICS:
 
+<<<<<<< HEAD
 Equipped Abilities: 
  Armor Class Bonus: +3
  Base THAC0 Bonus: +3
  Saving Throws Bonus: +3
+=======
+Equipped abilities: 
+ Armor Class: +3
+ Base THAC0: +3
+ Saving Throws: +3
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Hit Points Max: +20
  Magic Resistance: +10%
  Resistance to fire, cold, acid, poison and electricity: +25%
@@ -451,10 +652,7 @@ Special Abilities:
  Cast Aura of Command 3 times per day
  (Enemies must save vs spell at -2 or flee in terror)
 
-Special: Protects Against Critical Hits
-
-Usable By:
- Fighter~
+Special: Protects Against Critical Hits~
 
 COPY ~NeJE\bdash\itm\HELM28.ITM~ ~override~
  SAY DESC ~Combined with the Bronze Ioun Stone, the Circlet of Netheril is a great boon to any practitioner of the arcane arts. Of course, something so valuable is likely to attract unwanted attention from rival mages.
@@ -462,19 +660,16 @@ COPY ~NeJE\bdash\itm\HELM28.ITM~ ~override~
 STATISTICS:
 
 Equipped Bonuses:
- Intelligence Bonus: +1
- Wisdom Bonus: +1
- Armor Class Bonus: +3
- Base THAC0 Bonus: +3
+ Intelligence: +1
+ Wisdom: +1
+ Armor Class: +3
+ Base THAC0: +3
  Maximum Hit Points: +15
 
 Special Abilities:
  Memorize three additional 7th-, 8th- and 9th-level spells
 
-Special: Protects Against Critical Hits
-
-Usable By:
- Mage~
+Special: Protects Against Critical Hits~
 
 COPY ~NeJE\bdash\itm\HELM30.ITM~ ~override~
  SAY DESC ~There is no honor among thieves. Perhaps that is why the Thieves' Hood has been imbued with magical properties to protect the wearer from their own ilk.
@@ -482,9 +677,9 @@ COPY ~NeJE\bdash\itm\HELM30.ITM~ ~override~
 STATISTICS:
 
 Equipped Bonuses:
- Armor Class Bonus: +3
- Strength Bonus: +2
- Dexterity Bonus: +2
+ Armor Class: +3
+ Strength: +2
+ Dexterity: +2
  Maximum Hit Points: +10
  Magic Resistance: +10%
  
@@ -494,10 +689,7 @@ Equipped Immunities:
 Special Abilities: 
  Cast True Sight 3 times per day
  
-Special: Protects Against Critical Hits
-
-Usable by:
- Thieves~
+Special: Protects Against Critical Hits~
 
 COPY ~NeJE\bdash\itm\SW1H61.ITM~ ~override~
  SAY DESC ~The true power of Frithiof's blazing sword has been unleashed by the Liquid Mercury.
@@ -506,9 +698,9 @@ STATISTICS:
  
 Equipped Bonuses:
  Strength: Set to 22 when equipped
- Armor Class Bonus: +2
- Constitution Bonus: +2
- Off-Hand THAC0 Bonus: +2
+ Armor Class: +2
+ Constitution: +2
+ Off-Hand THAC0: +2
  
 Combat Abilities:
  Instant Death
@@ -516,17 +708,22 @@ Combat Abilities:
  Bleeding
  (Each hit causes 5 points of bleeding damage on a target every round for 3 rounds)
 
-Equipped Abilities:
+Equipped abilities:
  Negative Plane Protection
  Free Action
  (Immunity to any slowing and holding effects)
  
 THAC0: +5 bonus
+<<<<<<< HEAD
 Damage: 2D8 + 5, 1D6 + 3 fire damage
+=======
+Damage: 2d8 + 5, 1d6 + 3 fire damage
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 2
 Speed Factor: 0
 Proficiency Type: Long Sword
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 6 Strength
 Not Usable By:
@@ -534,6 +731,10 @@ Not Usable By:
  Cleric
  Mage
  Beast Master~
+=======
+Type: One-handed
+Requires: 6 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\CLCK32.ITM~ ~override~
  SAY DESC ~This is the fabled cloak of Montolio DeBrouchee, the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
@@ -550,20 +751,32 @@ COPY ~NeJE\bdash\itm\AX1H14.ITM~ ~override~
 STATISTICS
 
 Equipped Bonuses:
+<<<<<<< HEAD
  Strength Bonus: +2
  Constitution Bonus: +2
  
 Equipped Abilities: 
+=======
+ Strength: +2
+ Constitution: +2
+ 
+Equipped abilities: 
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Immunity to non-magical weapons
  Negative Plane Protection
  Regeneration (1 hit point per round)
 
 THAC0: +3 bonus 
+<<<<<<< HEAD
 Damage: 2D6 + 3
+=======
+Damage: 2d6 + 3
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 5
 Speed Factor: 2
 Proficiency Type: Axe
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 10 Strength
 Not Usable By:
@@ -573,6 +786,10 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed
+Requires: 10 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
 COPY ~NeJE\bdash\itm\AX1H15.ITM~ ~override~
  SAY DESC ~Enhanced by the magic of the Baalor's Claw, the Axe of the Unyielding is now the most fearsome of weapons - a vorpal edged axe capable of severing an opponents head with a single blow. 
@@ -581,9 +798,15 @@ STATISTICS
 
 Equipped Bonuses:
  Strength: Set to 24 when equipped
+<<<<<<< HEAD
  Constitution Bonus: +2
  
 Equipped Abilities: 
+=======
+ Constitution: +2
+ 
+Equipped abilities: 
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Death Ward
  (Immunity to all forms of death magic)
  Immunity to non-magical weapons
@@ -595,11 +818,16 @@ Combat Abilities:
  (Each hit may instantly killing an opponent with a 10% chance by decapitation with each successful attack)
 
 THAC0: +5 bonus 
+<<<<<<< HEAD
 Damage: 2D6 + 5
+=======
+Damage: 2d6 + 5
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 5
 Speed Factor: 2
 Proficiency Type: Axe
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 10 Strength
 Not Usable By:
@@ -609,6 +837,10 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed
+Requires: 10 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\HAMM11.ITM~ ~override~
  SAY DESC ~The Rune of Clangeddin is now inscribed on the head of this hammer, granting even greater powers to any who wield the weapon.
@@ -618,7 +850,11 @@ STATISTICS:
 Equipped Bonuses:
  Fire Giant Strength: Set to 22 when equipped
 
+<<<<<<< HEAD
 Equipped Abilities: 
+=======
+Equipped abilities: 
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Death Ward
  (Immunity to all forms of death magic)
  Immunity to Fear
@@ -632,11 +868,16 @@ Combat Abilities:
  4-16 +10 damage to Undead, plus they must make a saving throw vs. death (-4 penalty) or be utterly destroyed
 
 THAC0: +6 bonus
+<<<<<<< HEAD
 Damage: 2D4 + 6
+=======
+Damage: 2d4 + 6
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: crushing
 Weight: 2
 Speed Factor: 0
 Proficiency Type: Warhammer
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 16 Strength
 Not Usable By:
@@ -645,6 +886,10 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed
+Requires: 16 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\BLUN29.ITM~ ~override~
  SAY DESC ~Infused with the otherworldly Starfall Ore, the powers of this already formidable weapon are greatly enhanced.
@@ -655,17 +900,26 @@ Combat Abilities:
  10% chance of casting chain lightning on target with each successful attack
  10% chance of pertrifying an opponent
 
+<<<<<<< HEAD
 Equipped Abilities:
+=======
+Equipped abilities:
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Negative Plane Protection
  Immunity to Pertrification and Polymorph
  Immunity to Wing Buffet
  
 THAC0: +5 bonus
+<<<<<<< HEAD
 Damage: 1D6 + 6, +6 vs. dragons, +1D10 electrical damage
+=======
+Damage: 1d6 + 6, +6 vs. dragons, +1d10 electrical damage
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: crushing
 Weight: 4
 Speed Factor: 2
 Proficiency Type: Mace
+<<<<<<< HEAD
 Type: 1-handed
 Requires: 10 Strength
 Not Usable By:
@@ -674,15 +928,19 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed
+Requires: 10 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\SW2H18.ITM~ ~override~
  SAY DESC ~Siegfried's fearsome blade is even more powerful with the Heart of the Damned set into its pommel.
 
 STATISTICS
 
-Equipped Abilities: 
- Armour Class Bonus: +3
- Saving Throws Bonus: +3
+Equipped abilities: 
+ Armor Class: +3
+ Saving Throws: +3
  Magic Resistance: +50%
  Cold and Fire Resistance: +50%
  True Free Action
@@ -694,17 +952,26 @@ Combat Abilities:
  1. Instant Death
  (Each hit may instantly slay an opponent with a 10% chance unless a saving throw vs death is made at -2 penalty)
  2. Poison
+<<<<<<< HEAD
  (Each hit may poison an opponent for 2D12 poison damage with a 10% chance with no save)
+=======
+ (Each hit may poison an opponent for 2d12 poison damage with a 10% chance with no save)
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  3. Level Drain
  (Each hit an opponent must save vs. death or lose 2 levels unless a saving throw vs death is made at -5 penalty)
  4. Slays Elementals
 
 THAC0: +6 bonus
+<<<<<<< HEAD
 Damage: 1D12 + 6
+=======
+Damage: 1d12 + 6
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: slashing
 Weight: 9
 Speed Factor: 5
 Proficiency Type: Two-handed sword
+<<<<<<< HEAD
 Type: 2-handed
 Requires: 14 Strength
 Not Usable By:
@@ -714,6 +981,10 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: Two-handed
+Requires: 14 Strength~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\PLAT20.ITM~ ~override~
  SAY DESC ~The light but durable scales of the Blue Dragon provide excellent protection against weapons and all forms of electricity.
@@ -724,7 +995,7 @@ Special Abilities:
  Spellcasting is possible
  
 Equipped Bonuses:
- Saving Throws Bonus: +3
+ Saving Throws: +3
  Magic Resistance: +10%
  Immunity to Electrical Attacks
  Immunity to crushing, slashing, piercing and missile weapons
@@ -734,18 +1005,7 @@ Equipped Bonuses:
 
 Armor Class: -4
 Weight: 20
-Requires: 15 Strength
-Not Usable By:
- Bard
- Druid
- Mage
- Thief
- Archer
- Stalker
- Barbarian
- Beast Master
- Kensai
- Monk~
+Requires: 15 Strength~
 
 COPY ~NeJE\bdash\itm\HAMM09.ITM~ ~override~
  SAY DESC ~Crom Faeyr
@@ -765,11 +1025,16 @@ Combat Abilities:
  Miscast Magic (on each successful hit)
  
 THAC0: +5 bonus
+<<<<<<< HEAD
 Damage: 2D4 + 5, +5 electrical
+=======
+Damage: 2d4 + 5, +5 electrical
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Damage type: crushing
 Weight: 4
 Speed Factor: 1
 Proficiency Type: War Hammer
+<<<<<<< HEAD
 Type: 1-handed
 Not Usable By:
  Druid
@@ -777,6 +1042,9 @@ Not Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Type: One-handed~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\OGI.ITM~ ~override~
  SAY NAME2 ~Ogi-Luc's Great Robe~
@@ -785,17 +1053,29 @@ COPY ~NeJE\bdash\itm\OGI.ITM~ ~override~
 STATISTICS:
 
 Special Abilities:
+<<<<<<< HEAD
  Strength: Set to 23
  Constitution: Set to 23
  Fire and Acid Resistance: +50%
+=======
+ Strength: 23
+ Constitution: 23
+ Fire Resistance: +50%
+ Acid Resistance: +50%
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Magic Resistance: +15%
  Immunity to Backstab
  Immunity to Normal Weapons
  
 Armor Class: -1
+<<<<<<< HEAD
 Weight: 5
 Only Usable By:
  Mage~
+=======
+
+Weight: 5~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\BracKens.ITM~ ~override~
  SAY NAME2 ~Kensai Gloves~
@@ -804,21 +1084,25 @@ COPY ~NeJE\bdash\itm\BracKens.ITM~ ~override~
 STATISTICS:
 
 Combat Bonuses:
- Armor Class Bonus: +2
- Base THAC0 Bonus: +2
- Off-Hand THAC0 Bonus: +2
- Damage Bonus: +2
+ Armor Class: +2
+ Base THAC0: +2
+ Off-Hand THAC0: +2
+ Damage: +2
  Adds one extra attack per round
 
-Equipped Abilities:
+Equipped abilities:
  Immunity to +1 magical weapons
  Maximum HP total: +15
  Magic Resistance: +10%
 
+<<<<<<< HEAD
 Weight: 1
 
 Not Usable By:
  Wizard Slayer~
+=======
+Weight: 1~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
 //Improved Purifier
 COPY ~NeJE\bdash\itm\SW1H64.ITM~ ~override~
@@ -826,15 +1110,22 @@ COPY ~NeJE\bdash\itm\SW1H64.ITM~ ~override~
 
 STATISTICS
 
+<<<<<<< HEAD
 Equipped Abilities: 
  Magic Resistance: +20%
  Death Ward
  (Immunity to all forms of death magic) 
+=======
+Equipped abilities: 
+ Magic Resistance: +20%
+ Death Ward
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 Combat Abilities:
  Lower Magic Resistance (by 10% each hit)
  Holy Blast (with each hit there is 10% chance to drain one level from an opponent and stun him for three rounds with no save)
 
+<<<<<<< HEAD
 THAC0: +5 bonus
 Damage: 2D6 + 5, +2D4 acid, +2D4 fire
 Additional Damage: +4 to chaotic evil opponents
@@ -849,6 +1140,18 @@ Usable By:
  Fighters (single, dual-, and multi-class)
  Rangers
  Paladins~
+=======
+THAC0: +5
+Damage: 2d6+5, +2d4 acid, +2d4 fire,
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 6~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
  COPY ~NeJE\bdash\itm\SW1H65.ITM~ ~override~
  SAY NAME2 ~Purifier +6~
@@ -856,7 +1159,11 @@ Usable By:
 
 STATISTICS
 
+<<<<<<< HEAD
 Equipped Abilities: 
+=======
+Equipped abilities: 
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  Magic Resistance: +30%
  Death Ward
  (Immunity to all forms of death magic) 
@@ -869,6 +1176,7 @@ Combat Abilities:
  Lower Magic Resistance (by 20% each hit)
  Holy Blast (with each hit there is 20% chance to drain one level from an opponent and stun him for three rounds with no save)
 
+<<<<<<< HEAD
 THAC0: +6 bonus
 Damage: 2D6 + 6, +2D4 acid, +2D4 fire
 Additional Damage: +5 to chaotic evil opponents
@@ -883,6 +1191,18 @@ Usable By:
  Fighters (single, dual-, and multi-class)
  Rangers
  Paladins~
+=======
+THAC0: +6
+Damage: 2d6+6, +2d4 acid, +2d4 fire, +5 damage to chaotic evil
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 6~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 //Flame Tongue (Enhanced by Cromwell)
 COPY ~NeJE\bdash\itm\FLAMSW1H.ITM~ ~override~
@@ -890,7 +1210,7 @@ COPY ~NeJE\bdash\itm\FLAMSW1H.ITM~ ~override~
 
 There was a time before Neverwinter was warm and before the great Anauroch was dry... or so it is said. Few relics remain to prove such an age existed, and fewer still have an identifiable purpose. "The Burning Earth" seems straightforward enough - it burns a victim with magical fire, and a cryptic rune seems to suggest that the power comes from the ground itself- but whomever constructed it remains a mystery. It looks a perfectly serviceable weapon, but something in the balance or grip is... wrong. It strains the forearm a touch, and does not fit the hand just right. It doesn't seem to hurt a warrior's performance, aside from the nagging doubt that the blade was not made for him... or any other humanoid.
 
-Combined with the Hell Bane sword, this weapon is also the bane of certain lower planes creatures and vampires. Against Baatezu and Tanar‘ri the sword inflicts additional damage and the user gains a +4 to both hit and damage. As for vampires, the sword has a chance to slain them on touch. While held, the sword also grants complete protection against poison, disease and fire being magical or not.
+Combined with the Hell Bane sword, this weapon is also the bane of certain lower planes creatures and vampires. Against Baatezu and Tanar'ri the sword inflicts additional damage and the user gains a +4 to both hit and damage. As for vampires, the sword has a chance to slain them on touch. While held, the sword also grants complete protection against poison, disease and fire being magical or not.
 
 STATISTICS:
 
@@ -901,6 +1221,7 @@ Equipped Bonuses:
 Combat Abilities:
  If any vampiric creature is hit it must save vs. spells or be utterly destroyed.
 
+<<<<<<< HEAD
 Damage: 2D4 +4, +4 vs. Baatezu and Tanar‘ri
 THAC0: +4, +4 vs. Baatezu and Tanar‘ri
 Damage Type: Slashing
@@ -915,12 +1236,30 @@ Not Usable By:
  Cleric
  Mage
  Beast Master~
+=======
+THAC0: +4, +4 vs. Baatezu and Tanar'ri
+Damage: 2d4+4, +2d4 fire, +2d4 acid, +4 vs. Baatezu and Tanar'ri
+Damage Type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
 //10. Crimson Dragon Scales
 COPY ~NeJE\bdash\itm\ScaleSel.ITM~ ~override~
  SAY NAME1 ~Crimson Dragon Scales~
  SAY NAME2 ~Crimson Dragon Scales~
+<<<<<<< HEAD
  SAY DESC ~There are a large number of scales salvaged from the crimson dragon. Legend has it they can be magically forged into powerful armor.~ 
+=======
+ SAY DESC ~There are a large number of scales salvaged from the crimson dragon. Legend has it they can be magically forged into powerful armor.
+
+Weight: ~ 
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 COPY ~NeJE\bdash\itm\PlatCrDr.ITM~ ~override~
  SAY NAME2 ~Crimson Dragon Scale~
@@ -928,37 +1267,38 @@ COPY ~NeJE\bdash\itm\PlatCrDr.ITM~ ~override~
 
 STATISTICS:
 
-Bonuses (while worn):
- Constitution Bonus: +3
+Equipped abilities:
+ Constitution: +3
  Fire Resistance: 100%
  Magic Resistance: +20%
- 
-Special abilities (while worn):
  Regeneration (1 HP/round)
  Non-detection by magical means
  No penalties to thieving skills
  Dual- or multi-class mages can cast spells
-
-Immunities (while worn):
  Death Ward (Immunity to Death Magic)
  Immunity to Backstab
  True Free Action
  (Immunity to any slowing, holding and paralyzation magics)
+<<<<<<< HEAD
  
+=======
+ Saving Throws: +3
+
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 Armor Class: -4
-Saving Throws Bonus: +3
-Weight: 10
-Requires: 6 Strength
-Not Usable By:
- Mage
- Kensai
- Monk
- Shapeshifter~ 
+Requires:
+ 6 Strength
+
+Weight: 10~ 
 
 //11. Enhanced Melodic Chain
 COPY ~NeJE\bdash\itm\CHAN15N.ITM~ ~override~
  SAY NAME2 ~Melodic Chain +5~
+<<<<<<< HEAD
  SAY DESC ~The Bards of Melody were a small band of half-elf bardic warriors who entertained and defended scattered elven communities throughout Calimshan. Enchantments allowed only minstrels to wear their armor, the magical links sliding together to produce beautiful melodies as they danced or fought. Unfortunately the Bards of Melody were disbanded hundreds of years ago, and the secret of 'playing' the armor faded with them. This chain armour has been enhanced by Cromwell.
+=======
+ SAY DESC ~The Bards of Melody were a small band of half-elf bardic warriors who entertained and defended scattered elven communities throughout Calimshan. Enchantments allowed only minstrels to wear their armor, the magical links sliding together to produce beautiful melodies as they danced or fought. Unfortunately the Bards of Melody were disbanded hundreds of years ago, and the secret of 'playing' the armor faded with them. This chain Armor has been enhanced by Cromwell.
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
 
 STATISTICS:
 
@@ -971,15 +1311,19 @@ Special abilities (while worn):
  Immunity to Backstab
  Immunity to Poison
  Physical Mirror
+<<<<<<< HEAD
  (Reflects missile weapons back to their user)
  True Free Action
  (Immunity to any slowing, holding and paralyzation magics)
+=======
+ Reflects missile weapons back to their user
+ Immunity to any slowing, holding and paralyzation magics
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
 Armor Class: 0
-Saving Throws: +2 bonus
-Weight: 8
-Usable By:
- Bard~
+Saving Throws: +2
+
+Weight: 8~
  
 //12. Enhanced Mercykiller Ring
 COPY ~NeJE\bdash\itm\WA2RING2.ITM~ ~override~
@@ -988,6 +1332,7 @@ COPY ~NeJE\bdash\itm\WA2RING2.ITM~ ~override~
 
 STATISTICS
 
+<<<<<<< HEAD
 Equipped Abilities:
  Armor Class Bonus: +2
  Dexterity Bonus: +1 
@@ -1037,10 +1382,52 @@ Usable By:
  Thief
  Monk
  Beast Master~
+=======
+Equipped abilities:
+ Armor Class: +2
+ Dexterity: +1 
+ Thieving Skills: +40%
+ Immunity to any slowing, holding and paralyzation magics
+ 
+Weight: ~ 
+   
+
+ COPY ~NeJE\bdash\itm\SW2HSAR.ITM~ ~override~
+ SAY DESC ~Silver Sword (enhanted by Cespenar)
+This is truly a legendary weapon called Vorpal or Silver Sword. No wonder that githyanki wanted to procure it so much and return it to their ancestral city of Tu'narath. Vorpal is their ritual sword radiating a dark aura when you examine it, and the blade is so finely sharpened it could likely sever a head in a single blow.
+
+Besides bein a ritual sword, Vorpal also serves the purpose of getting rid the world of the hateful illithids. Those who wield the Vorpal have a complete mind shield including immunity to charm, domination, confusion and psionics. In addition, the sword provides the wearer the freedom to move under any movement-alterating spells.
+
+STATISTICS:
+
+Equipped abilities: 
+Armor Class: +3
+Saving Throws: +3
+Magic Resistance: +30%
+Cold and Fire Resistance: +30%
+Immunity to any movement-alterating effects
+Immunity to any mind-alterating effects and psionics
+
+Combat Abilities:
+-3% Magic Resistance to an opponent with each hit (no save)
+-2 point to THAC0 cumulative penalty to an opponent with each hit (no save)
+Instant Death (each hit may instantly slay an opponent with a 25% chance unless a saving throw vs death is made at -2 penalty)
+
+THAC0: +6
+Damage: 1d12+6 (slashing)
+Speed Factor: 3
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
  COPY ~NeJE\bdash\itm\BlackNi2.ITM~ ~override~
  SAY NAME2 ~Blade Of The Night~
  SAY DESC ~Blade Of The Night (enhanted by Cespenar)
+<<<<<<< HEAD
  This was the weapon used by the most famous assassin in Kara Tur, but none knew her name apart from the emperor. She was the greatest thief the world had ever seen. She received this powerful weapon after completing a series of succesful missions for the emperor, who decided she was worthy of the blade. It was made by the emperors best weapon smiths, and then tempered in the bloods of red, black, silver and blue dragons. The legend says this weapon would make anyone almost as good as thief as the original owner, but because of the strong enchantments, the katana requires much from its wielder, and it is only usable by a thief.
  
  STATISTICS:
@@ -1078,11 +1465,44 @@ Usable By:
  Cleric
  Mage
  Beast Master~
+=======
+This was the weapon used by the most famous assassin in Kara Tur, but none knew her name apart from the emperor. She was the greatest thief the world had ever seen. She received this powerful weapon after completing a series of succesful missions for the emperor, who decided she was worthy of the blade. It was made by the emperors best weapon smiths, and then tempered in the bloods of red, black, silver and blue dragons. The legend says this weapon would make anyone almost as good as thief as the original owner, but because of the strong enchantments, the katana requires much from its wielder, and it is only usable by a thief.
+
+STATISTICS:
+
+Equipped Bonuses:
+Armor Class: +3
+Dexterity: +3
+Constitution: +3
+(Immunity to all forms of death magic)
+Negative Plane Protection
+Immunity to Backstab
+Immunity to Poison
+
+Charge abilities:
+Cast Greater Restoration and Heal thrice per day
+
+Combat Abilities:
+10% chance of Level Drain from the target on each hit
+(target may save vs. spells to avoid the drain)
+Each hit lowers opponents' Magic Resistance by 10%
+
+THAC0 +6
+Damage: 1d10+6 (slashing)
+Speed Factor: 4
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 6~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a
  
  COPY ~NeJE\bdash\itm\UMHULK2.ITM~ ~override~
  SAY NAME1 ~Umber Hulk Plate~
  SAY NAME2 ~Umber Hulk Plate~
  SAY DESC ~Umber Hulk Plate (enchanted by Cespenar)
+<<<<<<< HEAD
  The hard plates that protect umber hulks are reasonably easy to craft into humanoid armor. This dark suit of armor was fashioned into plate mail by duergar smiths. The dark dwarves, skilled in handling umber hulk exoskeletons, cured and reinforced the armor.
  
  Equipped Abilities:
@@ -1100,3 +1520,16 @@ Usable By:
  Mage
  Monk
  Thief~
+=======
+The hard plates that protect umber hulks are reasonably easy to craft into humanoid armor. This dark suit of armor was fashioned into plate mail by duergar smiths. The dark dwarves, skilled in handling umber hulk exoskeletons, cured and reinforced the armor.
+ 
+Equipped abilities:
+ Magic Resistance: +20%
+ Immunity to Backstab
+ Immunity to any mind-alterating effects
+ Death Ward
+ 
+Armor Class: -5 (+3 vs. Slashing, Piercing and Missile)
+
+Weight: 20~
+>>>>>>> 0330644907cb1800e9e0eae3a89047188e08849a

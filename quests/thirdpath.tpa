@@ -182,10 +182,10 @@ COMPILE ~%MOD_FOLDER%/quests/thirdpath/dialogue/dialogue.d~
 // Creatures
 
 COPY_EXISTING ~ARAN.CRE~ ~override~
-    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv1~
 
 COPY_EXISTING ~ARAN02.CRE~ ~override~
-    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~vparlett~ #0 #0 #0 ~none~ ~inv1~
 
 // Items
 
