@@ -1,2 +1,52 @@
-COPY_EXISTING ~DRAGBLUE.CRE~ ~override~
-    
+//Improved Unseeing Eye Quest
+COPY ~%MOD_FOLDER%/unseeye~ ~override~
+
+ COPY ~%MOD_FOLDER%/cre/ShadFi04.CRE~ ~override~
+ SAY NAME1 ~Giant Shadow~
+ SAY NAME2 ~Giant Shadow~
+
+ COPY ~%MOD_FOLDER%/cre/VAMPSOU2.CRE~ ~override~
+ SAY NAME1 ~Vampiric Shadow~
+ SAY NAME2 ~Vampiric Shadow~
+
+COPY_EXISTING ~AR0202.ARE~ ~override~
+ WRITE_ASCII 0x2158 ~GAS2~ //setting trigger script
+ WRITE_BYTE (0x2158+4) 0 //terminating 0
+ WRITE_ASCII 0x221c ~GAS3~ //setting trigger script
+ WRITE_BYTE (0x221c+4) 0 //terminating 0
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~AR0202.ARE~ ~override~
+ WRITE_ASCII 0x16dc ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x16dc+8) 0 //terminating 0
+ WRITE_ASCII 0x17ec ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x17ec+8) 0 //terminating 0
+ WRITE_ASCII 0x18fc ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x18fc+8) 0 //terminating 0
+ WRITE_ASCII 0x1a0c ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x1a0c+8) 0 //terminating 0
+ WRITE_ASCII 0x1b1c ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x1b1c+8) 0 //terminating 0
+ WRITE_ASCII 0x1c2c ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x1c2c+8) 0 //terminating 0
+ WRITE_ASCII 0x1d3c ~SHADFI03~ //setting new creature
+ WRITE_BYTE (0x1d3c+8) 0 //terminating 0
+BUT_ONLY_IF_IT_CHANGES
+
+ACTION_IF FILE_EXISTS_IN_GAME ~AR0202.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~AR0202.bcs~ ~override/AR0202.bcs~
+ EXTEND_TOP ~AR0202.bcs~ ~%MOD_FOLDER%/sExt/xAR0202.baf~
+END
+ ELSE BEGIN
+ COPY ~%MOD_FOLDER%/sExt/AR0202.bcs~ ~override~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~KAYPAL03.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~KAYPAL03.bcs~ ~override/KAYPAL03.bcs~
+ EXTEND_TOP ~KAYPAL03.bcs~ ~%MOD_FOLDER%/sExt/eKAYPAL3.baf~
+END
+ ELSE BEGIN
+ COPY ~%MOD_FOLDER%/sExt/KAYPAL03.bcs~ ~override~
+END
