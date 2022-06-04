@@ -7,4 +7,3 @@ THEN
 		GiveItemCreate("wa2dak2",Myself,0,0,0)
 		EquipMostDamagingMelee()
 END
-

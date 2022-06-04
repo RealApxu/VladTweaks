@@ -25,7 +25,8 @@ Damage: 1d10+2 (slashing)
 Speed Factor: 2
 Proficiency Type: Katana
 Type: One-handed
-Requires: 6 Strength
+Requires:
+ 6 Strength
 
 Weight: 4~
  
@@ -48,7 +49,8 @@ Damage: 1d10+2 (slashing)
 Speed Factor: 2
 Proficiency Type: Katana
 Type: One-handed
-Requires: 6 Strength
+Requires:
+ 6 Strength
 
 Weight: 4~
  
@@ -73,7 +75,8 @@ Damage: 1d10+3 (slashing)
 Speed Factor: 2
 Proficiency Type: Katana
 Type: One-handed
-Requires: 6 Strength
+Requires:
+ 6 Strength
 
 Weight: 4~
  
@@ -99,7 +102,8 @@ Damage: 1d10+4 (slashing)
 Speed Factor: 2
 Proficiency Type: Katana
 Type: One-handed
-Requires: 6 Strength
+Requires:
+ 6 Strength
 
 Weight: 4~
  
@@ -126,6 +130,7 @@ Damage: 1d10+5 (slashing)
 Speed Factor: 2
 Proficiency Type: Katana
 Type: One-handed
-Requires: 6 Strength
+Requires:
+ 6 Strength
 
 Weight: 4~

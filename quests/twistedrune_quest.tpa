@@ -17,5 +17,5 @@ COPY_EXISTING ~TRAN1008.BCS~ ~override~
 COPY ~%MOD_FOLDER%/quests/twistedrune_quest/itm/SCRL3IBD.itm~ ~override~
 
 COPY_EXISTING ~HLKOSHI.CRE~ ~override~
-    ADD_CRE_ITEM ~scrl3ibd~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~scrl3ibd~ #0 #0 #0 ~none~ ~inv1~
 BUT_ONLY

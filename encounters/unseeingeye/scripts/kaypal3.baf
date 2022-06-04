@@ -1,0 +1,9 @@
+IF
+	Global("VP_Anarg_Is_Good","GLOBAL",1)
+	Global("VP_Escape_Area","LOCALS",0)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Escape_Area","LOCALS",1)
+		EscapeArea()
+END
