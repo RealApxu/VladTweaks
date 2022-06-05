@@ -1,7 +1,0 @@
-IF
-	Global("HeardOfTwistedRuneHQ","GLOBAL",0)
-	PartyHasItem("SCRL3IBD") // Scroll
-THEN
-	RESPONSE #100
-		SetGlobal("HeardOfTwistedRuneHQ","GLOBAL",1)
-END

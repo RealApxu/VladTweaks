@@ -1,8 +1,0 @@
-IF
-	Dead("aran")
-	Global("DearAranJournal","AR0329",0)
-THEN
-	RESPONSE #100
-		SetGlobal("DearAranJournal","AR0329",1)
-		AddJournalEntry(5819,QUEST) // Perform Bodhi's tasks to receive her aid.  Aran Linvail, the Shadowmaster of the Shadow Thieves in Athkatla, is dead.  Now I must return to Bodhi and tell her that her grim task has been completed.
-END

@@ -25,8 +25,8 @@ COPY_EXISTING ~GROMG03.CRE~ ~override~
  WRITE_BYTE 0x52 0xfa // THAC0
  WRITE_BYTE 0x53 10 // APR
  WRITE_BYTE 0x234 20 // First Class Level
- REMOVE_CRE_ITEM ~bow02~ ~arow02~ ~leat07~
- ADD_CRE_ITEM ~bow24~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REMOVE_CRE_ITEM ~arow02~
+ REPLACE_CRE_ITEM ~bow24~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
  ADD_CRE_ITEM ~sw1h72~ #0 #0 #0 ~none~ ~weapon2~
  ADD_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
  ADD_CRE_ITEM ~arow15~ #20 #0 #0 ~none~ ~quiver1~
@@ -52,9 +52,8 @@ COPY_EXISTING ~GROMG08.CRE~ ~override~
  WRITE_SHORT 0x48 0xffff // AC Effective
  WRITE_BYTE 0x52 0xfb // THAC0
  WRITE_BYTE 0x53 4 // APR
- WRITE_ASCII 0x268 ~KARUNF.BCS~
- REMOVE_CRE_ITEM ~staf18~
- ADD_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
+ WRITE_ASCII 0x268 ~KARUNF~
+ REPLACE_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
 BUT_ONLY
 
 COPY_EXISTING ~GROMG09.CRE~ ~override~
@@ -68,7 +67,7 @@ COPY_EXISTING ~GROMG09.CRE~ ~override~
  REMOVE_CRE_ITEM ~leat24~ ~dagg02~
  ADD_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~shield~
  ADD_CRE_ITEM ~sw1h52~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~ 
+ REPLACE_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
 COPY_EXISTING ~GROMG10.CRE~ ~override~
@@ -82,8 +81,7 @@ COPY_EXISTING ~GROMG10.CRE~ ~override~
  WRITE_BYTE 0x23a 14 // INT
  WRITE_BYTE 0x23b 13 // WIS
  WRITE_BYTE 0x23c 21 // DEX
- REMOVE_CRE_ITEM ~plat01~
- ADD_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~ 
+ REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
 COPY_EXISTING ~GROMNIR.CRE~ ~override~
@@ -97,8 +95,7 @@ COPY_EXISTING ~GROMNIR.CRE~ ~override~
  WRITE_BYTE 0x23a 12 // INT
  WRITE_BYTE 0x23b 14 // WIS
  WRITE_BYTE 0x23d 21 // CON
- REMOVE_CRE_ITEM ~blun34~
- ADD_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
+ REPLACE_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
 COPY ~%MOD_FOLDER%\encounters\gromnir\itm\vpaxcha2.itm~ ~override~

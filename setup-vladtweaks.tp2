@@ -59,45 +59,7 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/twistedrune_encounter.tpa~
 */
-// Quests
 
-BEGIN ~Third Path~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Quests~
-INCLUDE ~%MOD_FOLDER%/quests/thirdpath.tpa~
-
-BEGIN ~Restored Twisted Rune Quest~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Quests~
-INCLUDE ~%MOD_FOLDER%/quests/twistedrune_quest.tpa~
-
-BEGIN ~Merchant League Bank~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
-GROUP ~Quests~
-INCLUDE ~%MOD_FOLDER%/quests/bank.tpa~
-/*
-BEGIN ~Keys to Eternity~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
-GROUP ~Quests~
-INCLUDE ~%MOD_FOLDER%/quests/keystoeternity.tpa~
-*/
-// Items
-/*
-BEGIN ~Vlad's Item Upgrade~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
-
-BEGIN ~Improved Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
-
-BEGIN ~Upgradable Dakkon Blade~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
-*/
 // Kits
 /*
 BEGIN ~Aerie Kit - Wildwanderer of Baervan~
@@ -134,51 +96,4 @@ BEGIN ~Viconia Kit - Darkcloak of Shar~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Kits~
 INCLUDE ~%MOD_FOLDER%/kits/viconia.tpa~
-*/
-// NPC
-/*
-BEGIN ~Aerie - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Anomen - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Imoen - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Jaheira - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Jan - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Minsc - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Nalia - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Viconia - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
-
-BEGIN ~Xan - Improved Stats and Items~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~NPC Changes~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
 */

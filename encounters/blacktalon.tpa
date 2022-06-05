@@ -23,10 +23,11 @@ COPY_EXISTING ~BANDIT2.CRE~ ~override~
     WRITE_BYTE 0x039 63 // Exc. STR
     WRITE_BYTE 0x23c 18 // Dexterity
     WRITE_BYTE 0x23d 17 // Constitution
-    REMOVE_CRE_ITEM ~leat01~ ~arow01~ ~compb05~ ~bow05~
-    ADD_CRE_ITEM ~chan04~ #0 #0 #0 ~none~ ~armor~
-    ADD_CRE_ITEM ~arow14~ #40 #0 #0 ~undroppable~ ~quiver1 quiver2 quiver3~
-    ADD_CRE_ITEM ~bow01~ #0 #0 #0 ~none~ ~weapon1 weapon2~ EQUIP
+    REPLACE_CRE_ITEM ~chan04~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~arow14~ #40 #0 #0 ~undroppable~ ~quiver1~
+    REPLACE_CRE_ITEM ~arow14~ #40 #0 #0 ~undroppable~ ~quiver2~
+    REPLACE_CRE_ITEM ~arow14~ #40 #0 #0 ~undroppable~ ~quiver3~
+    REPLACE_CRE_ITEM ~bow01~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
 COPY_EXISTING ~IRONELIT.CRE~ ~override~
@@ -44,8 +45,8 @@ COPY_EXISTING ~IRONELIT.CRE~ ~override~
     WRITE_BYTE 0x70 5
     WRITE_BYTE 0x234 9
     WRITE_BYTE 0x23c 18 // Dexterity
-    REMOVE_CRE_ITEM ~bow03~ ~arow12~ ~arow01~
-    ADD_CRE_ITEM ~bow01~ #0 #0 #0 ~none~ ~weapon1 weapon2 weapon3~ EQUIP
+    REMOVE_CRE_ITEM ~arow12~ ~arow01~
+    REPLACE_CRE_ITEM ~bow01~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
     REPLACE_CRE_ITEM ~arow09~ #12 #0 #0 ~none~ ~quiver1~
     REPLACE_CRE_ITEM ~arow14~ #12 #0 #0 ~undroppable~ ~quiver2~
     REPLACE_CRE_ITEM ~arow02~ #20 #0 #0 ~none~ ~quiver3~
