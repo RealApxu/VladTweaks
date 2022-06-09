@@ -1,0 +1,19 @@
+IF
+	Global("VP_Create_Esmond","GLOBAL",1)
+	!Global("VP_AngelosLegacy","GLOBAL",0)
+	InParty("Sharteel")
+	!Dead("Sharteel")
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Create_Esmond","GLOBAL",2)
+		CreateCreature("Esmond",[647.1037],2)
+		CreateCreature("EsAnima1",[568.1004],2)
+		CreateCreature("EsAnima2",[680.1098],2)
+		CreateCreature("EsAnima3",[522.1052],1)
+		CreateCreature("EsAnima4",[633.1147],1)
+		CreateCreature("EsAnima5",[581.1099],0)
+		RealSetGlobalTimer("VP_SharTeel_Notes","GLOBAL",10)
+END
+
+
+

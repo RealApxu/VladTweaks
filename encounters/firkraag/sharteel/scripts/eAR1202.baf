@@ -1,0 +1,11 @@
+IF
+	Global("VP_Enhanced_Area","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Enhanced_Area","MYAREA",1)
+		CreateCreature("firgole1",[1475.1223],10)
+		CreateCreature("firgole2",[1215.1403],11)
+		CreateCreature("firgole3",[1768.893],10)
+		CreateCreature("durbin",[746.2090],12)
+		Continue()
+END

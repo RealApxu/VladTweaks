@@ -1,0 +1,71 @@
+IF
+	InMyArea("firkra02")  // Firkraag
+	Global("VP_EnhancedFirkrag","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_EnhancedFirkrag","GLOBAL",1)
+		ActionOverride("firkra02",DestroySelf())
+		CreateCreature("firkra04",[1526.1560],0)  // Firkraag
+END
+
+IF
+	OR(2)
+		Global("SPRITE_IS_DEADfirkra02","GLOBAL",1)
+		Global("SPRITE_IS_DEADfirkra04","GLOBAL",1)
+	CombatCounter(0)
+	Global("VP_Firkrag_Is_Dead","GLOBAL",0)
+	OR(2)
+		InParty("Sharteel")  // Shar-Teel
+		InMyArea("Sharteel")  // Shar-Teel
+	!Dead("Sharteel")  // Shar-Teel
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Firkrag_Is_Dead","GLOBAL",1)
+		ActionOverride("Sharteel",StartDialogNoSet([PC]))
+END
+
+IF
+	OR(2)
+		Global("SPRITE_IS_DEADfirkra02","GLOBAL",1)
+		Global("SPRITE_IS_DEADfirkra04","GLOBAL",1)
+	CombatCounter(0)
+	Global("VP_Firkrag_Is_Dead","GLOBAL",0)
+	OR(3)
+		!InParty("Sharteel")  // Shar-Teel
+		!InMyArea("Sharteel")  // Shar-Teel
+		Dead("Sharteel")  // Shar-Teel
+	OR(2)
+		InParty("Leina")  // Leina
+		InMyArea("Leina")  // Leina
+	!Dead("Leina")  // Leina
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Firkrag_Is_Dead","GLOBAL",1)
+		ActionOverride("Leina",StartDialogNoSet([PC]))
+END
+
+IF
+	InMyArea("firkra02")  // Firkraag
+	Global("SPRITE_IS_DEADfirkra02","GLOBAL",0)
+	CombatCounter(0)
+	RealGlobalTimerExpired("VP_FirAttacksParty","GLOBAL")
+	Global("VP_AngelosLegacy","GLOBAL",4)
+	Global("VP_Firkrag_Hostile","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Firkrag_Hostile","MYAREA",1)
+		ActionOverride("firkra02",Enemy())
+END
+
+IF
+	InMyArea("firkra04")  // Firkraag
+	Global("SPRITE_IS_DEADfirkra04","GLOBAL",0)
+	CombatCounter(0)
+	RealGlobalTimerExpired("VP_FirAttacksParty","GLOBAL")
+	Global("VP_AngelosLegacy","GLOBAL",4)
+	Global("VP_Firkrag_Hostile","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Firkrag_Hostile","MYAREA",1)
+		ActionOverride("firkra04",Enemy())
+END

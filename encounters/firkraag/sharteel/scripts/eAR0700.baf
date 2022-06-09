@@ -1,0 +1,13 @@
+IF
+	Global("PostCutSpeak","AR0700",0)
+	Global("CutScene01","AR0700",5)
+	GlobalTimerExpired("CutScene01Timer","AR0700")
+	InParty("Sharteel")
+	!Dead("Sharteel")
+	!StateCheck("Sharteel",STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("PostCutSpeak","AR0700",1)
+		ActionOverride("Sharteel",StartDialogueNoSet([PC]))
+		Continue()
+END

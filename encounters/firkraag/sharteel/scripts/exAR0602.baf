@@ -1,0 +1,86 @@
+IF
+	Global("VP_Join_SharTeel","GLOBAL",0)
+	Global("SharteelPartyBG1","GLOBAL",0)
+	XPLT(Player1,135000)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Join_SharTeel","GLOBAL",1)
+		CreateCreature("SHARTE7",[3584.2916],10)
+		Lock("Cell04")
+		ActionOverride("Picture1",CreateItem("VPShrKey",0,0,0)) // Key from Shar-Teel's cell
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+		Continue()
+END
+
+IF
+	Global("VP_Join_SharTeel","GLOBAL",0)
+	Global("SharteelPartyBG1","GLOBAL",0)
+	XPLT(Player1,205000)
+	XPGT(Player1,134999)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Join_SharTeel","GLOBAL",1)
+		CreateCreature("SHARTE8",[3584.2916],10)
+		Lock("Cell04")
+		ActionOverride("Picture1",CreateItem("VPShrKey",0,0,0)) // Key from Shar-Teel's cell
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+		Continue()
+END
+
+IF
+	Global("VP_Join_SharTeel","GLOBAL",0)
+	Global("SharteelPartyBG1","GLOBAL",0)
+	XPGT(Player1,204999)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Join_SharTeel","GLOBAL",1)
+		CreateCreature("SHARTE9",[3584.2916],10)
+		Lock("Cell04")
+		ActionOverride("Picture1",CreateItem("VPShrKey",0,0,0)) // Key from Shar-Teel's cell
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD01",[2513.966],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+		Continue()
+END
+
+IF
+	Global("VP_Join_SharTeel","GLOBAL",0)
+	Global("SharteelPartyBG1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Join_SharTeel","GLOBAL",1)
+		Lock("Cell04")
+		ActionOverride("Picture1",CreateItem("VPShrKey",0,0,0)) // Key from Shar-Teel's cell
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD01",[2513.966],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+		Continue()
+END
+
+IF
+	Global("VP_Place_Ring","GLOBAL",0)
+	OR(16)
+		Gender(Player1,MALE)
+		Class(Player1,THIEF)
+		Class(Player1,THIEF_ALL)
+		Class(Player1,FIGHTER_MAGE_THIEF)
+		Class(Player1,FIGHTER_THIEF)
+		Class(Player1,MAGE_THIEF)
+		Class(Player1,CLERIC_THIEF)
+		CheckStatLT(Player1,13,CHR)
+		Race(Player1,DWARF)
+		Race(Player1,HALFLING)
+		Race(Player1,GNOME)
+		Race(Player1,HALFORC)
+		Alignment(Player1,LAWFUL_EVIL)                 
+		Alignment(Player1,NEUTRAL_EVIL)                
+		Alignment(Player1,CHAOTIC_NEUTRAL)             
+		Alignment(Player1,CHAOTIC_EVIL)   
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Place_Ring","GLOBAL",1)
+		ActionOverride("Picture1",CreateItem("kring222",0,0,0))  // Gorion's Ring
+		Continue()
+END

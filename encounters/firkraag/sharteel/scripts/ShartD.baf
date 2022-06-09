@@ -1,0 +1,45 @@
+IF
+	GlobalTimerExpired("VP_Sharteel_Immy","GLOBAL")
+	Global("VP_In_IWD_Part1","GLOBAL",1)
+	Global("VP_STB_Imoen","LOCALS",1)
+	InParty(Myself)
+	InParty("Imoen")
+	!Dead("Imoen")
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("VP_STB_Imoen","LOCALS",2)
+		SetGlobal("VP_STB_TalkToImmy","LOCALS",1)
+		Interact("Imoen")
+END
+
+IF
+	GlobalTimerExpired("VP_Sharteel_Immy","GLOBAL")
+	Global("VP_In_IWD_Part1","GLOBAL",1)
+	Global("VP_STB_Imoen","LOCALS",1)
+	InParty(Myself)
+	InParty("Imoen2")
+	!Dead("Imoen2")
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("VP_STB_Imoen","LOCALS",2)
+		SetGlobal("VP_STB_TalkToImmy2","LOCALS",1)
+		Interact("Imoen2")
+END
+
+IF
+	GlobalTimerExpired("VP_Sharteel_Dar","GLOBAL")
+	Global("VP_STB_Dar","LOCALS",4)
+	InParty(Myself)
+	InParty("Dar")
+	!Dead("Dar")
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("VP_STB_Dar","LOCALS",5)
+		Interact("Dar")
+END

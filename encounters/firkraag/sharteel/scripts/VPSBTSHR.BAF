@@ -1,0 +1,9 @@
+IF
+	AreaCheck("AR0602")
+	Global("BP_SharteelBG1Check","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetPlayerSound(Myself,10215,EXISTANCE5)
+		SmallWait(10)
+		ChangeAIScript("",CLASS)
+END
