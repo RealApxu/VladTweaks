@@ -104,8 +104,8 @@ COPY_EXISTING ~SLAPRI.CRE~ ~override~
  WRITE_BYTE 0x23b 18 // Wisdom
  WRITE_BYTE 0x23c 17 // Dexterity
  WRITE_BYTE 0x23d 16 // Constitution
- WRITE_ASCII 0x250 ~PRIES18B~ // Script
- WRITE_ASCII 0x280 ~slapri~
+ WRITE_ASCII 0x250 ~PRIES18B~ (8)// Script
+ WRITE_ASCII 0x280 ~slapri~ (8)
  REMOVE_KNOWN_SPELL ~sppr303~ ~sppr312~ ~sppr401~
  ADD_KNOWN_SPELL ~sppr208~ #1 ~priest~
  ADD_KNOWN_SPELL ~sppr211~ #1 ~priest~
@@ -139,13 +139,13 @@ COPY_EXISTING ~SLAPRI.CRE~ ~override~
  ADD_MEMORIZED_SPELL ~sppr204~ #1 ~priest~
  ADD_MEMORIZED_SPELL ~sppr208~ #1 ~priest~ (3)
  ADD_MEMORIZED_SPELL ~sppr211~ #1 ~priest~
- ADD_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~blun15~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring lring~
- ADD_CRE_ITEM ~shld19~ #0 #0 #0 ~none~ ~shield~
- ADD_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
- ADD_CRE_ITEM ~ring31~ #0 #0 #0 ~none~ ~rring lring~
- ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv16~
+ REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~blun15~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring~
+ REPLACE_CRE_ITEM ~shld19~ #0 #0 #0 ~none~ ~shield~
+ REPLACE_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
+ REPLACE_CRE_ITEM ~ring31~ #0 #0 #0 ~none~ ~lring~
+ ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~
 BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~CCGUARD1.CRE~ ~override~
@@ -175,13 +175,12 @@ COPY_EXISTING ~CCGUARD1.CRE~ ~override~
  WRITE_BYTE 0x23b 18 // Wisdom
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 18 // Constitution
- REMOVE_CRE_ITEM ~bow03~ ~chan01~ ~arow01~ ~sw1h04~ ~helm22~
- ADD_CRE_ITEM ~bow04~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~plat01~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1 quiver2 quiver3~
- ADD_CRE_ITEM ~sw1h02~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~helm10~ #0 #0 #0 ~none~ ~helmet~
- ADD_CRE_ITEM ~arow11~ #40 #0 #0 ~none~ ~quiver1 quiver2 quiver3~
+ REPLACE_CRE_ITEM ~bow04~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~plat01~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+ REPLACE_CRE_ITEM ~sw1h02~ #0 #0 #0 ~none~ ~weapon2~
+ REPLACE_CRE_ITEM ~helm10~ #0 #0 #0 ~none~ ~helmet~
+ ADD_CRE_ITEM ~arow11~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 COPY_EXISTING ~CCGUARD2.CRE~ ~override~
@@ -261,8 +260,7 @@ COPY_EXISTING ~CCGUARD2.CRE~ ~override~
  ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
- REMOVE_CRE_ITEM ~staf01~
- ADD_CRE_ITEM ~staf07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~staf07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
  ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~
  ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~
 BUT_ONLY
@@ -301,12 +299,12 @@ COPY_EXISTING ~COPAMB02.CRE~ ~override~
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 16 // Constitution
 // WRITE_BYTE 0x27b 18 //Alignment
- REMOVE_CRE_ITEM ~bow03~ ~chan01~ ~arow01~ ~sw1h04~
- ADD_CRE_ITEM ~bow17~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1 quiver2 quiver3~
- ADD_CRE_ITEM ~sw1h05~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver1 quiver2 quiver3~
+ REPLACE_CRE_ITEM ~bow17~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+ REPLACE_CRE_ITEM ~sw1h05~ #0 #0 #0 ~none~ ~weapon2~
+ ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
+BUT_ONLY
 
 COPY_EXISTING ~COPAMB05.CRE~ ~override~
  WRITE_LONG 0x14 1500 // XP Value
@@ -334,12 +332,11 @@ COPY_EXISTING ~COPAMB05.CRE~ ~override~
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 17 // Constitution
 // WRITE_BYTE 0x27b 18 //Alignment
- REMOVE_CRE_ITEM ~bow03~ ~chan01~ ~arow01~ ~sw1h04~
- ADD_CRE_ITEM ~bow02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~chan05~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1 quiver2 quiver3~
- ADD_CRE_ITEM ~sw1h06~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver1 quiver2 quiver3~
+ REPLACE_CRE_ITEM ~bow02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~chan05~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+ REPLACE_CRE_ITEM ~sw1h06~ #0 #0 #0 ~none~ ~weapon2~
+ ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 /*
@@ -379,12 +376,11 @@ COPY_EXISTING ~SLARCH1.CRE~ ~override~
  WRITE_BYTE 0x23c 19 // Dexterity
  WRITE_BYTE 0x23d 18 // Constitution
 // WRITE_BYTE 0x27b 18 //Alignment
- REMOVE_CRE_ITEM ~bow02~ ~arow01~ ~arow02~ ~sw1h07~ ~leat04~
- ADD_CRE_ITEM ~bow16~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~sw1h09~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~arow05~ #10 #0 #0 ~none~ ~quiver1 quiver2 quiver3~
- ADD_CRE_ITEM ~arow09~ #20 #0 #0 ~none~ ~quiver1 quiver2 quiver3~
+ REPLACE_CRE_ITEM ~bow16~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~sw1h09~ #0 #0 #0 ~none~ ~weapon2~
+ REPLACE_CRE_ITEM ~arow05~ #10 #0 #0 ~none~ ~quiver1~
+ REPLACE_CRE_ITEM ~arow09~ #20 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 COPY_EXISTING ~SLGUARD1.CRE~ ~override~
@@ -411,9 +407,8 @@ COPY_EXISTING ~SLGUARD1.CRE~ ~override~
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 18 // Constitution
 // WRITE_BYTE 0x27b 18 //Alignment
- REMOVE_CRE_ITEM ~chan04~ ~blun02~
- ADD_CRE_ITEM ~blun13~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~chan07~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~blun13~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~chan07~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
 COPY_EXISTING ~SLGUARD2.CRE~ ~override~
@@ -435,9 +430,8 @@ COPY_EXISTING ~SLGUARD2.CRE~ ~override~
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 18 // Constitution
 // WRITE_BYTE 0x27b 18 //Alignment
- REMOVE_CRE_ITEM ~chan04~ ~sw1h20~
- ADD_CRE_ITEM ~sw1h42~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~plat04~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~sw1h42~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~plat04~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
 COPY_EXISTING ~SLMAGE1.CRE~ ~override~
@@ -475,8 +469,8 @@ COPY_EXISTING ~SLMAGE1.CRE~ ~override~
  WRITE_BYTE 0x240 6 // Morale Break
  WRITE_SHORT 0x242 60 // Morale Recovery
  WRITE_SHORT 0x244 0x0080 // Kit
- WRITE_ASCII 0x260 ~MAGE18G~
- WRITE_ASCII 0x280 ~slmage1~
+ WRITE_ASCII 0x260 ~MAGE18G~ (8)
+ WRITE_ASCII 0x280 ~slmage1~ (8)
  REMOVE_KNOWN_SPELLS
  REMOVE_MEMORIZED_SPELLS
  ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
@@ -533,10 +527,9 @@ COPY_EXISTING ~SLMAGE1.CRE~ ~override~
  ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~ (3)
  ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
- REMOVE_CRE_ITEM ~staf01~ ~dart01~ ~clck01~
- ADD_CRE_ITEM  ~staf08~ #0 #0 #0 ~none~ ~weapon1~
- ADD_CRE_ITEM ~dart03~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
- ADD_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~
+ REPLACE_CRE_ITEM ~staf08~ #0 #0 #0 ~none~ ~weapon1~ 
+ REPLACE_CRE_ITEM ~dart03~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
+ REPLACE_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~
  ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
 BUT_ONLY
 
@@ -637,11 +630,11 @@ COPY_EXISTING ~SLMAGE2.CRE~ ~override~
  ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
- REMOVE_CRE_ITEM ~staf01~ ~dart01~ ~wand16~
- ADD_CRE_ITEM ~staf24~ #0 #0 #0 ~none~ ~weapon1~
- ADD_CRE_ITEM ~dart04~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
+ REMOVE_CRE_ITEM ~wand16~
+ REPLACE_CRE_ITEM ~staf24~ #0 #0 #0 ~none~ ~weapon1~
+ REPLACE_CRE_ITEM ~dart04~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
  ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
- ADD_CRE_ITEM ~rndtree01~ #0 #0 #0 ~none~ ~inv16~
+ ADD_CRE_ITEM ~rndtree01~ #0 #0 #0 none inv
 BUT_ONLY
 
 // New Slums' Sewers Encounter

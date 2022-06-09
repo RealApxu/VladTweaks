@@ -1,4 +1,5 @@
 COPY_EXISTING ~TORGAL.CRE~ ~override~
+              ~TORGAL3.CRE~ ~override~
  WRITE_SHORT 0x24 240 // Current HP
  WRITE_SHORT 0x26 240 // Total HP
  WRITE_SHORT 0x46 "-3" // AC Natural
@@ -67,9 +68,9 @@ BUT_ONLY
 COPY ~%MOD_FOLDER%/encounters/trolls/itm/vptrolto.itm~ ~override~
 
 COPY_EXISTING ~TORGAL.CRE~ ~override~
- ~TORGAL2.CRE~ ~override~
- ~TORGAL3.CRE~ ~override~
-  REPLACE_CRE_ITEM ~vptrolto~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+              ~TORGAL2.CRE~ ~override~
+              ~TORGAL3.CRE~ ~override~
+                REPLACE_CRE_ITEM ~vptrolto~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
 EXTEND_TOP ~AR1301.BCS~ ~%MOD_FOLDER%/encounters/trolls/scripts/ar1301.baf~
