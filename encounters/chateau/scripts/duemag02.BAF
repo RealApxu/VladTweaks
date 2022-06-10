@@ -1,0 +1,93 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Heard([ANYONE],99)
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+
+IF
+	Heard([0.0.DWARF],24)
+	Detect([PC])
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Видеть невидимое)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Видеть невидимое)
+END
+
+IF
+	Heard([0.0.DWARF],24)
+	!Detect([PC])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("duergarmage","LOCALS",0)
+	Detect([PC])
+	!See([PC])
+THEN
+	RESPONSE #100
+		MoveToPoint([1942.529])
+		SetGlobal("duergarmage","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("duergarmage","LOCALS",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([1869.595])
+		SetGlobal("duergarmage","LOCALS",0)
+END
+
+IF
+	Heard([0.0.DWARF],99)
+	!See([PC])
+	Detect([PC])
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Видеть невидимое)
+THEN
+	RESPONSE #100
+		Enemy()
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Видеть невидимое)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalLT("VP_Cast_Fear","LOCALS",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("VP_Cast_Fear","LOCALS",1)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Символ, Страх)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalLT("VP_Cast_Chaos","LOCALS",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("VP_Cast_Chaos","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_CHAOS)  // SPWI508.SPL (Хаос)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("VP_Cast_ShadowDoor","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Cast_ShadowDoor","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Теневая дверь)
+END
+

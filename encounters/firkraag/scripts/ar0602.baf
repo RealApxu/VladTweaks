@@ -1,0 +1,25 @@
+IF
+	Global("VP_Place_Ring","GLOBAL",0)
+	OR(16)
+		Gender(Player1,MALE)
+		Class(Player1,THIEF)
+		Class(Player1,THIEF_ALL)
+		Class(Player1,FIGHTER_MAGE_THIEF)
+		Class(Player1,FIGHTER_THIEF)
+		Class(Player1,MAGE_THIEF)
+		Class(Player1,CLERIC_THIEF)
+		CheckStatLT(Player1,13,CHR)
+		Race(Player1,DWARF)
+		Race(Player1,HALFLING)
+		Race(Player1,GNOME)
+		Race(Player1,HALFORC)
+		Alignment(Player1,LAWFUL_EVIL)                 
+		Alignment(Player1,NEUTRAL_EVIL)                
+		Alignment(Player1,CHAOTIC_NEUTRAL)             
+		Alignment(Player1,CHAOTIC_EVIL)   
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Place_Ring","GLOBAL",1)
+		ActionOverride("Picture1",CreateItem("kring222",0,0,0))  // Gorion's Ring
+		Continue()
+END

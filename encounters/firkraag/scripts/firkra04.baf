@@ -1,0 +1,314 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	OR(4)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		HitBy([GOODCUTOFF],CRUSHING)
+		HPPercentLT(Myself,100)
+		CheckStatLT(Myself,55,RESISTMAGIC)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	OR(10)
+		SpellCast([GOODCUTOFF],WIZARD_HASTE)  // SPWI305.SPL (Спешка)
+		SpellCast([GOODCUTOFF],WIZARD_IMPROVED_HASTE)  // SPWI613.SPL (Улучшенная спешка)
+		SpellCast([GOODCUTOFF],WIZARD_PROTECTION_FROM_ENERGY)  // SPWI803.SPL (Защита от энергии)
+		SpellCastPriest([GOODCUTOFF],CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Призыв священной мощи)
+		SpellCastPriest([GOODCUTOFF],CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Сила Единого)
+		SpellCastInnate([GOODCUTOFF],THIEF_SET_SNARE)  // SPCL412.SPL (Установить ловушку)
+		SpellCastInnate([GOODCUTOFF],THIEF_SET_SPECIAL_SNARE)  // SPCL414.SPL (Установить особую ловушку)
+		SpellCastInnate([GOODCUTOFF],ROGUE_SET_SPIKE_TRAP)  // SPCL910.SPL (Установить ловушку с шипами)
+		SpellCastInnate([GOODCUTOFF],ROGUE_SET_EXPLODING_TRAP)  // SPCL911.SPL (Установить взрывающуюся ловушку)
+		SpellCastInnate([GOODCUTOFF],ROGUE_SET_TIME_TRAP)  // SPCL912.SPL (Установить временную ловушку)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Detect(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("SpSequencer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SpSequencer","LOCALS",1000)
+		SetGlobal("SeqUsed","LOCALS",1)
+		DisplayString(Myself,39969)  // Последовательность: приведена в действие
+		ReallyForceSpell(Myself,DRAGON_STONE_SKIN)  // SPIN694.SPL (Каменная кожа)
+		ReallyForceSpellRES("jwglobe",Myself)  // Сфера неуязвимости
+		ForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Снять магию)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("DRAGONFEAR","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DRAGONFEAR","LOCALS",TWENTY_MINUTES)
+		PlaySound("BLACK01")
+		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)  // SPIN895.SPL (Драконий ужас)
+		ReallyForceSpell(NearestEnemyOf(Myself),0)
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Удар крылом)
+END
+
+IF
+	OR(3)
+		SpellCast([GOODCUTOFF],WIZARD_INCENDIARY_CLOUD)  // SPWI810.SPL (Жгучее облако)
+		SpellCast([GOODCUTOFF],WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Зловонное облако)
+		SpellCast([GOODCUTOFF],WIZARD_DEATH_FOG)  // SPWI614.SPL (Туман смерти)
+	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+		ApplySpell(Myself,0)
+		ForceSpell(NearestEnemyOf(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Удар крылом)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	OR(7)
+		Gender(NearestEnemyOf(Myself),ILLUSIONARY)
+		StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+	!GlobalTimerNotExpired("DragonSight","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DragonSight","LOCALS",TEN_ROUNDS)
+		ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Истинное зрение)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	CheckStat(Myself,0,STONESKINS)
+	Global("SeqUsed","LOCALS",1)
+	!GlobalTimerNotExpired("DragonStoneSkin","LOCALS")
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DragonStoneSkin","LOCALS",FIVE_ROUNDS)
+		ForceSpell(Myself,DRAGON_STONE_SKIN)  // SPIN694.SPL (Каменная кожа)
+END
+
+IF
+	OR(2)
+		!Allegiance(LastSeenBy(Myself),GOODCUTOFF)
+		!See([GOODCUTOFF])
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Исцеление)
+		MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+	Range(LastSeenBy(Myself),10)
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Удар крылом)
+		Wait(1)
+END
+
+IF
+	!GlobalTimerNotExpired("dbCharm","LOCALS")
+	RandomNum(3,1)
+	!CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+	HasBounceEffects(LastSeenBy(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("dbCharm","LOCALS",FIVE_ROUNDS)
+		ForceSpell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)  // SPWI316.SPL (Дикое очарование)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("RemoveMagic","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,DRAGON_STONE_SKIN)  // SPIN694.SPL (Каменная кожа)
+		ForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Снять магию)
+		SetGlobal("StoneSkin","LOCALS",1)
+		SetGlobal("RemoveMagic","LOCALS",1)
+END
+
+IF
+	!Detect([PC])
+	HPLT(Myself,50)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("RemoveMagic","LOCALS",0)
+		SetGlobal("WingBuffet","LOCALS",0)
+		SetGlobal("Haste","LOCALS",0)
+		SetGlobal("DRAGONFEAR","LOCALS",0)
+		ForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Исцеление)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("DRAGONFEAR","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)  // SPIN895.SPL (Драконий ужас)
+		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_LOWER_FIRE)  // SPIN682.SPL (Понижение сопротивления огню)
+		SetGlobal("DRAGONFEAR","LOCALS",1)
+		SetGlobalTimer("REDDRAGONBREATH","GLOBAL",1)
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Удар крылом)
+END
+
+IF
+	GlobalTimerExpired("REDDRAGONBREATH","GLOBAL")
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),11)
+	Global("WingBuffet","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Удар крылом)
+		Wait(1)
+		SetGlobal("WingBuffet","LOCALS",1)
+	RESPONSE #60
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(LastSeenBy(Myself),10)
+	GlobalTimerExpired("REDDRAGONBREATH","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("WingBuffet","LOCALS",0)
+		ForceSpell(LastSeenBy(Myself),RED_DRAGON_BREATH)  // SPIN894.SPL (Дыхание красного дракона)
+		ReallyForceSpell(LastSeenBy(Myself),RED_DRAGON_HIT)  // SPIN693.SPL (No such index)
+		SetGlobalTimer("REDDRAGONBREATH","GLOBAL",THREE_ROUNDS)
+END
+
+IF
+	Global("WingBuffet","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),11)
+THEN
+	RESPONSE #100
+		SetGlobal("WingBuffet","LOCALS",0)
+		SetGlobalTimer("REDDRAGONBREATH","GLOBAL",THREE_ROUNDS)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Offense1","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Великое проклятие)
+		SetGlobal("Offense1","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Haste","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Спешка)
+		SetGlobal("Haste","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("HoldPerson","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Удержание персонажа)
+		SetGlobal("HoldPerson","LOCALS",1)
+END
+
+IF
+	Global("Silence","LOCALS",0)
+	OR(2)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+THEN
+	RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),DRAGON_SILENCE)  // SPIN692.SPL (Тишина в радиусе 15 футов)
+		SetGlobal("Silence","LOCALS",1)
+		AttackOneRound(LastSeenBy(Myself))
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Delay(6)
+	GlobalLT("CharmPerson","LOCALS",3)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_CHARM_PERSON)  // SPWI104.SPL (Очаровать персонажа)
+		IncrementGlobal("CharmPerson","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),35)
+	RESPONSE #10
+		ForceSpell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Кислотная стрела Мелфа)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Prep","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(NearestEnemyOf(Myself),BEHOLDER_DOMINATION)  // SPIN985.SPL (Подчинение)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),BEHOLDER_CHARM_PERSON)  // SPIN980.SPL (Очаровать персонажа)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),BEHOLDER_PARALYZATION)  // SPIN990.SPL (Паралич)
+		SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Prep","LOCALS",1)
+	Global("SpellSequencer","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpellSequencer","LOCALS",1)
+		DisplayString(Myself,39968)  // Мгновенное заклинание: приведено в действие
+		DisplayString(Myself,40244)  // Мгновенное заклинание: Каменная кожа
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Каменная кожа)
+		DisplayString(Myself,40248)  // Мгновенное заклинание: Истинное зрение
+		ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Истинное зрение)
+		DisplayString(Myself,2469)  // Мгновенное заклинание: Защита от магического оружия
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Защита от магического оружия)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+		Continue()
+END
+
+IF
+	See(SecondNearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+		Continue()
+END
+
+IF
+	See(ThirdNearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+		Continue()
+END
+
