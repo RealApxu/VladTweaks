@@ -1,0 +1,160 @@
+// Improved Firkraag and his lair - from Vlad's Shar-Teel NPC
+
+// Making mobs stronger
+
+COPY_EXISTING ~FIRARC01.CRE~ override
+ WRITE_SHORT 0x24 112 // Current HP
+ WRITE_SHORT 0x26 112 // Total HP
+ WRITE_SHORT 0x46 3 // AC Natural
+ WRITE_SHORT 0x48 3 // AC Effective
+ WRITE_SHORT 0x4a 25 // AC Crushing
+ WRITE_SHORT 0x4c 50 // AC Missile
+ WRITE_SHORT 0x4e 25 // AC Piercing
+ WRITE_SHORT 0x50 25 // AC Slashing
+ WRITE_BYTE 0x52 6 // THAC0
+ WRITE_BYTE 0x53 3 // APR
+ WRITE_BYTE 0x60 25 // Slashing Resistance
+ WRITE_BYTE 0x62 25 // Piercing Resistance
+ WRITE_BYTE 0x63 25 // Missile Resistance
+ WRITE_BYTE 0x234 14 // First Class Level
+ WRITE_BYTE 0x238 22 // Strength
+ WRITE_BYTE 0x23c 17 // DEX
+ WRITE_BYTE 0x23d 21 // Constitution
+ REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~unstealable&undroppable~ ~armor~
+ REPLACE_CRE_ITEM ~bow02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
+ REPLACE_CRE_ITEM ~blun07~ #0 #0 #0 ~none~ ~weapon2~
+ REPLACE_CRE_ITEM ~arow06~ #3 #0 #0 ~none~ ~quiver3~
+ REPLACE_CRE_ITEM ~arow08~ #20 #0 #0 ~none~ ~quiver2~
+ REPLACE_CRE_ITEM ~arow12~ #20 #0 #0 ~none~ ~quiver1~
+BUT_ONLY
+
+COPY_EXISTING ~FIRORC01.CRE~ override
+ WRITE_SHORT 0x24 199 // Current HP
+ WRITE_SHORT 0x26 199 // Total HP
+ WRITE_SHORT 0x46 "-3" // AC Natural
+ WRITE_SHORT 0x48 "-3" // AC Effective
+ WRITE_SHORT 0x4a 25 // AC Crushing
+ WRITE_SHORT 0x4c 25 // AC Missile
+ WRITE_SHORT 0x4e 50 // AC Piercing
+ WRITE_SHORT 0x50 50 // AC Slashing
+ WRITE_BYTE 0x52 "-3" // THAC0
+ WRITE_BYTE 0x53 3 // APR
+ WRITE_BYTE 0x54 3 // Save vs. Death
+ WRITE_BYTE 0x55 5 // Save vs. Wands
+ WRITE_BYTE 0x56 6 // Save vs. Polymorph
+ WRITE_BYTE 0x57 6 // Save vs. Breath
+ WRITE_BYTE 0x58 7 // Save vs. Breath
+ WRITE_BYTE 0x234 16 // First Class Level
+ WRITE_BYTE 0x238 22 // Strength
+ WRITE_BYTE 0x23c 16 // Dexterity
+ WRITE_BYTE 0x23d 21 // Constitution
+ REPLACE_CRE_ITEM ~shld07~ #0 #0 #0 ~unstealable&undroppable~ ~shield~
+ REPLACE_CRE_ITEM ~ax1h17~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~helm04~ #3 #0 #0 ~unstealable&undroppable~ ~helmet~ 
+BUT_ONLY
+
+COPY_EXISTING ~FIRRAK01.CRE~ override
+ WRITE_SHORT 0x24 280 // Current HP
+ WRITE_SHORT 0x26 280 // Total HP
+ WRITE_SHORT 0x46 "-6" // AC Natural
+ WRITE_SHORT 0x48 "-6" // AC Effective
+ WRITE_SHORT 0x4c 50 // AC Missile
+ WRITE_SHORT 0x4e 50 // AC Piercing
+ WRITE_SHORT 0x50 25 // AC Slashing
+ WRITE_BYTE 0x52 1 // THAC0
+ WRITE_BYTE 0x59 100 // Fire Resistance
+ WRITE_BYTE 0x5a 25 // Cold Resistance
+ WRITE_BYTE 0x5d 25 // Magic Resistance
+ WRITE_BYTE 0x5e 100 // Magic Fire Resistance
+ WRITE_BYTE 0x5f 25 // Magic Cold Resistance
+ WRITE_BYTE 0x60 25 // Slashing Resistance
+ WRITE_BYTE 0x62 50 // Piercing Resistance
+ WRITE_BYTE 0x63 50 // Missile Resistance
+ WRITE_BYTE 0x64 75 // Detect Illusion
+ WRITE_BYTE 0x238 18 // Strength
+ WRITE_BYTE 0x238 93 // Strength bonus
+ WRITE_BYTE 0x23c 18 // Dexterity
+ SET_BG2_PROFICIENCY PROFICIENCYSCIMITARWAKISASHININJATO 5
+ REPLACE_CRE_ITEM ~sw1h23~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~plat19~ #0 #0 #0 ~unstealable&undroppable~ ~armor~
+BUT_ONLY
+
+COPY_EXISTING ~FIRTRL01.CRE~ override
+ WRITE_SHORT 0x24 150 // Current HP
+ WRITE_SHORT 0x26 150 // Total HP
+ WRITE_SHORT 0x46 "-2" // AC Natural
+ WRITE_SHORT 0x48 "-2" // AC Effective
+ WRITE_SHORT 0x4a 25 // AC Crushing
+ WRITE_SHORT 0x4e 25 // AC Piercing
+ WRITE_SHORT 0x50 25 // AC Slashing
+ WRITE_BYTE 0x52 3 // THAC0
+ WRITE_BYTE 0x53 5 // APR
+ WRITE_BYTE 0x60 25 // Slashing Resistance
+ WRITE_BYTE 0x61 25 // Piercing Resistance
+ WRITE_BYTE 0x62 25 // Missile Resistance
+ WRITE_BYTE 0x234 16 // First Class Level
+ WRITE_BYTE 0x238 22 // Strength
+ WRITE_BYTE 0x23c 24 // Dexterity
+BUT_ONLY
+
+COPY_EXISTING ~TAZOK.CRE~ override
+ WRITE_SHORT 0x24 236 // Current HP
+ WRITE_SHORT 0x26 236 // Total HP
+ WRITE_SHORT 0x46 "-3" // AC Natural
+ WRITE_SHORT 0x48 "-3" // AC Effective
+ WRITE_SHORT 0x4a 50 // AC Crushing
+ WRITE_SHORT 0x4c 75 // AC Crushing
+ WRITE_SHORT 0x4e 50 // AC Piercing
+ WRITE_SHORT 0x50 50 // AC Slashing
+ WRITE_BYTE 0x52 "-3" // THAC0
+ WRITE_BYTE 0x53 3 // APR
+ WRITE_BYTE 0x59 50 // Fire Resistance
+ WRITE_BYTE 0x5e 50 // Magic Fire Resistance
+ WRITE_BYTE 0x60 25 // Slashing Resistance
+ WRITE_BYTE 0x61 25 // Crushing Resistance
+ WRITE_BYTE 0x62 25 // Piercing Resistance
+ WRITE_BYTE 0x63 75 // Missile Resistance
+ SET_BG2_PROFICIENCY PROFICIENCY2HANDED 3
+ SET_BG2_PROFICIENCY PROFICIENCYTWOHANDEDSWORD 5
+BUT_ONLY
+
+COPY_EXISTING ~FIRKRA02.CRE~ override
+ WRITE_LONG 0x1c 1500 // Gold
+ WRITE_SHORT 0x24 284 // Current HP
+ WRITE_SHORT 0x26 284 // Total HP
+ WRITE_SHORT 0x46 "-15" // AC Natural
+ WRITE_SHORT 0x48 "-15" // AC Effective
+ WRITE_SHORT 0x4c "-4" // AC Missile
+ WRITE_BYTE 0x52 "-10" // THAC0
+ WRITE_BYTE 0x53 4 // APR
+ WRITE_BYTE 0x5a 20 // Cold Resistance
+ WRITE_BYTE 0x5b 20 // Elec Resistance
+ WRITE_BYTE 0x5c 20 // Acid Resistance
+ WRITE_BYTE 0x5d 85 // Magic Resistance
+ WRITE_BYTE 0x5f 20 // Magic Cold Resistance
+ WRITE_BYTE 0x60 50 // Slashing Resistance
+ WRITE_BYTE 0x61 50 // Piercing Resistance
+ WRITE_BYTE 0x62 50 // Missile Resistance
+ WRITE_BYTE 0x63 50 // Piercing Resistance
+ WRITE_BYTE 0x234 25 // First Class Level
+ WRITE_BYTE 0x23a 19 // INT
+ WRITE_BYTE 0x23b 18 // WIS
+ WRITE_BYTE 0x23c 18 // Dexterity
+ WRITE_BYTE 0x23d 23 // CON
+// WRITE_ASCII 0x248 ~FIRKRA04~ (8)
+ ADD_CRE_ITEM ~misc52~ #0 #0 #0 ~none~ inv
+BUT_ONLY
+
+// New Spawns
+
+EXTEND_TOP ~AR1202.BCS~ ~%MOD_FOLDER%/encounters/firkraag/scripts/ar1202.baf~
+
+COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/durbin.cre~ override
+
+COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole1.cre~ override
+     ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole2.cre~ override
+     ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole3.cre~ override
+ SAY NAME1 ~Fire Golem~
+ SAY NAME2 ~Fire Golem~
+
+COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgolem.itm~ override

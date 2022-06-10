@@ -1,8 +1,0 @@
-IF
-	Global("TeleportDialog","GLOBAL",3)
-THEN
-	RESPONSE #100
-		SetGlobal("TeleportDialog","GLOBAL",4)
-		ActionOverride(Player1,StartDialog("Player1",Myself))
-		Continue()
-END

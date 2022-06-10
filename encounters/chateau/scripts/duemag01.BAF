@@ -1,37 +1,10 @@
-IF
-	Allegiance(Myself,NEUTRAL)
-	AttackedBy([ANYONE],DEFAULT)
-THEN
-	RESPONSE #100
-		Shout(99)
-		Enemy()
-END
-
-IF
-	Allegiance(Myself,NEUTRAL)
-	Heard([ANYONE],99)
-THEN
-	RESPONSE #100
-		Shout(99)
-		Enemy()
-END
-
-IF
-	HPPercentLT(Myself,35)
-	HasItem("POTN08",Myself)  // Зелье лечения
-THEN
-	RESPONSE #100
-		UseItem("POTN08",Myself)  // Зелье лечения
-		Continue()
-END
-
-IF
+/*IF
 	See(NearestEnemyOf(Myself))
 	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Зеркальный образ)
 THEN
 	RESPONSE #100
 		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Зеркальный образ)
-END
+END*/
 
 IF
 	See(NearestEnemyOf(Myself))
@@ -59,52 +32,11 @@ THEN
 		SetGlobal("VP_Cast_ShadowDoor","LOCALS",1)
 		ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Теневая дверь)
 END
-
+/*
 IF
 	See(NearestEnemyOf(Myself))
 	HaveSpell(WIZARD_FLAME_ARROW)  // SPWI303.SPL (Огненная стрела)
 THEN
 	RESPONSE #100
 		Spell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Огненная стрела)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(WIZARD_AGANNAZAR_SCORCHER)  // SPWI217.SPL (Выстрел Аганназара)
-THEN
-	RESPONSE #100
-		Spell(SecondNearestEnemyOf(Myself),WIZARD_AGANNAZAR_SCORCHER)  // SPWI217.SPL (Выстрел Аганназара)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Магический снаряд)
-THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Магический снаряд)
-END
-
-IF
-	HPPercentLT(Myself,10)
-THEN
-	RESPONSE #100
-		EscapeArea()
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),4)
-THEN
-	RESPONSE #100
-		EquipMostDamagingMelee()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
-END
-
+END*/

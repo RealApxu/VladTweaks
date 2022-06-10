@@ -1,0 +1,22 @@
+IF
+	Global("VP_Enhanced_Chateau","MYAREA",0)
+	XPLT(Player1,205000)
+THEN
+	RESPONSE #100
+        SetGlobal("VP_Enhanced_Chateau","MYAREA",1)
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+		Continue()
+END
+
+IF
+	Global("VP_Enhanced_Chateau","MYAREA",0)
+    XPGT(Player1,204999)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Enhanced_Chateau","MYAREA",1)
+        CreateCreature("IGUARD01",[2513.966],5)
+		CreateCreature("IGUARD02",[2486.1004],5)
+		CreateCreature("IGUARD02",[2559.936],5)
+        Continue()
+END
