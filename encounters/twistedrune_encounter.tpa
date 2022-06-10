@@ -1,3 +1,5 @@
+// Improved Twisted Rune
+
 COPY_EXISTING ~DEMMAG.CRE~ ~override~
     WRITE_BYTE 0x234 18 // Level First Class
     WRITE_BYTE 0x23a 18 // INT

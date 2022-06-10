@@ -1,3 +1,5 @@
+// Improved Illasera
+
 COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/illasera.baf~
 COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/zilmag01.baf~
 

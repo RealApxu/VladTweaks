@@ -1,3 +1,5 @@
+// Improved Black Talon Bandits
+
 COPY_EXISTING ~BANDIT2.BCS~ ~override~
     DECOMPILE_AND_PATCH BEGIN
         REPLACE_TEXTUALLY EXACT_MATCH ~Enemy()~ ~Enemy() MoveToObject(LastHeardBy(Myself))~

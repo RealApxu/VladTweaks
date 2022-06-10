@@ -1,3 +1,5 @@
+// Improved Yaga-Shura Fight
+
 COPY ~%MOD_FOLDER%/encounters/yagashura/itm~ ~override~
 
 COPY_EXISTING ~YAGA01.CRE~ ~override~

@@ -1,3 +1,5 @@
+// Improved Shadows, Shadow Lord and Shadow Dragon in Umar Hills
+
 COPY ~%MOD_FOLDER%/encounters/shadows/cre~ ~override~
 COPY ~%MOD_FOLDER%/encounters/shadows/itm~ ~override~
 

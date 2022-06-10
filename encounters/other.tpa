@@ -1,3 +1,5 @@
+// Misc buffs
+
 COPY_EXISTING ~BERKREF.CRE~ ~override~
     REMOVE_CRE_ITEM ~shld05~ ~plat01~ ~blun04~
     ADD_CRE_ITEM ~shld19~ #0 #0 #0 ~IDENTIFIED~

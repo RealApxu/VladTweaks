@@ -1,3 +1,5 @@
+// Improved Trolls in De'Arnise Keep - from Improved Nalia NPC
+
 COPY_EXISTING ~TORGAL.CRE~ ~override~
               ~TORGAL3.CRE~ ~override~
  WRITE_SHORT 0x24 240 // Current HP
