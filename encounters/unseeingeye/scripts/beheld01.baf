@@ -270,4 +270,3 @@ THEN
 	RESPONSE #100
 		Spell(NearestEnemyOf(Myself),WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
 END
-

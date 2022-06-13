@@ -98,4 +98,3 @@ THEN
 		SetGlobal("GauthBehavior","LOCALS",0)
 		Wait(2)
 END
-

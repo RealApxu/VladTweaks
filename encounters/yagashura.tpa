@@ -50,8 +50,8 @@ COPY_EXISTING ~YSFIRE01.CRE~ ~override~
     WRITE_BYTE 0x23c 18 // Dexterity
     WRITE_BYTE 0x23d 22 // Constitution
 //    ADD_CRE_ITEM #0 #0 #0 ~none~ ~ax1h17~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
-    ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem1 qitem2 qitem3~
-    ADD_CRE_ITEM ~potn55~ #5 #0 #0 ~none~ ~qitem1 qitem2 qitem3~
+    ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem~
+    ADD_CRE_ITEM ~potn55~ #5 #0 #0 ~none~ ~qitem~
     REPLACE_CRE_ITEM ~vpgifir2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
@@ -66,7 +66,7 @@ COPY_EXISTING ~YSFIRE02.CRE~ ~override~
     WRITE_BYTE 0x23c 18 // Dexterity
     WRITE_BYTE 0x23d 22 // Constitution
 //    ADD_CRE_ITEM #0 #0 #0 ~IDENTIFIED~ ~ax1h17~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
-    ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem1 qitem2 qitem3~
-    ADD_CRE_ITEM ~potn55~ #5 #0 #0 ~none~ ~qitem1 qitem2 qitem3~
+    ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem~
+    ADD_CRE_ITEM ~potn55~ #5 #0 #0 ~none~ ~qitem~
     REPLACE_CRE_ITEM ~vpgifir2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY

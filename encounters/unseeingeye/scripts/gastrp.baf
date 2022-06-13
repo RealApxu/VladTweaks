@@ -15,4 +15,3 @@ THEN
 		CreateCreature("VAMPSOU2",[2980.2057],NE)
 		CreateCreature("MISTVA01",[2980.2057],NE)  // Vampiric Mist
 END
-

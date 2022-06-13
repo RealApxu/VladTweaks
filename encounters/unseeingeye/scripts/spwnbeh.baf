@@ -50,4 +50,3 @@ THEN
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
 END
-

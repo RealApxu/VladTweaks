@@ -184,4 +184,3 @@ THEN
 		ForceSpell(LastSeenBy(Myself),BEHOLDER_ANTIMAGIC_RAY)  // SPIN992.SPL (Anti-Magic Ray)
 		SetGlobal("BeholderBehavior","LOCALS",0)
 END
-

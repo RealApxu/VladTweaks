@@ -1,8 +1,8 @@
 IF
-	Global("VP_Improved_Area","MYAREA",0)
+	Global("VP_Improved_Area_Items","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Improved_Area","MYAREA",1)
+		SetGlobal("VP_Improved_Area_Items","MYAREA",1)
 		ActionOverride("Chest1",CreateItem("SCRL09",0,0,0))  // Protection From Undead
 		ActionOverride("Chest1",CreateItem("SCRL7O",0,0,0))  // Protection From Magical Weapons
 		ActionOverride("Chest3",CreateItem("SCRL9R",0,0,0))  // Time Stop
@@ -16,15 +16,4 @@ THEN
 		ActionOverride("Drawer1",CreateItem("AROW15",80,0,0))  // Arrow +3
 		ActionOverride("Chest6",CreateItem("COFFEE",5,0,0))
 		ActionOverride("Chest6",CreateItem("NEOLIT",0,0,0))
-		CreateCreature("SKELARCH",[3057.341],NEE)
-		CreateCreature("SKELARCH",[3070.361],NEE)
-		CreateCreature("SKELARCH",[3085.384],NEE)
-		CreateCreature("VAMPSOU2",[2959.413],NEE)
-		CreateCreature("VAMPSOU2",[2988.442],NEE)
-		CreateCreature("VAMPSOU2",[3332.704],S)
-		CreateCreature("VAMPSOU2",[3413.643],S)
-		CreateCreature("VAMPSOU2",[3638.762],S)
-		CreateCreature("VAMPSOU2",[3557.831],S)
-		CreateCreature("VAMPSOU2",[3492.717],NNE)
-		CreateCreature("VAMPSOU2",[3555.765],NNE)
 END
