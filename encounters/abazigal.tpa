@@ -1,0 +1,15 @@
+// Improved Abazigal
+
+COPY ~NeJE\bdash\abazig\copy~ ~override~
+
+COPY ~NeJE\bdash\abazig\cre\BazDra04.cre~ ~override\BazDra04.cre~
+ SAY NAME1 ~Purple~
+ SAY NAME2 ~Purple~
+
+COPY_EXISTING ~AR6000.bcs~ ~override~
+ DECOMPILE_BCS_TO_BAF
+ REPLACE_TEXTUALLY
+~TriggerActivation("Tran6001",FALSE)~
+~TriggerActivation("Tran6001",FALSE)
+CreateCreature("BazDra04",[694.945],12)~
+ COMPILE_BAF_TO_BCS

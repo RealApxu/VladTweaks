@@ -51,16 +51,6 @@ ACTION_FOR_EACH keldor IN keldor8 keldor9 keldor10 keldor12 keldor14 BEGIN
 	ACTION_IF FILE_EXISTS_IN_GAME ~%keldor%.cre~ THEN BEGIN
 		COPY_EXISTING ~%keldor%.cre~ ~override~
 			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_REDEEMER~))
-			READ_LONG 0x2c4 e_o
-			READ_LONG 0x2c8 e_n
-			FOR (i=0 ; i<e_n ; i+=1) BEGIN
-				READ_LONG e_o+0x108*i+0x8 opcode_num
-				PATCH_IF opcode_num = 233 BEGIN
-					READ_SHORT e_o+0x108*i+0x18 prof_name
-					PATCH_IF prof_name = 93 BEGIN
-						WRITE_LONG e_o+0x108*i+0x14 0x00000005
-					END
-				END
-			END
+			SET_BG2_PROFICIENCY PROFICIENCYTWOHANDEDSWORD 5
 	END
 END
