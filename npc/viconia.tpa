@@ -1,0 +1,174 @@
+// Viconia
+
+ADD_KIT ~VP_VICONIA_PRIEST~
+
+ ~VP_VICONIA_PRIEST 0 0 1 1 0 1 0 0~
+
+ ~VP_VICONIA_PRIEST 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+
+ ~VP_VICONIA_PRIEST 0 0 0 0 13 0~
+
+ ~VP_VICONIA_PRIEST 0 0 0 0 0 0~
+
+ ~VP_VICONIA_PRIEST 0 0 0 0 17 0~
+
+ ~VP_VICONIA_PRIEST 0 0 0 0 15 0~
+
+ ~VP_VICONIA_PRIEST 1 0 0 1 0 0 1 0 0~
+
+ ~VP_VICONIA_PRIEST 1 0 1 1 0 1~
+
+ ~%MOD_FOLDER%/npc/viconia/rules/vpviclab.2da~
+
+ ~~
+
+ ~0x00000000 3~
+
+ ~Cl0~
+
+ ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLING05 DAGG05,40 STAF20~
+
+ SAY ~darkcloak of shar~
+
+ SAY ~Darkcloak of Shar~
+
+ SAY ~DARKCLOAK OF SHAR: This cleric kit was especially created for Viconia to reflect her unique personality.
+
+Shar, also known as Mistress of the Night, Nightsinger, Lady of Loss, or The Darkness, is the evil counterpart to her twin sister Selune, and presides over caverns, dark, dungeons, forgetfulness, loss, night, secrets, and the Underdark. Shar is an ancient goddess, formed together with her sister at the beginning of time, out of the empty nothingness that existed before gods or mortals. Among her array of twisted powers is the ability to see everything that lies or happens in the dark.
+
+Since her earliest battles with Selune (which continue to this day), Shar has gained dominion over pain hidden but not forgotten, carefully nurtured bitterness, and quiet revenge for old slights. Deeply twisted, the Lady of Loss favors secrets, underhanded dealings, and subterfuge. She uses her mortal worshipers as pawns in a perverse game against everything that has been, is, and will be. Patron of the Shadow Weave, a corrupting magical force based upon nothingness and mad secrets, the Mistress of the Night bolsters her impressive power with temptation and guile.
+
+The clergy of the Church of Shar use corruption and subversion to spread Shar's faith, but they must do this in secret in many places due to the religion being forbidden. The atmosphere of the organization is one of unwavering faith to its leader, Shar herself. Disobeying an order usually results in death. Although devotees are perfectly willing to give their life for Shar, she often does not intend for this to happen because it will deplete the number of her dedicated followers.
+
+From time to time, Shar requests of her priests that a certain individual, usually a sorcerer or wizard who she deems to have misused the Shadow Weave, is killed. On the other hand, Shar can forbid such acts against specific individuals. It is not uncommon for the church to make use of the Shadow Weave itself, although Shar holds onto the deepest and most powerful secrets of the magical force.
+
+The clergy of the church will travel in small groups or individually throughout Faerun, often disguised as merchants or pilgrims to avoid detection. Their missions usually involve either espionage or murder.
+
+The church is split into individual cells that can operate independently from one another, often having a temple or shrine as their focal point. Cells are linked by the leadership of a priest, and one priest will typically control the cells in a geographic area. Priests communicate with one another, but rarely reveal truthful information to their inferiors.
+
+The intent of the Church of Shar is to spread the faith of Shar. This is achieved by undermining and corrupting individuals, governments and even other religions. This enables the subject to be more likely to accept the views and dogma of Shar. Because the most valuable commodity to the clergy of Shar is a secret, information is closely guarded and is only revealed when it is essential to be known. The clergy of Shar will expect that a secret is traded for another similarly prized secret.
+
+By revealing secrets, Sharran clergy will attempt to incite bitterness and jealously within individual, such as telling a woman that her husband is having an affair. These emotions are strongly embraced by Shar and highly increase the likeliness of a successful conversion.
+
+There are several orders in the Church of Shar: the Dark Justicars who have to kill a priest of Selune to gain admittance to the order, the Servants of the Dark Moon who tap into the Shadow Weave through their powers of sorcery, and the "Nightbringers", the elite Sharran forces.
+
+Unusual among other orders in the Church, the "Darkcloaks" were actually a compassionate group of oracles and caregivers who tended to those troubled souls who were emotionally damaged, often bringing the bliss of forgetfulness to soothe their pain. Their work did much to present the church in a positive light to the populace, though too often the reaction was still negative. This order included some of the few non-evil clerics in the Church, and Viconia is one of them.
+ 
+Advantages:
+- They can specialise in any weapon that a cleric can use
+- Darkcloaks have a negative plane protection and a natural mind shield, both embedded in one of their personal items, i.e. they cannot be level or energy drained and they cannot be charmed, confused or affected by any mind-altering effects including pisonics
+- They can cast a limited number of spells, which become available from their innate slots as they advance levels:
+ At 2nd, 4th and 6th level, darkcloaks can cast Cure Disease, Neutralize Poison and Remove Paralysis
+ At 3rd, 5th and 8th level, darkcloaks can cast Iron Skins, Lesser Restoration and Death Ward
+ At 7th, 9th and 11th level, darkcloaks can cast Cause Serious Wounds, Cause Critical Wounds and Slay Living
+ At 10th, 12th and 14th level, darkcloaks can cast Heal and Harm
+ At 13th, 16th and 18th level, darkcloaks can cast Physical Mirror and Greater Restoration
+ At 17th, 19th and 21st level, darkcloaks can cast Finger of Death and Creeping Doom
+ At 20th, 23rd and 26th level, darkcloaks can cast Storm of Vengeance and Summon Fallen Deva
+
+Disadvantages:
+- None~
+
+LAF fl#add_kit_ee
+ STR_VAR
+ kit_name = VP_VICONIA_PRIEST
+END
+
+COPY ~%MOD_FOLDER%/npc/viconia/spl~ ~override~
+
+// 2, 4, 6
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR103 destination = ~VPSHAR11~ END // Cure Light Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR404 destination = ~VPSHAR12~ END // Neutralize Poison
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR308 destination = ~VPSHAR13~ END // Remove Paralysis
+
+// 3, 5, 8
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR506 destination = ~VPSHAR21~ END // Iron Skins
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR417 destination = ~VPSHAR22~ END // Lesser Restoration
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR409 destination = ~VPSHAR23~ END // Death Ward
+
+// 7, 9, 11
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR414 destination = ~VPSHAR31~ END // Cause Serious Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR510 destination = ~VPSHAR32~ END // Cause Critical Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR511 destination = ~VPSHAR33~ END // Slay Living
+
+//10, 12, 14
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR607 destination = ~VPSHAR41~ END // Heal
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR608 destination = ~VPSHAR42~ END // Harm
+
+//13, 16, 18
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR613 destination = ~VPSHAR51~ END // Physical Mirror
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR713 destination = ~VPSHAR52~ END // Greater Restoration
+
+//17, 19, 21
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR708 destination = ~VPSHAR61~ END // Finger of Death
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination = ~VPSHAR62~ END // Creeping Doom
+
+//20, 23, 26
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR722 destination = ~VPSHAR71~ END // Storm of Vengeance
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR727 destination = ~VPSHAR72~ END // Summon Fallen Deva
+
+// Creature Files
+
+ACTION_FOR_EACH viconia IN VICONI VICONI4 VICONI6_ VICONI6 viconi7 VICONI8 VICONI9 VICONI11 VICONI13 VICONI16 BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%viconia%.cre~ THEN BEGIN
+    COPY_EXISTING ~%viconia%.cre~ ~override~
+    WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_VICONIA_PRIEST~))
+    ADD_CRE_ITEM ~vpviamul~ #0 #0 #0 ~IDENTIFIED~ ~amulet~
+  END
+END
+
+//Items
+
+COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviamul.itm~ ~override~
+ SAY NAME2 ~Dark Shadow of Shar~
+ SAY DESC ~Dark Shadow of Shar 
+This amulet is cold beneath your touch and bears a weight far greater than its size might suggest. The black round-shaped stone is inserted into it, and the symbols of an ancient tongue are inscribed on one side, the strange words shimmering and glowing with an inner white light. 
+
+STATISTICS:
+
+Equipped Abilities:
+– Armor Class: +2
+– THAC0: +2
+– Saving Throws: +2
+– Improves Casting Speed by 2
+– Magic Resistance: +10%
+– Magic Damage Resistance: +50%
+– Immunity to any mind-alterating effects
+– Negative Plane Protection
+– Vocalize
+– Can memorize two extra 4th-, 5th-, 6th-, and 7th-level priest spells
+
+Charge abilities:
+– Polymorph into Shadow at will
+  Duration: 2 turns
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviclck.itm~ ~override~
+ SAY NAME2 ~Dark Cloak of Shar~
+ SAY DESC ~Dark Cloak of Shar 
+Only those most worthy and devoted servants of the Lady of Loss are granted these powerful cloaks which provide essential protections and increase the amount of priest high-level spells they can memorise. 
+
+STATISTICS:
+
+Equipped Abilities:
+– Armor Class: +2
+– THAC0: +2
+– Strength: +2
+– Constitution: +2
+– Regenerate 1 HP/round
+– Immunity to disease and poison
+– Immunity to any slowing, holding and paralyzation magics
+– Can memorize two extra 6th-, and 7th-level priest spells
+
+Weight: 3~
+
+// 2da Appends
+
+APPEND ~item_use.2da~
+~vpviclck Viconia 9382 2 99999
+vpviamul Viconia 9382 2 99999~
+UNLESS ~vpviclck~
+
+COPY_EXISTING ~item_use.2da~ ~override~
+REPLACE ~99999~ #6132

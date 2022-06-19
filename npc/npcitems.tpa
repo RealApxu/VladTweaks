@@ -1,0 +1,224 @@
+// Anomen
+
+COPY ~%MOD_FOLDER%/npc/npcitems/itm/HelmAnom.itm~ ~override~
+ SAY NAME1 #6346
+ SAY NAME2 ~Helm of Radiance~ 
+ SAY UNIDENTIFIED_DESC #19725
+ SAY DESC ~This helm is similar to the famous Helm of Brilliance but magically enhanced to give additional protection to the wearer. It is made of the finest steel and set with diamonds, rubies and fire opals. The gems glow with an internal light, the source of which can only be magical. The helm makes the wearer immune to poison, as well as giving the wearer some spell abilities. These include Fireball, Prismatic Spray and the Sunray. In addition, anyone who wears it is granted immunity to all forms of fear and panic, be their origins natural or magical.
+
+STATISTICS:
+
+Charge abilities:
+– Fireball thrice per day
+  Damage: 6D6 (save vs. wands for half)
+  Range: 90 ft
+  Area: 30 ft radius
+
+– Prismatic Spray thrice per day
+  Effects vary as per 7th Level Wizard spell
+
+– Sunray thrice per day
+  Damage: 3D6 (save vs. spells or be blinded for 10 rounds)
+  Undead: an additional 1d6 points of damage per level of caster (save vs. spells or be destroyed)
+  Range: 20 ft
+  Area: 20 ft radius
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Protects Against Critical Hits
+
+Weight: 2~
+
+COPY_EXISTING ~NPSHLD.ITM~ ~override~
+ SAY NAME1 #8482
+ SAY NAME2 #8482
+ SAY UNIDENTIFIED_DESC #6819
+ SAY DESC ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Fire Resistance: +30%
+– Cold Resistance: +30%
+– Protection From Normal Missiles
+
+Weight: 7~
+
+// Edwin
+
+COPY_EXISTING ~MISC89.ITM~
+ SAY DESC ~This is Edwin's birthright, inlaid with his family stone.
+
+STATISTICS:
+
+Equipped Abilities:
+– Hit Points: +25
+– Magic Resistance: +15%
+– Magic Damage Resistance: +50%
+– Fire Resistance: +50%
+– Immunity to any mind-alterating effects
+– Can memorize three extra wizard spells of each level
+– Improves casting speed by 3
+– Vocalize 
+– Armor Class: +2
+– THAC0: +2
+– Saving Throws: +2
+
+Weight: 1~
+
+// Jan Jansen
+
+COPY_EXISTING ~XBOW12.ITM~ ~override~
+ SAY UNIDENTIFIED_DESC ~This is Jan Jansen's crossbow, and such is its complexity that only he can use it. Likewise, only he can make the special ammunition it is capable of firing. Substantial tinkering on this launcher has made it especially accurate.
+
+STATISTICS:
+
+THAC0: +3
+Speed Factor: 3
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 10~
+
+COPY_EXISTING ~BOLT07.ITM~ ~override~
+ SAY DESC ~This is the ammunition for Jan's crossbow (the Flasher Master Bruiser). These skulls are filled with a special powder that does a little bit of damage and has a chance to stun an opponent (Saving Throw vs. Spell (with a -4 penalty) or be stunned for 4 rounds).
+
+STATISTICS:
+
+Combat abilities:
+– Always considered to be of +3 enchantment when determining what they can hit
+– Hit target must save vs. Spell (with a -4 penalty) or be stunned for 4 rounds
+
+THAC0: +3
+Damage: 2d3+3 (missile)
+Launcher: Flasher Master Bruiser
+
+Requires:
+ 9 Intelligence
+
+Weight: 0~
+
+COPY ~NeJE/bdash/Jan/itm/NPARM.ITM~ ~override~
+ SAY DESC ~Jansen-Brand Metal-Repellant AdventureWear—(patent pending)
+This strange armor is made of a foreign material, very supple but strong to the touch. Designed by and for Jan Jansen, only he may wear it. The armor does not give any bonuses to the base Armor Class, but it does grant a +40% resistance to all physical damage. It is also partially fire-proof. On top of all its bonuses, the armor doubles the movement rate. Jan may also cast spells while wearing this armor. In addition, the armor is stylish.
+
+Note: Dry clean only
+
+STATISTICS:
+
+Charge abilities:
+– Imroved Invisibility thrice per day
+– Improved Haste thrice per day
+
+Equipped abilities:
+– Constitution: +2
+– Physical Damage Resistance: +40%
+– Fire Resistance: +40%
+– Immunity to backstab
+– Doubles movement rate
+
+Armor Class: 9
+Requires:
+ 4 Strength
+ 17 Dexterity
+
+Weight: 3~
+
+COPY ~NeJE/bdash/Jan/itm/NPMISC1.ITM~ ~override~
+ SAY UNIDENTIFIED_DESC ~Jansen-Brand Micro-Macro Spectroscopes—(Official Spectroscopes of the Purple Brotherhood)
+Another one of Jan Jansen's inventions, these glasses allow Jan to detect invisibility and enable X-ray vision thrice per day. Various lenses on the contraption increase Jan's athieving abilities by 25%. The style of the Spectroscopes is so obvious it hardly needs to be mentioned.
+
+STATISTICS:
+
+Charge abilities:
+– Detect Invisibility thrice per day
+  Area of Effect: 15-ft. radius
+
+– X-Ray Vision thrice per day
+  Area of Effect: 15-ft. radius
+
+Equipped abilities:
+– Armor Class: +2
+– Magic Resistance: +20%
+– Thieving abilities: +25%
+– Doubles the amount of memorizable spells
+– Improves casting speed by 3
+– Vocalize
+– Immunity to blindness
+– Protects Against Critical Hits
+
+Requires:
+17 Dexterity
+
+Weight: 0~
+
+COPY ~NeJE/bdash/Jan/itm/NPMISC2.ITM~ ~override~
+ SAY UNIDENTIFIED_DESC ~Jansen-Brand Techno-Thieving Gadgetizer Gloves—(TM)
+This set of thieving tools gives Jan an additional bonus to both his lockpicking and pickpocketing. In addition, the gloves provide additional bonuses to strength, armor class and saving throws and protect Jan from poison. The gloves also provide regeneration abilities. Jan is the only one who can use the Gloves, as no one else quite has the knack of it. Oddly, he seems to be able to actually cast spells while wearing the things. Must be because they got style.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Strength: +2
+– Saving Throws: +2
+– Open Locks: +20%
+– Pick Pockets: +20%
+– Immunity to Poison
+– Regeneration (1 hit point per round)
+– Missiles THAC0 Bonus: +4 
+
+Requires:
+ 17 Dexterity
+
+Weight: 0~
+
+ // Nalia
+
+COPY ~NeJE/bdash/Nalia/itm/NPRING01.ITM~ ~override~
+ SAY DESC ~This ring was given to Nalia by her father upon her ascension to adulthood. Bonded to her blood as it is, the ring may not be removed from Nalia, nor its powers used by anyone else.
+
+STATISTICS:
+
+Charge abilities:
+– Blur thrice per day
+– Imroved Invisibility thrice per day
+– Improved Haste thrice per day
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Improves casting speed by 2
+– Fire Resistance: +50%
+– Thieving abilities: +50%
+– Negative Plane Protection
+
+Weight: 0~
+
+// Xan
+
+COPY ~NeJE/bdash/BGTComp/Xan/sw1h13.itm~ ~override~
+ SAY DESC ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Charge abilities:
+– Dispel magic three times per day
+
+Equipped abilities:
+– Armor Class: +2
+– Fire Resistance: +50%
+– Magic Resistance: +50%
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+
+Weight: 3~

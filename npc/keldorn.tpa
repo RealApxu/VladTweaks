@@ -1,0 +1,56 @@
+// Keldorn
+
+ADD_KIT ~VP_REDEEMER~
+
+~VP_REDEEMER 1 1 1 1 1 1 1 1~
+
+~VP_REDEEMER 2 2 2 2 2 2 2 2 2 2 2 2 5 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2~
+
+~VP_REDEEMER 12 0 9 0 13 17~
+
+~VP_REDEEMER 0 0 0 0 0 0~
+
+~VP_REDEEMER 17 0 0 0 0 17~
+
+~VP_REDEEMER 15 0 0 0 0 15~
+
+~VP_REDEEMER 1 0 0 0 0 0 0 0 0~
+
+~VP_REDEEMER 0 0 0 0 0 0~
+
+~%MOD_FOLDER%/npc/keldorn/rules/vpkeclab.2da~
+
+~~
+
+~0x00004000	6~
+
+~Pa0~
+
+~CHAN09 * HELM07 BAG20 RING06 RING31 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
+
+SAY ~redeemer~
+SAY ~Redeemer~
+SAY ~This kit reflects a unique experience of Keldorn in dealing with mages. It is actually spellcaster's worst nightmare as it is able to cast powerful anti-spell abilities twice their actual level, thus being able to disrupt any and all spells with relative ease. 
+
+Advantages:
+- May use 'Dispel Magic' ability once per day per 4 levels (starts at 1st level with one use): ability is used at speed factor 1 and acts at twice Keldorn's actual level.
+- May cast 'True Sight' once per day per 4 levels (starts at 1st level with one use)
+- Grandmastery in two-handed swords
+- Gained back 'Lay On Hands' ability
+- Immune to Hold and Charm spells
+
+Disadvantages:
+- May not turn undead.~
+
+LAF fl#add_kit_ee
+STR_VAR
+kit_name = VP_REDEEMER
+END
+
+ACTION_FOR_EACH keldor IN keldor8 keldor9 keldor10 keldor12 keldor14 BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~%keldor%.cre~ THEN BEGIN
+		COPY_EXISTING ~%keldor%.cre~ ~override~
+			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_REDEEMER~))
+			SET_BG2_PROFICIENCY PROFICIENCYTWOHANDEDSWORD 5
+	END
+END

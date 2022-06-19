@@ -100,7 +100,7 @@ COPY_EXISTING ~GROMNIR.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
-COPY ~%MOD_FOLDER%\encounters\gromnir\itm\vpaxcha2.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/gromnir/itm/vpaxcha2.itm~ ~override~
  SAY NAME2 ~Charged Battle Axe +5~
  SAY DESC ~Besides its superb craftsmanship, tiny runes of power can be seen etched all along the surface. It's obvious a lot of time and effort went into its creation and although not apparent at first, a slight blue glow can be seen emanating from the runes.
 

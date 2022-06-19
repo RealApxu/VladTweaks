@@ -1,8 +1,8 @@
 // Improved Abazigal
 
-COPY ~NeJE\bdash\abazig\copy~ ~override~
+COPY ~NeJE/bdash/abazig/copy~ ~override~
 
-COPY ~NeJE\bdash\abazig\cre\BazDra04.cre~ ~override\BazDra04.cre~
+COPY ~NeJE/bdash/abazig/cre/BazDra04.cre~ ~override/BazDra04.cre~
  SAY NAME1 ~Purple~
  SAY NAME2 ~Purple~
 

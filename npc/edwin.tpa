@@ -1,0 +1,85 @@
+// Spells
+
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI612 destination = ~VPEDWI01~ END // Power Word Silence
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI715 destination = ~VPEDWI02~ END // Power Word Stun
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI815 destination = ~VPEDWI03~ END // Power Word Blind
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI714 destination = ~VPEDWI04~ END // Prismatic Spray
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI620 destination = ~VPEDWI05~ END // Conjure Fire Elemental
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI622 destination = ~VPEDWI06~ END // Conjure Earth Elemental
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI717 destination = ~VPEDWI07~ END // Summon Efreeti
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI811 destination = ~VPEDWI08~ END // Symbol Fear
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI816 destination = ~VPEDWI09~ END // Symbol Stun
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI905 destination = ~VPEDWI10~ END // Gate
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI922 destination = ~VPEDWI11~ END // Dragon Breath
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI924 destination = ~VPEDWI12~ END // Summon Dark Planetar
+
+// Kit
+
+ADD_KIT  ~VP_RED_WIZARD~
+
+~VP_RED_WIZARD 1 0 1 1 0 0 0 0~
+
+~VP_RED_WIZARD 0 2 0 0 2 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+
+~VP_RED_WIZARD 0 0 0 9 0 0~
+
+~VP_RED_WIZARD 0 0 0 0 0 0~
+
+~VP_RED_WIZARD 0 0 0 17 0 0~
+
+~VP_RED_WIZARD 0 0 0 15 0 0~
+
+~VP_RED_WIZARD 0 1 1 0 1 1 0 1 1~
+
+~VP_RED_WIZARD 1 1 0 1 0 0~
+
+~%MOD_FOLDER%/npc/edwin/rules/vpedclab.2da~
+
+~~
+
+~0x00000000 1~
+
+~Ma0~
+
+~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLING05 DAGG05,40 STAF20~
+
+SAY ~red wizard~
+
+SAY ~Red Wizard~
+
+SAY ~RED WIZARD OF THAY: The Red Wizards are the masters of Thay, the conquerors of that land's native Rashemi, and the would-be magical overlords of Faerun. They focus on a school of magic more intently than any specialist, achieving incredible mastery of magic within a very narrow focus. Seen as cruel and evil tyrants by people across Toril, a few choose to leave their region, assume secret identities, and practice magic without having to worry about political alliances and possible slave uprisings.
+
+The Red Wizards at their height were the enemies of many forces in Toril and received support from demons, devils, and drow. Amongst those who opposed them were the Witches of Rashemen, the Seven Sisters and their allies, the goodly Harpers, and even the Zhentarim, who disliked the Wizards encroaching on their territory.
+
+After another failed attempt at securing Rashemen in 1357 DR, the Red Wizards planned to infiltrate the nations of Faerun legitimately — in Thayan enclaves which would publicly sell magic items and quietly also traffic drugs, wicked spells, and slaves. Using these they hoped to eventually have strongholds and resulting political infiltration that would make them indispensable and powerful, and eventually get them something along the lines of world domination.
+
+Despite the general distrust and dislike that most felt towards the Red Wizards, the mages were still able to extend their power to almost every corner of the Realms, running their enclaves as planned in towns where slaving was otherwise banned. From here they ran a lucrative business in the trade of magical items, spells and artifacts, making them virtually indispensable to many of their clients, and as such the wizards expanded their sphere of influence ever further.
+
+The final blow to the Red Wizards as they once stood came when the last remaining zulkirs, decades later, interrupted Szass Tam's plot to become a being of godlike power, preventing his ritual from reaching completion. Their efforts cost them their lives but likely saved Faerun from one of the greatest threats it might have ever faced and prevented Szass Tam from ever attempting the ritual again - at least so long as it was conducted on Thayan soil. For the Red Wizards however, the death of the zulkirs ended what the Red Wizards once had been and gave way for the new order.
+
+The Red Wizards in the end transformed their old enclaves into their homes. What had once been a facade of a purpose, the accumulation of profit through selling magical items, became fact as the Red Wizards' goals transformed entirely. By 1479 DR few individuals associated the name "Red Wizard" with Thay but instead with a loose confederacy of merchant arcanists and those who believed otherwise were, in fact, mistaken.
+
+Many traditions of the old Red Wizards were lost in the transformation and modern Red Wizards don't maintain the same Mulani traditions of shaved heads and tattoos that the old organization did. Most of the Red Wizards are actual wizards, but not all are, and the title of Red Wizard is generally inherited from parent to child, with exceptions in the case of adoption or marriage whereas in the past the Red Wizards were recruited from talented wizards. Red Wizard enclaves are essentially self-run, some by a single individual, others by a small council of wizards. Most of these enclaves are found within the lands bordering the Sea of Fallen Stars and those nations where Red Wizards are found almost certainly have an enclave within their capital city.
+
+Advantages:
+- As many other Red Wizards, Edwin can specialise in any weapon that a mage can use.
+- In addition to spells Edwin learns, he can cast a limited number of conjuration/summoning spells, which become available from his innate slots as he advances levels:
+    At 12th, 15th and 19th level, Edwin can cast Power Words of Silence, Stun and Blind
+    At 14th, 20th and 26th level, Edwin can conjure Fire and Earth Elementals, and cast Prismatic Spray
+    At 16th, 22nd and 28th level, Edwin can summon Efteeti, and draw the Symbols of Fear and Stun
+    At 18th, 24th and 30th level, Edwin can summon Dark Planetar, and cast Gate and Dragon Breath
+
+Disadvantages:
+- None~
+
+LAF fl#add_kit_ee
+STR_VAR
+kit_name = VP_RED_WIZARD
+END
+
+ACTION_FOR_EACH edwin IN edwin2 edwin4 edwin6 edwin7_ edwin7 edwin9 edwin11 edwin12 edwin13 edwin15 BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%edwin%.cre~ THEN BEGIN
+        COPY_EXISTING ~%edwin%.cre~ ~override~
+            WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_RED_WIZARD~))
+    END
+END

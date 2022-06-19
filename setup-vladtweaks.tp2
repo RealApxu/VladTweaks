@@ -59,6 +59,11 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/unseeingeye.tpa~
 
+BEGIN ~Improved Abazigal~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+GROUP ~Improved Encounters~
+INCLUDE ~%MOD_FOLDER%/encounters/abazigal.tpa~
+
 BEGIN ~Improved Gromnir~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
@@ -78,35 +83,35 @@ INCLUDE ~%MOD_FOLDER%/encounters/yagashura.tpa~
 
 BEGIN ~Aerie Kit - Wildwanderer of Baervan~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/aerie.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/aerie.tpa~
 
 BEGIN ~Edwin Kit - Red Wizard~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/edwin.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/edwin.tpa~
 
 BEGIN ~Imoen Kit - Charming Rogue~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/imoen.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/imoen.tpa~
 
 BEGIN ~Jaheira Kit - Wildwanderer of Baervan~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/jaheira.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/jaheira.tpa~
 
 BEGIN ~Keldorn Kit - Redeemer~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/keldorn.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/keldorn.tpa~
 
 BEGIN ~Boo - Familiar of Minsc~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/minsc.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/minsc.tpa~
 
 BEGIN ~Viconia Kit - Darkcloak of Shar~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
-GROUP ~Kits~
-INCLUDE ~%MOD_FOLDER%/kits/viconia.tpa~
+GROUP ~NPC Changes~
+INCLUDE ~%MOD_FOLDER%/npc/viconia.tpa~
