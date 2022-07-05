@@ -14,12 +14,12 @@ REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or E
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/blacktalon.tpa~
 
-BEGIN ~Improved Starting Dungeon~
+BEGIN ~Improved Starting Dungeon (from Shar-Teel NPC)~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/chateau.tpa~
 
-BEGIN ~Improved Firkraag Dungeon~
+BEGIN ~Improved Firkraag Dungeon (from Shar-Teel NPC)~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/firkraag.tpa~
@@ -29,7 +29,7 @@ REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod must be installed on BG1
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/nymph.tpa~
 
-BEGIN ~Improved Umar Hills' Shadows~
+BEGIN ~Improved Umar Hills Shadows~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/shadows.tpa~
@@ -39,12 +39,12 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/slavers.tpa~
 
-BEGIN ~Improved Shadow Thieves Hideout~
+BEGIN ~Improved Shadow Thieves Hideout (from Third Path)~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/thieves.tpa~
 
-BEGIN ~Improved De'Arnise Keep~
+BEGIN ~Improved De'Arnise Keep (from Improved Nalia)~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/trolls.tpa~
@@ -54,7 +54,7 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/twistedrune_encounter.tpa~
 
-BEGIN ~Improved Unseeing Eye~
+BEGIN ~Improved Unseeing Eye (from Senka's Keldorn Romance)~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/unseeingeye.tpa~
