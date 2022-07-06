@@ -152,6 +152,7 @@ EXTEND_TOP ~AR1202.BCS~ ~%MOD_FOLDER%/encounters/firkraag/scripts/ar1202.baf~
 COMPILE ~%MOD_FOLDER%/encounters/firkraag/scripts/vpfirkra.baf~
 
 COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/durbin.cre~ override
+
 COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole1.cre~ override
      ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole2.cre~ override
      ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole3.cre~ override

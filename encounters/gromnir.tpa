@@ -54,7 +54,7 @@ COPY_EXISTING ~GROMG08.CRE~ ~override~
  WRITE_SHORT 0x48 0xffff // AC Effective
  WRITE_BYTE 0x52 0xfb // THAC0
  WRITE_BYTE 0x53 4 // APR
- WRITE_ASCII 0x268 ~KARUNF~
+ WRITE_ASCII 0x268 ~KARUNF~ (8)
  REPLACE_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
 BUT_ONLY
 
