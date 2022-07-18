@@ -7,4 +7,5 @@ THEN
 		SetGlobal("VP_Create_Ginny","GLOBAL",1)
 		ActionOverride("Dalton",DestroySelf())
 		CreateCreature("vpginny",[1165.479],0)
+		Continue()
 END
