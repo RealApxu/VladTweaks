@@ -1,0 +1,10 @@
+IF
+	LevelGT(Myself,11)
+	HasItem("vpdaksw3",Myself)
+THEN
+	RESPONSE #100
+		DestroyItem("vpdaksw3")
+		DestroyItem("vpdaksw2")
+		GiveItemCreate("vpdaksw4",Myself,0,0,0)
+		EquipMostDamagingMelee()
+END

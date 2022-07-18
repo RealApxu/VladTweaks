@@ -1,0 +1,20 @@
+IF
+	Global("VP_RemoveCromwell","MYAREA",0)
+	GlobalGT("ASYLUMPLOT","GLOBAL",54)
+	OR(2)
+		Global("Chapter","GLOBAL",4)
+		Global("Chapter","GLOBAL",5)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_RemoveCromwell","MYAREA",1)
+		ActionOverride("wsmith01",DestroySelf())
+END
+
+IF
+	Global("VP_RemoveCromwell","MYAREA",1)
+	GlobalGT("Chapter","GLOBAL",5)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_RemoveCromwell","MYAREA",0)
+		CreateCreature("wsmith01",[503.339],14)
+END

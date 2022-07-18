@@ -1,0 +1,18 @@
+IF
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Detect([PC])
+	Allegiance(Myself,NEUTRAL)
+	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("ThievesGetNasty","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ThievesGetNasty","LOCALS",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END

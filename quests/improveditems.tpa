@@ -1,0 +1,1255 @@
+// Holy Symbol of Lathander
+COPY ~NeJE/bdash/Aerie/itm/BELT12.ITM~ ~override~
+SAY DESC ~Only the most worthy and devoted servants of the Dawnbringer are granted these powerful holy symbols. It provides essential protections and increases the amount of high-level spells a priest can memorise.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Strength: +2
+– Dexterity: +2
+– Negative Plane Protection
+– Can memorize three extra 6th- and 7th-level Cleric spell
+
+Weight: 0~
+
+//Improved Horns of Valhalla
+COPY ~NeJE/bdash/itm/MISC3I.ITM~ ~override~
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 12th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
+
+STATISTICS:
+
+Charge abilities:
+– Summon 12th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
+
+COPY ~NeJE/bdash/itm/MISC3J.ITM~ ~override~
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 15th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
+
+STATISTICS:
+
+Charge abilities:
+– Summon 15th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
+
+COPY ~NeJE/bdash/itm/MISC3K.ITM~ ~override~
+SAY DESC ~In the halls of Valhalla rest the most valiant of warriors. Their service to war during their lives has rewarded them with honored positions in Valhalla. As part of their service, these warriors must offer their service to any who blow a horn of Valhalla. This horn will summon forth a 18th-level berserk warrior who will fight for the summoner for 1 turn. The horn may be used once per day.
+
+STATISTICS:
+
+Charge abilities:
+– Summon 18th-level warrior once per day
+  Duration: 1 turn
+
+Weight: 1~
+
+
+//Update for Aec'Letec
+ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+THEN BEGIN
+COPY_EXISTING ~TANAR.CRE~ ~override~
+WRITE_SHORT 0x24 123 //Current HP
+WRITE_SHORT 0x26 123 //Max HP
+WRITE_BYTE 0x62 0 //THAC0
+WRITE_BYTE 0x53 5 //# attacks
+ADD_CRE_ITEM ~ULFISTS~ #0 #0 #0 ~NONE~ ~INV1~
+END
+ELSE BEGIN
+COPY_EXISTING ~WMART1.STO~ ~override~
+ADD_STORE_ITEM + ~ULFISTS~ #0 #0 #0 ~IDENTIFIED~ #1
+END
+
+ACTION_IF FILE_EXISTS ~data/BG1ARE.BIF~
+THEN BEGIN
+//////ONLY FOR BGT//////
+COPY ~NeJE/bdash/BGTComp/itm/VPSword.itm~ ~override~
+SAY NAME2 ~The Answerer +2~
+SAY DESC ~The last swing of a battle is more important than the first. Such is the philosophy embodied in this powerful weapon. Although the strange design of the Answerer makes it difficult to take the initiative in combat, with each hit it makes an opponent more vulnerable to subsequent attacks. 
+
+STATISTICS:
+
+Combat abilities:
+– Each hit lowers the target's Magic Resistance by 5% for 4 rounds
+– Each hit penalizes the target's Armor Class by 1 for 4 rounds
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 9
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+COPY ~NeJE/bdash/BGTComp/itm/bgsw2h07.itm~ ~override~
+SAY NAME2 ~The World's Edge +3~
+SAY DESC ~This is a legendary weapon of heroic proportions, especially among the far-northern tribes of barbarians. Champion after champion has wielded this blade against countless enemies, and the blood it has spilled could fill a small sea. History will not admit that such a blade could be forged and each consecutive owner seems to tie its origin to whatever creation myth they believe. The most grandiose of these tales is that of a great chieftain who sailed to the cliffs that supposedly bordered the world. There he reached into the void, and his will shaped the blade from nothing. Whatever the truth, in the right hands this sword is a fearsome thing.
+
+STATISTICS:
+
+Equipped abilities:
+– Armour Class: +2
+– Constitution: +2
+
+THAC0: +3
+Damage: 1d12+3 (slashing)
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 13 Strength
+
+Weight: 9~
+
+COPY_EXISTING ~ARD000.ARE~ ~override~
+READ_LONG 0x78 item_off
+READ_SHORT 0x76 item_num
+FOR (i=0;i<"%item_num%";i+=1) BEGIN
+READ_ASCII ("%item_off%" + "%i%"*0x14) item_name
+PATCH_IF (("%item_name%" STRING_COMPARE_CASE "SW1H23")=0) BEGIN
+WRITE_ASCII ("%item_off%" + "%i%"*0x14) "VPSWORD"
+END
+END
+
+//Removes Flame Tongue, replacing with Long Sword
+COPY_EXISTING ~ARD014.ARE~ ~override~
+READ_LONG 0x78 item_off
+READ_SHORT 0x76 item_num
+FOR (i=0;i<"%item_num%";i+=1) BEGIN
+READ_ASCII ("%item_off%" + "%i%"*0x14) item_name
+PATCH_IF (("%item_name%" STRING_COMPARE_CASE "SW1H24")=0) BEGIN
+WRITE_ASCII ("%item_off%" + "%i%"*0x14) "SW1H04"
+END
+END
+END
+ELSE BEGIN
+/////DO NOTHING///////// 
+END
+
+COPY ~NeJE/jah/itm/SPER07.ITM~ ~override~
+SAY NAME2 ~Spear of the Unicorn +4~ 
+SAY DESC ~This graceful spear is carved to resemble the elongated horn of the unicorn. Wielders of this spear are immune to charm and hold spells, just as a unicorn might be. Whether the horn is or isn't an actual unicorn horn is the subject of much debate.
+
+STATISTICS:
+
+Equipped abilities: 
+– Protection from Evil
+– Magic Resistance: +10%
+– Save vs. Death: +3
+
+THAC0: +4
+Damage: 1d8+4 (piercing)
+Speed Factor: 4
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+COPY ~NeJE/bdash/itm/SHLD21.ITM~ ~override~
+SAY NAME2 ~Dragon Scale Shield +5~
+SAY DESC ~Another powerful item created by the warlock Wormsor, this shield consists of red dragon skin stretched over a steel frame. Green and white dragon scales adorn the red background in a pattern that, when looked at in the right way, reveals the face of an ancient dragon.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +6
+– Cold Resistance: +50%
+– Fire Resistance: +50%
+– Electrical Resistance: +50%
+
+Requires:
+ 12 Strength
+
+Weight: 5~
+
+COPY ~NeJE/bdash/itm/SW1H31.ITM~ ~override~
+SAY DESC ~Sunblade: Daystar
+Whether created specifically for use in the service of Torm or appropriated at some point in the long history of the church, paladins of the Loyal Fury have made good use of Daystar in their battles against evil undead. Through magic or blessing it is empowered with the Sunray, a force of pure life energy so potent that it slays both living and unliving.
+
+STATISTICS:
+
+Charge abilities:
+– Sunray once per day
+ Damage: 3d6 (Save vs. Spell or be blinded for 1 turn)
+ Undead: An additional 1d6 points of damage per level of caster (Save vs. Spell or be destroyed)
+ Range: 20 ft.
+ Area: 15-ft. radius
+
+THAC0: +4, +4 vs. evil creatures
+Damage: 2d6+4, +4 vs. evil creatures, does double damage against undead
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+COPY ~NeJE/bdash/itm/SW1H35.ITM~ ~override~
+SAY NAME2 ~Adjatha the Drinker +4~
+SAY DESC ~This blade belonged to Dabbar, a long-dead servant of Bhaal that exercised control over his minions in the most brutal of ways. In addition to strengthening the mind against the guile of others, the sword absorbs life energy from an opponent with each successful hit, healing the user. Dabbar considered it a failure of his officers if he returned from battle in less than perfect health, and as the rest of the company watched, he would administer beatings until fully healed.
+
+STATISTICS:
+
+Equipped abilities:
+– Armour Class: +2
+– Saving Throws: +2
+– Immunity to any mind-alterating effects
+
+Combat abilities:
+– Each hit drains 6 hit points from a target and adds it to the wielder (no save)
+– 10% chance to drain one level from the opponent with every hit
+
+THAC0: +4
+Damage: 1d8+4 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+COPY ~NeJE/bdash/itm/SW1H51.ITM~ ~override~
+SAY DESC ~Katana +4
+To enchant a katana is no simple process. Unlike conventional weapons, the katana is already a near-perfect fighting sword. To improve it usually requires a sacrifice, perhaps a dying samurai might beg a Wu Jen to infuse his fighting spirit into the spirit of the katana. The wielder of an enchanted katana, such as this one, must respect the customs of Kara-Tur and of the samurai who once carried this blade into battle. Not doing so could drastically change one's luck for the worse.
+
+STATISTICS:
+
+Special Abilities: 
+Lightning Strike: Once per day
+Blindness: Once per day
+
+Combat Abilities: 
+Booming Thunder whenever the sword strikes an opponent
+(Save vs. Spell or be stunned for one round)
+Shocking Blow chance when sword strikes an opponent
+(5% chance of 20 additional electrical damage)
+
+THAC0: +4 bonus
+Damage: 1D10 + 4
+Damage type: slashing
+Weight: 3
+Speed Factor: 1
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+
+COPY ~NeJE/bdash/itm/SW1H32.ITM~ ~override~
+SAY DESC ~Long sword +5: Dragonslayer (Peridan)
+Few dare to create items such as this, for who does not fear the wrath of dragons, and what action would more tempt their reckoning? Yet, at a time lost in Faerun's past, there was a need, and this sword was forged in answer. Tempered by a wizard's skill, this blade protects the wielder from the fear they should rightly feel while staring down a dragon's maw. It also bolsters with regeneration, dispels magics whenever the sword strikes an enemy, and dares to do double damage against the greatest creatures of the Realms.
+
+STATISTICS:
+
+Equipped Abilities:
+Immunity to Fear and Panic
+Regenerate 1 hit point every round
+
+Combat Abilities:
+Dispels Magic
+(whenever the sword strikes an opponent)
+
+THAC0: +5 bonus
+Damage: 1D8 + 5, double damage against dragons
+Damage type: slashing
+Weight: 3
+Speed Factor: 3
+Proficiency Type: Long sword
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+COPY ~NeJE/bdash/itm/LEAT19.ITM~ ~override~
+SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful with some essential extra protections.
+
+STATISTICS:
+
+Special Abilities:
+Spellcasting is possible
+
+Bonuses:
+Cold and Acid Resistance: +50%
+Magic Resistance: +10%
+Hide in Shadows and Move Silently: + 25%
+
+Equipped Abilities:
+Immunity to Normal Weapons
+Immunity to Backstab
+Movement Rate Bonus x2
+
+Armor Class: 1
+Weight: 10
+Requires: 6 Strength
+Not Usable By:
+Mage
+Kensai
+Monk
+Shapeshifter~
+
+COPY ~NeJE/bdash/itm/HELM21.ITM~ ~override~
+SAY DESC ~The skillful hand of the warlock Wormsor carefully worked several dragon scales into this powerful helmet. Red, white and green scales overlap, protecting the wearer from normal blows as well as fire, cold and electricity. It is hard to determine whether the benefits originate within the scales or the spells of the mage.
+
+Equipped Abilities:
+Cold, Fire and Electrical Resistance: +50%
+
+Armor Class Bonus: +2
+Saving Throws: +2
+Hit Point Max: +15
+Weight: 2
+Not Usable By:
+Mage
+Bard
+Thief
+Monk
+Kensai~
+
+COPY ~NeJE/bdash/itm/PLAT18.ITM~ ~override~
+SAY DESC ~This suit of armor is formed from interlocking red dragon scales. It is light of weight, strong, and resistant to fire and magic. Because of these properties it is much sought after, but finding, let alone slaying, a powerful ancient dragon is nearly impossible. It is usually easier to search for an existing suit, such as this one. One should be careful wearing it near dragons, however, particularly red ones.
+
+STATISTICS:
+
+Special Abilities:
+Spellcasting is possible
+
+Bonuses:
+Fire and Acid Resistance: +50%
+Magic Resistance: +10%
+Immunity to Normal Weapons
+Immunity to Backstab
+True Free Action
+(Immunity to any slowing, holding and paralyzation magics)
+
+Armor Class: -3
+Saving Throws: +3 Bonus
+Weight: 10
+Requires: 6 Strength
+Not Usable By:
+Mage
+Kensai
+Monk
+Shapeshifter~
+
+COPY ~NeJE/bdash/itm/CHAN18.ITM~ ~override~
+SAY DESC ~This was the armor of Seffer Ekr, and a sign of the goddess Mielikii's favor. She had rewarded the ranger's loyalty with the promise that he would never die in battle, and he defied death for many years, holding orcish hordes back from his home forest. A heart attack claimed him when his time was done, not an enemy's blade.
+
+STATISTICS
+
+Bonuses: +3 bonuses to all saving throws
+Armor Class: -2
+Weight: 35
+Requires: 15 Strength
+Not Usable By:
+Bard
+Druid
+Mage
+Thief
+Archer
+Stalker
+Beast Master
+Kensai
+Monk~
+
+COPY ~NeJE/bdash/itm/SW2H15.ITM~ ~override~
+SAY DESC ~Silver Sword
+This is truly a legendary weapon called Vorpal or Silver Sword. No wonder that githyanki wanted to procure it so much and return it to their ancestral city of Tu'narath. Vorpal is their ritual sword radiating a dark aura when you examine it, and the blade is so finely sharpened it could likely sever a head in a single blow.
+
+Besides bein a ritual sword, Vorpal also serves the purpose of getting rid the world of the hateful illithids. Those who wield the Vorpal have a complete mind shield including immunity to charm, domination, confusion and psionics. In addition, the sword provides the wearer the freedom to move under any movement-alterating spells.
+
+STATISTICS:
+
+Equipped Abilities: 
+Armour Class Bonus: +2
+Saving Throws Bonus: +2
+True Free Action
+(Immunity to any movement-alterating effects)
+Complete Mind Shield
+(Immunity to any mind-alterating effects and psionics)
+
+Combat Abilities:
+Instant Death
+(Each hit may instantly slay an opponent with a 25% chance unless a saving throw vs death is made at -2 penalty)
+
+THAC0: +5 bonus
+Damage: 1D12 + 5
+Damage type: slashing
+Weight: 10
+Speed Factor: 5
+Proficiency Type: Two Handed sword
+Type: 2-handed
+Requires: 14 Strength
+Not Usable By:
+Druid
+Cleric
+Mage 
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/SW1H54.ITM~ ~override~
+SAY DESC ~Long Sword: The Equalizer
+Such is the age of this sword that its true origin has been lost to time, but markings hint that it was possibly forged in the service of Helm. Also called the "Sword of Neutrality", it seems designed to seek and terminate extremes, to shift the universe closer to harmonious equilibrium. The further the behavior of a target from true balance, the more potent the damage they suffer.
+
+STATISTICS:
+
+Combat Abilities: 
+Level Drain
+(20% chance to drain one level from opponent with every hit)
+Booming Thunder whenever the sword strikes an opponent
+(Save vs. Spell or be stunned for one round)
+
+Equipped Abilities:
+Armour class: +2
+Saving throws: +2
+Magic Resistance: +20%
+
+THAC0: +5 bonus
+Damage: 2D8 + 5
+Additional THAC0 & damage:
+vs True Neutral: +0 to hit, +0 damage
+vs Chaotic Neutral, Lawful Neutral: +1 to hit, +2 damage
+vs Neutral Good, Neutral Evil: +2 to hit, +4 damage
+vs other alignments: +3 to hit, +6 damage
+Damage type: slashing
+Weight: 3
+Speed Factor: 3
+Proficiency Type: Long sword
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+
+COPY ~NeJE/bdash/itm/STAF12BD.ITM~ ~override~
+SAY NAME2 ~Staff of Dracandros~ 
+SAY DESC ~Staff of Dracandros
+A mage's staff is far more than just a gilded walking stick, most being enchanted to an impressive degree. This one is no exception, and whoever the previous owner was, they were powerful indeed. 
+
+STATISTICS
+
+Saving Throws: +2 bonus
+Armor Class: +2 bonus
+
+THAC0: +4 bonus
+Damage: 1D8 +4
+Damage type: crushing
+Weight: 3
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: 2-handed
+Requires: 5 Strength
+Usable By
+Mages~
+
+COPY ~NeJE/bdash/itm/BLUN17.ITM~ ~override~
+SAY NAME2 ~Morningstar +4: Wyvern's Tail~ 
+SAY DESC ~The large spike at the head of this morningstar is actually the lethal stinger of a wyvern. The mage-fighter Sedej created this weapon, using his magical abilities to keep the stinger capable of producing poison. The magic he used has actually made the Wyvern's Tail a living weapon, that pulses with life in the hands of its wielder.
+
+STATISTICS
+
+Combat Abilities: Victims must make a saving throw vs. poison or take 6 hit points of poison damage
+THAC0: +4
+Damage: 2D4 + 4
+Damage type: crushing
+Weight: 9
+Speed Factor: 5
+Proficiency Type: Flail/Morningstar
+Type: 1-handed
+Requires: 11 Strength
+Not Usable By:
+Druid
+Mage 
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/POTNRES.ITM~ ~override~
+SAY NAME2 ~Potion of Restoration~ 
+SAY DESC ~As the name implies, this potion will restore the life energy level of the imbiber. This reverses any previous life energy level drain of the creature by a force or monster. The restoration is instant and the potion may only be used once.
+
+Usable By:
+All~
+
+COPY ~NeJE/bdash/twistrun/SW1H70.ITM~ ~override~
+SAY DESC ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands. 
+
+STATISTICS
+
+Equipped Abilities: 
+Dexterity: +2 bonus
+
+THAC0: +3 bonus, +4 vs. undead
+Damage: 1D10 + 3, +4 vs. undead
+Damage type: slashing
+Weight: 3
+Speed Factor: 1
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+COPY ~NeJE/bdash/twistrun/SW1H71.ITM~ ~override~
+SAY DESC ~Hindo was a samurai of great renown, a staunch defender of his people against the evil undead that often ravaged his homelands. 
+
+STATISTICS
+
+Equipped Abilities: 
+Dexterity: +3 bonus
+
+Special Abilities:
+20% Magic Resistance when equipped
+Immunity to all forms of death magic when equipped
+
+THAC0: +4 bonus
+Damage: 1D10 + 4, double damage against undead
+Damage type: slashing
+Weight: 2
+Speed Factor: 0
+Proficiency Type: Katana
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+COPY ~NeJE/bdash/BGTComp/vic/MISC3P.ITM~ ~override~
+SAY DESC ~Glasses of Identification
+Wearing these glasses allows the user to see magical items as they truly are. The proper instructions to activate the object appear like floating words before the wearer of these glasses. The glasses may be used six times per day. The glasses act much like a scroll of identify, in that to identify an item you right-click on that item. A menu will appear and from here you choose the 'scroll' option. The item will now be identified.~
+
+//Improved Holy Symbol of Helm
+COPY ~NeJE/bdash/itm/BELT13.ITM~ ~override~
+SAY DESC ~Only those most worthy and devoted servants of the Watcher are granted these powerful holy symbols which provide essential protections and increase the amount of priest high-level spells they can memorise. 
+
+STATISTICS:
+
+Constitution: +2 bonus
+Wisdom: +2 bonus
+Magic Resistance Bonus: +10%
+Grants three additional 6th and 7th level spells
+Death Ward
+(Immunity to all forms of death magic)
+
+Armor Class Bonus: +2
+Saving Throws Bonus: +2
+Base THAC0 Bonus: +2
+Extra Attacks: +1 per round
+
+Usable By:
+Clerics of Neutral alignment~
+
+//Improved Foebane
+COPY ~NeJE/bdash/itm/SW1H62.ITM~ ~override~
+SAY DESC ~The Archmage Demron created this powerful blade for Captain Fflar of Myth Drannor. When the elven city fell, the sword was lost beneath the rubble of the once great metropolis.
+
+STATISTICS:
+
+Combat Abilities:
+Stunning Blow
+(Each hit may stun an opponent for four rounds with a 10% chance unless a saving throw vs spell is made at -4 penalty)
+
+THAC0: +5 bonus
+Damage: 2D4 + 5, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+Damage type: slashing
+Weight: 7
+Speed Factor: 5
+Proficiency Type: Bastard Sword
+Type: 1-handed
+Requires: 11 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Thief~
+
+COPY ~NeJE/bdash/itm/SW1H63.ITM~ ~override~
+SAY NAME2 ~Foebane +6~
+SAY DESC ~Reunited with Fflar's Scabbard, Foebane is an even greater weapon than the legends claimed.
+
+STATISTICS:
+
+Combat Abilities:
+Larloch's Minor Drain
+(Each successful hit drains 8 HP from a target and adds it to the wielder with no save)
+Stunning Blow
+(Each hit may stun an opponent for four rounds with a 25% chance unless a saving throw vs spell is made at -4 penalty)
+
+THAC0: +6 bonus
+Damage: 2D4 + 6, +6 damage vs. undead, shapeshifters, and all extra-planar beings (demons, planetars, etc.)
+Damage type: slashing
+Weight: 5
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: 1-handed
+Requires: 11 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/CHAN20.ITM~ ~override~
+SAY DESC ~Not surprisingly, this full plate armor created from the scales of a young Ice Dragon provides the wearer with protection from cold and ice. Lightweight and natural-source, it can be worn by more classes than other similarly protective armors.
+
+STATISTICS:
+
+Bonuses:
+Dexterity Bonus: +2
+Constitution Bonus: +2
+Cold Resistance: +80%
+Magic Resistance: +20%
+Immunity to Normal and Enhanted +1 Weapons
+Immunity to Backstab
+Regeneration (1 HP/round)
+True Free Action
+(Immunity to any slowing, holding and paralyzation magics)
+
+Special Abilities:
+Cast Cone of Cold 3 times per day
+
+Armor Class: -4
+Saving Throws Bonus: +4
+Weight: 15
+Requires: 8 Strength
+Not Usable By:
+Mage
+Monk
+Shapeshifter
+Avenger
+Kensai~
+
+COPY ~NeJE/bdash/itm/HELM32.ITM~ ~override~
+SAY DESC ~With the addition of the horns, the Helm of the Rock is even more powerful. Generals and military leaders can command both fear and respect simply by wearing this helm.
+
+STATISTICS:
+
+Equipped Abilities: 
+Armor Class Bonus: +3
+Base THAC0 Bonus: +3
+Saving Throws Bonus: +3
+Hit Points Max: +20
+Magic Resistance: +10%
+Resistance to fire, cold, acid, poison and electricity: +25%
+Complete Mind Shield
+(Immunity to any mind-alterating effects and psionics) 
+
+Special Abilities:
+Cast Aura of Command 3 times per day
+(Enemies must save vs spell at -2 or flee in terror)
+
+Special: Protects Against Critical Hits
+
+Usable By:
+Fighter~
+
+COPY ~NeJE/bdash/itm/HELM28.ITM~ ~override~
+SAY DESC ~Combined with the Bronze Ioun Stone, the Circlet of Netheril is a great boon to any practitioner of the arcane arts. Of course, something so valuable is likely to attract unwanted attention from rival mages.
+
+STATISTICS:
+
+Equipped Bonuses:
+Intelligence Bonus: +1
+Wisdom Bonus: +1
+Armor Class Bonus: +3
+Base THAC0 Bonus: +3
+Maximum Hit Points: +15
+
+Special Abilities:
+Memorize three additional 7th-, 8th- and 9th-level spells
+
+Special: Protects Against Critical Hits
+
+Usable By:
+Mage~
+
+COPY ~NeJE/bdash/itm/HELM30.ITM~ ~override~
+SAY DESC ~There is no honor among thieves. Perhaps that is why the Thieves' Hood has been imbued with magical properties to protect the wearer from their own ilk.
+
+STATISTICS:
+
+Equipped Bonuses:
+Armor Class Bonus: +3
+Strength Bonus: +2
+Dexterity Bonus: +2
+Maximum Hit Points: +10
+Magic Resistance: +10%
+
+Equipped Immunities: 
+Immunity to Backstab and Poison
+
+Special Abilities: 
+Cast True Sight 3 times per day
+
+Special: Protects Against Critical Hits
+
+Usable by:
+Thieves~
+
+COPY ~NeJE/bdash/itm/SW1H61.ITM~ ~override~
+SAY DESC ~The true power of Frithiof's blazing sword has been unleashed by the Liquid Mercury.
+
+STATISTICS:
+
+Equipped Bonuses:
+Strength: Set to 22 when equipped
+Armor Class Bonus: +2
+Constitution Bonus: +2
+Off-Hand THAC0 Bonus: +2
+
+Combat Abilities:
+Instant Death
+(Each hit may instantly slay an opponent with a 10% chance)
+Bleeding
+(Each hit causes 5 points of bleeding damage on a target every round for 3 rounds)
+
+Equipped Abilities:
+Negative Plane Protection
+Free Action
+(Immunity to any slowing and holding effects)
+
+THAC0: +5 bonus
+Damage: 2D8 + 5, 1D6 + 3 fire damage
+Damage type: slashing
+Weight: 2
+Speed Factor: 0
+Proficiency Type: Long Sword
+Type: 1-handed
+Requires: 6 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Beast Master~
+
+COPY ~NeJE/bdash/itm/CLCK32.ITM~ ~override~
+SAY DESC ~This is the fabled cloak of Montolio DeBrouchee, the aged, blind mentor of the dark elf ranger Drizzt Do'Urden. Like his famous pupil, Montolio was a master at wielding two blades simultaneously.
+
+STATISTICS:
+
++3 bonus to AC
++3 bonus to all saving throws
++2 THAC0 with off hand~
+
+COPY ~NeJE/bdash/itm/AX1H14.ITM~ ~override~
+SAY DESC ~This axe was last seen in the gnarled fists of Glimred Heavyhand, an aging dwarven hero who disappeared in the deepest caverns beneath the Marching Mountains.
+
+STATISTICS
+
+Equipped Bonuses:
+Strength Bonus: +2
+Constitution Bonus: +2
+
+Equipped Abilities: 
+Immunity to non-magical weapons
+Negative Plane Protection
+Regeneration (1 hit point per round)
+
+THAC0: +3 bonus 
+Damage: 2D6 + 3
+Damage type: slashing
+Weight: 5
+Speed Factor: 2
+Proficiency Type: Axe
+Type: 1-handed
+Requires: 10 Strength
+Not Usable By:
+Druid
+Cleric
+Mage 
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/AX1H15.ITM~ ~override~
+SAY DESC ~Enhanced by the magic of the Baalor's Claw, the Axe of the Unyielding is now the most fearsome of weapons - a vorpal edged axe capable of severing an opponents head with a single blow. 
+
+STATISTICS
+
+Equipped Bonuses:
+Strength: Set to 24 when equipped
+Constitution Bonus: +2
+
+Equipped Abilities: 
+Death Ward
+(Immunity to all forms of death magic)
+Immunity to non-magical weapons
+Negative Plane Protection
+Regeneration (1 hit point per round)
+
+Combat Abilities:
+Instant Death
+(Each hit may instantly killing an opponent with a 10% chance by decapitation with each successful attack)
+
+THAC0: +5 bonus 
+Damage: 2D6 + 5
+Damage type: slashing
+Weight: 5
+Speed Factor: 2
+Proficiency Type: Axe
+Type: 1-handed
+Requires: 10 Strength
+Not Usable By:
+Druid
+Cleric
+Mage 
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/HAMM11.ITM~ ~override~
+SAY DESC ~The Rune of Clangeddin is now inscribed on the head of this hammer, granting even greater powers to any who wield the weapon.
+
+STATISTICS:
+
+Equipped Bonuses:
+Fire Giant Strength: Set to 22 when equipped
+
+Equipped Abilities: 
+Death Ward
+(Immunity to all forms of death magic)
+Immunity to Fear
+Negative Plane Protection
+Regeneration (1 hit point per round)
+
+Special Abilities:
+Mass Cure thrice/day
+
+Combat Abilities:
+4-16 +10 damage to Undead, plus they must make a saving throw vs. death (-4 penalty) or be utterly destroyed
+
+THAC0: +6 bonus
+Damage: 2D4 + 6
+Damage type: crushing
+Weight: 2
+Speed Factor: 0
+Proficiency Type: Warhammer
+Type: 1-handed
+Requires: 16 Strength
+Not Usable By:
+Druid
+Mage 
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/BLUN29.ITM~ ~override~
+SAY DESC ~Infused with the otherworldly Starfall Ore, the powers of this already formidable weapon are greatly enhanced.
+
+STATISTICS:
+
+Combat Abilities:
+10% chance of casting chain lightning on target with each successful attack
+10% chance of pertrifying an opponent
+
+Equipped Abilities:
+Negative Plane Protection
+Immunity to Pertrification and Polymorph
+Immunity to Wing Buffet
+
+THAC0: +5 bonus
+Damage: 1D6 + 6, +6 vs. dragons, +1D10 electrical damage
+Damage type: crushing
+Weight: 4
+Speed Factor: 2
+Proficiency Type: Mace
+Type: 1-handed
+Requires: 10 Strength
+Not Usable By:
+Druid
+Mage
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/SW2H18.ITM~ ~override~
+SAY DESC ~Siegfried's fearsome blade is even more powerful with the Heart of the Damned set into its pommel.
+
+STATISTICS
+
+Equipped Abilities: 
+Armour Class Bonus: +3
+Saving Throws Bonus: +3
+Magic Resistance: +50%
+Cold and Fire Resistance: +50%
+True Free Action
+(Immunity to any movement-alterating effects)
+Complete Mind Shield
+(Immunity to any mind-alterating effects and psionics)
+
+Combat Abilities:
+1. Instant Death
+(Each hit may instantly slay an opponent with a 10% chance unless a saving throw vs death is made at -2 penalty)
+2. Poison
+(Each hit may poison an opponent for 2D12 poison damage with a 10% chance with no save)
+3. Level Drain
+(Each hit an opponent must save vs. death or lose 2 levels unless a saving throw vs death is made at -5 penalty)
+4. Slays Elementals
+
+THAC0: +6 bonus
+Damage: 1D12 + 6
+Damage type: slashing
+Weight: 9
+Speed Factor: 5
+Proficiency Type: Two-handed sword
+Type: 2-handed
+Requires: 14 Strength
+Not Usable By:
+Druid
+Cleric
+Mage
+Thief
+Monk
+Beast Master~
+
+COPY ~NeJE/bdash/itm/PLAT20.ITM~ ~override~
+SAY DESC ~The light but durable scales of the Blue Dragon provide excellent protection against weapons and all forms of electricity.
+
+STATISTICS:
+
+Special Abilities:
+Spellcasting is possible
+
+Equipped Bonuses:
+Saving Throws Bonus: +3
+Magic Resistance: +10%
+Immunity to Electrical Attacks
+Immunity to crushing, slashing, piercing and missile weapons
+Immunity to Backstab
+True Free Action
+(Immunity to any slowing, holding and paralyzation magics)
+
+Armor Class: -4
+Weight: 20
+Requires: 15 Strength
+Not Usable By:
+Bard
+Druid
+Mage
+Thief
+Archer
+Stalker
+Barbarian
+Beast Master
+Kensai
+Monk~
+
+COPY ~NeJE/bdash/itm/HAMM09.ITM~ ~override~
+SAY DESC ~Crom Faeyr
+
+This is the true name that the dwarven weaponsmith, Silverblade, gave to the weapon he intended to create for his son. Alas, his son died before the weapon was ever completed, but here it stands complete... forged from the combined magic of the original hammer with the Gauntlets of Ogre Power and a Girdle of Frost Giant Strength. Crom Faeyr gifts its users with all the powers of the original Hammer of Thunderbolts, in addition to enormous strength and the ability to kill golems, ettins and trolls in one blow.
+
+STATISTICS:
+
+Equipped Bonuses:
+Strength: Set to 25 when equipped
+
+Special Abilities:
+Iron Skin (thrice/day)
+
+Combat Abilities:
+Kills Stone/Clay/Bone/Sand Golems, Ettins and Trolls
+Miscast Magic (on each successful hit)
+
+THAC0: +5 bonus
+Damage: 2D4 + 5, +5 electrical
+Damage type: crushing
+Weight: 4
+Speed Factor: 1
+Proficiency Type: War Hammer
+Type: 1-handed
+Not Usable By:
+Druid
+Mage 
+Thief
+Monk
+Beast Master~
+
+//Improved Purifier
+COPY ~NeJE/bdash/itm/SW1H64.ITM~ ~override~
+ SAY DESC ~This single handed weapon is infused with the very essence of virtue, and is rumored to be the sanctified blade of the famous paladin Sir Wediyer. The weapon was lost when Sir Wediyer pursued a fleeing pit fiend through a planar rift. Neither the fiend nor Sir Wediyer ever returned.
+
+STATISTICS
+
+Equipped Abilities: 
+ Magic Resistance: +20%
+ Death Ward
+ (Immunity to all forms of death magic) 
+
+Combat Abilities:
+ Lower Magic Resistance (by 10% each hit)
+ Holy Blast (with each hit there is 10% chance to drain one level from an opponent and stun him for three rounds with no save)
+
+THAC0: +5 bonus
+Damage: 2D6 + 5, +2D4 acid, +2D4 fire
+Additional Damage: +4 to chaotic evil opponents
+Damage type: Slashing
+Weight: 6
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: 1-handed
+Requires: 11 Strength
+Usable By:
+ Good Characters
+ Fighters (single, dual-, and multi-class)
+ Rangers
+ Paladins~
+ 
+ COPY ~NeJE/bdash/itm/SW1H65.ITM~ ~override~
+ SAY NAME2 ~Purifier +6~
+ SAY DESC ~With the Eye of Tyr set into its pommel, Purifier is perhaps the greatest single instrument of holy justice on the face of Faerun.
+
+STATISTICS
+
+Equipped Abilities: 
+ Magic Resistance: +30%
+ Death Ward
+ (Immunity to all forms of death magic) 
+
+Special Abilities:
+ Cast Dispel Magic (twice per day)
+ Cast Mass Cure (twice per day)
+ 
+Combat Abilities:
+ Lower Magic Resistance (by 20% each hit)
+ Holy Blast (with each hit there is 20% chance to drain one level from an opponent and stun him for three rounds with no save)
+
+THAC0: +6 bonus
+Damage: 2D6 + 6, +2D4 acid, +2D4 fire
+Additional Damage: +5 to chaotic evil opponents
+Damage type: Slashing
+Weight: 6
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: 1-handed
+Requires: 11 Strength
+Usable By:
+ Good Characters
+ Fighters (single, dual-, and multi-class)
+ Rangers
+ Paladins~
+
+
+
+COPY ~%MOD_FOLDER%/itm_nej/dragblue.CRE~ ~override~ // improved abazigal
+
+COPY ~%MOD_FOLDER%/itm_nej/KPFORGE.BCS~ ~override~
+COPY ~%MOD_FOLDER%/itm_nej/BLUN30.itm~ ~override~ // improved item
+ SAY DESC ~This flail has been in the care of Lord de'Arnise for some time, a relic of his adventuring youth. It has been kept disassembled, the individual pieces stored in separate locations, and only used in the direst of emergencies. Lord Arnise was likely concerned about the powerful magic that the weapon radiated when compiled, and rightfully so. A trail of destruction has followed it through history, leading straight back to the original owners. The flail was the creation of the warlike Rakshasa, a race of vengeful spirits that crave human meat, and used as an adaptable weapon that could suit any battle. During a particularly violent hunt the flail was lost, only to be returned when they used their affinity for magic to locate its powerful aura. They discovered that the weapon had found its way into the hands of a great human warrior, and the battle that followed was truly splendid. They have since used the item as bait countless times, 'losing' it again and again. Powerful items gravitate towards powerful people, and powerful people yield the most glorious battles.
+
+With the addition of the fifth and final head to this weapon created by the evil Rakshasa race the true potential of the Flail of Ages is finally realized.
+
+STATISTICS:
+
+Equipped Abilities:
+ Armor Class: +1
+ Saving Throws: +1
+ True Free Action
+ (Immunity to any slowing, holding and paralyzation magics)
+
+Combat Abilities:
+ 33% chance each hit that target will be slowed (no saving throw)
+
+THAC0: +6 bonus
+Damage: 1D8 +6, +2 Acid Damage, +2 Cold Damage, +2 Fire Damage, +2 Poison Damage, +2 Electrical Damage
+Damage type: crushing
+Speed Factor: 2
+Proficiency Type: Flail/Morningstar
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 8~
+
+
+COPY ~%MOD_FOLDER%/itm/AMUL26.ITM~ ~override~ // Improved Item
+SAY DESC ~This amulet grants its wearer fleetness of foot. Not surprisingly, it is popular among fleeing felons, travelers, and cowards.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +1
+– Doubles the movement rate
+– Immunity to Backstab
+
+Charge abilities:
+– Improved Haste once per day
+    Duration: 23 rounds
+    Area of Effect: The user
+
+Weight: 2~
+
+COPY ~%MOD_FOLDER%/itm/npplat.ITM~ ~override~ // Improved Item upgrade?
+    SAY NAME1 #8487
+    SAY NAME2 #8487
+    SAY UNIDENTIFIED_DESC #6683
+    SAY DESC ~This suit was designed specifically for Keldorn and his mission. It is made from very light but durable illithium alloy comprising strong fibers, carbide and silicon, embedded in a plastic matrix. The resulted composite is stronger than steel and lighter than duraluminum. In addition, Cromwell kindly agreed to enhance it to provide additional protections.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +2
+– Constitution: +2
+– Immunity to Normal Weapons
+– Immunity to Backstab
+– Immunity to any slowing, holding and paralyzation effects
+
+Armor Class: -2
+
+Weight: 70~
+
+COPY ~%MOD_FOLDER%/itm/NPSW03.ITM~ ~override~ // Improved Item
+    SAY NAME1 #8491
+    SAY NAME2 #8491
+    SAY DESC ~Keldorn distinguished himself early in his career as a paladin and received this blade as a boon from Torm. It is exceptionally accurate, but also protects him in battle with a special Fireshield, and any that strike him while he wields it suffer Torm's wrath in the form of magical damage. None but Keldorn may use this sword.
+
+STATISTICS:
+
+Equipped abilities:
+– 10 points of magic damage to any who damage the wielder
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+    17 Strength
+    10 Intelligence
+
+Weight: 8~
+
+//New Vampire's Revenge
+COPY ~%MOD_FOLDER%/itm_nej/sw1h19.itm~ ~override~ //improved item
+ SAY DESC ~It would seem that the very speculation of this weapon's existence has conspired to pull it from the realm of fantasy and into the everyday—though, as with all things that come from dreams, it is not as it truly seems. The blade is indeed vampiric, as the name would suggest: each hit drains life energies from the target and transfers them to the wielder.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit drains one hit point from the opponent and transfers it to the wielder
+– 15% chance to drain 1 level from opponent with every hit
+
+THAC0: +4
+Damage: 1d8+4 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
+//Cloak of Scintillating Colors
+COPY ~%MOD_FOLDER%/itm_nej/CLOAKSC.ITM~ ~override~ // iwd item to VladTweaks
+ SAY NAME2 ~Cloak of Scintillating Colors~
+ SAY DESC ~The origins of this cloak have been lost in the mists of time. However, for some time it was in the possession of Drosus, a mage of no small power from Waterdeep. Drosus fell afoul of an unusually large group of winter wolves on a solo expedition into the Spine of the World mountains having been forced to don a heavier cloak to keep out of the cold...
+
+At first glance this cloak appears to be blinding white in color. However, it is in fact a composite of thousands of colors, which dance and play in any available light source. This barrage of scintillating colors tends to distract and partially blind anyone staring directly at the wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Can be worn in combination with any other protective enchantment
+
+Weight: 3~
+
+//New Ion Stone
+COPY ~%MOD_FOLDER%/itm_nej/HELM35.ITM~ ~override~ // new item to vladtweaks
+ SAY NAME2 ~Bright Pearl Ion Stone~
+ SAY DESC ~This bright, shiny ioun stone first came into being as a an extraordinarily large fresh water pearl. Now, magically enchanted in such a way that it raises both the wisdom and the intelligence of those who are lucky enough to possess it, it has become highly sought after by wizard and mage alike.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Protects Against Critical Hits
+– Intelligence: +1
+– Wisdom: +1
+– Can memorize two extra 7th- and 8th-level wizard spells
+
+Weight: 2~
+
+COPY ~%MOD_FOLDER%/itm_nej/DRAGARM.ITM~ ~override~ // new item to vladtweaks
+ SAY NAME2 ~Black Dragon Scale~
+ SAY UNIDENTIFIED_DESC ~This armor has an unusual texture and appearance. From a distance, it appears to be common splint mail. Close inspection reveals that it is, in fact, made of thin, very flexible black scales.
+
+STATISTICS:
+
+Weight: 15~
+ SAY DESC ~This armor was crafted by the dwarven smiths and priests of Clan Battlehammer when one of their own, Bruenhal, led a band of heroes in the defeat of a black dragon far to the south. Some dwarves turn up their noses at the thought of wearing armor made from the remains of a dragon, but Bruenhal proudly wore the armor until the end of his days.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +2
+– Fire Resistance: +35%
+– Cold Resistance: +35%
+– Acid Resistance: +35%
+– Magic Resistance: +15%
+– Protection from Normal Weapons
+– Non-detection
+– Spellcasting is not disabled
+
+Armor Class: 0 (+2 vs. Slashing, -2 vs. Crushing)
+Requires:
+ 5 Strength
+
+Weight: 15~
+
+ACTION_IF FILE_EXISTS ~AR0206.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~AR0206.bcs~ ~override~
+ EXTEND_TOP ~AR0206.bcs~ ~%MOD_FOLDER%/itm_nej/eAR0206.baf~
+END
+ ELSE BEGIN
+ COPY ~%MOD_FOLDER%/itm_nej/AR0206.bcs~ ~override~
+ COPY_EXISTING ~AR0206.ARE~ ~override~
+ WRITE_ASCII 0x94 ~AR0206~ //setting area script
+ WRITE_BYTE (0x94+6) 0 //terminating 0
+ BUT_ONLY_IF_IT_CHANGES
+END
+
+//New Items & Flail of Ages +5
+ACTION_IF FILE_EXISTS_IN_GAME ~AR1302.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~AR1302.bcs~ ~override/AR1302.bcs~
+ EXTEND_BOTTOM ~AR1302.bcs~ ~%MOD_FOLDER%/itm_nej/xAR1302.baf~
+END
+ ELSE BEGIN
+ COPY ~%MOD_FOLDER%/itm_nej/AR1302.bcs~ ~override~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~AR3016.bcs~
+ THEN BEGIN
+ COPY_EXISTING ~AR3016.bcs~ ~override/AR3016.bcs~
+ EXTEND_BOTTOM ~AR3016.bcs~ ~%MOD_FOLDER%/itm_nej/xAR3016.baf~
+END
+ ELSE BEGIN
+ COPY ~%MOD_FOLDER%/itm_nej/AR3016.bcs~ ~override~
+END

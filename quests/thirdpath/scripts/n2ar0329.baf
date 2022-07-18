@@ -1,0 +1,7 @@
+IF
+	Global("EnteredArea","AR0329",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","AR0329",1)
+		MoveGlobalsTo("AR0307","AR0329",[0.0])
+END

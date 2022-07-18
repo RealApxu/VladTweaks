@@ -1,0 +1,121 @@
+// Upgradable Dak'kon Blade
+
+// Sword Change Scripts
+
+COMPILE ~%MOD_FOLDER%/items/dakkon/scripts/vpdaksw1.baf~
+        ~%MOD_FOLDER%/items/dakkon/scripts/vpdaksw2.baf~
+        ~%MOD_FOLDER%/items/dakkon/scripts/vpdaksw3.baf~
+        ~%MOD_FOLDER%/items/dakkon/scripts/vpdaksw4.baf~
+
+// Adding script to the original sword
+
+COPY_EXISTING ~WA2DAK.ITM~ ~override~
+ ADD_ITEM_EFFECT INT_VAR opcode=82 target=1 parameter2=5 timing=2 STR_VAR resource=vpdaksw1
+BUT_ONLY
+
+// New Swords
+
+COPY ~%MOD_FOLDER%/items/dakkon/itm/vpdaksw2.itm~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +2
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
+ 
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Can memorize two extra 1st-, 2nd-, 3rd-, and 4th-level wizard spells
+
+Combat abilities:
+– Each hit lowers opponents' Magic Resistance by 15%
+ 
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+ 
+COPY ~%MOD_FOLDER%/items/dakkon/itm/vpdaksw3.itm~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +3
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
+ 
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Magic Resistance: +5%
+– Death Ward
+– Can memorize three extra 3rd-, two extra 4th-, one extra 5th-, and one extra 6th-level wizards spells
+
+Combat abilities:
+– Each hit lowers opponents' Magic Resistance by 15%
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+ 
+COPY ~%MOD_FOLDER%/items/dakkon/itm/vpdaksw4.itm~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +4
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
+ 
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– Magic Resistance: +10%
+– Death Ward
+– Can memorize three extra 3rd-, two extra 4th-, 5th-, 6th- and one extra 7th-level wizards spells
+
+Combat Abilities:
+– Each hit lowers opponents' Magic Resistance by 15%
+– Each hit opponent must save vs. death (with a -5 penalty) or lose 1 level
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+ 
+COPY ~%MOD_FOLDER%/items/dakkon/itm/vpdaksw5.itm~ ~override~
+ SAY NAME2 ~Dak'kon's Streaming Blade~
+ SAY DESC ~Dak'kon's Streaming Blade +5
+This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." After the battle Nameless One restored Dak'kon to life and freed him of the oath he had. This is the blade that was formed after Dak'kon was free from his oath.
+ 
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +5
+– Magic Resistance: +15%
+– Death Ward
+– Can memorize three extra 3rd-, and two extra 4th- to 9th-level wizards spells
+
+Combat abilities:
+– Dispels magic whenever the blade strikes an opponent
+– Each hit lowers opponents' Magic Resistance by 15%
+– Each hit opponent must save vs. death (with a -5 penalty) or lose 1 level
+
+THAC0: +5
+Damage: 1d10+5 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~

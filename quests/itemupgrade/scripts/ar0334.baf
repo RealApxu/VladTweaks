@@ -1,0 +1,212 @@
+// 1. Enhanced Mask of Strohm
+
+IF
+	Global("VP_Mask_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Mask_Is_Done","GLOBAL",2)
+		TakePartyItem("key20")
+		TakePartyItem("ring41")
+		TakePartyItem("helm05")
+		TakePartyItem("helm19")
+		GiveItemCreate("kingmask",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 2. Enhanced Carsomyr
+
+IF
+	Global("VP_Carsomyr_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Carsomyr_Is_Done","GLOBAL",2)
+		TakePartyItem("sw2h10")
+		TakePartyItem("sw2h14")
+		TakePartyItem("misc45")
+		GiveItemCreate("lilarco2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 3. Enhanced Selune's Promise
+
+IF
+	Global("VP_Mace_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Mace_Is_Done","GLOBAL",2)
+		TakePartyItem("rithtel")
+		TakePartyItem("simace1")
+		TakePartyItem("hammcomm")
+		GiveItemCreate("simace3",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+IF
+	Global("VP_Mace_Is_Done","GLOBAL",3)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Mace_Is_Done","GLOBAL",2)
+		TakePartyItem("rithore")
+		TakePartyItem("simace1")
+		TakePartyItem("hammcomm")
+		GiveItemCreate("simace3",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 4. Enhanced Robe of Armory
+
+IF
+	Global("VP_Robe_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Robe_Is_Done","GLOBAL",2)
+		TakePartyItem("robearm")
+		TakePartyItem("amulbar")
+		TakePartyItem("tuamulb")
+		TakePartyItem("leat23")
+		GiveItemCreate("robearm2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 5. Enhanced Staff of Besieging
+
+IF
+	Global("VP_Staff_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Staff_Is_Done","GLOBAL",2)
+		TakePartyItem("staffbes")
+		TakePartyItem("staffpow")
+		TakePartyItem("ring31")
+		GiveItemCreate("staffbe2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 6. Enhanced Messenger of Sseth
+
+IF
+	Global("VP_Bow_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Bow_Is_Done","GLOBAL",2)
+		TakePartyItem("bowmess")
+		TakePartyItem("bowhamm")
+		TakePartyItem("bow10")
+		GiveItemCreate("bowmess2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 7. Enhanced Firetooth
+
+IF
+	Global("VP_XBow_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_XBow_Is_Done","GLOBAL",2)
+		TakePartyItem("xbow15")
+		TakePartyItem("daisy")
+		TakePartyItem("wand18")
+		TakePartyItem("clck24")
+		TakePartyItem("helm19")
+		GiveItemCreate("xbow15en",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 8. Enhanced Flame Tongue
+
+IF
+	Global("VP_FlameSw_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_FlameSw_Is_Done","GLOBAL",2)
+		TakePartyItem("sw1h24")
+		TakePartyItem("ulswd3a")
+		TakePartyItem("zzc8hb")
+		TakePartyItem("zzg7ts")
+		GiveItemCreate("flamsw1h",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 9. Enhanced Sebastian's Dagger
+
+IF
+	Global("VP_Dagger_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Dagger_Is_Done","GLOBAL",2)
+		TakePartyItem("dagseb")
+		TakePartyItem("misc75")
+		TakePartyItem("udagg5a")
+		GiveItemCreate("dagseb2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 10. Crimson Dragon Scale
+
+IF
+	Global("VP_Plate_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Plate_Is_Done","GLOBAL",2)
+		TakePartyItem("scalesel")
+		TakePartyItem("leat14")
+		TakePartyItem("clck06")
+		GiveItemCreate("platcrdr",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 11. Enhanced Melody Chain
+
+IF
+	Global("VP_Chain_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Chain_Is_Done","GLOBAL",2)
+		TakePartyItem("chan11")
+		TakePartyItem("chan15")
+		TakePartyItem("boot01")
+		TakePartyItem("ring09")
+		GiveItemCreate("chan15n",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END
+
+// 12. Enhanced Mercykiller Ring
+
+IF
+	Global("VP_Ring_Is_Done","GLOBAL",1)
+	Global("ForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForgeStuff","GLOBAL",0)
+		SetGlobal("VP_Ring_Is_Done","GLOBAL",2)
+		TakePartyItem("wa2ring")
+		TakePartyItem("ring35")
+		TakePartyItem("ring36")
+		TakePartyItem("ring09")
+		GiveItemCreate("wa2ring2",Player1,0,0,0)
+		ActionOverride("wsmith01",StartDialogNoSet([PC]))
+END

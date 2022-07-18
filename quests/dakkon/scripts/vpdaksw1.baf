@@ -1,0 +1,9 @@
+IF
+	LevelGT(Myself,7)
+	HasItem("wa2dak",Myself)  // Dak'kon's Zerth Blade +2
+THEN
+	RESPONSE #100
+		DestroyItem("wa2dak")  // Dak'kon's Zerth Blade +2
+		GiveItemCreate("vpdaksw2",Myself,0,0,0)
+		EquipMostDamagingMelee()
+END
