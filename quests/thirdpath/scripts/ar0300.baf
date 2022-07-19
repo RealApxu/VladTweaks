@@ -13,5 +13,5 @@ THEN
 		TriggerActivation("Info307a",TRUE)
 		TriggerActivation("Info307b",TRUE)
 		SetGlobal("ETG2Dave","AR0300",1)
+		Continue()
 END
-

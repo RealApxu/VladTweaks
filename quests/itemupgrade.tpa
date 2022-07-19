@@ -1,7 +1,30 @@
-//  Items Upgrade - August 2017, May 2018
+// Items Upgrade - August 2017, May 2018
 
-EXTEND_TOP ~AR0334.bcs~ ~%MOD_FOLDER%/items/itemupgrade/eAR0334.baf~
- 
+// Dialogues
+
+COMPILE ~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom1.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom2.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom3.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom4.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom5.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom6.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom7.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom8.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom9.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom10.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom11.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/crom12.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/cesp1.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/cesp2.d~
+~%MOD_FOLDER%/quests/itemupgrade/dialogue/cesp3.d~
+
+// Scripts
+
+EXTEND_TOP ~AR0334.bcs~ ~%MOD_FOLDER%/items/itemupgrade/scripts/ar0334.baf~
+
+
+// Upgraded Items
+
 //1. Enhanced King Strohm Mask
 COPY ~%MOD_FOLDER%/items/itemupgrade/KingMask.ITM~ ~override~
  SAY NAME2 ~Enhanced Mask of King Strohm III~
@@ -928,12 +951,14 @@ Weight: 6~
  SAY NAME2 ~Umber Hulk Plate~
  SAY DESC ~Umber Hulk Plate (enchanted by Cespenar)
 The hard plates that protect umber hulks are reasonably easy to craft into humanoid armor. This dark suit of armor was fashioned into plate mail by duergar smiths. The dark dwarves, skilled in handling umber hulk exoskeletons, cured and reinforced the armor.
- 
+
+STATISTICS:
+
 Equipped abilities:
- Magic Resistance: +20%
- Immunity to Backstab
- Immunity to any mind-alterating effects
- Death Ward
+– Magic Resistance: +20%
+– Immunity to Backstab
+– Immunity to any mind-alterating effects
+– Death Ward
  
 Armor Class: -5 (+3 vs. Slashing, Piercing and Missile)
 
