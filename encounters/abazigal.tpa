@@ -1,5 +1,27 @@
 // Improved Abazigal
 
+// Draconian Changes
+
+COPY_EXISTING ~BAZDRA02.CRE~ override
+ WRITE_SHORT 0x24 390 // Current HP
+ WRITE_SHORT 0x26 390 // Total HP
+ WRITE_SHORT 0x46 "-16" // AC Natural
+ WRITE_SHORT 0x48 "-16" // AC Effective
+ WRITE_BYTE 0x52 "-14" // THAC0
+ WRITE_BYTE 0x53 10 // APR
+ WRITE_BYTE 0x23d 21 // Constitution
+BUT_ONLY
+
+COPY_EXISTING ~DRAGBLUE.CRE~ override
+ WRITE_SHORT 0x24 500 // Current HP
+ WRITE_SHORT 0x26 500 // Total HP
+ WRITE_SHORT 0x46 "-18" // AC Natural
+ WRITE_SHORT 0x48 "-18" // AC Effective
+ WRITE_BYTE 0x52 "-12" // THAC0
+ WRITE_BYTE 0x53 10 // APR
+ WRITE_BYTE 0x23d 24 // Constitution
+BUT_ONLY
+
 COPY ~NeJE/bdash/abazig/copy~ ~override~
 
 COPY ~NeJE/bdash/abazig/cre/BazDra04.cre~ override
