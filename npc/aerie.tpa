@@ -27,7 +27,9 @@ COPY ~%MOD_FOLDER%/npc/aerie/bam~ ~override~
 COPY ~%MOD_FOLDER%/npc/aerie/spl/vpaeri02.spl~ ~override~
 SAY NAME1 ~Baervan's Bilberries~
 SAY NAME2 ~Baervan's Bilberries~
-SAY 0x50 ~Baervan's Bilberries (Alteration, Evocation)
+SAY 0x50 ~Baervan's Bilberries
+(Alteration, Evocation)
+
 Level: 2
 Sphere: Plant
 Range: Touch
@@ -37,14 +39,16 @@ Area of Effect: Special
 Saving Throw: None
 
 Casting a Baervan's Bilberries spell creates five magical berries that the caster can carry with him. These berries cure 20 points of physical damage for each one eaten.~
-SAY 0x54 ~Baervan's Bilberries (Alteration, Evocation) 
+SAY 0x54 ~Baervan's Bilberries
+(Alteration, Evocation)
+
 Level: 2
-Sphere: Plant 
-Range: Touch 
+Sphere: Plant
+Range: Touch
 Duration: Permanent
-Casting Time: 1 round 
-Area of Effect: Special 
-Saving Throw: None 
+Casting Time: 1 round
+Area of Effect: Special
+Saving Throw: None
 
 Casting a Baervan's Bilberries spell creates five magical berries that the caster can carry with him. These berries cure 20 points of physical damage for each one eaten.~
 

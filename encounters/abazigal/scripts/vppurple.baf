@@ -1,0 +1,10 @@
+IF
+	HPLT(Myself,2)
+	Global("VP_Death_Transform","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Death_Transform","LOCALS",1)
+		ReallyForceSpell(Myself,HEAL_NO_VISUAL)  // SPIN679.SPL (Heal)
+		ChangeAnimation("DragPurp")  // Purple Dragon
+		ReallyForceSpellRES("SPCTMD02",Myself)  // Death Field
+END

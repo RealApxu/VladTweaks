@@ -1,4 +1,6 @@
+/////////////////////////
 // Improved Abazigal
+/////////////////////////
 
 // Draconian Changes
 
@@ -22,9 +24,29 @@ COPY_EXISTING ~DRAGBLUE.CRE~ override
  WRITE_BYTE 0x23d 24 // Constitution
 BUT_ONLY
 
-COPY ~NeJE/bdash/abazig/copy~ ~override~
+// Polishing those claws
 
-COPY ~NeJE/bdash/abazig/cre/BazDra04.cre~ override
+COPY_EXISTING ~DRAGBLUE.ITM~ override
+ WRITE_LONG 0x60 5 // Enchantment
+ WRITE_SHORT 0x86 5 // Bonus to Hit
+ WRITE_BYTE 0x88 10 // Dice Size
+ WRITE_BYTE 0x8a 4 // Dice Thrown
+ WRITE_SHORT 0x8c 5 // Damage bonus
+ READ_LONG 0x6a e_o
+ WRITE_LONG e_o+1c 2
+ WRITE_LONG e_o+1c 6
+BUT_ONLY
+
+COPY_EXISTING ~DRAGBROW.ITM~ override
+ WRITE_SHORT 0x86 4 // Bonus to Hit
+ WRITE_BYTE 0x88 10 // Dice Size
+ WRITE_BYTE 0x8a 2 // Dice Thrown
+ WRITE_SHORT 0x8c 4 // Damage bonus
+BUT_ONLY
+
+// 
+
+COPY ~/%MOD_FOLDER%/encounters/abazigal/cre/vppurple.cre~ override
  SAY NAME1 ~Purple~
  SAY NAME2 ~Purple~
 
@@ -33,6 +55,6 @@ COPY_EXISTING ~AR6000.bcs~ override
   REPLACE_TEXTUALLY
    ~TriggerActivation("Tran6001",FALSE)~
    ~TriggerActivation("Tran6001",FALSE)
-   CreateCreature("BazDra04",[694.945],12)~
+   CreateCreature("vppurple",[694.945],12)~
   END
 BUT_ONLY
