@@ -25,7 +25,7 @@ GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/firkraag.tpa~
 
 BEGIN ~Improved Nymph Script (by Goeran Rimen)~
-REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/nymph.tpa~
 
@@ -117,38 +117,30 @@ GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/viconia.tpa~
 
 // Quests and Items
+
 /*
 BEGIN ~Third Path~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Quests~
+GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/thirdpath.tpa~
+*/
 
 BEGIN ~Merchant League Bank~
 REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
-GROUP ~Quests~
+GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/bank.tpa~
 
 BEGIN ~Keys to Eternity~
 REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
-GROUP ~Quests~
+GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/keystoeternity.tpa~
-
-BEGIN ~Vlad's Item Upgrade~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
-
-BEGIN ~Cromwell in Brynnlaw~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
 
 BEGIN ~Upgradable Dakkon Blade~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
+GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
 
 BEGIN ~Improved NPC Items~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
-GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~*/
+REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
+GROUP ~Quests and Items~
+INCLUDE ~%MOD_FOLDER%/quests/npcitems.tpa~

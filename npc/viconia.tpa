@@ -104,8 +104,11 @@ LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR708 destination 
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination = ~VPSHAR62~ END // Creeping Doom
 
 //20, 23, 26
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR722 destination = ~VPSHAR71~ END // Storm of Vengeance
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR727 destination = ~VPSHAR72~ END // Summon Fallen Deva
+END
 
 // Creature Files
 

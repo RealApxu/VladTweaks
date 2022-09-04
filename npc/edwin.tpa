@@ -10,8 +10,11 @@ LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI717 destination 
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI811 destination = ~VPEDWI08~ END // Symbol Fear
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI816 destination = ~VPEDWI09~ END // Symbol Stun
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI905 destination = ~VPEDWI10~ END // Gate
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI922 destination = ~VPEDWI11~ END // Dragon Breath
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI924 destination = ~VPEDWI12~ END // Summon Dark Planetar
+END
 
 // Kit
 

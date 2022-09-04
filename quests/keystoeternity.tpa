@@ -12,20 +12,24 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
 
 // Dialogue
 
-COMPILE ~quests/keystoeternity/dialogue/dialogue.d~
+COMPILE ~%MOD_FOLDER%/quests/keystoeternity/dialogue/dialogue.d~
 
 // Scripts
 
-EXTEND_TOP ~%AREA0516%.bcs~ ~quests/keystoeternity/scripts/ar0516.baf~
+EXTEND_TOP ~%AREA0516%.bcs~ ~%MOD_FOLDER%/quests/keystoeternity/scripts/ar0516.baf~
 
 COPY_EXISTING ~%AREA1005%.ARE~ ~override~
   WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
 BUT_ONLY_IF_IT_CHANGES
 
-COMPILE ~quests/keystoeternity/scripts/%AREA1005%.baf~
+ACTION_IF NOT FILE_EXISTS ~%AREA1005%.BCS~ THEN BEGIN
+EXTEND_TOP ~%AREA1005%.BCS~ ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
+END ELSE BEGIN
+COMPILE ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
+END
 
 // Creatures
 
-COPY ~quests/keystoeternity/cre/vpginny.cre~ ~override~
+COPY ~%MOD_FOLDER%/quests/keystoeternity/cre/vpginny.cre~ ~override~
  SAY NAME1 ~Ginny~
  SAY NAME2 ~Ginny~

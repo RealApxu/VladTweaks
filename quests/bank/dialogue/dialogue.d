@@ -7,7 +7,7 @@ END
 ALTER_TRANS ALDETH
 BEGIN 28 END
 BEGIN 0 END
-BEGIN "REPLY" ~No, nothing at the moment.~
+BEGIN "REPLY" ~No, nothing at the moment.~ END
 
 EXTEND_TOP ALDETH 28
  ++ ~Aldeth, could you show me your special merchandise?~ DO ~StartStore("aldeth",LastTalkedToBy(Myself))~ EXIT
