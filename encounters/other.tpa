@@ -2,10 +2,10 @@
 
 COPY_EXISTING ~BERKREF.CRE~ ~override~
     REMOVE_CRE_ITEM ~shld05~ ~plat01~ ~blun04~
-    ADD_CRE_ITEM ~shld19~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~plat15~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~blun34~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~potnres~ #0 #0 #0 ~IDENTIFIED~
+    ADD_CRE_ITEM ~shld19~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~plat15~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~blun34~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~potnres~ #0 #0 #0 ~none~
 
 COPY_EXISTING ~LOUTCAPT.CRE~ ~override~
     WRITE_SHORT 0x24 131
@@ -15,11 +15,11 @@ COPY_EXISTING ~LOUTCAPT.CRE~ ~override~
     WRITE_BYTE 0x52 -2
     WRITE_BYTE 0x53 5
     REMOVE_CRE_ITEM ~helm01~ ~bolt01~ ~xbow01~ ~halb01~ ~plat04~
-    ADD_CRE_ITEM ~helm26~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~bolt09~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~xbow17~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~halb12~ #0 #0 #0 ~IDENTIFIED~
-    ADD_CRE_ITEM ~plat19~ #0 #0 #0 ~IDENTIFIED~
+    ADD_CRE_ITEM ~helm26~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~bolt09~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~xbow17~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~halb12~ #0 #0 #0 ~none~
+    ADD_CRE_ITEM ~plat19~ #0 #0 #0 ~none~
 
 COPY_EXISTING ~SEVPAT01.CRE~ ~override~
-    ADD_CRE_ITEM ~amul26~ #0 #0 #0 ~IDENTIFIED~
+    ADD_CRE_ITEM ~amul26~ #0 #0 #0 ~none~

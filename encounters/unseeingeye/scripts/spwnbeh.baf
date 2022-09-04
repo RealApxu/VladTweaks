@@ -5,7 +5,6 @@ THEN
 	RESPONSE #100
 		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 END
 
 IF
@@ -15,9 +14,6 @@ IF
 THEN
 	RESPONSE #100
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
 END
 
@@ -31,9 +27,6 @@ THEN
 		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behold01",[-1.-1],S)  // Beholder
 END
 
 IF
@@ -41,11 +34,6 @@ IF
 	Entered([ANYONE])
 THEN
 	RESPONSE #100
-		CreateCreature("behold01",[-1.-1],S)  // Beholder
-		CreateCreature("behold01",[-1.-1],S)  // Beholder
-		CreateCreature("behold01",[-1.-1],S)  // Beholder
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
-		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behgau01",[-1.-1],S)  // Gauth
 		CreateCreature("behold01",[-1.-1],S)  // Beholder
 		CreateCreature("behold01",[-1.-1],S)  // Beholder

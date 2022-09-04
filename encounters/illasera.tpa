@@ -35,10 +35,9 @@ COPY_EXISTING ~ILLASERA.CRE~ ~override~
  WRITE_BYTE 0x23c 18 // Dexterity
  WRITE_BYTE 0x23d 17 // Constitution
  WRITE_BYTE 0x23e 15 //Alignment
- REMOVE_CRE_ITEM ~ring06~ ~dagg15~ ~chan14~
- ADD_CRE_ITEM ~ring95~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~
- ADD_CRE_ITEM ~leat08~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~ring95~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~
+ REPLACE_CRE_ITEM ~leat08~ #0 #0 #0 ~none~ ~armor~
+ REPLACE_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
  ADD_CRE_ITEM ~vprithsw~ #0 #0 #0 ~none~ ~shield~
  ADD_CRE_ITEM ~immune4~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~ 
 BUT_ONLY
@@ -56,16 +55,15 @@ COPY_EXISTING ~ZILARC01.CRE~ ~override~
  WRITE_BYTE 0x23c 19 // Dexterity
  WRITE_BYTE 0x23d 17 // Constitution
  WRITE_BYTE 0x23e 14 // CHR
- REMOVE_CRE_ITEM ~bow02~ ~arow02~ ~helm13~ ~leat01~
- ADD_CRE_ITEM ~bow12~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~arow16~ #20 #0 #0 ~none~ ~quiver1~
+ REPLACE_CRE_ITEM ~bow12~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~arow16~ #20 #0 #0 ~none~ ~quiver1~
  ADD_CRE_ITEM ~arow05~ #20 #0 #0 ~none~ ~quiver2~
  ADD_CRE_ITEM ~arow15~ #20 #0 #0 ~none~ ~quiver3~
- ADD_CRE_ITEM ~helm26~ #0 #0 #0 ~none~ ~helmet~
- ADD_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~potn05~ #1 #0 #0 ~none~ ~inv16~
- ADD_CRE_ITEM ~potn07~ #1 #0 #0 ~none~ ~inv15~
- ADD_CRE_ITEM ~potn11~ #2 #0 #0 ~none~ ~inv14~
+ REPLACE_CRE_ITEM ~helm26~ #0 #0 #0 ~none~ ~helmet~
+ REPLACE_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~
+ ADD_CRE_ITEM ~potn05~ #1 #0 #0 ~none~ inv
+ ADD_CRE_ITEM ~potn07~ #1 #0 #0 ~none~ inv
+ ADD_CRE_ITEM ~potn11~ #2 #0 #0 ~none~ inv
  ADD_CRE_ITEM ~potn14~ #2 #0 #0 ~none~ ~qitem1~
  ADD_CRE_ITEM ~potn52~ #5 #0 #0 ~none~ ~qitem2~
  ADD_CRE_ITEM ~potn53~  #5 #0 #0 ~none~ ~qitem3~
@@ -78,9 +76,8 @@ COPY_EXISTING ~ZILFGT01.CRE~ ~override~
  WRITE_SHORT 0x48 0xfff8 // AC Effective
  WRITE_BYTE 0x52 0xf9 // THAC0
  WRITE_BYTE 0x53 4 // APR
- REMOVE_CRE_ITEM ~dagg02~ ~sw1h22~
- ADD_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~weapon1 weapon2~ EQUIP
- ADD_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~shield~
+ REPLACE_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~weapon1 weapon2~ EQUIP
+ REPLACE_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
 COPY_EXISTING ~ZILMAG01.CRE~ ~override~
@@ -140,11 +137,10 @@ COPY_EXISTING ~ZILMAG01.CRE~ ~override~
  ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
  ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
- REMOVE_CRE_ITEM ~clck14~ ~staf02~
  ADD_CRE_ITEM ~ring41~ #0 #0 #0 ~none~ ~lring rring~
- ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~scrl7g~ #0 #0 #0 ~none~ ~inv16~
+ REPLACE_CRE_ITEM ~sw1h73~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+ REPLACE_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~
+ ADD_CRE_ITEM ~scrl7g~ #0 #0 #0 ~none~ inv
  ADD_CRE_ITEM ~ring09~ #0 #0 #0 ~none~ ~lring rring~
 BUT_ONLY
 

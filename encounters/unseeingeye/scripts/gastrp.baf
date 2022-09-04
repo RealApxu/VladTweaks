@@ -9,9 +9,9 @@ THEN
 		Lock("DOOR01")
 		Lock("DOOR02")
 		CreateCreature("MISTVA01",[2766.1925],E)  // Vampiric Mist
-		CreateCreature("VAMPSOU2",[2766.1925],E)
+		CreateCreature("vpvsoul2",[2766.1925],E)
 		CreateCreature("MISTVA01",[2766.1925],E)  // Vampiric Mist
 		CreateCreature("MISTVA01",[2980.2057],NE)  // Vampiric Mist
-		CreateCreature("VAMPSOU2",[2980.2057],NE)
+		CreateCreature("vpvsoul2",[2980.2057],NE)
 		CreateCreature("MISTVA01",[2980.2057],NE)  // Vampiric Mist
 END

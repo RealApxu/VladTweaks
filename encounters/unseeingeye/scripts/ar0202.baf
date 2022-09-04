@@ -1,0 +1,17 @@
+IF
+	Global("VP_Improved_Area_Monsters","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VP_Improved_Area_Monsters","MYAREA",1)
+		CreateCreature("SKELARCH",[3057.341],NEE)
+		CreateCreature("SKELARCH",[3070.361],NEE)
+		CreateCreature("SKELARCH",[3085.384],NEE)
+		CreateCreature("vpvsoul2",[2959.413],NEE)
+		CreateCreature("vpvsoul2",[2988.442],NEE)
+		CreateCreature("vpvsoul2",[3332.704],S)
+		CreateCreature("vpvsoul2",[3413.643],S)
+		CreateCreature("vpvsoul2",[3638.762],S)
+		CreateCreature("vpvsoul2",[3557.831],S)
+		CreateCreature("vpvsoul2",[3492.717],NNE)
+		CreateCreature("vpvsoul2",[3555.765],NNE)
+END

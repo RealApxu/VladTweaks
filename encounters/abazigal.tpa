@@ -24,7 +24,7 @@ COPY_EXISTING ~DRAGBLUE.CRE~ override
  WRITE_BYTE 0x23d 24 // Constitution
 BUT_ONLY
 
-// Polishing those claws
+// Polishing these claws
 
 COPY_EXISTING ~DRAGBLUE.ITM~ override
  WRITE_LONG 0x60 5 // Enchantment
@@ -33,8 +33,8 @@ COPY_EXISTING ~DRAGBLUE.ITM~ override
  WRITE_BYTE 0x8a 4 // Dice Thrown
  WRITE_SHORT 0x8c 5 // Damage bonus
  READ_LONG 0x6a e_o
- WRITE_LONG e_o+1c 2
- WRITE_LONG e_o+1c 6
+ WRITE_LONG e_o+0x1c 2
+ WRITE_LONG e_o+0x1c 6
 BUT_ONLY
 
 COPY_EXISTING ~DRAGBROW.ITM~ override
@@ -46,11 +46,11 @@ BUT_ONLY
 
 // 
 
-COPY ~/%MOD_FOLDER%/encounters/abazigal/cre/vppurple.cre~ override
+COPY ~%MOD_FOLDER%/encounters/abazigal/cre/vppurple.cre~ override
  SAY NAME1 ~Purple~
  SAY NAME2 ~Purple~
 
-COPY_EXISTING ~AR6000.bcs~ override
+COPY_EXISTING ~AR6000.BCS~ override
  DECOMPILE_AND_PATCH BEGIN
   REPLACE_TEXTUALLY
    ~TriggerActivation("Tran6001",FALSE)~

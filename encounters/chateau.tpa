@@ -122,10 +122,10 @@ BUT_ONLY
 
 // Additional Spawn on the 1st Floor
 
-COPY ~%MOD_FOLDER%/encounters/chateau/cre/vpigrd01.cre~
-COPY ~%MOD_FOLDER%/encounters/chateau/cre/vpigrd02.cre~
+COPY ~%MOD_FOLDER%/encounters/chateau/cre/vpigrd01.cre~ override
+COPY ~%MOD_FOLDER%/encounters/chateau/cre/vpigrd02.cre~ override
 
-EXTEND_TOP ~AR06002.BCS~ ~%MOD_FOLDER%/encounters/chateau/scripts/ar0602.baf~
+EXTEND_TOP ~AR0602.BCS~ ~%MOD_FOLDER%/encounters/chateau/scripts/ar0602.baf~
 
 // New Scripts for Mages
 

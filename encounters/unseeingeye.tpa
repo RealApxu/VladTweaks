@@ -2,18 +2,18 @@
 
 // More items
 
-EXTEND_TOP ~AR0202.bcs~ ~%MOD_FOLDER%/encounters/unseeingeye/scripts/ar0202.baf~
-EXTEND_TOP ~KAYPAL03.bcs~ ~%MOD_FOLDER%/encounters/unseeingeye/scripts/kaypal3.baf~
+EXTEND_TOP ~AR0202.BCS~ ~%MOD_FOLDER%/encounters/unseeingeye/scripts/ar0202.baf~
+EXTEND_TOP ~KAYPAL03.BCS~ ~%MOD_FOLDER%/encounters/unseeingeye/scripts/kaypal3.baf~
 
 // Change Shadows in the Unseeing Eye Lair
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/shadfi03.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi03.cre~ ~override~
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/shadfi04.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi04.cre~ ~override~
  SAY NAME1 ~Giant Shadow~
  SAY NAME2 ~Giant Shadow~
 
-COPY ~%MOD_FOLDER%/cre/vampsou2.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpvsoul2.cre~ ~override~
  SAY NAME1 ~Vampiric Shadow~
  SAY NAME2 ~Vampiric Shadow~
 
@@ -186,8 +186,8 @@ COPY_EXISTING ~GAAL01.CRE~ ~override~
  REPLACE_CRE_ITEM ~STAF08~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-// New Itms
-
+// New Items
+/*
 COPY ~%MOD_FOLDER%/encounters/unseeingeye/itm/vpcoffee.itm~ ~override~
  SAY NAME1 #6976 
  SAY NAME2 ~Berduskan Black Brew~
@@ -218,4 +218,4 @@ Saving Throws: +2
 Magic Resistance: 10%
 Protects Against Critical Hits
 
-Weight: ~
+Weight: ~*/

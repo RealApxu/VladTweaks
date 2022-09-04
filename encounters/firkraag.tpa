@@ -149,14 +149,14 @@ BUT_ONLY
 // New Spawns
 
 EXTEND_TOP ~AR1202.BCS~ ~%MOD_FOLDER%/encounters/firkraag/scripts/ar1202.baf~
-COMPILE ~%MOD_FOLDER%/encounters/firkraag/scripts/vpfirkra.baf~
+COMPILE ~%MOD_FOLDER%/encounters/firkraag/scripts/dragred.baf~
 
-COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/durbin.cre~ override
+COPY ~%MOD_FOLDER%/encounters/firkraag/cre/vpdurbin.cre~ override
 
-COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole1.cre~ override
-     ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole2.cre~ override
-     ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgole3.cre~ override
+COPY ~%MOD_FOLDER%/encounters/firkraag/cre/vpfgole1.cre~ override
+     ~%MOD_FOLDER%/encounters/firkraag/cre/vpfgole2.cre~ override
+     ~%MOD_FOLDER%/encounters/firkraag/cre/vpfgole3.cre~ override
       SAY NAME1 ~Fire Golem~
       SAY NAME2 ~Fire Golem~
 
-COPY ~%MOD_FOLDER%/encounters/firkraag/scripts/cre/firgolem.itm~ override
+COPY ~%MOD_FOLDER%/encounters/firkraag/itm/vpfgolem.itm~ override

@@ -70,7 +70,7 @@ COPY_EXISTING ~DEMMAG.CRE~ ~override~
     ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
     //REMOVE_CRE_ITEM ~brac02~
     REPLACE_CRE_ITEM ~brac15~ #0 #0 #0 ~none~ ~gloves~
-    REPLACE_CRE_ITEM ~misc45~ #0 #0 #0 ~none~ ~inv16~
+    REPLACE_CRE_ITEM ~misc45~ #0 #0 #0 ~none~ inv
     REPLACE_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~
     REPLACE_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~lring rring~
     REPLACE_CRE_ITEM ~staf12~ #0 #0 #0 ~none~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
@@ -78,7 +78,7 @@ BUT_ONLY
 
 COPY_EXISTING ~FSDRAGON.CRE~ ~override~
     REMOVE_CRE_ITEM ~sw1h70~
-    REPLACE_CRE_ITEM ~rndtre5~ #0 #0 #0 ~none~ ~inv16~
+    REPLACE_CRE_ITEM ~rndtre5~ #0 #0 #0 ~none~ inv
 BUT_ONLY
 
 COPY_EXISTING ~HLKETTA.CRE~ ~override~

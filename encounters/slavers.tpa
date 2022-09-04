@@ -637,9 +637,9 @@ COPY_EXISTING ~SLMAGE2.CRE~ ~override~
  ADD_CRE_ITEM ~rndtree01~ #0 #0 #0 none inv
 BUT_ONLY
 
-// New Slums' Sewers Encounter
+// New Slums' Sewers Encounter (belongs to Third Path)
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ ~override~
+/*COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ ~override~
  SAY NAME1 ~Coulson~
  SAY NAME2 ~Coulson~
 
@@ -667,7 +667,7 @@ COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmack.cre~ ~override~
  SAY NAME1 ~Mack~
  SAY NAME2 ~Mack~
 
-EXTEND_TOP ~AR0404.BCS~ ~%MOD_FOLDER%/encounters/slavers/scripts/ar0404.baf~
+EXTEND_TOP ~AR0404.BCS~ ~%MOD_FOLDER%/encounters/slavers/scripts/ar0404.baf~*/
 
 // Slavers Ambush Party
 

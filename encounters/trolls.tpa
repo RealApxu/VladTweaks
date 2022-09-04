@@ -1,7 +1,7 @@
 // Improved Trolls in De'Arnise Keep - from Improved Nalia NPC
 
-COPY_EXISTING ~TORGAL.CRE~ ~override~
-              ~TORGAL3.CRE~ ~override~
+COPY_EXISTING ~TORGAL.CRE~ override
+              ~TORGAL3.CRE~ override
  WRITE_SHORT 0x24 240 // Current HP
  WRITE_SHORT 0x26 240 // Total HP
  WRITE_SHORT 0x46 "-3" // AC Natural
@@ -32,7 +32,7 @@ COPY_EXISTING ~TORGAL.CRE~ ~override~
  WRITE_BYTE 0x23d 20 // CON
 BUT_ONLY
 
-COPY_EXISTING ~TROLGI01.CRE~ ~override~
+COPY_EXISTING ~TROLGI01.CRE~ override
  WRITE_LONG 0x14 8500 // XP Value
  WRITE_SHORT 0x24 131 // Current HP
  WRITE_SHORT 0x26 131 // Total HP
@@ -49,7 +49,7 @@ COPY_EXISTING ~TROLGI01.CRE~ ~override~
  WRITE_BYTE 0x23d 20 // CON
 BUT_ONLY
 
-COPY_EXISTING ~TROLL01.CRE~ ~override~
+COPY_EXISTING ~TROLL01.CRE~ override
  WRITE_LONG 0x14 5500 // XP Value
  WRITE_SHORT 0x24 112 // Current HP
  WRITE_SHORT 0x26 112 // Total HP
@@ -67,7 +67,7 @@ COPY_EXISTING ~TROLL01.CRE~ ~override~
  WRITE_BYTE 0x23d 24 // CON
 BUT_ONLY
 
-COPY ~%MOD_FOLDER%/encounters/trolls/itm/vptrolto.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/trolls/itm/vptrolto.itm~ override
 
 COPY_EXISTING ~TORGAL.CRE~ ~override~
               ~TORGAL2.CRE~ ~override~
@@ -76,4 +76,4 @@ COPY_EXISTING ~TORGAL.CRE~ ~override~
 BUT_ONLY
 
 EXTEND_TOP ~AR1301.BCS~ ~%MOD_FOLDER%/encounters/trolls/scripts/ar1301.baf~
-           ~AR1302.BCS~ ~%MOD_FOLDER%/encounters/trolls/scripts/ar1302.baf~
+EXTEND_TOP ~AR1302.BCS~ ~%MOD_FOLDER%/encounters/trolls/scripts/ar1302.baf~

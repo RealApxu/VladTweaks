@@ -117,7 +117,7 @@ GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/viconia.tpa~
 
 // Quests and Items
-
+/*
 BEGIN ~Third Path~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Quests~
@@ -151,4 +151,4 @@ INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
 BEGIN ~Improved NPC Items~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
 GROUP ~Items~
-INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
+INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~*/

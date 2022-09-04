@@ -127,7 +127,7 @@ COPY_EXISTING ~ARNWAR06.CRE~ ~override~
     ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
     ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
     REPLACE_CRE_ITEM ~staf21~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
-    ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv16~
+    ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ inv
     ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~
     ADD_CRE_ITEM ~brac15~ #0 #0 #0 ~none~ ~gloves~
 BUT_ONLY
