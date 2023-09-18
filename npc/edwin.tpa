@@ -18,23 +18,23 @@ END
 
 // Kit
 
-ADD_KIT  ~VP_RED_WIZARD~
+ADD_KIT  ~vpEdwinKit~
 
-~VP_RED_WIZARD 1 0 1 1 0 0 0 0~
+~vpEdwinKit 1 0 1 1 0 0 0 0~
 
-~VP_RED_WIZARD 0 2 0 0 2 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+~vpEdwinKit 0 2 0 0 2 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 
-~VP_RED_WIZARD 0 0 0 9 0 0~
+~vpEdwinKit 0 0 0 9 0 0~
 
-~VP_RED_WIZARD 0 0 0 0 0 0~
+~vpEdwinKit 0 0 0 0 0 0~
 
-~VP_RED_WIZARD 0 0 0 17 0 0~
+~vpEdwinKit 0 0 0 17 0 0~
 
-~VP_RED_WIZARD 0 0 0 15 0 0~
+~vpEdwinKit 0 0 0 15 0 0~
 
-~VP_RED_WIZARD 0 1 1 0 1 1 0 1 1~
+~vpEdwinKit 0 1 1 0 1 1 0 1 1~
 
-~VP_RED_WIZARD 1 1 0 1 0 0~
+~vpEdwinKit 1 1 0 1 0 0~
 
 ~%MOD_FOLDER%/npc/edwin/rules/vpedclab.2da~
 
@@ -77,12 +77,12 @@ Disadvantages:
 
 LAF fl#add_kit_ee
 STR_VAR
-kit_name = VP_RED_WIZARD
+kit_name = vpEdwinKit
 END
 
 ACTION_FOR_EACH edwin IN edwin2 edwin4 edwin6 edwin7_ edwin7 edwin9 edwin11 edwin12 edwin13 edwin15 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%edwin%.cre~ THEN BEGIN
-        COPY_EXISTING ~%edwin%.cre~ ~override~
-            WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_RED_WIZARD~))
+        COPY_EXISTING ~%edwin%.cre~ override
+            WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpEdwinKit~))
     END
 END

@@ -1,8 +1,8 @@
 IF
-	Global("VP_EnhancedArea","MYAREA",0)
+	Global("vpEnhancedArea","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_EnhancedArea","MYAREA",1)
+		SetGlobal("vpEnhancedArea","MYAREA",1)
 		ActionOverride("hobsha01",DestroySelf())
 		CreateCreature("vpmack",[1385.640],6)
 		CreateCreature("vplincol",[1339.696],6)

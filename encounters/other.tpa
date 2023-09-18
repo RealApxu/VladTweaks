@@ -1,13 +1,13 @@
 // Misc buffs
 
-COPY_EXISTING ~BERKREF.CRE~ ~override~
+COPY_EXISTING ~BERKREF.CRE~ override
     REMOVE_CRE_ITEM ~shld05~ ~plat01~ ~blun04~
     ADD_CRE_ITEM ~shld19~ #0 #0 #0 ~none~
     ADD_CRE_ITEM ~plat15~ #0 #0 #0 ~none~
     ADD_CRE_ITEM ~blun34~ #0 #0 #0 ~none~
     ADD_CRE_ITEM ~potnres~ #0 #0 #0 ~none~
 
-COPY_EXISTING ~LOUTCAPT.CRE~ ~override~
+COPY_EXISTING ~LOUTCAPT.CRE~ override
     WRITE_SHORT 0x24 131
     WRITE_SHORT 0x26 131
     WRITE_SHORT 0x46 -3
@@ -21,5 +21,5 @@ COPY_EXISTING ~LOUTCAPT.CRE~ ~override~
     ADD_CRE_ITEM ~halb12~ #0 #0 #0 ~none~
     ADD_CRE_ITEM ~plat19~ #0 #0 #0 ~none~
 
-COPY_EXISTING ~SEVPAT01.CRE~ ~override~
+COPY_EXISTING ~SEVPAT01.CRE~ override
     ADD_CRE_ITEM ~amul26~ #0 #0 #0 ~none~

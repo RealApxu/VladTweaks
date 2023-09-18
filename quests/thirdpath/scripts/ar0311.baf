@@ -1,6 +1,6 @@
 IF
 	Global("GaelanSpawn2","GLOBAL",0)
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	!InMyArea("gaelan2")
 	!Dead("gaelan2")
 THEN
@@ -12,7 +12,7 @@ END
 
 IF
 	PartyHasItem("misc4s") // Shadow Thief Cellar Key
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	Global("WorkingForBodhi","GLOBAL",0)
 	Global("AranKeyJournalEntry","AR0311",0)
 THEN
@@ -26,7 +26,7 @@ END
 
 IF
 	PartyHasItem("misc4s") // Shadow Thief Cellar Key
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	GlobalGT("WorkingForBodhi","GLOBAL",0)
 	Global("AranKeyJournalEntry2","AR0311",0)
 THEN
@@ -38,7 +38,7 @@ THEN
 END
 
 IF
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	OR(2)
 		Global("AranKeyJournalEntry","AR0311",1)
 		Global("AranKeyJournalEntry2","AR0311",1)

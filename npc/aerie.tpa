@@ -22,9 +22,9 @@ LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination 
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR723 destination = ~VPAERI21~ END // Elemental Summoning
 LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR724 destination = ~VPAERI22~ END // Greater Elemental Summoning
 
-COPY ~%MOD_FOLDER%/npc/aerie/bam~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/bam~ override
 
-COPY ~%MOD_FOLDER%/npc/aerie/spl/vpaeri02.spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/spl/vpaeri02.spl~ override
 SAY NAME1 ~Baervan's Bilberries~
 SAY NAME2 ~Baervan's Bilberries~
 SAY 0x50 ~Baervan's Bilberries
@@ -52,27 +52,27 @@ Saving Throw: None
 
 Casting a Baervan's Bilberries spell creates five magical berries that the caster can carry with him. These berries cure 20 points of physical damage for each one eaten.~
 
-COPY ~%MOD_FOLDER%/npc/aerie/spl/vpaeri99.spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/spl/vpaeri99.spl~ override
 
 // New kit
 
-ADD_KIT ~VP_WILDWANDERER_OF_BAERVAN~
+ADD_KIT ~vpAerieKit~
 
-~VP_WILDWANDERER_OF_BAERVAN 0 0 1 1 0 1 0 0~
+~vpAerieKit 0 0 1 1 0 1 0 0~
 
-~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+~vpAerieKit 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 13 0~
+~vpAerieKit 0 0 0 0 13 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 0 0~
+~vpAerieKit 0 0 0 0 0 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 17 0~
+~vpAerieKit 0 0 0 0 17 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 0 0 0 0 15 0~
+~vpAerieKit 0 0 0 0 15 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 1 0 0 1 0 0 1 0 0~
+~vpAerieKit 1 0 0 1 0 0 1 0 0~
  
-~VP_WILDWANDERER_OF_BAERVAN 1 0 1 1 0 1~
+~vpAerieKit 1 0 1 1 0 1~
  
 ~%MOD_FOLDER%/npc/aerie/rules/vpaeclab.2da~
  
@@ -129,10 +129,10 @@ Disadvantages:
 
 LAF fl#add_kit_ee
 STR_VAR
-    kit_name = VP_WILDWANDERER_OF_BAERVAN
+    kit_name = vpAerieKit
 END
 
-COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaeclck.itm~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaeclck.itm~ override
  SAY NAME2 ~Aerie's Cloak~
  SAY DESC ~Aerie's Cloak
 
@@ -162,7 +162,7 @@ Equipped abilities:
 
 Weight: 3~
 
-COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaering.itm~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaering.itm~ override
  SAY NAME2 ~Holy Symbol of Baervan~
  SAY DESC ~Only those most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols which provide essential protections and increase the amount of priest high-level spells they can memorise. This particular ring has a signet with a raccon's face. 
 
@@ -180,7 +180,7 @@ Equipped abilities:
 
 Weight: 0~
 
-COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaeri02.itm~ ~override~
+COPY ~%MOD_FOLDER%/npc/aerie/itm/vpaeri02.itm~ override
  SAY NAME1 ~Baervan's Bilberry~
  SAY NAME2 ~Baervan's Bilberry~
  SAY UNIDENTIFIED_DESC ~This very special bilberry created by Aerie will heal 20 points of damage instantly for each berry eaten.
@@ -202,9 +202,9 @@ Weight: 0~
 
 ACTION_FOR_EACH aerie IN aerbod01 aerie aerie6 aerie7 aerie9 aerie10 aerie11 aerie12 BEGIN
  ACTION_IF FILE_EXISTS_IN_GAME ~%aerie%.cre~ THEN BEGIN
-  COPY_EXISTING ~%aerie%.cre~ ~override~
+  COPY_EXISTING ~%aerie%.cre~ override
    WRITE_BYTE 0x273 3 // Change class to Single-Class Cleric
-   WRITE_SHORT 0x246 IDS_OF_SYMBOL (~kit~ ~VP_WILDWANDERER_OF_BAERVAN~) // New Kit
+   WRITE_SHORT 0x246 IDS_OF_SYMBOL (~kit~ ~vpAerieKit~) // New Kit
    ADD_CRE_ITEM ~vpaeclck~ #0 #0 #0 ~none~ ~cloak~ // Kit item
 //   READ_BYTE 0x235 ae_class // Read Cleric levels
 //   WRITE_BYTE 0x234 ae_class // Replace Mage levels with Cleric levels
@@ -219,5 +219,5 @@ APPEND ~item_use.2da~
 ~vpaeclck aerie 9382 2 99999~
 UNLESS ~vpaeclck~
 
-COPY_EXISTING ~item_use.2da~ ~override~
+COPY_EXISTING ~item_use.2da~ override
 REPLACE ~99999~ #9184

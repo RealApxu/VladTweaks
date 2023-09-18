@@ -1,5 +1,5 @@
 IF
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
@@ -9,7 +9,7 @@ END
 IF
 	Detect([PC])
 	Allegiance(Myself,NEUTRAL)
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	Global("ThievesGetNasty","LOCALS",0)
 THEN
 	RESPONSE #100

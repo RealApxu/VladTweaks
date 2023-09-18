@@ -1,8 +1,8 @@
 // Improved Yaga-Shura Fight
 
-COPY ~%MOD_FOLDER%/encounters/yagashura/itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/yagashura/itm~ override
 
-COPY_EXISTING ~YAGA01.CRE~ ~override~
+COPY_EXISTING ~YAGA01.CRE~ override
     WRITE_SHORT 0x24 380 // Current HP
     WRITE_SHORT 0x26 380 // Total HP
     WRITE_SHORT 0x46 0xfff1 // AC Natural
@@ -16,7 +16,7 @@ COPY_EXISTING ~YAGA01.CRE~ ~override~
     REPLACE_CRE_ITEM ~vpgifir1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~YAGA02.CRE~ ~override~
+COPY_EXISTING ~YAGA02.CRE~ override
     WRITE_SHORT 0x24 166 // Current HP
     WRITE_SHORT 0x26 166 // Total HP
     WRITE_SHORT 0x46 0 // AC Natural
@@ -39,7 +39,7 @@ COPY_EXISTING ~YAGA02.CRE~ ~override~
     ADD_CRE_ITEM ~lich02~ #0 #0 #0 ~none~ ~weapon1 weapon2 weapon3 weapon4~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~YSFIRE01.CRE~ ~override~
+COPY_EXISTING ~YSFIRE01.CRE~ override
     WRITE_SHORT 0x24 300 // Current HP
     WRITE_SHORT 0x26 300 // Total HP
     WRITE_SHORT 0x46 0xfff4 // AC Natural
@@ -55,7 +55,7 @@ COPY_EXISTING ~YSFIRE01.CRE~ ~override~
     REPLACE_CRE_ITEM ~vpgifir2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~YSFIRE02.CRE~ ~override~
+COPY_EXISTING ~YSFIRE02.CRE~ override
     WRITE_SHORT 0x24 320 // Current HP
     WRITE_SHORT 0x26 320 // Total HP
     WRITE_SHORT 0x46 0xfff4 // AC Natural

@@ -1,5 +1,5 @@
 IF
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 	Global("ETG2Dave","AR0300",0)
 THEN
 	RESPONSE #100

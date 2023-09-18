@@ -1,25 +1,25 @@
 IF
     PartyHasItem("misc84")
-    !Global("VP_Boo","GLOBAL",1)
+    !Global("vpBoo","GLOBAL",1)
 THEN
     RESPONSE #100
-        SetGlobal("VP_Boo","GLOBAL",1)
+        SetGlobal("vpBoo","GLOBAL",1)
 END
 
 IF
     !PartyHasItem("misc84")
-    GlobalTimerExpired("VP_NoBoo","GLOBAL")
-    Global("VP_Boo","GLOBAL",2)
+    GlobalTimerExpired("vpNoBoo","GLOBAL")
+    Global("vpBoo","GLOBAL",2)
 THEN
     RESPONSE #100
-        SetGlobal("VP_Boo","GLOBAL",1)
+        SetGlobal("vpBoo","GLOBAL",1)
         GiveItemCreate("misc84",Myself,0,0,0)
 END
 
 IF
     !PartyHasItem("misc84")
-    Global("VP_Boo","GLOBAL",0)
-    !GlobalTimerNotExpired("VP_NoBoo","GLOBAL")
+    Global("vpBoo","GLOBAL",0)
+    !GlobalTimerNotExpired("vpNoBoo","GLOBAL")
     !InMyArea("vpboo")
 THEN
     RESPONSE #100
@@ -29,11 +29,11 @@ THEN
 END
 
 IF
-    Global("VP_BooRest","GLOBAL",0)
+    Global("vpBooRest","GLOBAL",0)
     PartyRested()
     Detect("vpboo")
 THEN
     RESPONSE #100
-        SetGlobal("VP_BooRest","GLOBAL",1)
+        SetGlobal("vpBooRest","GLOBAL",1)
         Continue()
 END

@@ -1,5 +1,5 @@
 // Slaver Ship in Slums - Replace Traps
-COPY_EXISTING ~AR0405.ARE~ ~override~
+COPY_EXISTING ~AR0405.ARE~ override
  READ_SHORT 0x5a t_n
  READ_LONG 0x5c t_o
  FOR (i=0 ; i<t_n ; i+=1) BEGIN
@@ -26,7 +26,7 @@ EXTEND_BOTTOM ~COPAMB05.BCS~ ~%MOD_FOLDER%/encounters/slavers/scripts/copamb.baf
 
 // Stats Improvements
 
-COPY_EXISTING ~BEAST.CRE~ ~override~
+COPY_EXISTING ~BEAST.CRE~ override
  WRITE_LONG 0x14 5000 // XP Value
  WRITE_SHORT 0x24 95 // Current HP
  WRITE_SHORT 0x26 95 // Total HP
@@ -47,7 +47,7 @@ COPY_EXISTING ~BEAST.CRE~ ~override~
  REPLACE_CRE_ITEM ~arow05~ #80 #0 #0 ~none~ ~quiver1~
 BUT_ONLY
 
-COPY_EXISTING ~HAEGAN.CRE~ ~override~
+COPY_EXISTING ~HAEGAN.CRE~ override
  WRITE_LONG 0x14 8500 // XP Value
  WRITE_SHORT 0x24 279 // Current HP
  WRITE_SHORT 0x26 279 // Total HP
@@ -69,7 +69,7 @@ COPY_EXISTING ~HAEGAN.CRE~ ~override~
  REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~unstealable~ ~armor~
 BUT_ONLY
 
-COPY_EXISTING ~SLAPRI.CRE~ ~override~
+COPY_EXISTING ~SLAPRI.CRE~ override
  WRITE_LONG 0x14 8000 // XP Value
  WRITE_SHORT 0x24 145 // Current HP
  WRITE_SHORT 0x26 145 // Total HP
@@ -148,7 +148,7 @@ COPY_EXISTING ~SLAPRI.CRE~ ~override~
  ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~
 BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING ~CCGUARD1.CRE~ ~override~
+COPY_EXISTING ~CCGUARD1.CRE~ override
  WRITE_LONG 0x14 5500 // XP Value
  WRITE_SHORT 0x24 120 // Current HP
  WRITE_SHORT 0x26 120 // Total HP
@@ -183,7 +183,7 @@ COPY_EXISTING ~CCGUARD1.CRE~ ~override~
  ADD_CRE_ITEM ~arow11~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
-COPY_EXISTING ~CCGUARD2.CRE~ ~override~
+COPY_EXISTING ~CCGUARD2.CRE~ override
  WRITE_LONG 0x14 7500 // XP Value
  WRITE_SHORT 0x24 66 // Current HP
  WRITE_SHORT 0x26 66 // Total HP
@@ -265,7 +265,7 @@ COPY_EXISTING ~CCGUARD2.CRE~ ~override~
  ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~
 BUT_ONLY
 
-COPY_EXISTING ~COPAMB02.CRE~ ~override~
+COPY_EXISTING ~COPAMB02.CRE~ override
  WRITE_LONG 0x14 1500 // XP Value
  WRITE_SHORT 0x24 120 // Current HP
  WRITE_SHORT 0x26 120 // Total HP
@@ -306,7 +306,7 @@ COPY_EXISTING ~COPAMB02.CRE~ ~override~
  ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
-COPY_EXISTING ~COPAMB05.CRE~ ~override~
+COPY_EXISTING ~COPAMB05.CRE~ override
  WRITE_LONG 0x14 1500 // XP Value
  WRITE_SHORT 0x24 150 // Current HP
  WRITE_SHORT 0x26 150 // Total HP
@@ -340,20 +340,20 @@ COPY_EXISTING ~COPAMB05.CRE~ ~override~
 BUT_ONLY
 
 /*
-COPY_EXISTING ~COPCUST1.CRE~ ~override~
+COPY_EXISTING ~COPCUST1.CRE~ override
  WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 
-COPY_EXISTING ~COPCUST1.CRE~ ~override~
+COPY_EXISTING ~COPCUST1.CRE~ override
  WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 
-COPY_EXISTING ~SLEEPDW.CRE~ ~override~
+COPY_EXISTING ~SLEEPDW.CRE~ override
  WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 */
 
-COPY_EXISTING ~SLARCH1.CRE~ ~override~
+COPY_EXISTING ~SLARCH1.CRE~ override
  WRITE_LONG 0x14 4500 // XP Value
  WRITE_SHORT 0x24 130 // Current HP
  WRITE_SHORT 0x26 130 // Total HP
@@ -383,7 +383,7 @@ COPY_EXISTING ~SLARCH1.CRE~ ~override~
  REPLACE_CRE_ITEM ~arow09~ #20 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
-COPY_EXISTING ~SLGUARD1.CRE~ ~override~
+COPY_EXISTING ~SLGUARD1.CRE~ override
  WRITE_LONG 0x14 3500 // XP Value
  WRITE_SHORT 0x24 156 // Current HP
  WRITE_SHORT 0x26 156 // Total HP
@@ -411,7 +411,7 @@ COPY_EXISTING ~SLGUARD1.CRE~ ~override~
  REPLACE_CRE_ITEM ~chan07~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
-COPY_EXISTING ~SLGUARD2.CRE~ ~override~
+COPY_EXISTING ~SLGUARD2.CRE~ override
  WRITE_LONG 0x14 3500 // XP Value
  WRITE_SHORT 0x24 138 // Current HP
  WRITE_SHORT 0x26 138 // Total HP
@@ -434,7 +434,7 @@ COPY_EXISTING ~SLGUARD2.CRE~ ~override~
  REPLACE_CRE_ITEM ~plat04~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
-COPY_EXISTING ~SLMAGE1.CRE~ ~override~
+COPY_EXISTING ~SLMAGE1.CRE~ override
  WRITE_LONG 0x14 7500 // XP Value
  WRITE_SHORT 0x24 118 // Current HP
  WRITE_SHORT 0x26 118 // Total HP
@@ -533,7 +533,7 @@ COPY_EXISTING ~SLMAGE1.CRE~ ~override~
  ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
 BUT_ONLY
 
-COPY_EXISTING ~SLMAGE2.CRE~ ~override~
+COPY_EXISTING ~SLMAGE2.CRE~ override
  WRITE_LONG 0x14 6000 // XP Value
  WRITE_SHORT 0x24 78 // Current HP
  WRITE_SHORT 0x26 78 // Total HP
@@ -639,31 +639,31 @@ BUT_ONLY
 
 // New Slums' Sewers Encounter (belongs to Third Path)
 
-/*COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ ~override~
+/*COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ override
  SAY NAME1 ~Coulson~
  SAY NAME2 ~Coulson~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmay.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmay.cre~ override
  SAY NAME1 ~May~
  SAY NAME2 ~May~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpfitz.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpfitz.cre~ override
  SAY NAME1 ~Fitz~
  SAY NAME2 ~Fitz~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpsimmon.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpsimmon.cre~ override
  SAY NAME1 ~Simmons~
  SAY NAME2 ~Simmons~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpskye.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpskye.cre~ override
  SAY NAME1 ~Skye~
  SAY NAME2 ~Skye~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vplincol.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vplincol.cre~ override
  SAY NAME1 ~Lincoln~
  SAY NAME2 ~Lincoln~
 
-COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmack.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmack.cre~ override
  SAY NAME1 ~Mack~
  SAY NAME2 ~Mack~
 

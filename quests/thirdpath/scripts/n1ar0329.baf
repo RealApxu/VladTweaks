@@ -2,7 +2,7 @@ IF
 	Dead("aran")  // Aran Linvail
 	Global("DearAranJournal","AR0329",0)
 	Global("BodhiJob","GLOBAL",0)
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("DearAranJournal","AR0329",1)

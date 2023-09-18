@@ -69,9 +69,9 @@ BUT_ONLY
 
 COPY ~%MOD_FOLDER%/encounters/trolls/itm/vptrolto.itm~ override
 
-COPY_EXISTING ~TORGAL.CRE~ ~override~
-              ~TORGAL2.CRE~ ~override~
-              ~TORGAL3.CRE~ ~override~
+COPY_EXISTING ~TORGAL.CRE~ override
+              ~TORGAL2.CRE~ override
+              ~TORGAL3.CRE~ override
                 REPLACE_CRE_ITEM ~vptrolto~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 

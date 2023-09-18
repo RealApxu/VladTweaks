@@ -1,12 +1,12 @@
 // Improved Black Talon Bandits
 
-COPY_EXISTING ~BANDIT2.BCS~ ~override~
+COPY_EXISTING ~BANDIT2.BCS~ override
     DECOMPILE_AND_PATCH BEGIN
         REPLACE_TEXTUALLY EXACT_MATCH ~Enemy()~ ~Enemy() MoveToObject(LastHeardBy(Myself))~
     END
 BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING ~BANDIT2.CRE~ ~override~
+COPY_EXISTING ~BANDIT2.CRE~ override
     WRITE_LONG 0x14 270 // XP Value
     WRITE_SHORT 0x24 63 // Current HP
     WRITE_SHORT 0x26 63 // Total HP
@@ -32,7 +32,7 @@ COPY_EXISTING ~BANDIT2.CRE~ ~override~
     REPLACE_CRE_ITEM ~bow01~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~IRONELIT.CRE~ ~override~
+COPY_EXISTING ~IRONELIT.CRE~ override
     WRITE_SHORT 0x24 81 // Current HP
     WRITE_SHORT 0x26 81 // Total HP
     WRITE_SHORT 0x46 10 // AC Natural

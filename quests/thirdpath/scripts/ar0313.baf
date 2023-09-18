@@ -1,8 +1,8 @@
 IF
 	PartyHasItem("vparlett") // Aran's Letter
-	OR(2)
-		GlobalTimerExpired("VP_ToBrynnlaw_Time","GLOBAL")
-		GlobalGT("VP_Kr_CyricPlot","GLOBAL",6)
+//	OR(2)
+//		GlobalTimerExpired("VP_ToBrynnlaw_Time","GLOBAL")
+//		GlobalGT("VP_Kr_CyricPlot","GLOBAL",6)
 	Global("VP_SailTo_Brynnlaw","GLOBAL",1)
 	GlobalLT("Chapter","GLOBAL",%bg_chapter_4%)
 THEN
@@ -14,10 +14,10 @@ END
 IF
 	InMyArea("PPSAEM")
 	GlobalGT("Chapter","GLOBAL",%bg_chapter_3%)
-	Global("VP_Remove_Saemon","GLOBAL",0)
+	Global("vpRemoveSaemon","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Remove_Saemon","GLOBAL",1)
+		SetGlobal("vpRemoveSaemon","GLOBAL",1)
 		ActionOverride("PPSAEM",DestroySelf())
 END
 

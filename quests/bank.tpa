@@ -20,13 +20,13 @@ COMPILE ~%MOD_FOLDER%/quests/bank/dialogue/dialogue.d~
 
 // Creatures
 
-COPY ~%MOD_FOLDER%/quests/bank/cre/vpmebank.cre~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/cre/vpmebank.cre~ override
  SAY NAME1 ~League Merchant~
  SAY NAME2 ~League Merchant~
 
 // Items
 
-COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc10.itm~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc10.itm~ override
  SAY NAME1 ~Merchant League Banknote~ 
  SAY NAME2 ~Merchant League Banknote~
  SAY UNIDENTIFIED_DESC ~Banknote is a promissory note or certificate issued by a bank that bears monetary value and can be exchanged for a certain amount of gold pieces.~
@@ -38,7 +38,7 @@ STATISTICS:
 
 Weight: 0~
 
-COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc25.itm~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc25.itm~ override
  SAY NAME1 ~Merchant League Banknote~ 
  SAY NAME2 ~Merchant League Banknote~
  SAY UNIDENTIFIED_DESC ~Banknote is a promissory note or certificate issued by a bank that bears monetary value and can be exchanged for a certain amount of gold pieces.~
@@ -50,7 +50,7 @@ STATISTICS:
 
 Weight: 0~
 
-COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc50.itm~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/itm/vpvouc50.itm~ override
  SAY NAME1 ~Merchant League Banknote~ 
  SAY NAME2 ~Merchant League Banknote~
  SAY UNIDENTIFIED_DESC ~Banknote is a promissory note or certificate issued by a bank that bears monetary value and can be exchanged for a certain amount of gold pieces.~
@@ -62,7 +62,7 @@ STATISTICS:
 
 Weight: 0~
 
-COPY ~%MOD_FOLDER%/quests/bank/itm/vpvou100.itm~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/itm/vpvou100.itm~ override
  SAY NAME1 ~Merchant League Banknote~ 
  SAY NAME2 ~Merchant League Banknote~
  SAY UNIDENTIFIED_DESC ~Banknote is a promissory note or certificate issued by a bank that bears monetary value and can be exchanged for a certain amount of gold pieces.~
@@ -76,13 +76,13 @@ Weight: 0~
 
 // Stores
 
-COPY ~%MOD_FOLDER%/quests/bank/sto/vpaldeth.sto~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/sto/vpaldeth.sto~ override
  SAY STORE_NAME ~Aldeth~
 
-COPY ~%MOD_FOLDER%/quests/bank/sto/vpmebank.sto~ ~override~
+COPY ~%MOD_FOLDER%/quests/bank/sto/vpmebank.sto~ override
  SAY STORE_NAME ~Merchant Bank~
 
-COPY_EXISTING ~ulgoth.sto~ ~override~
+COPY_EXISTING ~ulgoth.sto~ override
  ADD_STORE_ITEM ~vpvouc10.itm~ #0 #0 #0 ~none~ #5
  ADD_STORE_ITEM ~vpvouc25.itm~ #0 #0 #0 ~none~ #5
  ADD_STORE_ITEM ~vpvouc50.itm~ #0 #0 #0 ~none~ #5

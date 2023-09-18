@@ -1,6 +1,6 @@
 // Improved Gromnir
 
-COPY_EXISTING ~AR5002.bcs~ ~override~
+COPY_EXISTING ~AR5002.bcs~ override
 DECOMPILE_AND_PATCH BEGIN
 REPLACE_TEXTUALLY
 ~ClearAllActions()~
@@ -17,9 +17,9 @@ BUT_ONLY
 
 COMPILE ~%MOD_FOLDER%/encounters/gromnir/scripts/karunf.baf~
 
-COPY ~%MOD_FOLDER%/encounters/gromnir/bam~ ~override~
+COPY ~%MOD_FOLDER%/encounters/gromnir/bam~ override
 
-COPY_EXISTING ~GROMG03.CRE~ ~override~
+COPY_EXISTING ~GROMG03.CRE~ override
  WRITE_SHORT 0x24 220 // Current HP
  WRITE_SHORT 0x26 220 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -36,7 +36,7 @@ COPY_EXISTING ~GROMG03.CRE~ ~override~
  ADD_CRE_ITEM ~arow08~ #20 #0 #0 ~none~ ~quiver3~ 
 BUT_ONLY
 
-COPY_EXISTING ~GROMG05.CRE~ ~override~
+COPY_EXISTING ~GROMG05.CRE~ override
  WRITE_SHORT 0x24 246 // Current HP
  WRITE_SHORT 0x26 246 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -47,7 +47,7 @@ COPY_EXISTING ~GROMG05.CRE~ ~override~
  WRITE_BYTE 0x234 18 // First Class Level 
 BUT_ONLY
 
-COPY_EXISTING ~GROMG08.CRE~ ~override~
+COPY_EXISTING ~GROMG08.CRE~ override
  WRITE_SHORT 0x24 86 // Current HP
  WRITE_SHORT 0x26 86 // Total HP
  WRITE_SHORT 0x46 0xffff // AC Natural
@@ -58,7 +58,7 @@ COPY_EXISTING ~GROMG08.CRE~ ~override~
  REPLACE_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~GROMG09.CRE~ ~override~
+COPY_EXISTING ~GROMG09.CRE~ override
  WRITE_SHORT 0x24 225 // Current HP
  WRITE_SHORT 0x26 225 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -72,7 +72,7 @@ COPY_EXISTING ~GROMG09.CRE~ ~override~
  REPLACE_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
-COPY_EXISTING ~GROMG10.CRE~ ~override~
+COPY_EXISTING ~GROMG10.CRE~ override
  WRITE_SHORT 0x24 225 // Current HP
  WRITE_SHORT 0x26 225 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -86,7 +86,7 @@ COPY_EXISTING ~GROMG10.CRE~ ~override~
  REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
-COPY_EXISTING ~GROMNIR.CRE~ ~override~
+COPY_EXISTING ~GROMNIR.CRE~ override
  WRITE_SHORT 0x24 390 // Current HP
  WRITE_SHORT 0x26 390 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -100,7 +100,7 @@ COPY_EXISTING ~GROMNIR.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
-COPY ~%MOD_FOLDER%/encounters/gromnir/itm/vpaxcha2.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/gromnir/itm/vpaxcha2.itm~ override
  SAY NAME2 ~Charged Battle Axe +5~
  SAY DESC ~Besides its superb craftsmanship, tiny runes of power can be seen etched all along the surface. It's obvious a lot of time and effort went into its creation and although not apparent at first, a slight blue glow can be seen emanating from the runes.
 

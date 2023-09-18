@@ -1,8 +1,8 @@
 IF
-	Global("VP_Enhanced_Area","MYAREA",0)
+	Global("vpEnhancedArea","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Enhanced_Area","MYAREA",1)
+		SetGlobal("vpEnhancedArea","MYAREA",1)
 		CreateCreature("vpfgole1",[1475.1223],10)
 		CreateCreature("vpfgole2",[1215.1403],11)
 		CreateCreature("vpfgole3",[1768.893],10)

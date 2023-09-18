@@ -9,11 +9,11 @@ END
 
 IF
 	HPPercentLT(Myself,60)
-	Global("VP_Fear","LOCALS",0)
+	Global("vpFear","LOCALS",0)
 THEN
 	RESPONSE #100
 		ForceSpell(NearestEnemyOf(Myself),CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Cloak of Fear)
-		SetGlobal("VP_Fear","LOCALS",1)
+		SetGlobal("vpFear","LOCALS",1)
 		Continue()
 END
 

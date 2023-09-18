@@ -18,10 +18,10 @@ END
 
 IF
 	!Global("MAP_GROUP_HOSTILE10","MYAREA",0)
-	Global("VP_Thief_Is_Hidding","LOCALS",0)
+	Global("vpThiefIsHidding","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Thief_Is_Hidding","LOCALS",1)
+		SetGlobal("vpThiefIsHidding","LOCALS",1)
 		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
 END
 
@@ -77,4 +77,3 @@ THEN
 	RESPONSE #100
 		MoveToObject([PC])
 END
-

@@ -2,10 +2,10 @@ IF
 	See([PC])
 	Allegiance(Myself,ENEMY)
 	Global("SPRITE_IS_DEADgromg08","GLOBAL",0)
-	Global("VP_Karun_Multiplies","GLOBAL",0)
+	Global("vpKarunMultiplies","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Karun_Multiplies","GLOBAL",1)
+		SetGlobal("vpKarunMultiplies","GLOBAL",1)
 		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
 		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
 		CreateCreatureObjectCopy("gromg08",Myself,0,0,0)  // Karun the Black
@@ -18,28 +18,28 @@ IF
 	Die()
 THEN
 	RESPONSE #100
-		IncrementGlobal("VP_Fake_Karun_Dead","GLOBAL",1)
+		IncrementGlobal("vpFakeKarunDead","GLOBAL",1)
 		DestroySelf()
 END
 
 IF
 	RandomNum(9,1)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",1)
+		SetGlobal("vpJump","LOCALS",1)
 		JumpToPoint([643.791])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",1)
+	Global("vpJump","LOCALS",1)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)  // SPWI808.SPL (Improved Mantle)
 		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
 		DisplayString(Myself,39968)  // Spell Trigger—Fired
@@ -54,11 +54,11 @@ THEN
 END
 
 IF
-	Global("VP_Jump","LOCALS",1)
+	Global("vpJump","LOCALS",1)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([760.678])
 		Continue()
 END
@@ -66,31 +66,31 @@ END
 IF
 	RandomNum(9,2)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",2)
+		SetGlobal("vpJump","LOCALS",2)
 		JumpToPoint([760.678])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",2)
+	Global("vpJump","LOCALS",2)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_DISINTEGRATE)  // SPWI616.SPL (Disintegrate)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",2)
+	Global("vpJump","LOCALS",2)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([498.481])
 		Continue()
 END
@@ -98,31 +98,31 @@ END
 IF
 	RandomNum(9,3)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",3)
+		SetGlobal("vpJump","LOCALS",3)
 		JumpToPoint([498.481])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",3)
+	Global("vpJump","LOCALS",3)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",3)
+	Global("vpJump","LOCALS",3)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([370.559])
 		Continue()
 END
@@ -130,31 +130,31 @@ END
 IF
 	RandomNum(9,4)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",4)
+		SetGlobal("vpJump","LOCALS",4)
 		JumpToPoint([370.559])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",4)
+	Global("vpJump","LOCALS",4)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",4)
+	Global("vpJump","LOCALS",4)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([539.868])
 		Continue()
 END
@@ -162,21 +162,21 @@ END
 IF
 	RandomNum(9,5)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",5)
+		SetGlobal("vpJump","LOCALS",5)
 		JumpToPoint([539.868])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",5)
+	Global("vpJump","LOCALS",5)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ApplySpell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
 		ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
 		DisplayString(Myself,39968)  // Spell Trigger—Fired
@@ -192,11 +192,11 @@ THEN
 END
 
 IF
-	Global("VP_Jump","LOCALS",5)
+	Global("vpJump","LOCALS",5)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([866.768])
 		Continue()
 END
@@ -204,31 +204,31 @@ END
 IF
 	RandomNum(9,6)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",6)
+		SetGlobal("vpJump","LOCALS",6)
 		JumpToPoint([866.768])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",6)
+	Global("vpJump","LOCALS",6)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",6)
+	Global("vpJump","LOCALS",6)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([922.492])
 		Continue()
 END
@@ -236,31 +236,31 @@ END
 IF
 	RandomNum(9,7)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",7)
+		SetGlobal("vpJump","LOCALS",7)
 		JumpToPoint([922.492])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",7)
+	Global("vpJump","LOCALS",7)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_IMPRISONMENT)  // SPWI910.SPL (Imprisonment)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",7)
+	Global("vpJump","LOCALS",7)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([672.517])
 		Continue()
 END
@@ -268,31 +268,31 @@ END
 IF
 	RandomNum(9,8)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",8)
+		SetGlobal("vpJump","LOCALS",8)
 		JumpToPoint([672.517])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",8)
+	Global("vpJump","LOCALS",8)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word, Kill)
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",8)
+	Global("vpJump","LOCALS",8)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([497.696])
 		Continue()
 END
@@ -300,21 +300,21 @@ END
 IF
 	RandomNum(9,9)
 	OR(2)
-		GlobalLT("VP_Fake_Karun_Dead","GLOBAL",7)
+		GlobalLT("vpFakeKarunDead","GLOBAL",7)
 		GlobalLT("SPRITE_IS_DEADgromg08","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",9)
+		SetGlobal("vpJump","LOCALS",9)
 		JumpToPoint([497.696])
 		Continue()
 END
 
 IF
-	Global("VP_Jump","LOCALS",9)
+	Global("vpJump","LOCALS",9)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		ApplySpell(NearestEnemyOf(Myself),WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Prismatic Spray)
 		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLESH_TO_STONE)  // SPWI604.SPL (Flesh to Stone)
 		ApplySpell(SecondNearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol, Stun)
@@ -324,11 +324,11 @@ THEN
 END
 
 IF
-	Global("VP_Jump","LOCALS",9)
+	Global("vpJump","LOCALS",9)
 	!See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Jump","LOCALS",0)
+		SetGlobal("vpJump","LOCALS",0)
 		MoveToPoint([233.726])
 		Continue()
 END

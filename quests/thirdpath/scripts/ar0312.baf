@@ -1,6 +1,6 @@
 IF
 	Global("ArledHostile","AR0312",0)
-	Global("VP_Guild_Attacked","GLOBAL",1)
+	Global("vpGuildAttacked","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("ArledHostile","AR0312",1)

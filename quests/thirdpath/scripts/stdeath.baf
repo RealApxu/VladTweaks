@@ -3,7 +3,7 @@ IF
 	Global("WorkingForBodhi","GLOBAL",0)
 	OR(2)
 		Global("AttackedThieves","GLOBAL",1)
-		Global("VP_Guild_Attacked","GLOBAL",1)
+		Global("vpGuildAttacked","GLOBAL",1)
 THEN
 	RESPONSE #100
 		CreateCreatureObject("STDEATH2",Player1,0,0,0) // Arkanis Gath
@@ -13,7 +13,7 @@ END
 IF
 	OR(2)
 		Global("AttackedThieves","GLOBAL",1)
-		Global("VP_Guild_Attacked","GLOBAL",1)
+		Global("vpGuildAttacked","GLOBAL",1)
 	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
@@ -26,13 +26,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AttackedThieves","GLOBAL",1)
-		SetGlobal("VP_Guild_Attacked","GLOBAL",1)
+		SetGlobal("vpGuildAttacked","GLOBAL",1)
 END
 
 IF
 	OR(2)
 		Allegiance(Myself,ENEMY)
-		Global("VP_Guild_Attacked","GLOBAL",1)
+		Global("vpGuildAttacked","GLOBAL",1)
 	Global("AttackedThieves","GLOBAL",0)
 THEN
 	RESPONSE #100

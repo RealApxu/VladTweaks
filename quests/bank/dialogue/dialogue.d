@@ -1,6 +1,6 @@
 // Aldeth Additions
 
-I_C_T ALDETH 27 VP_Aldeth1
+I_C_T ALDETH 27 vpAldeth1
 == ALDETH ~In addition I will suggest you to browse my personal store and take a look at my special merchandise which I show only to my very special guests. If you wish you may purchase banknotes accepted by any accredited merchant store, our exchange rate will be only 20% for you.~
 END
 

@@ -1,42 +1,42 @@
 /*IF
 	See(NearestEnemyOf(Myself))
-	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Зеркальный образ)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL
 THEN
 	RESPONSE #100
-		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Зеркальный образ)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL
 END*/
 
 IF
 	See(NearestEnemyOf(Myself))
-	GlobalLT("VP_Cast_Fear","LOCALS",2)
+	GlobalLT("vpCastFear","LOCALS",2)
 THEN
 	RESPONSE #100
-		IncrementGlobal("VP_Cast_Fear","LOCALS",1)
-		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Символ, Страх)
+		IncrementGlobal("vpCastFear","LOCALS",1)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	GlobalLT("VP_Cast_Chaos","LOCALS",2)
+	GlobalLT("vpCastChaos","LOCALS",2)
 THEN
 	RESPONSE #100
-		IncrementGlobal("VP_Cast_Chaos","LOCALS",1)
-		ReallyForceSpell(Myself,WIZARD_CHAOS)  // SPWI508.SPL (Хаос)
+		IncrementGlobal("vpCastChaos","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_CHAOS)  // SPWI508.SPL
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	Global("VP_Cast_ShadowDoor","LOCALS",0)
+	Global("vpCastShadowDoor","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Cast_ShadowDoor","LOCALS",1)
-		ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Теневая дверь)
+		SetGlobal("vpCastShadowDoor","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL
 END
 /*
 IF
 	See(NearestEnemyOf(Myself))
-	HaveSpell(WIZARD_FLAME_ARROW)  // SPWI303.SPL (Огненная стрела)
+	HaveSpell(WIZARD_FLAME_ARROW)  // SPWI303.SPL
 THEN
 	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Огненная стрела)
+		Spell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL
 END*/

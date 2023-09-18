@@ -1,8 +1,8 @@
 IF
-    Global("VPImprovedSlaverSpawn","MYAREA",0)
+    Global("vpImprovedSlavers","MYAREA",0)
 THEN
     RESPONSE #100
-        SetGlobal("VPImprovedSlaverSpawn","MYAREA",1)
+        SetGlobal("vpImprovedSlavers","MYAREA",1)
         CreateCreature("slarch1",[1887.1206],0)
         CreateCreature("slarch1",[1455.1550],12)
         CreateCreature("slarch1",[1950.1293],12)

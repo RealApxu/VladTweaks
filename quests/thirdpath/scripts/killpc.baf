@@ -17,10 +17,10 @@ THEN
 END
 
 IF
-	Global("VP_Thief_Is_Hidding","LOCALS",0)
+	Global("vpThiefIsHidding","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Thief_Is_Hidding","LOCALS",1)
+		SetGlobal("vpThiefIsHidding","LOCALS",1)
 		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
 END
 
@@ -58,10 +58,10 @@ THEN
 END
 
 IF
-	Global("VP_Thief_Is_Hidding","LOCALS",1)
+	Global("vpThiefIsHidding","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Thief_Is_Hidding","LOCALS",2)
+		SetGlobal("vpThiefIsHidding","LOCALS",2)
 		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
 END
 

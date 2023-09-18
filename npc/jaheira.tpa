@@ -1,18 +1,18 @@
 // Spells
 
-COPY ~%MOD_FOLDER%/npc/jaheira/bam~ ~override~
+COPY ~%MOD_FOLDER%/npc/jaheira/bam~ override
 
-COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah11.spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah11.spl~ override
  SAY NAME1 ~Sylvanus Mental Agility~
  SAY NAME2 ~Sylvanus Mental Agility~
  SAY DESC ~This spell quickens the thought processes of the caster actually allowing him to cast spells more quickly than normally. The casting speed facor is increased as the caster advances levels.~
 
-COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah12.spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah12.spl~ override
  SAY NAME1 ~Sylvanus Physical Agility~
  SAY NAME2 ~Sylvanus Physical Agility~
  SAY DESC ~This spell quickens the caster's reflexes, enabling faster and more effective combat.~
 
-COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah13.spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/jaheira/spl/vpjah13.spl~ override
  SAY NAME1 ~Shapechange~
  SAY NAME2 ~Shapechange~
  SAY DESC ~Shapechange (Alteration) 
@@ -29,23 +29,23 @@ Note that the although the assumed form has the combat characteristics of the re
 
 // Kit
 
-ADD_KIT ~VP_PRIEST_OF_SYLVANUS~
+ADD_KIT ~vpJaheiraKit~
 
-~VP_PRIEST_OF_SYLVANUS 0 0 1 1 1 0 0 0~
+~vpJaheiraKit 0 0 1 1 1 0 0 0~
 
-~VP_PRIEST_OF_SYLVANUS 0 0 0 2 2 2 0 2 0 0 0 0 0 0 2 2 0 2 2 0 0 0 2 2 0 0 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+~vpJaheiraKit 0 0 0 2 2 2 0 2 0 0 0 0 0 0 2 2 0 2 2 0 0 0 2 2 0 0 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
  
-~VP_PRIEST_OF_SYLVANUS 0 9 0 9 15 15~
+~vpJaheiraKit 0 9 0 9 15 15~
  
-~VP_PRIEST_OF_SYLVANUS 0 0 0 0 0 0~
+~vpJaheiraKit 0 0 0 0 0 0~
  
-~VP_PRIEST_OF_SYLVANUS 0 12 0 12 17 15~
+~vpJaheiraKit 0 12 0 12 17 15~
  
-~VP_PRIEST_OF_SYLVANUS 0 9 0 9 15 15~
+~vpJaheiraKit 0 9 0 9 15 15~
  
-~VP_PRIEST_OF_SYLVANUS 0 0 0 0 1 0 0 0 0~
+~vpJaheiraKit 0 0 0 0 1 0 0 0 0~
  
-~VP_PRIEST_OF_SYLVANUS 1 0 0 0 0 0~
+~vpJaheiraKit 1 0 0 0 0 0~
  
 ~%MOD_FOLDER%/npc/jaheira/rules/vpjaclab.2da~
  
@@ -84,14 +84,14 @@ Disadvantages:
 
 LAF fl#add_kit_ee
 STR_VAR
-kit_name = VP_PRIEST_OF_SYLVANUS
+kit_name = vpJaheiraKit
 END
 
 //Creature files
 
 ACTION_FOR_EACH jaheir IN jaheir7 jaheir8 jaheir11 jaheir12 jahei12b jahei14 jaheird jaheir2 jaheir4 jaheir6 jaheir7_ BEGIN
 	ACTION_IF FILE_EXISTS_IN_GAME ~%jaheir%.cre~ THEN BEGIN
-		COPY_EXISTING ~%jaheir%.cre~ ~override~
-			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_PRIEST_OF_SYLVANUS~))
+		COPY_EXISTING ~%jaheir%.cre~ override
+			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpJaheiraKit~))
     END
 END

@@ -3,9 +3,9 @@
 COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/illasera.baf~
 COMPILE ~%MOD_FOLDER%/encounters/illasera/scripts/zilmag01.baf~
 
-COPY ~%MOD_FOLDER%/encounters/illasera/bam~ ~override~
+COPY ~%MOD_FOLDER%/encounters/illasera/bam~ override
 
-COPY_EXISTING ~ILLASERA.CRE~ ~override~
+COPY_EXISTING ~ILLASERA.CRE~ override
  WRITE_LONG 0x14 20000 // XP Value
  WRITE_SHORT 0x24 298 // Current HP
  WRITE_SHORT 0x26 298 // Total HP
@@ -42,7 +42,7 @@ COPY_EXISTING ~ILLASERA.CRE~ ~override~
  ADD_CRE_ITEM ~immune4~ #0 #0 #0 ~unstealable&undroppable~ ~lring rring~ 
 BUT_ONLY
 
-COPY_EXISTING ~ZILARC01.CRE~ ~override~
+COPY_EXISTING ~ZILARC01.CRE~ override
  WRITE_SHORT 0x24 171 // Current HP
  WRITE_SHORT 0x26 171 // Total HP
  WRITE_SHORT 0x46 0xfff6 // AC Natural
@@ -69,7 +69,7 @@ COPY_EXISTING ~ZILARC01.CRE~ ~override~
  ADD_CRE_ITEM ~potn53~  #5 #0 #0 ~none~ ~qitem3~
 BUT_ONLY
 
-COPY_EXISTING ~ZILFGT01.CRE~ ~override~
+COPY_EXISTING ~ZILFGT01.CRE~ override
  WRITE_SHORT 0x24 182 // Current HP
  WRITE_SHORT 0x26 182 // Total HP
  WRITE_SHORT 0x46 0xfff8 // AC Natural
@@ -80,7 +80,7 @@ COPY_EXISTING ~ZILFGT01.CRE~ ~override~
  REPLACE_CRE_ITEM ~sw1h76~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
-COPY_EXISTING ~ZILMAG01.CRE~ ~override~
+COPY_EXISTING ~ZILMAG01.CRE~ override
  WRITE_LONG 0x14 9000 // XP Value
  WRITE_SHORT 0x24 125 // Current HP
  WRITE_SHORT 0x26 125 // Total HP
@@ -144,7 +144,7 @@ COPY_EXISTING ~ZILMAG01.CRE~ ~override~
  ADD_CRE_ITEM ~ring09~ #0 #0 #0 ~none~ ~lring rring~
 BUT_ONLY
 
-COPY ~%MOD_FOLDER%/encounters/illasera/itm/vprithsw.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/illasera/itm/vprithsw.itm~ override
  SAY NAME2 ~Rithtellium Short Sword +5~
  SAY DESC ~This short sword is extremely light and give off a shimmering blue hue. Closer examination reveals that it is made from *rithtellium*, a mystical alloy, the forging of which is a closely guarded secret, known only to those who forge it. It requires both mage and smith to forge weapons from rithtellium, the end result being weapons with a shimmering blue hue which are usable by wizards as if proficient in their use.
 

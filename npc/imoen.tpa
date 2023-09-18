@@ -20,23 +20,23 @@ LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPWI405 destination 
 
 // Kit
 
-ADD_KIT ~VP_CHARMING_ROGUE~
+ADD_KIT ~vpImoenKit~
 
-~VP_CHARMING_ROGUE 1 1 1 1 1 0 0 0~
+~vpImoenKit 1 1 1 1 1 0 0 0~
 
-~VP_CHARMING_ROGUE 0 1 0 0 1 0 0 2 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 2 0 2 2 2 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+~vpImoenKit 0 1 0 0 1 0 0 2 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 2 0 2 2 2 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
  
-~VP_CHARMING_ROGUE 0 9 0 9 0 13~
+~vpImoenKit 0 9 0 9 0 13~
 
-~VP_CHARMING_ROGUE 0 0 0 0 0 0~
+~vpImoenKit 0 0 0 0 0 0~
 
-~VP_CHARMING_ROGUE 0 12 0 12 0 15~
+~vpImoenKit 0 12 0 12 0 15~
 
-~VP_CHARMING_ROGUE 0 9 0 9 0 13~
+~vpImoenKit 0 9 0 9 0 13~
 
-~VP_CHARMING_ROGUE 0 1 1 1 1 1 1 1 1~
+~vpImoenKit 0 1 1 1 1 1 1 1 1~
 
-~VP_CHARMING_ROGUE 1 1 1 0 0 0~
+~vpImoenKit 1 1 1 0 0 0~
 
 ~%MOD_FOLDER%/npc/imoen/rules/vpimclab.2da~
 
@@ -67,15 +67,15 @@ Disadvantages:
 LAF fl#add_kit_ee
  STR_VAR
 	hpclass = ~hprog~
- kit_name = VP_CHARMING_ROGUE
+ kit_name = vpImoenKit
 END
 
 //Creature files
 
 ACTION_FOR_EACH imoen IN imoen1 imoen2 imoen4 imoen6 imoen10 imoen15 imoen211 imoen213 ttimoen c#im_010 BEGIN
 	ACTION_IF FILE_EXISTS_IN_GAME ~%imoen%.cre~ THEN BEGIN
-		COPY_EXISTING ~%imoen%.cre~ ~override~
+		COPY_EXISTING ~%imoen%.cre~ override
 			WRITE_BYTE 0x273 4
-			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_CHARMING_ROGUE~))
+			WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpImoenKit~))
 	END
 END

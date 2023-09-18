@@ -1,22 +1,22 @@
 // Viconia
 
-ADD_KIT ~VP_VICONIA_PRIEST~
+ADD_KIT ~vpViconiaKit~
 
- ~VP_VICONIA_PRIEST 0 0 1 1 0 1 0 0~
+ ~vpViconiaKit 0 0 1 1 0 1 0 0~
 
- ~VP_VICONIA_PRIEST 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+ ~vpViconiaKit 0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 
- ~VP_VICONIA_PRIEST 0 0 0 0 13 0~
+ ~vpViconiaKit 0 0 0 0 13 0~
 
- ~VP_VICONIA_PRIEST 0 0 0 0 0 0~
+ ~vpViconiaKit 0 0 0 0 0 0~
 
- ~VP_VICONIA_PRIEST 0 0 0 0 17 0~
+ ~vpViconiaKit 0 0 0 0 17 0~
 
- ~VP_VICONIA_PRIEST 0 0 0 0 15 0~
+ ~vpViconiaKit 0 0 0 0 15 0~
 
- ~VP_VICONIA_PRIEST 1 0 0 1 0 0 1 0 0~
+ ~vpViconiaKit 1 0 0 1 0 0 1 0 0~
 
- ~VP_VICONIA_PRIEST 1 0 1 1 0 1~
+ ~vpViconiaKit 1 0 1 1 0 1~
 
  ~%MOD_FOLDER%/npc/viconia/rules/vpviclab.2da~
 
@@ -71,58 +71,58 @@ Disadvantages:
 
 LAF fl#add_kit_ee
  STR_VAR
- kit_name = VP_VICONIA_PRIEST
+ kit_name = vpViconiaKit
 END
 
-COPY ~%MOD_FOLDER%/npc/viconia/spl~ ~override~
+COPY ~%MOD_FOLDER%/npc/viconia/spl~ override
 
 // 2, 4, 6
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR103 destination = ~VPSHAR11~ END // Cure Light Wounds
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR404 destination = ~VPSHAR12~ END // Neutralize Poison
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR308 destination = ~VPSHAR13~ END // Remove Paralysis
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR103 destination = ~VPVICO11~ END // Cure Light Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR404 destination = ~VPVICO12~ END // Neutralize Poison
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR308 destination = ~VPVICO13~ END // Remove Paralysis
 
 // 3, 5, 8
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR506 destination = ~VPSHAR21~ END // Iron Skins
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR417 destination = ~VPSHAR22~ END // Lesser Restoration
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR409 destination = ~VPSHAR23~ END // Death Ward
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR506 destination = ~VPVICO21~ END // Iron Skins
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR417 destination = ~VPVICO22~ END // Lesser Restoration
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR409 destination = ~VPVICO23~ END // Death Ward
 
 // 7, 9, 11
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR414 destination = ~VPSHAR31~ END // Cause Serious Wounds
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR510 destination = ~VPSHAR32~ END // Cause Critical Wounds
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR511 destination = ~VPSHAR33~ END // Slay Living
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR414 destination = ~VPVICO31~ END // Cause Serious Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR510 destination = ~VPVICO32~ END // Cause Critical Wounds
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR511 destination = ~VPVICO33~ END // Slay Living
 
 //10, 12, 14
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR607 destination = ~VPSHAR41~ END // Heal
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR608 destination = ~VPSHAR42~ END // Harm
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR607 destination = ~VPVICO41~ END // Heal
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR608 destination = ~VPVICO42~ END // Harm
 
 //13, 16, 18
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR613 destination = ~VPSHAR51~ END // Physical Mirror
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR713 destination = ~VPSHAR52~ END // Greater Restoration
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR613 destination = ~VPVICO51~ END // Physical Mirror
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR713 destination = ~VPVICO52~ END // Greater Restoration
 
 //17, 19, 21
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR708 destination = ~VPSHAR61~ END // Finger of Death
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination = ~VPSHAR62~ END // Creeping Doom
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR708 destination = ~VPVICO61~ END // Finger of Death
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR717 destination = ~VPVICO62~ END // Creeping Doom
 
 //20, 23, 26
 
 ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR722 destination = ~VPSHAR71~ END // Storm of Vengeance
-LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR727 destination = ~VPSHAR72~ END // Summon Fallen Deva
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR722 destination = ~VPVICO71~ END // Storm of Vengeance
+LAF cd_clone_spell INT_VAR make_innate = 1 STR_VAR source = SPPR727 destination = ~VPVICO72~ END // Summon Fallen Deva
 END
 
 // Creature Files
 
 ACTION_FOR_EACH viconia IN VICONI VICONI4 VICONI6_ VICONI6 viconi7 VICONI8 VICONI9 VICONI11 VICONI13 VICONI16 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%viconia%.cre~ THEN BEGIN
-    COPY_EXISTING ~%viconia%.cre~ ~override~
-    WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~VP_VICONIA_PRIEST~))
+    COPY_EXISTING ~%viconia%.cre~ override
+    WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpViconiaKit~))
     ADD_CRE_ITEM ~vpviamul~ #0 #0 #0 ~IDENTIFIED~ ~amulet~
   END
 END
 
 //Items
 
-COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviamul.itm~ ~override~
+COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviamul.itm~ override
  SAY NAME2 ~Dark Shadow of Shar~
  SAY DESC ~Dark Shadow of Shar 
 This amulet is cold beneath your touch and bears a weight far greater than its size might suggest. The black round-shaped stone is inserted into it, and the symbols of an ancient tongue are inscribed on one side, the strange words shimmering and glowing with an inner white light. 
@@ -147,7 +147,7 @@ Charge abilities:
 
 Weight: 3~
 
-COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviclck.itm~ ~override~
+COPY ~%MOD_FOLDER%/npc/viconia/itm/vpviclck.itm~ override
  SAY NAME2 ~Dark Cloak of Shar~
  SAY DESC ~Dark Cloak of Shar 
 Only those most worthy and devoted servants of the Lady of Loss are granted these powerful cloaks which provide essential protections and increase the amount of priest high-level spells they can memorise. 
@@ -173,5 +173,5 @@ APPEND ~item_use.2da~
 vpviamul Viconia 9382 2 99999~
 UNLESS ~vpviclck~
 
-COPY_EXISTING ~item_use.2da~ ~override~
+COPY_EXISTING ~item_use.2da~ override
 REPLACE ~99999~ #6132

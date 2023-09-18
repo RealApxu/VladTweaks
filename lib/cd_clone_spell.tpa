@@ -60,7 +60,7 @@ COPY_EXISTING ~%source%.spl~ ~override/%destination%.spl~
  
   ACTION_IF ((FILE_EXISTS_IN_GAME ~7eyes.2da~) AND (FILE_CONTAINS_EVALUATED (~7eyes.2da~ ~[ %TAB%]%source%[ %TAB%%LNL%%MNL%%WNL%]~))) THEN BEGIN
  
-    COPY_EXISTING ~7eyes.2da~ ~override~
+    COPY_EXISTING ~7eyes.2da~ override
       SPRINT mind ~*~
       SPRINT sword ~*~
       SPRINT mage ~*~

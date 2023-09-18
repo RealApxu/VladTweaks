@@ -11,28 +11,28 @@ END*/
 
 IF
 	See(NearestEnemyOf(Myself))
-	GlobalLT("VP_Cast_Fear","LOCALS",2)
+	GlobalLT("vpCastFear","LOCALS",2)
 THEN
 	RESPONSE #100
-		IncrementGlobal("VP_Cast_Fear","LOCALS",1)
+		IncrementGlobal("vpCastFear","LOCALS",1)
 		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Символ, Страх)
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	GlobalLT("VP_Cast_Chaos","LOCALS",2)
+	GlobalLT("vpCastChaos","LOCALS",2)
 THEN
 	RESPONSE #100
-		IncrementGlobal("VP_Cast_Chaos","LOCALS",1)
+		IncrementGlobal("vpCastChaos","LOCALS",1)
 		ReallyForceSpell(Myself,WIZARD_CHAOS)  // SPWI508.SPL (Хаос)
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	Global("VP_Cast_ShadowDoor","LOCALS",0)
+	Global("vpCastShadowDoor","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Cast_ShadowDoor","LOCALS",1)
+		SetGlobal("vpCastShadowDoor","LOCALS",1)
 		ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Теневая дверь)
 END
 

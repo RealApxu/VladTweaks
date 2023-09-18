@@ -1,9 +1,9 @@
 IF
 	OnCreation()
-	Global("VP_Create_MercBank","AR0700",0)
+	Global("vpBankSpawn","AR0700",0)
 THEN
 	RESPONSE #100
-		SetGlobal("VP_Create_MercBank","AR0700",1)
+		SetGlobal("vpBankSpawn","AR0700",1)
 		CreateCreature("vpmebank",[3238.523],2)
 		Continue()
 END

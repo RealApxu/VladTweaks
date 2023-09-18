@@ -37,7 +37,7 @@ AddXPObject(Player4,45000)
 AddXPObject(Player5,45000)
 AddXPObject(Player6,45000)
 SetGlobal("Attacked","LOCALS",2)
-SetGlobal("VP_Guild_Attacked","GLOBAL",1)
+SetGlobal("vpGuildAttacked","GLOBAL",1)
 ClearAllActions()
 StartCutSceneMode()
 StartCutScene("vpthirdp")~
@@ -199,11 +199,11 @@ END
 // VVARKAN.D
 
 REPLACE_STATE_TRIGGER VVARKAN 0
-~Global("VP_Guild_Attacked","GLOBAL",0) Global("PlayerAttackedAran","GLOBAL",0)~
+~Global("vpGuildAttacked","GLOBAL",0) Global("PlayerAttackedAran","GLOBAL",0)~
 
 REPLACE_STATE_TRIGGER VVSHAD1 0
 ~OR(2)
-Global("VP_Guild_Attacked","GLOBAL",1)
+Global("vpGuildAttacked","GLOBAL",1)
 Global("PlayerAttackedAran","GLOBAL",1)~
 
 // VVSHAD1.d
@@ -212,16 +212,16 @@ REPLACE_STATE_TRIGGER VVSHAD1 0
 ~Global("HareisFlee","GLOBAL",1)
 OR(2)
 Global("WorkingForBodhi","GLOBAL",1)
-Global("VP_Guild_Attacked","GLOBAL",1)~
+Global("vpGuildAttacked","GLOBAL",1)~
 
 REPLACE_STATE_TRIGGER VVSHAD1 1
 ~Global("HareisFlee","GLOBAL",1)
-Global("VP_Guild_Attacked","GLOBAL",0)~
+Global("vpGuildAttacked","GLOBAL",0)~
 
 REPLACE_STATE_TRIGGER VVSHAD1 2
 ~Global("HareisFlee","GLOBAL",1)
 Global("WorkingForAran","GLOBAL",1)
-Global("VP_Guild_Attacked","GLOBAL",0)~
+Global("vpGuildAttacked","GLOBAL",0)~
 
 SET_WEIGHT VVSHAD1 0 #0
 SET_WEIGHT VVSHAD1 1 #2

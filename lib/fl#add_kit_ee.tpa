@@ -373,7 +373,7 @@ BEGIN
     OUTER_SPRINT sod_clastext ""
     OUTER_SPRINT sod_stweapon ""
     ACTION_IF FILE_EXISTS_IN_GAME ~campaign.2da~ BEGIN
-      COPY_EXISTING ~campaign.2da~ ~override~
+      COPY_EXISTING ~campaign.2da~ override
         COUNT_2DA_COLS num_col
         COUNT_2DA_ROWS num_col num_row
         COUNT_2DA_ROWS (num_col - 1) num_row2

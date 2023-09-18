@@ -7,17 +7,17 @@ EXTEND_TOP ~KAYPAL03.BCS~ ~%MOD_FOLDER%/encounters/unseeingeye/scripts/kaypal3.b
 
 // Change Shadows in the Unseeing Eye Lair
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi03.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi03.cre~ override
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi04.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpshfi04.cre~ override
  SAY NAME1 ~Giant Shadow~
  SAY NAME2 ~Giant Shadow~
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpvsoul2.cre~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/cre/vpvsoul2.cre~ override
  SAY NAME1 ~Vampiric Shadow~
  SAY NAME2 ~Vampiric Shadow~
 
-COPY_EXISTING ~AR0202.ARE~ ~override~
+COPY_EXISTING ~AR0202.ARE~ override
  READ_LONG 0x54 a_o
  READ_SHORT 0x58 a_n
  FOR (i=0 ; i<a_n ; i+=1) BEGIN
@@ -29,7 +29,7 @@ COPY_EXISTING ~AR0202.ARE~ ~override~
  END
 BUT_ONLY
 
-COPY_EXISTING ~AR0202.ARE~ ~override~
+COPY_EXISTING ~AR0202.ARE~ override
  WRITE_ASCII 0x2158 ~GAS2~ //setting trigger script
  WRITE_BYTE (0x2158+4) 0 //terminating 0
  WRITE_ASCII 0x221c ~GAS3~ //setting trigger script
@@ -38,7 +38,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 // Improved cres
 
-COPY_EXISTING ~BEHELD01.CRE~ ~override~
+COPY_EXISTING ~BEHELD01.CRE~ override
  WRITE_SHORT 0x24 230 // Current HP
  WRITE_SHORT 0x26 230 // Total HP
  WRITE_SHORT 0x46 "-8" // AC Natural
@@ -54,7 +54,7 @@ COPY_EXISTING ~BEHELD01.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~BEHGAU01.CRE~ ~override~
+COPY_EXISTING ~BEHGAU01.CRE~ override
  WRITE_SHORT 0x24 151 // Current HP
  WRITE_SHORT 0x26 151 // Total HP
  WRITE_SHORT 0x46 "-1" // AC Natural
@@ -65,7 +65,7 @@ COPY_EXISTING ~BEHGAU01.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~BHCAPT01.CRE~ ~override~
+COPY_EXISTING ~BHCAPT01.CRE~ override
 WRITE_LONG 0x14 7500 // XP Value
 WRITE_SHORT 0x24 181 // Current HP
 WRITE_SHORT 0x26 181 // Total HP
@@ -84,7 +84,7 @@ REPLACE_CRE_ITEM ~BOLT04~ #0 #0 #0 ~none~ ~quiver1 quiver2~
 REPLACE_CRE_ITEM ~BRAC21~ #0 #0 #0 ~none~ ~gloves~
 BUT_ONLY
 
-COPY_EXISTING ~BHEYE.CRE~ ~override~
+COPY_EXISTING ~BHEYE.CRE~ override
  WRITE_SHORT 0x24 320 // Current HP
  WRITE_SHORT 0x26 320 // Total HP
  WRITE_SHORT 0x46 "-4" // AC Natural
@@ -96,7 +96,7 @@ COPY_EXISTING ~BHEYE.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~BHGUARD2.CRE~ ~override~
+COPY_EXISTING ~BHGUARD2.CRE~ override
  WRITE_LONG 0x14 3200 // XP Value
  WRITE_SHORT 0x24 123 // Current HP
  WRITE_SHORT 0x26 123 // Total HP
@@ -115,7 +115,7 @@ COPY_EXISTING ~BHGUARD2.CRE~ ~override~
  REPLACE_CRE_ITEM ~BOLT03~ #0 #0 #0 ~none~ ~quiver1 quiver2~
 BUT_ONLY
 
-COPY_EXISTING ~CULTBH1.CRE~ ~override~
+COPY_EXISTING ~CULTBH1.CRE~ override
  WRITE_LONG 0x14 5500 // XP Value
  WRITE_SHORT 0x24 151 // Current HP
  WRITE_SHORT 0x26 151 // Total HP
@@ -128,7 +128,7 @@ COPY_EXISTING ~CULTBH1.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~CULTBH2.CRE~ ~override~
+COPY_EXISTING ~CULTBH2.CRE~ override
  WRITE_LONG 0x14 5500 // XP Value
  WRITE_SHORT 0x24 151 // Current HP
  WRITE_SHORT 0x26 151 // Total HP
@@ -141,7 +141,7 @@ COPY_EXISTING ~CULTBH2.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol1~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~CULTBH3.CRE~ ~override~
+COPY_EXISTING ~CULTBH3.CRE~ override
  WRITE_SHORT 0x24 230 // Current HP
  WRITE_SHORT 0x26 230 // Total HP
  WRITE_SHORT 0x46 "-8" // AC Natural
@@ -157,7 +157,7 @@ COPY_EXISTING ~CULTBH3.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~CULTBH4.CRE~ ~override~
+COPY_EXISTING ~CULTBH4.CRE~ override
  WRITE_SHORT 0x24 175 // Current HP
  WRITE_SHORT 0x26 175 // Total HP
  WRITE_SHORT 0x46 "-8" // AC Natural
@@ -172,7 +172,7 @@ COPY_EXISTING ~CULTBH4.CRE~ ~override~
  REPLACE_CRE_ITEM ~vpbehol2~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
-COPY_EXISTING ~GAAL01.CRE~ ~override~
+COPY_EXISTING ~GAAL01.CRE~ override
  WRITE_SHORT 0x24 117 // Current HP
  WRITE_SHORT 0x26 117 // Total HP
  WRITE_SHORT 0x46 "-2" // AC Natural
@@ -188,7 +188,7 @@ BUT_ONLY
 
 // New Items
 /*
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/itm/vpcoffee.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/itm/vpcoffee.itm~ override
  SAY NAME1 #6976 
  SAY NAME2 ~Berduskan Black Brew~
  SAY UNIDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
@@ -204,7 +204,7 @@ Removes fatigue as if user has had a full nights sleep.
 
 Weight: ~
 
-COPY ~%MOD_FOLDER%/encounters/unseeingeye/itm/vpneolit.itm~ ~override~
+COPY ~%MOD_FOLDER%/encounters/unseeingeye/itm/vpneolit.itm~ override
  SAY NAME1 ~Neolite Ioun Stone~
  SAY NAME2 ~Neolite Ioun Stone~
  SAY DESC ~Highly sought out by wizards and mages, this ioun stone not only raises the intelligence of those who possess it but also protects the wielder from physical and magical damage.
