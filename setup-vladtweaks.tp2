@@ -8,7 +8,6 @@ ALWAYS
 END
 
 // Encounters
-
 BEGIN ~Improved Black Talon Elites~
 REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
 GROUP ~Improved Encounters~
