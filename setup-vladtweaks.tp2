@@ -23,10 +23,12 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/firkraag.tpa~
 
+/*
 BEGIN ~Improved Nymph Script (by Goeran Rimen)~
 REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/nymph.tpa~
+*/
 
 BEGIN ~Improved Umar Hills Shadows~
 REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
@@ -124,12 +126,12 @@ GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/thirdpath.tpa~
 */
 
-BEGIN ~Merchant League Bank~
+BEGIN ~BG1 - Merchant League Bank~
 REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/bank.tpa~
 
-BEGIN ~Keys to Eternity~
+BEGIN ~BG1 - Keys to Eternity~
 REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/keystoeternity.tpa~
@@ -139,7 +141,9 @@ REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
 
+/*
 BEGIN ~Improved NPC Items~
 REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/npcitems.tpa~
+*/
