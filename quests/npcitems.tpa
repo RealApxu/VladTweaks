@@ -3,10 +3,10 @@
 ACTION_IF FILE_EXISTS_IN_GAME ~npshld.itm~ THEN BEGIN
 
 COPY_EXISTING ~%MOD_FOLDER%/quests/npcitems/itm/npshld.itm~ override
- SAY NAME1 #8482
- SAY NAME2 #8482
- SAY UNIDENTIFIED_DESC #6819
- SAY DESC ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance.
+    SAY NAME1 #8482
+    SAY NAME2 #8482
+    SAY UNIDENTIFIED_DESC #6819
+    SAY DESC ~This is Anomen's family shield, given to him by his father. In addition to magical protection, the shield radiates an aura that grants the wielder fire and cold resistance.
 
 STATISTICS:
 
@@ -19,10 +19,10 @@ Equipped abilities:
 Weight: 7~
 
 COPY ~%MOD_FOLDER%/quests/npcitems/itm/vphelman.itm~ override
- SAY NAME1 #6346
- SAY NAME2 ~Helm of Radiance~ 
- SAY UNIDENTIFIED_DESC #19725
- SAY DESC ~This helm is similar to the famous Helm of Brilliance but magically enhanced to give additional protection to the wearer. It is made of the finest steel and set with diamonds, rubies and fire opals. The gems glow with an internal light, the source of which can only be magical. The helm makes the wearer immune to poison, as well as giving the wearer some spell abilities. These include Fireball, Prismatic Spray and the Sunray. In addition, anyone who wears it is granted immunity to all forms of fear and panic, be their origins natural or magical.
+    SAY NAME1 #6346
+    SAY NAME2 ~Helm of Radiance~ 
+    SAY UNIDENTIFIED_DESC #19725
+    SAY DESC ~This helm is similar to the famous Helm of Brilliance but magically enhanced to give additional protection to the wearer. It is made of the finest steel and set with diamonds, rubies and fire opals. The gems glow with an internal light, the source of which can only be magical. The helm makes the wearer immune to poison, as well as giving the wearer some spell abilities. These include Fireball, Prismatic Spray and the Sunray. In addition, anyone who wears it is granted immunity to all forms of fear and panic, be their origins natural or magical.
 
 STATISTICS:
 
@@ -50,20 +50,17 @@ Equipped abilities:
 Weight: 2~
 
 ACTION_FOR_EACH anomen IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BEGIN
- ACTION_IF FILE_EXISTS_IN_GAME ~%anomen%.cre~ THEN BEGIN
-  COPY_EXISTING ~%anomen%.cre~ override
-  REPLACE_CRE_ITEM ~vphelman~ #0 #0 #0 ~none~ ~helmet~
- END
-END
-
+    COPY_EXISTING ~%anomen%.cre~ override
+        REPLACE_CRE_ITEM ~vphelman~ #0 #0 #0 ~none~ ~helmet~
+    BUT_ONLY
+    IF_EXISTS
 END
 
 // Edwin
 
 ACTION_IF FILE_EXISTS_IN_GAME ~MISC89.ITM~ THEN BEGIN
-
-COPY_EXISTING ~%MOD_FOLDER%/quests/npcitems/itm/MISC89.ITM~
- SAY DESC ~This is Edwin's birthright, inlaid with his family stone.
+    COPY_EXISTING ~%MOD_FOLDER%/quests/npcitems/itm/MISC89.ITM~
+        SAY DESC ~This is Edwin's birthright, inlaid with his family stone.
 
 STATISTICS:
 
@@ -81,7 +78,6 @@ Equipped Abilities:
 – Saving Throws: +2
 
 Weight: 1~
-
 END
 
 // Jan Jansen

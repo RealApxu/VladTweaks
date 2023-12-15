@@ -5,56 +5,55 @@
 // Draconian Changes
 
 COPY_EXISTING ~BAZDRA02.CRE~ override
- WRITE_SHORT 0x24 390 // Current HP
- WRITE_SHORT 0x26 390 // Total HP
- WRITE_SHORT 0x46 "-16" // AC Natural
- WRITE_SHORT 0x48 "-16" // AC Effective
- WRITE_BYTE 0x52 "-14" // THAC0
- WRITE_BYTE 0x53 10 // APR
- WRITE_BYTE 0x23d 21 // Constitution
+    WRITE_SHORT 0x24 390 // Current HP
+    WRITE_SHORT 0x26 390 // Total HP
+    WRITE_SHORT 0x46 "-16" // AC Natural
+    WRITE_SHORT 0x48 "-16" // AC Effective
+    WRITE_BYTE 0x52 "-14" // THAC0
+    WRITE_BYTE 0x53 10 // APR
+    WRITE_BYTE 0x23d 21 // Constitution
 BUT_ONLY
 
 COPY_EXISTING ~DRAGBLUE.CRE~ override
- WRITE_SHORT 0x24 500 // Current HP
- WRITE_SHORT 0x26 500 // Total HP
- WRITE_SHORT 0x46 "-18" // AC Natural
- WRITE_SHORT 0x48 "-18" // AC Effective
- WRITE_BYTE 0x52 "-12" // THAC0
- WRITE_BYTE 0x53 10 // APR
- WRITE_BYTE 0x23d 24 // Constitution
+    WRITE_SHORT 0x24 500 // Current HP
+    WRITE_SHORT 0x26 500 // Total HP
+    WRITE_SHORT 0x46 "-18" // AC Natural
+    WRITE_SHORT 0x48 "-18" // AC Effective
+    WRITE_BYTE 0x52 "-12" // THAC0
+    WRITE_BYTE 0x53 10 // APR
+    WRITE_BYTE 0x23d 24 // Constitution
 BUT_ONLY
 
 // Polishing these claws
 
 COPY_EXISTING ~DRAGBLUE.ITM~ override
- WRITE_LONG 0x60 5 // Enchantment
- WRITE_SHORT 0x86 5 // Bonus to Hit
- WRITE_BYTE 0x88 10 // Dice Size
- WRITE_BYTE 0x8a 4 // Dice Thrown
- WRITE_SHORT 0x8c 5 // Damage bonus
- READ_LONG 0x6a e_o
- WRITE_LONG e_o+0x1c 2
- WRITE_LONG e_o+0x1c 6
+    WRITE_LONG 0x60 5 // Enchantment
+    WRITE_SHORT 0x86 5 // Bonus to Hit
+    WRITE_BYTE 0x88 10 // Dice Size
+    WRITE_BYTE 0x8a 4 // Dice Thrown
+    WRITE_SHORT 0x8c 5 // Damage bonus
+    READ_LONG 0x6a e_o
+    WRITE_LONG e_o+0x1c 2
+    WRITE_LONG e_o+0x1c 6
 BUT_ONLY
 
 COPY_EXISTING ~DRAGBROW.ITM~ override
- WRITE_SHORT 0x86 4 // Bonus to Hit
- WRITE_BYTE 0x88 10 // Dice Size
- WRITE_BYTE 0x8a 2 // Dice Thrown
- WRITE_SHORT 0x8c 4 // Damage bonus
+    WRITE_SHORT 0x86 4 // Bonus to Hit
+    WRITE_BYTE 0x88 10 // Dice Size
+    WRITE_BYTE 0x8a 2 // Dice Thrown
+    WRITE_SHORT 0x8c 4 // Damage bonus
 BUT_ONLY
 
 // 
 
 COPY ~%MOD_FOLDER%/encounters/abazigal/cre/vppurple.cre~ override
- SAY NAME1 ~Purple~
- SAY NAME2 ~Purple~
+    SAY NAME1 ~Purple~
+    SAY NAME2 ~Purple~
 
 COPY_EXISTING ~AR6000.BCS~ override
- DECOMPILE_AND_PATCH BEGIN
-  REPLACE_TEXTUALLY
-   ~TriggerActivation("Tran6001",FALSE)~
-   ~TriggerActivation("Tran6001",FALSE)
-   CreateCreature("vppurple",[694.945],12)~
-  END
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~TriggerActivation("Tran6001",FALSE)~
+            ~TriggerActivation("Tran6001",FALSE) CreateCreature("vppurple",[694.945],12)~
+    END
 BUT_ONLY

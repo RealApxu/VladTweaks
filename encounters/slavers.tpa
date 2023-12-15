@@ -1,19 +1,19 @@
 // Slaver Ship in Slums - Replace Traps
 COPY_EXISTING ~AR0405.ARE~ override
- READ_SHORT 0x5a t_n
- READ_LONG 0x5c t_o
- FOR (i=0 ; i<t_n ; i+=1) BEGIN
-  READ_ASCII t_o+0xc4*i+0x7c trap_name
-  PATCH_IF trap_name STR_CMP "GSLIME" BEGIN
-   WRITE_ASCII t_o+0xc4*i+0x7c "GT006"
-  END
-  PATCH_IF trap_name STR_CMP "GDARTS" BEGIN
-   WRITE_ASCII t_o+0xc4*i+0x7c "GT010"
-  END
-  PATCH_IF trap_name STR_CMP "GT014" BEGIN
-   WRITE_ASCII t_o+0xc4*i+0x7c "GT021"
-  END
- END
+    READ_SHORT 0x5a t_n
+    READ_LONG 0x5c t_o
+    FOR (i=0 ; i<t_n ; i+=1) BEGIN
+        READ_ASCII t_o+0xc4*i+0x7c trap_name
+        PATCH_IF trap_name STR_CMP "GSLIME" BEGIN
+            WRITE_ASCII t_o+0xc4*i+0x7c "GT006"
+        END
+        PATCH_IF trap_name STR_CMP "GDARTS" BEGIN
+            WRITE_ASCII t_o+0xc4*i+0x7c "GT010"
+        END
+        PATCH_IF trap_name STR_CMP "GT014" BEGIN
+            WRITE_ASCII t_o+0xc4*i+0x7c "GT021"
+        END
+    END
 BUT_ONLY
 
 // Slaver Ship in Slums - Additional Spawns
@@ -27,645 +27,646 @@ EXTEND_BOTTOM ~COPAMB05.BCS~ ~%MOD_FOLDER%/encounters/slavers/scripts/copamb.baf
 // Stats Improvements
 
 COPY_EXISTING ~BEAST.CRE~ override
- WRITE_LONG 0x14 5000 // XP Value
- WRITE_SHORT 0x24 95 // Current HP
- WRITE_SHORT 0x26 95 // Total HP
- WRITE_SHORT 0x46 1 // AC
- WRITE_SHORT 0x48 1 // AC
- WRITE_BYTE 0x52 0xfd // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x70 5
- WRITE_BYTE 0x75 5
- WRITE_BYTE 0x234 18 // First Class Level
- WRITE_BYTE 0x23a 15 // INT 
- WRITE_BYTE 0x23b 14 // WIS
- WRITE_BYTE 0x23c 18 // DEX 
- WRITE_BYTE 0x23d 17 // CON
- REPLACE_CRE_ITEM ~sper06~ #0 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
- REPLACE_CRE_ITEM ~chan11~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~arow05~ #80 #0 #0 ~none~ ~quiver1~
+    WRITE_LONG 0x14 5000 // XP Value
+    WRITE_SHORT 0x24 95 // Current HP
+    WRITE_SHORT 0x26 95 // Total HP
+    WRITE_SHORT 0x46 1 // AC
+    WRITE_SHORT 0x48 1 // AC
+    WRITE_BYTE 0x52 0xfd // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x70 5
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x234 18 // First Class Level
+    WRITE_BYTE 0x23a 15 // INT 
+    WRITE_BYTE 0x23b 14 // WIS
+    WRITE_BYTE 0x23c 18 // DEX 
+    WRITE_BYTE 0x23d 17 // CON
+    REPLACE_CRE_ITEM ~sper06~ #0 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
+    REPLACE_CRE_ITEM ~chan11~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~arow05~ #80 #0 #0 ~none~ ~quiver1~
 BUT_ONLY
 
 COPY_EXISTING ~HAEGAN.CRE~ override
- WRITE_LONG 0x14 8500 // XP Value
- WRITE_SHORT 0x24 279 // Current HP
- WRITE_SHORT 0x26 279 // Total HP
- WRITE_SHORT 0x46 0xfff8 // AC
- WRITE_SHORT 0x48 0xfff8 // AC
- WRITE_SHORT 0x4a 20 // AC
- WRITE_SHORT 0x4c 20 // AC
- WRITE_SHORT 0x4e 20 // AC
- WRITE_SHORT 0x50 20 //AC
- WRITE_BYTE 0x52 0xf8 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x234 18 // First Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x239 93 // Exc. Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
- REPLACE_CRE_ITEM ~ax1h06~ #0 #0 #0 ~none~ ~weapon2~ EQUIP
- REPLACE_CRE_ITEM ~sw2h11~ #0 #0 #0 ~unstealable~ ~weapon1~
- REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~unstealable~ ~armor~
+    WRITE_LONG 0x14 8500 // XP Value
+    WRITE_SHORT 0x24 279 // Current HP
+    WRITE_SHORT 0x26 279 // Total HP
+    WRITE_SHORT 0x46 0xfff8 // AC
+    WRITE_SHORT 0x48 0xfff8 // AC
+    WRITE_SHORT 0x4a 20 // AC
+    WRITE_SHORT 0x4c 20 // AC
+    WRITE_SHORT 0x4e 20 // AC
+    WRITE_SHORT 0x50 20 //AC
+    WRITE_BYTE 0x52 0xf8 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x234 18 // First Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x239 93 // Exc. Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    REPLACE_CRE_ITEM ~ax1h06~ #0 #0 #0 ~none~ ~weapon2~ EQUIP
+    REPLACE_CRE_ITEM ~sw2h11~ #0 #0 #0 ~unstealable~ ~weapon1~
+    REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~unstealable~ ~armor~
 BUT_ONLY
 
 COPY_EXISTING ~SLAPRI.CRE~ override
- WRITE_LONG 0x14 8000 // XP Value
- WRITE_SHORT 0x24 145 // Current HP
- WRITE_SHORT 0x26 145 // Total HP
- WRITE_SHORT 0x46 0xfffe // AC Natural
- WRITE_SHORT 0x48 0xfffe // AC Effective
- WRITE_SHORT 0x4a 10 // AC Crushing
- WRITE_SHORT 0x4c 10 // AC Missile
- WRITE_SHORT 0x4e 10 // AC Piercing
- WRITE_SHORT 0x50 10 //AC Slashing
- WRITE_BYTE 0x52 0xfe // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x54 4 // Save vs. Death
- WRITE_BYTE 0x55 8 // Save vs. Wands
- WRITE_BYTE 0x56 7 // Save vs. Polymorph
- WRITE_BYTE 0x57 10 // Save vs. Breath
- WRITE_BYTE 0x58 9 // Save vs. Breath
- WRITE_BYTE 0x59 10 // Fire Resistance
- WRITE_BYTE 0x5a 10 // Cold Resistance
- WRITE_BYTE 0x5b 10 // Elec Resistance
- WRITE_BYTE 0x5c 10 // Acid Resistance
- WRITE_BYTE 0x5d 40 // Magic Resistance
- WRITE_BYTE 0x5e 30 // Magic Fire Resistance
- WRITE_BYTE 0x5f 30 // Magic Cold Resistance
- WRITE_BYTE 0x60 10 // Slashing Resistance
- WRITE_BYTE 0x61 10 // Crushing Resistance
- WRITE_BYTE 0x62 10 // Piercing Resistance
- WRITE_BYTE 0x63 20 // Missile Resistance
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x234 18 // First Class Level
- WRITE_BYTE 0x238 17 // Strength
- WRITE_BYTE 0x23a 16 // Int
- WRITE_BYTE 0x23b 18 // Wisdom
- WRITE_BYTE 0x23c 17 // Dexterity
- WRITE_BYTE 0x23d 16 // Constitution
- WRITE_ASCII 0x250 ~PRIES18B~ (8)// Script
- WRITE_ASCII 0x280 ~slapri~ (8)
- REMOVE_KNOWN_SPELL ~sppr303~ ~sppr312~ ~sppr401~
- ADD_KNOWN_SPELL ~sppr208~ #1 ~priest~
- ADD_KNOWN_SPELL ~sppr211~ #1 ~priest~
- ADD_KNOWN_SPELL ~sppr302~ #2 ~priest~
- ADD_KNOWN_SPELL ~sppr310~ #2 ~priest~
- ADD_KNOWN_SPELL ~sppr416~ #3 ~priest~
- ADD_KNOWN_SPELL ~sppr511~ #4 ~priest~
- ADD_KNOWN_SPELL ~sppr607~ #5 ~priest~
- ADD_KNOWN_SPELL ~sppr610~ #5 ~priest~
- ADD_KNOWN_SPELL ~sppr612~ #5 ~priest~
- ADD_KNOWN_SPELL ~sppr613~ #5 ~priest~
- ADD_KNOWN_SPELL ~sppr715~ #6 ~priest~
- ADD_KNOWN_SPELL ~sppr510~ #4 ~priest~
- ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi899~ #7 ~wizard~
- REMOVE_MEMORIZED_SPELL ~sppr303~ ~sppr312~ ~sppr401~
- ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi302~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~sppr715~ #6 ~priest~
- ADD_MEMORIZED_SPELL ~sppr607~ #5 ~priest~
- ADD_MEMORIZED_SPELL ~sppr610~ #5 ~priest~
- ADD_MEMORIZED_SPELL ~sppr612~ #5 ~priest~
- ADD_MEMORIZED_SPELL ~sppr613~ #5 ~priest~
- ADD_MEMORIZED_SPELL ~sppr510~ #4 ~priest~
- ADD_MEMORIZED_SPELL ~sppr511~ #4 ~priest~
- ADD_MEMORIZED_SPELL ~sppr514~ #4 ~priest~ (2)
- ADD_MEMORIZED_SPELL ~sppr405~ #3 ~priest~
- ADD_MEMORIZED_SPELL ~sppr416~ #3 ~priest~
- ADD_MEMORIZED_SPELL ~sppr302~ #2 ~priest~
- ADD_MEMORIZED_SPELL ~sppr310~ #2 ~priest~
- ADD_MEMORIZED_SPELL ~sppr204~ #1 ~priest~
- ADD_MEMORIZED_SPELL ~sppr208~ #1 ~priest~ (3)
- ADD_MEMORIZED_SPELL ~sppr211~ #1 ~priest~
- REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~blun15~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring~
- REPLACE_CRE_ITEM ~shld19~ #0 #0 #0 ~none~ ~shield~
- REPLACE_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
- REPLACE_CRE_ITEM ~ring31~ #0 #0 #0 ~none~ ~lring~
- ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~
+    WRITE_LONG 0x14 8000 // XP Value
+    WRITE_SHORT 0x24 145 // Current HP
+    WRITE_SHORT 0x26 145 // Total HP
+    WRITE_SHORT 0x46 0xfffe // AC Natural
+    WRITE_SHORT 0x48 0xfffe // AC Effective
+    WRITE_SHORT 0x4a 10 // AC Crushing
+    WRITE_SHORT 0x4c 10 // AC Missile
+    WRITE_SHORT 0x4e 10 // AC Piercing
+    WRITE_SHORT 0x50 10 //AC Slashing
+    WRITE_BYTE 0x52 0xfe // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x54 4 // Save vs. Death
+    WRITE_BYTE 0x55 8 // Save vs. Wands
+    WRITE_BYTE 0x56 7 // Save vs. Polymorph
+    WRITE_BYTE 0x57 10 // Save vs. Breath
+    WRITE_BYTE 0x58 9 // Save vs. Breath
+    WRITE_BYTE 0x59 10 // Fire Resistance
+    WRITE_BYTE 0x5a 10 // Cold Resistance
+    WRITE_BYTE 0x5b 10 // Elec Resistance
+    WRITE_BYTE 0x5c 10 // Acid Resistance
+    WRITE_BYTE 0x5d 40 // Magic Resistance
+    WRITE_BYTE 0x5e 30 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 30 // Magic Cold Resistance
+    WRITE_BYTE 0x60 10 // Slashing Resistance
+    WRITE_BYTE 0x61 10 // Crushing Resistance
+    WRITE_BYTE 0x62 10 // Piercing Resistance
+    WRITE_BYTE 0x63 20 // Missile Resistance
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x234 18 // First Class Level
+    WRITE_BYTE 0x238 17 // Strength
+    WRITE_BYTE 0x23a 16 // Int
+    WRITE_BYTE 0x23b 18 // Wisdom
+    WRITE_BYTE 0x23c 17 // Dexterity
+    WRITE_BYTE 0x23d 16 // Constitution
+    WRITE_ASCII 0x250 ~PRIES18B~ (8)// Script
+    WRITE_ASCII 0x280 ~slapri~ (8)
+    REMOVE_KNOWN_SPELL ~sppr303~ ~sppr312~ ~sppr401~
+    ADD_KNOWN_SPELL ~sppr208~ #1 ~priest~
+    ADD_KNOWN_SPELL ~sppr211~ #1 ~priest~
+    ADD_KNOWN_SPELL ~sppr302~ #2 ~priest~
+    ADD_KNOWN_SPELL ~sppr310~ #2 ~priest~
+    ADD_KNOWN_SPELL ~sppr416~ #3 ~priest~
+    ADD_KNOWN_SPELL ~sppr511~ #4 ~priest~
+    ADD_KNOWN_SPELL ~sppr607~ #5 ~priest~
+    ADD_KNOWN_SPELL ~sppr610~ #5 ~priest~
+    ADD_KNOWN_SPELL ~sppr612~ #5 ~priest~
+    ADD_KNOWN_SPELL ~sppr613~ #5 ~priest~
+    ADD_KNOWN_SPELL ~sppr715~ #6 ~priest~
+    ADD_KNOWN_SPELL ~sppr510~ #4 ~priest~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi899~ #7 ~wizard~
+    REMOVE_MEMORIZED_SPELL ~sppr303~ ~sppr312~ ~sppr401~
+    ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi302~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~sppr715~ #6 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr607~ #5 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr610~ #5 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr612~ #5 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr613~ #5 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr510~ #4 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr511~ #4 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr514~ #4 ~priest~ (2)
+    ADD_MEMORIZED_SPELL ~sppr405~ #3 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr416~ #3 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr302~ #2 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr310~ #2 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr204~ #1 ~priest~
+    ADD_MEMORIZED_SPELL ~sppr208~ #1 ~priest~ (3)
+    ADD_MEMORIZED_SPELL ~sppr211~ #1 ~priest~
+    REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~blun15~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~rring~
+    REPLACE_CRE_ITEM ~shld19~ #0 #0 #0 ~none~ ~shield~
+    REPLACE_CRE_ITEM ~helm19~ #0 #0 #0 ~none~ ~helmet~
+    REPLACE_CRE_ITEM ~ring31~ #0 #0 #0 ~none~ ~lring~
+    ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~
 BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~CCGUARD1.CRE~ override
- WRITE_LONG 0x14 5500 // XP Value
- WRITE_SHORT 0x24 120 // Current HP
- WRITE_SHORT 0x26 120 // Total HP
- WRITE_SHORT 0x46 0 // AC Natural
- WRITE_SHORT 0x48 0 // AC Effective
- WRITE_BYTE 0x52 5 // THAC0
- WRITE_BYTE 0x53 2 // APR
- WRITE_BYTE 0x54 7 // Save vs. Death
- WRITE_BYTE 0x55 7 // Save vs. Wands
- WRITE_BYTE 0x56 9 // Save vs. Polymorph
- WRITE_BYTE 0x57 9 // Save vs. Breath
- WRITE_BYTE 0x58 9 // Save vs. Breath
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x6e 5
- WRITE_BYTE 0x6f 5
- WRITE_BYTE 0x70 5
- WRITE_BYTE 0x74 5
- WRITE_BYTE 0x75 5
- WRITE_BYTE 0x234 15 // First Class Level
- WRITE_BYTE 0x235 15 // Second Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x238 95 // Exc. Strength
- WRITE_BYTE 0x23a 16 // Int
- WRITE_BYTE 0x23b 18 // Wisdom
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
- REPLACE_CRE_ITEM ~bow04~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~plat01~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
- REPLACE_CRE_ITEM ~sw1h02~ #0 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~helm10~ #0 #0 #0 ~none~ ~helmet~
- ADD_CRE_ITEM ~arow11~ #40 #0 #0 ~none~ ~quiver2~
+    WRITE_LONG 0x14 5500 // XP Value
+    WRITE_SHORT 0x24 120 // Current HP
+    WRITE_SHORT 0x26 120 // Total HP
+    WRITE_SHORT 0x46 0 // AC Natural
+    WRITE_SHORT 0x48 0 // AC Effective
+    WRITE_BYTE 0x52 5 // THAC0
+    WRITE_BYTE 0x53 2 // APR
+    WRITE_BYTE 0x54 7 // Save vs. Death
+    WRITE_BYTE 0x55 7 // Save vs. Wands
+    WRITE_BYTE 0x56 9 // Save vs. Polymorph
+    WRITE_BYTE 0x57 9 // Save vs. Breath
+    WRITE_BYTE 0x58 9 // Save vs. Breath
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x6e 5
+    WRITE_BYTE 0x6f 5
+    WRITE_BYTE 0x70 5
+    WRITE_BYTE 0x74 5
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x234 15 // First Class Level
+    WRITE_BYTE 0x235 15 // Second Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x238 95 // Exc. Strength
+    WRITE_BYTE 0x23a 16 // Int
+    WRITE_BYTE 0x23b 18 // Wisdom
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    REPLACE_CRE_ITEM ~bow04~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~plat01~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+    REPLACE_CRE_ITEM ~sw1h02~ #0 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~helm10~ #0 #0 #0 ~none~ ~helmet~
+    ADD_CRE_ITEM ~arow11~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 COPY_EXISTING ~CCGUARD2.CRE~ override
- WRITE_LONG 0x14 7500 // XP Value
- WRITE_SHORT 0x24 66 // Current HP
- WRITE_SHORT 0x26 66 // Total HP
- WRITE_SHORT 0x46 1 // AC Natural
- WRITE_SHORT 0x48 1 // AC Effective
- WRITE_BYTE 0x52 6 // THAC0
- WRITE_BYTE 0x53 2 // APR
- WRITE_BYTE 0x54 12 // Save vs. Death
- WRITE_BYTE 0x55 11 // Save vs. Wands
- WRITE_BYTE 0x56 13 // Save vs. Polymorph
- WRITE_BYTE 0x57 8 // Save vs. Breath
- WRITE_BYTE 0x58 9 // Save vs. Spell
- WRITE_BYTE 0x64 100 // Detect Illusion
- WRITE_BYTE 0x66 70 // Lore
- WRITE_BYTE 0x72 5
- WRITE_BYTE 0x73 5
- WRITE_BYTE 0x75 5
- WRITE_BYTE 0x234 14 // First Class Level
- WRITE_BYTE 0x235 14 // Second Class Level
- WRITE_BYTE 0x238 17 // Strength
- WRITE_BYTE 0x23a 15 // Int
- WRITE_BYTE 0x23b 18 // Wisdom
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 14 // Constitution
- WRITE_SHORT 0x244 0x0080 //Kit
- WRITE_ASCII 0x248 ~MAGE14C.BCS~
- REMOVE_KNOWN_SPELLS
- REMOVE_MEMORIZED_SPELLS
- ADD_KNOWN_SPELL ~spwi112~ #0 ~wizard~
- ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi306~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi308~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi316~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi423~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi508~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi601~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi602~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi605~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi704~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi899~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi112~ #0 ~wizard~ (5)
- ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi302~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi306~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi308~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi316~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi408~ #3 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi423~ #3 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi508~ #4 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi601~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi602~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi605~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi611~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi704~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
- REPLACE_CRE_ITEM ~staf07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
- ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~
+    WRITE_LONG 0x14 7500 // XP Value
+    WRITE_SHORT 0x24 66 // Current HP
+    WRITE_SHORT 0x26 66 // Total HP
+    WRITE_SHORT 0x46 1 // AC Natural
+    WRITE_SHORT 0x48 1 // AC Effective
+    WRITE_BYTE 0x52 6 // THAC0
+    WRITE_BYTE 0x53 2 // APR
+    WRITE_BYTE 0x54 12 // Save vs. Death
+    WRITE_BYTE 0x55 11 // Save vs. Wands
+    WRITE_BYTE 0x56 13 // Save vs. Polymorph
+    WRITE_BYTE 0x57 8 // Save vs. Breath
+    WRITE_BYTE 0x58 9 // Save vs. Spell
+    WRITE_BYTE 0x64 100 // Detect Illusion
+    WRITE_BYTE 0x66 70 // Lore
+    WRITE_BYTE 0x72 5
+    WRITE_BYTE 0x73 5
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x234 14 // First Class Level
+    WRITE_BYTE 0x235 14 // Second Class Level
+    WRITE_BYTE 0x238 17 // Strength
+    WRITE_BYTE 0x23a 15 // Int
+    WRITE_BYTE 0x23b 18 // Wisdom
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 14 // Constitution
+    WRITE_SHORT 0x244 0x0080 //Kit
+    WRITE_ASCII 0x248 ~MAGE14C.BCS~
+    REMOVE_KNOWN_SPELLS
+    REMOVE_MEMORIZED_SPELLS
+    ADD_KNOWN_SPELL ~spwi112~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi306~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi308~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi316~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi423~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi508~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi601~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi602~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi605~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi704~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi899~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi112~ #0 ~wizard~ (5)
+    ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi302~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi306~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi308~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi316~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi408~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi423~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi508~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi601~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi602~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi605~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi611~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi704~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi899~ #7 ~wizard~
+    REPLACE_CRE_ITEM ~staf07~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
+    ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~
+    ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~
 BUT_ONLY
 
 COPY_EXISTING ~COPAMB02.CRE~ override
- WRITE_LONG 0x14 1500 // XP Value
- WRITE_SHORT 0x24 120 // Current HP
- WRITE_SHORT 0x26 120 // Total HP
- WRITE_SHORT 0x46 0xffff // AC Natural
- WRITE_SHORT 0x48 0xffff // AC Effective
- WRITE_SHORT 0x4a 10 // AC Crushing
- WRITE_SHORT 0x4c 10 // AC Missile
- WRITE_SHORT 0x4e 10 // AC Piercing
- WRITE_SHORT 0x50 10 //AC Slashing
- WRITE_BYTE 0x52 1 // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x54 7 // Save vs. Death
- WRITE_BYTE 0x55 7 // Save vs. Wands
- WRITE_BYTE 0x56 8 // Save vs. Polymorph
- WRITE_BYTE 0x57 9 // Save vs. Breath
- WRITE_BYTE 0x58 9 // Save vs. Breath
- WRITE_BYTE 0x60 10 // Slashing Resistance
- WRITE_BYTE 0x61 10 // Crushing Resistance
- WRITE_BYTE 0x62 10 // Piercing Resistance
- WRITE_BYTE 0x63 20 // Missile Resistance
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x6e 5
- WRITE_BYTE 0x6f 5
- WRITE_BYTE 0x70 5
- WRITE_BYTE 0x74 5
- WRITE_BYTE 0x75 5
- WRITE_BYTE 0x234 15 // First Class Level
- WRITE_BYTE 0x235 15 // Second Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x238 93 // Exc. Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 16 // Constitution
-// WRITE_BYTE 0x27b 18 //Alignment
- REPLACE_CRE_ITEM ~bow17~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
- REPLACE_CRE_ITEM ~sw1h05~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
+    WRITE_LONG 0x14 1500 // XP Value
+    WRITE_SHORT 0x24 120 // Current HP
+    WRITE_SHORT 0x26 120 // Total HP
+    WRITE_SHORT 0x46 0xffff // AC Natural
+    WRITE_SHORT 0x48 0xffff // AC Effective
+    WRITE_SHORT 0x4a 10 // AC Crushing
+    WRITE_SHORT 0x4c 10 // AC Missile
+    WRITE_SHORT 0x4e 10 // AC Piercing
+    WRITE_SHORT 0x50 10 //AC Slashing
+    WRITE_BYTE 0x52 1 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x54 7 // Save vs. Death
+    WRITE_BYTE 0x55 7 // Save vs. Wands
+    WRITE_BYTE 0x56 8 // Save vs. Polymorph
+    WRITE_BYTE 0x57 9 // Save vs. Breath
+    WRITE_BYTE 0x58 9 // Save vs. Breath
+    WRITE_BYTE 0x60 10 // Slashing Resistance
+    WRITE_BYTE 0x61 10 // Crushing Resistance
+    WRITE_BYTE 0x62 10 // Piercing Resistance
+    WRITE_BYTE 0x63 20 // Missile Resistance
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x6e 5
+    WRITE_BYTE 0x6f 5
+    WRITE_BYTE 0x70 5
+    WRITE_BYTE 0x74 5
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x234 15 // First Class Level
+    WRITE_BYTE 0x235 15 // Second Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x238 93 // Exc. Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 16 // Constitution
+    // WRITE_BYTE 0x27b 18 //Alignment
+    REPLACE_CRE_ITEM ~bow17~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+    REPLACE_CRE_ITEM ~sw1h05~ #0 #0 #0 ~none~ ~weapon2~
+    ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 COPY_EXISTING ~COPAMB05.CRE~ override
- WRITE_LONG 0x14 1500 // XP Value
- WRITE_SHORT 0x24 150 // Current HP
- WRITE_SHORT 0x26 150 // Total HP
- WRITE_SHORT 0x46 0 // AC Natural
- WRITE_SHORT 0x48 0 // AC Effective
- WRITE_BYTE 0x52 3 // THAC0
- WRITE_BYTE 0x53 2 // APR
- WRITE_BYTE 0x54 7 // Save vs. Death
- WRITE_BYTE 0x55 7 // Save vs. Wands
- WRITE_BYTE 0x56 7 // Save vs. Polymorph
- WRITE_BYTE 0x57 8 // Save vs. Breath
- WRITE_BYTE 0x58 8 // Save vs. Breath
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x6e 5
- WRITE_BYTE 0x6f 5
- WRITE_BYTE 0x70 5
- WRITE_BYTE 0x74 5
- WRITE_BYTE 0x75 5
- WRITE_BYTE 0x234 15 // First Class Level
- WRITE_BYTE 0x235 15 // Second Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x238 97 // Exc. Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 17 // Constitution
-// WRITE_BYTE 0x27b 18 //Alignment
- REPLACE_CRE_ITEM ~bow02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~chan05~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
- REPLACE_CRE_ITEM ~sw1h06~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
+    WRITE_LONG 0x14 1500 // XP Value
+    WRITE_SHORT 0x24 150 // Current HP
+    WRITE_SHORT 0x26 150 // Total HP
+    WRITE_SHORT 0x46 0 // AC Natural
+    WRITE_SHORT 0x48 0 // AC Effective
+    WRITE_BYTE 0x52 3 // THAC0
+    WRITE_BYTE 0x53 2 // APR
+    WRITE_BYTE 0x54 7 // Save vs. Death
+    WRITE_BYTE 0x55 7 // Save vs. Wands
+    WRITE_BYTE 0x56 7 // Save vs. Polymorph
+    WRITE_BYTE 0x57 8 // Save vs. Breath
+    WRITE_BYTE 0x58 8 // Save vs. Breath
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x6e 5
+    WRITE_BYTE 0x6f 5
+    WRITE_BYTE 0x70 5
+    WRITE_BYTE 0x74 5
+    WRITE_BYTE 0x75 5
+    WRITE_BYTE 0x234 15 // First Class Level
+    WRITE_BYTE 0x235 15 // Second Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x238 97 // Exc. Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 17 // Constitution
+    // WRITE_BYTE 0x27b 18 //Alignment
+    REPLACE_CRE_ITEM ~bow02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~chan05~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~arow05~ #40 #0 #0 ~undroppable~ ~quiver1~
+    REPLACE_CRE_ITEM ~sw1h06~ #0 #0 #0 ~none~ ~weapon2~
+    ADD_CRE_ITEM ~arow02~ #40 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 /*
 COPY_EXISTING ~COPCUST1.CRE~ override
- WRITE_LONG 0x248 0x00000000
+    WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 
 COPY_EXISTING ~COPCUST1.CRE~ override
- WRITE_LONG 0x248 0x00000000
+    WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 
 COPY_EXISTING ~SLEEPDW.CRE~ override
- WRITE_LONG 0x248 0x00000000
+    WRITE_LONG 0x248 0x00000000
 BUT_ONLY
 */
 
 COPY_EXISTING ~SLARCH1.CRE~ override
- WRITE_LONG 0x14 4500 // XP Value
- WRITE_SHORT 0x24 130 // Current HP
- WRITE_SHORT 0x26 130 // Total HP
- WRITE_SHORT 0x46 0xfffe // AC Natural
- WRITE_SHORT 0x48 0xfffe // AC Effective
- WRITE_SHORT 0x4a 10 // AC Crushing
- WRITE_SHORT 0x4c 50 // AC Missile
- WRITE_SHORT 0x4e 10 // AC Piercing
- WRITE_SHORT 0x50 10 //AC Slashing
- WRITE_BYTE 0x52 0xfb // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x54 10 // Save vs. Death
- WRITE_BYTE 0x55 12 // Save vs. Wands
- WRITE_BYTE 0x56 11 // Save vs. Polymorph
- WRITE_BYTE 0x57 12 // Save vs. Breath
- WRITE_BYTE 0x58 13 // Save vs. Spell
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x234 15 // First Class Level
- WRITE_BYTE 0x238 17 // Strength
- WRITE_BYTE 0x23c 19 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
-// WRITE_BYTE 0x27b 18 //Alignment
- REPLACE_CRE_ITEM ~bow16~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~sw1h09~ #0 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~arow05~ #10 #0 #0 ~none~ ~quiver1~
- REPLACE_CRE_ITEM ~arow09~ #20 #0 #0 ~none~ ~quiver2~
+    WRITE_LONG 0x14 4500 // XP Value
+    WRITE_SHORT 0x24 130 // Current HP
+    WRITE_SHORT 0x26 130 // Total HP
+    WRITE_SHORT 0x46 0xfffe // AC Natural
+    WRITE_SHORT 0x48 0xfffe // AC Effective
+    WRITE_SHORT 0x4a 10 // AC Crushing
+    WRITE_SHORT 0x4c 50 // AC Missile
+    WRITE_SHORT 0x4e 10 // AC Piercing
+    WRITE_SHORT 0x50 10 //AC Slashing
+    WRITE_BYTE 0x52 0xfb // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x54 10 // Save vs. Death
+    WRITE_BYTE 0x55 12 // Save vs. Wands
+    WRITE_BYTE 0x56 11 // Save vs. Polymorph
+    WRITE_BYTE 0x57 12 // Save vs. Breath
+    WRITE_BYTE 0x58 13 // Save vs. Spell
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x234 15 // First Class Level
+    WRITE_BYTE 0x238 17 // Strength
+    WRITE_BYTE 0x23c 19 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    // WRITE_BYTE 0x27b 18 //Alignment
+    REPLACE_CRE_ITEM ~bow16~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~sw1h09~ #0 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~arow05~ #10 #0 #0 ~none~ ~quiver1~
+    REPLACE_CRE_ITEM ~arow09~ #20 #0 #0 ~none~ ~quiver2~
 BUT_ONLY
 
 COPY_EXISTING ~SLGUARD1.CRE~ override
- WRITE_LONG 0x14 3500 // XP Value
- WRITE_SHORT 0x24 156 // Current HP
- WRITE_SHORT 0x26 156 // Total HP
- WRITE_SHORT 0x46 0xfffc // AC Natural
- WRITE_SHORT 0x48 0xfffc // AC Effective
- WRITE_SHORT 0x4a 30 // AC Crushing
- WRITE_SHORT 0x4c 30 // AC Missile
- WRITE_SHORT 0x4e 30 // AC Piercing
- WRITE_SHORT 0x50 30 //AC Slashing
- WRITE_BYTE 0x52 0xfc // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x54 10 // Save vs. Death
- WRITE_BYTE 0x55 12 // Save vs. Wands
- WRITE_BYTE 0x56 11 // Save vs. Polymorph
- WRITE_BYTE 0x57 12 // Save vs. Breath
- WRITE_BYTE 0x58 13 // Save vs. Spell
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x234 9 // First Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x238 64 // Exc. Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
-// WRITE_BYTE 0x27b 18 //Alignment
- REPLACE_CRE_ITEM ~blun13~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~chan07~ #0 #0 #0 ~none~ ~armor~
+    WRITE_LONG 0x14 3500 // XP Value
+    WRITE_SHORT 0x24 156 // Current HP
+    WRITE_SHORT 0x26 156 // Total HP
+    WRITE_SHORT 0x46 0xfffc // AC Natural
+    WRITE_SHORT 0x48 0xfffc // AC Effective
+    WRITE_SHORT 0x4a 30 // AC Crushing
+    WRITE_SHORT 0x4c 30 // AC Missile
+    WRITE_SHORT 0x4e 30 // AC Piercing
+    WRITE_SHORT 0x50 30 //AC Slashing
+    WRITE_BYTE 0x52 0xfc // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x54 10 // Save vs. Death
+    WRITE_BYTE 0x55 12 // Save vs. Wands
+    WRITE_BYTE 0x56 11 // Save vs. Polymorph
+    WRITE_BYTE 0x57 12 // Save vs. Breath
+    WRITE_BYTE 0x58 13 // Save vs. Spell
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x234 9 // First Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x238 64 // Exc. Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    // WRITE_BYTE 0x27b 18 //Alignment
+    REPLACE_CRE_ITEM ~blun13~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~chan07~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
 COPY_EXISTING ~SLGUARD2.CRE~ override
- WRITE_LONG 0x14 3500 // XP Value
- WRITE_SHORT 0x24 138 // Current HP
- WRITE_SHORT 0x26 138 // Total HP
- WRITE_SHORT 0x46 0xfffa // AC Natural
- WRITE_SHORT 0x48 0xfffa // AC Effective
- WRITE_SHORT 0x4a 20 // AC Crushing
- WRITE_SHORT 0x4c 20 // AC Missile
- WRITE_SHORT 0x4e 20 // AC Piercing
- WRITE_SHORT 0x50 20 //AC Slashing
- WRITE_BYTE 0x52 0xfa // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x234 15 // First Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x238 52 // Exc. Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
-// WRITE_BYTE 0x27b 18 //Alignment
- REPLACE_CRE_ITEM ~sw1h42~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~plat04~ #0 #0 #0 ~none~ ~armor~
+    WRITE_LONG 0x14 3500 // XP Value
+    WRITE_SHORT 0x24 138 // Current HP
+    WRITE_SHORT 0x26 138 // Total HP
+    WRITE_SHORT 0x46 0xfffa // AC Natural
+    WRITE_SHORT 0x48 0xfffa // AC Effective
+    WRITE_SHORT 0x4a 20 // AC Crushing
+    WRITE_SHORT 0x4c 20 // AC Missile
+    WRITE_SHORT 0x4e 20 // AC Piercing
+    WRITE_SHORT 0x50 20 //AC Slashing
+    WRITE_BYTE 0x52 0xfa // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x234 15 // First Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x238 52 // Exc. Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    // WRITE_BYTE 0x27b 18 //Alignment
+    REPLACE_CRE_ITEM ~sw1h42~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~plat04~ #0 #0 #0 ~none~ ~armor~
 BUT_ONLY
 
 COPY_EXISTING ~SLMAGE1.CRE~ override
- WRITE_LONG 0x14 7500 // XP Value
- WRITE_SHORT 0x24 118 // Current HP
- WRITE_SHORT 0x26 118 // Total HP
- WRITE_SHORT 0x46 0xfffe // AC Natural
- WRITE_SHORT 0x48 0xfffe // AC Effective
- WRITE_BYTE 0x52 0xfe // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x54 10 // Save vs. Death
- WRITE_BYTE 0x55 5 // Save vs. Wands
- WRITE_BYTE 0x56 7 // Save vs. Polymorph
- WRITE_BYTE 0x57 9 // Save vs. Breath
- WRITE_BYTE 0x58 1 // Save vs. Spell
- WRITE_BYTE 0x59 30 // Fire Resistance
- WRITE_BYTE 0x5a 30 // Cold Resistance
- WRITE_BYTE 0x5b 30 // Elec Resistance
- WRITE_BYTE 0x5c 30 // Acid Resistance
- WRITE_BYTE 0x5d 30 // Magic Resistance
- WRITE_BYTE 0x5e 30 // Magic Fire Resistance
- WRITE_BYTE 0x5f 30 // Magic Cold Resistance
- WRITE_BYTE 0x60 30 // Slashing Resistance
- WRITE_BYTE 0x61 30 // Crushing Resistance
- WRITE_BYTE 0x62 30 // Piercing Resistance
- WRITE_BYTE 0x63 30 // Missile Resistance
- WRITE_BYTE 0x66 80 // Lore
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x6f 1
- WRITE_BYTE 0x234 18 // First Class Level
- WRITE_BYTE 0x238 16 // Strength
- WRITE_BYTE 0x23b 16 // Wisdom
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 16 // Constitution
- WRITE_BYTE 0x240 6 // Morale Break
- WRITE_SHORT 0x242 60 // Morale Recovery
- WRITE_SHORT 0x244 0x0080 // Kit
- WRITE_ASCII 0x260 ~MAGE18G~ (8)
- WRITE_ASCII 0x280 ~slmage1~ (8)
- REMOVE_KNOWN_SPELLS
- REMOVE_MEMORIZED_SPELLS
- ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
- ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi604~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi714~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi717~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi804~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi812~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi813~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi898~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi913~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
- ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
- ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi714~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi813~ #7 ~wizard~ (3)
- ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~ (3)
- ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
- REPLACE_CRE_ITEM ~staf08~ #0 #0 #0 ~none~ ~weapon1~ 
- REPLACE_CRE_ITEM ~dart03~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
- REPLACE_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~
- ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
+    WRITE_LONG 0x14 7500 // XP Value
+    WRITE_SHORT 0x24 118 // Current HP
+    WRITE_SHORT 0x26 118 // Total HP
+    WRITE_SHORT 0x46 0xfffe // AC Natural
+    WRITE_SHORT 0x48 0xfffe // AC Effective
+    WRITE_BYTE 0x52 0xfe // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x54 10 // Save vs. Death
+    WRITE_BYTE 0x55 5 // Save vs. Wands
+    WRITE_BYTE 0x56 7 // Save vs. Polymorph
+    WRITE_BYTE 0x57 9 // Save vs. Breath
+    WRITE_BYTE 0x58 1 // Save vs. Spell
+    WRITE_BYTE 0x59 30 // Fire Resistance
+    WRITE_BYTE 0x5a 30 // Cold Resistance
+    WRITE_BYTE 0x5b 30 // Elec Resistance
+    WRITE_BYTE 0x5c 30 // Acid Resistance
+    WRITE_BYTE 0x5d 30 // Magic Resistance
+    WRITE_BYTE 0x5e 30 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 30 // Magic Cold Resistance
+    WRITE_BYTE 0x60 30 // Slashing Resistance
+    WRITE_BYTE 0x61 30 // Crushing Resistance
+    WRITE_BYTE 0x62 30 // Piercing Resistance
+    WRITE_BYTE 0x63 30 // Missile Resistance
+    WRITE_BYTE 0x66 80 // Lore
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x6f 1
+    WRITE_BYTE 0x234 18 // First Class Level
+    WRITE_BYTE 0x238 16 // Strength
+    WRITE_BYTE 0x23b 16 // Wisdom
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 16 // Constitution
+    WRITE_BYTE 0x240 6 // Morale Break
+    WRITE_SHORT 0x242 60 // Morale Recovery
+    WRITE_SHORT 0x244 0x0080 // Kit
+    WRITE_ASCII 0x260 ~MAGE18G~ (8)
+    WRITE_ASCII 0x280 ~slmage1~ (8)
+    REMOVE_KNOWN_SPELLS
+    REMOVE_MEMORIZED_SPELLS
+    ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi604~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi714~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi717~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi804~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi812~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi813~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi898~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi913~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
+    ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi714~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi813~ #7 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
+    REPLACE_CRE_ITEM ~staf08~ #0 #0 #0 ~none~ ~weapon1~ 
+    REPLACE_CRE_ITEM ~dart03~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
+    REPLACE_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~
+    ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
 BUT_ONLY
 
 COPY_EXISTING ~SLMAGE2.CRE~ override
- WRITE_LONG 0x14 6000 // XP Value
- WRITE_SHORT 0x24 78 // Current HP
- WRITE_SHORT 0x26 78 // Total HP
- WRITE_SHORT 0x46 0xfffe // AC Natural
- WRITE_SHORT 0x48 0xfffe // AC Effective
- WRITE_BYTE 0x52 0xfe // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x54 10 // Save vs. Death
- WRITE_BYTE 0x55 5 // Save vs. Wands
- WRITE_BYTE 0x56 7 // Save vs. Polymorph
- WRITE_BYTE 0x57 9 // Save vs. Breath
- WRITE_BYTE 0x58 1 // Save vs. Spell
- WRITE_BYTE 0x59 30 // Fire Resistance
- WRITE_BYTE 0x5a 30 // Cold Resistance
- WRITE_BYTE 0x5b 30 // Elec Resistance
- WRITE_BYTE 0x5c 30 // Acid Resistance
- WRITE_BYTE 0x5d 30 // Magic Resistance
- WRITE_BYTE 0x5e 30 // Magic Fire Resistance
- WRITE_BYTE 0x5f 30 // Magic Cold Resistance
- WRITE_BYTE 0x60 30 // Slashing Resistance
- WRITE_BYTE 0x61 30 // Crushing Resistance
- WRITE_BYTE 0x62 30 // Piercing Resistance
- WRITE_BYTE 0x63 30 // Missile Resistance
- WRITE_BYTE 0x66 80 // Lore
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x6f 1
- WRITE_BYTE 0x234 18 // First Class Level
- WRITE_BYTE 0x238 10 // Strength
- WRITE_BYTE 0x23a 18 // Int
- WRITE_BYTE 0x23b 16 // Wisdom
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 16 // Constitution
- WRITE_BYTE 0x23e 10 // Constitution
- WRITE_BYTE 0x240 6 // Morale Break
- WRITE_SHORT 0x242 60 // Morale Recovery
- WRITE_BYTE 0x272 1
- WRITE_ASCII 0x260 ~MAGE18G~ (8)
- WRITE_ASCII 0x280 ~slmage1~ (8)
- REMOVE_KNOWN_SPELLS
- REMOVE_MEMORIZED_SPELLS
- ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
- ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
- ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
- ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi415~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
- ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
- ADD_KNOWN_SPELL ~spwi604~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
- ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi714~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi717~ #6 ~wizard~
- ADD_KNOWN_SPELL ~spwi804~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi812~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi813~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi898~ #7 ~wizard~
- ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi909~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
- ADD_KNOWN_SPELL ~spwi913~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
- ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
- ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
- ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi714~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi813~ #7 ~wizard~ (3)
- ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~ (2)
- ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
- ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
- REMOVE_CRE_ITEM ~wand16~
- REPLACE_CRE_ITEM ~staf24~ #0 #0 #0 ~none~ ~weapon1~
- REPLACE_CRE_ITEM ~dart04~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
- ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
- ADD_CRE_ITEM ~rndtree01~ #0 #0 #0 none inv
+    WRITE_LONG 0x14 6000 // XP Value
+    WRITE_SHORT 0x24 78 // Current HP
+    WRITE_SHORT 0x26 78 // Total HP
+    WRITE_SHORT 0x46 0xfffe // AC Natural
+    WRITE_SHORT 0x48 0xfffe // AC Effective
+    WRITE_BYTE 0x52 0xfe // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x54 10 // Save vs. Death
+    WRITE_BYTE 0x55 5 // Save vs. Wands
+    WRITE_BYTE 0x56 7 // Save vs. Polymorph
+    WRITE_BYTE 0x57 9 // Save vs. Breath
+    WRITE_BYTE 0x58 1 // Save vs. Spell
+    WRITE_BYTE 0x59 30 // Fire Resistance
+    WRITE_BYTE 0x5a 30 // Cold Resistance
+    WRITE_BYTE 0x5b 30 // Elec Resistance
+    WRITE_BYTE 0x5c 30 // Acid Resistance
+    WRITE_BYTE 0x5d 30 // Magic Resistance
+    WRITE_BYTE 0x5e 30 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 30 // Magic Cold Resistance
+    WRITE_BYTE 0x60 30 // Slashing Resistance
+    WRITE_BYTE 0x61 30 // Crushing Resistance
+    WRITE_BYTE 0x62 30 // Piercing Resistance
+    WRITE_BYTE 0x63 30 // Missile Resistance
+    WRITE_BYTE 0x66 80 // Lore
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x6f 1
+    WRITE_BYTE 0x234 18 // First Class Level
+    WRITE_BYTE 0x238 10 // Strength
+    WRITE_BYTE 0x23a 18 // Int
+    WRITE_BYTE 0x23b 16 // Wisdom
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 16 // Constitution
+    WRITE_BYTE 0x23e 10 // Constitution
+    WRITE_BYTE 0x240 6 // Morale Break
+    WRITE_SHORT 0x242 60 // Morale Recovery
+    WRITE_BYTE 0x272 1
+    WRITE_ASCII 0x260 ~MAGE18G~ (8)
+    WRITE_ASCII 0x280 ~slmage1~ (8)
+    REMOVE_KNOWN_SPELLS
+    REMOVE_MEMORIZED_SPELLS
+    ADD_KNOWN_SPELL ~spwi119~ #0 ~wizard~
+    ADD_KNOWN_SPELL ~spwi211~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi212~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi219~ #1 ~wizard~
+    ADD_KNOWN_SPELL ~spwi302~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi303~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi312~ #2 ~wizard~
+    ADD_KNOWN_SPELL ~spwi408~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi415~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi418~ #3 ~wizard~
+    ADD_KNOWN_SPELL ~spwi505~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi506~ #4 ~wizard~
+    ADD_KNOWN_SPELL ~spwi604~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi609~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi611~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi616~ #5 ~wizard~
+    ADD_KNOWN_SPELL ~spwi701~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi713~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi714~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi715~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi717~ #6 ~wizard~
+    ADD_KNOWN_SPELL ~spwi804~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi812~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi813~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi898~ #7 ~wizard~
+    ADD_KNOWN_SPELL ~spwi902~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi903~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi909~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi910~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi911~ #8 ~wizard~
+    ADD_KNOWN_SPELL ~spwi913~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi119~ #0 ~wizard~ (5)
+    ADD_MEMORIZED_SPELL ~spwi211~ #1 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi219~ #1 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi303~ #2 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi312~ #2 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi415~ #3 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi418~ #3 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi505~ #4 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi506~ #4 ~wizard~ (4)
+    ADD_MEMORIZED_SPELL ~spwi604~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi609~ #5 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi616~ #5 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi701~ #6 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi713~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi714~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi717~ #6 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi812~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi813~ #7 ~wizard~ (3)
+    ADD_MEMORIZED_SPELL ~spwi898~ #7 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi903~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi909~ #8 ~wizard~ (2)
+    ADD_MEMORIZED_SPELL ~spwi910~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi911~ #8 ~wizard~
+    ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~
+    REMOVE_CRE_ITEM ~wand16~
+    REPLACE_CRE_ITEM ~staf24~ #0 #0 #0 ~none~ ~weapon1~
+    REPLACE_CRE_ITEM ~dart04~ #20 #0 #0 ~none~ ~weapon2~ EQUIP
+    ADD_CRE_ITEM ~immune3~ #0 #0 #0 ~none~ ~lring rring~
+    ADD_CRE_ITEM ~rndtree01~ #0 #0 #0 none inv
 BUT_ONLY
 
 // New Slums' Sewers Encounter (belongs to Third Path)
 
-/*COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ override
- SAY NAME1 ~Coulson~
- SAY NAME2 ~Coulson~
+/*
+COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpcoulso.cre~ override
+    SAY NAME1 ~Coulson~
+    SAY NAME2 ~Coulson~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmay.cre~ override
- SAY NAME1 ~May~
- SAY NAME2 ~May~
+    SAY NAME1 ~May~
+    SAY NAME2 ~May~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpfitz.cre~ override
- SAY NAME1 ~Fitz~
- SAY NAME2 ~Fitz~
+    SAY NAME1 ~Fitz~
+    SAY NAME2 ~Fitz~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpsimmon.cre~ override
- SAY NAME1 ~Simmons~
- SAY NAME2 ~Simmons~
+    SAY NAME1 ~Simmons~
+    SAY NAME2 ~Simmons~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpskye.cre~ override
- SAY NAME1 ~Skye~
- SAY NAME2 ~Skye~
+    SAY NAME1 ~Skye~
+    SAY NAME2 ~Skye~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vplincol.cre~ override
- SAY NAME1 ~Lincoln~
- SAY NAME2 ~Lincoln~
+    SAY NAME1 ~Lincoln~
+    SAY NAME2 ~Lincoln~
 
 COPY ~%MOD_FOLDER%/encounters/slavers/cre/vpmack.cre~ override
- SAY NAME1 ~Mack~
- SAY NAME2 ~Mack~
+    SAY NAME1 ~Mack~
+    SAY NAME2 ~Mack~
 
 EXTEND_TOP ~AR0404.BCS~ ~%MOD_FOLDER%/encounters/slavers/scripts/ar0404.baf~*/
 

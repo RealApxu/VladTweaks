@@ -1,78 +1,80 @@
 // Improved Trolls in De'Arnise Keep - from Improved Nalia NPC
 
-COPY_EXISTING ~TORGAL.CRE~ override
-              ~TORGAL3.CRE~ override
- WRITE_SHORT 0x24 240 // Current HP
- WRITE_SHORT 0x26 240 // Total HP
- WRITE_SHORT 0x46 "-3" // AC Natural
- WRITE_SHORT 0x48 "-3" // AC Effective
- WRITE_SHORT 0x4a 20 // AC Crushing
- WRITE_SHORT 0x50 20 // AC Slashing
- WRITE_BYTE 0x52 "-2" // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x54 11 // Save vs. Death
- WRITE_BYTE 0x55 13 // Save vs. Wands
- WRITE_BYTE 0x56 12 // Save vs. Polymorph
- WRITE_BYTE 0x57 13 // Save vs. Breath
- WRITE_BYTE 0x58 14 // Save vs. Spell
- WRITE_BYTE 0x59 0 // Fire Resistance
- WRITE_BYTE 0x5a 0 // Cold Resistance
- WRITE_BYTE 0x5b 0 // Elec Resistance
- WRITE_BYTE 0x5c 0 // Acid Resistance
- WRITE_BYTE 0x5d 0 // Magic Resistance
- WRITE_BYTE 0x5e 0 // Magic Fire Resistance
- WRITE_BYTE 0x5f 0 // Magic Cold Resistance
- WRITE_BYTE 0x60 20 // Slashing Resistance
- WRITE_BYTE 0x60 20 // Crushing Resistance
- WRITE_BYTE 0x62 40 // Piercing Resistance
- WRITE_BYTE 0x63 40 // Missile Resistance
- WRITE_BYTE 0x234 20 // First Class Level
- WRITE_BYTE 0x238 22 // STR
- WRITE_BYTE 0x23a 15 // INT
- WRITE_BYTE 0x23d 20 // CON
+COPY_EXISTING
+~TORGAL.CRE~ override
+~TORGAL3.CRE~ override
+    WRITE_SHORT 0x24 240 // Current HP
+    WRITE_SHORT 0x26 240 // Total HP
+    WRITE_SHORT 0x46 "-3" // AC Natural
+    WRITE_SHORT 0x48 "-3" // AC Effective
+    WRITE_SHORT 0x4a 20 // AC Crushing
+    WRITE_SHORT 0x50 20 // AC Slashing
+    WRITE_BYTE 0x52 "-2" // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x54 11 // Save vs. Death
+    WRITE_BYTE 0x55 13 // Save vs. Wands
+    WRITE_BYTE 0x56 12 // Save vs. Polymorph
+    WRITE_BYTE 0x57 13 // Save vs. Breath
+    WRITE_BYTE 0x58 14 // Save vs. Spell
+    WRITE_BYTE 0x59 0 // Fire Resistance
+    WRITE_BYTE 0x5a 0 // Cold Resistance
+    WRITE_BYTE 0x5b 0 // Elec Resistance
+    WRITE_BYTE 0x5c 0 // Acid Resistance
+    WRITE_BYTE 0x5d 0 // Magic Resistance
+    WRITE_BYTE 0x5e 0 // Magic Fire Resistance
+    WRITE_BYTE 0x5f 0 // Magic Cold Resistance
+    WRITE_BYTE 0x60 20 // Slashing Resistance
+    WRITE_BYTE 0x60 20 // Crushing Resistance
+    WRITE_BYTE 0x62 40 // Piercing Resistance
+    WRITE_BYTE 0x63 40 // Missile Resistance
+    WRITE_BYTE 0x234 20 // First Class Level
+    WRITE_BYTE 0x238 22 // STR
+    WRITE_BYTE 0x23a 15 // INT
+    WRITE_BYTE 0x23d 20 // CON
 BUT_ONLY
 
 COPY_EXISTING ~TROLGI01.CRE~ override
- WRITE_LONG 0x14 8500 // XP Value
- WRITE_SHORT 0x24 131 // Current HP
- WRITE_SHORT 0x26 131 // Total HP
- WRITE_SHORT 0x46 "-1" // AC Natural
- WRITE_SHORT 0x48 "-1" // AC Effective
- WRITE_SHORT 0x4a 20 // AC Crushing
- WRITE_SHORT 0x50 20 // AC Slashing
- WRITE_BYTE 0x52 1 // THAC0
- WRITE_BYTE 0x60 10 // Slashing Resistance
- WRITE_BYTE 0x60 10 // Crushing Resistance
- WRITE_BYTE 0x62 20 // Piercing Resistance
- WRITE_BYTE 0x63 20 // Missile Resistance
- WRITE_BYTE 0x234 14 // First Class Level
- WRITE_BYTE 0x23d 20 // CON
+    WRITE_LONG 0x14 8500 // XP Value
+    WRITE_SHORT 0x24 131 // Current HP
+    WRITE_SHORT 0x26 131 // Total HP
+    WRITE_SHORT 0x46 "-1" // AC Natural
+    WRITE_SHORT 0x48 "-1" // AC Effective
+    WRITE_SHORT 0x4a 20 // AC Crushing
+    WRITE_SHORT 0x50 20 // AC Slashing
+    WRITE_BYTE 0x52 1 // THAC0
+    WRITE_BYTE 0x60 10 // Slashing Resistance
+    WRITE_BYTE 0x60 10 // Crushing Resistance
+    WRITE_BYTE 0x62 20 // Piercing Resistance
+    WRITE_BYTE 0x63 20 // Missile Resistance
+    WRITE_BYTE 0x234 14 // First Class Level
+    WRITE_BYTE 0x23d 20 // CON
 BUT_ONLY
 
 COPY_EXISTING ~TROLL01.CRE~ override
- WRITE_LONG 0x14 5500 // XP Value
- WRITE_SHORT 0x24 112 // Current HP
- WRITE_SHORT 0x26 112 // Total HP
- WRITE_SHORT 0x46 1 // AC Natural
- WRITE_SHORT 0x48 1 // AC Effective
- WRITE_BYTE 0x52 5 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x60 20 // Slashing Resistance
- WRITE_BYTE 0x60 20 // Crushing Resistance
- WRITE_BYTE 0x62 40 // Piercing Resistance
- WRITE_BYTE 0x63 20 // Missile Resistance
- WRITE_BYTE 0x234 12 // First Class Level
- WRITE_BYTE 0x238 22 // STR
- WRITE_BYTE 0x23a 9 // INT
- WRITE_BYTE 0x23d 24 // CON
+    WRITE_LONG 0x14 5500 // XP Value
+    WRITE_SHORT 0x24 112 // Current HP
+    WRITE_SHORT 0x26 112 // Total HP
+    WRITE_SHORT 0x46 1 // AC Natural
+    WRITE_SHORT 0x48 1 // AC Effective
+    WRITE_BYTE 0x52 5 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x60 20 // Slashing Resistance
+    WRITE_BYTE 0x60 20 // Crushing Resistance
+    WRITE_BYTE 0x62 40 // Piercing Resistance
+    WRITE_BYTE 0x63 20 // Missile Resistance
+    WRITE_BYTE 0x234 12 // First Class Level
+    WRITE_BYTE 0x238 22 // STR
+    WRITE_BYTE 0x23a 9 // INT
+    WRITE_BYTE 0x23d 24 // CON
 BUT_ONLY
 
 COPY ~%MOD_FOLDER%/encounters/trolls/itm/vptrolto.itm~ override
 
-COPY_EXISTING ~TORGAL.CRE~ override
-              ~TORGAL2.CRE~ override
-              ~TORGAL3.CRE~ override
-                REPLACE_CRE_ITEM ~vptrolto~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+COPY_EXISTING
+~TORGAL.CRE~ override
+~TORGAL2.CRE~ override
+~TORGAL3.CRE~ override
+    REPLACE_CRE_ITEM ~vptrolto~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
 BUT_ONLY
 
 EXTEND_TOP ~AR1301.BCS~ ~%MOD_FOLDER%/encounters/trolls/scripts/ar1301.baf~

@@ -81,8 +81,8 @@ kit_name = vpEdwinKit
 END
 
 ACTION_FOR_EACH edwin IN edwin2 edwin4 edwin6 edwin7_ edwin7 edwin9 edwin11 edwin12 edwin13 edwin15 BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME ~%edwin%.cre~ THEN BEGIN
-        COPY_EXISTING ~%edwin%.cre~ override
-            WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpEdwinKit~))
-    END
+    COPY_EXISTING ~%edwin%.cre~ override
+        WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~vpEdwinKit~))
+    BUT_ONLY
+    IF_EXISTS
 END

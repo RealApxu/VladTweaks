@@ -3,121 +3,121 @@
 // Beefing up enemies in the starting dungeon
 
 COPY_EXISTING ~DUEARC01.CRE~ override
- WRITE_LONG 0x14 2000 // XP Value
- WRITE_SHORT 0x24 72 // Current HP
- WRITE_SHORT 0x26 72 // Total HP
- WRITE_SHORT 0x46 4 // AC Natural
- WRITE_SHORT 0x48 4 // AC Effective
- WRITE_BYTE 0x52 6 // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x234 8 // First Class Level
- WRITE_BYTE 0x238 18 // Strength
- WRITE_BYTE 0x23c 17 // Dexterity
- WRITE_BYTE 0x23d 18 // Constitution
-// WRITE_BYTE 0x27b 18 // Alignment
-// WRITE_ASCII 0x280 ~duergare~ (8) // Death Variable
- REPLACE_CRE_ITEM ~chan02~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~ax1h02~ #20 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~xbow05~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
- REPLACE_CRE_ITEM ~bolt02~ #40 #0 #0 ~none~ ~quiver1~
+    WRITE_LONG 0x14 2000 // XP Value
+    WRITE_SHORT 0x24 72 // Current HP
+    WRITE_SHORT 0x26 72 // Total HP
+    WRITE_SHORT 0x46 4 // AC Natural
+    WRITE_SHORT 0x48 4 // AC Effective
+    WRITE_BYTE 0x52 6 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x234 8 // First Class Level
+    WRITE_BYTE 0x238 18 // Strength
+    WRITE_BYTE 0x23c 17 // Dexterity
+    WRITE_BYTE 0x23d 18 // Constitution
+    // WRITE_BYTE 0x27b 18 // Alignment
+    // WRITE_ASCII 0x280 ~duergare~ (8) // Death Variable
+    REPLACE_CRE_ITEM ~chan02~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~ax1h02~ #20 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~xbow05~ #0 #0 #0 ~none~ ~weapon1~ EQUIP TWOHANDED
+    REPLACE_CRE_ITEM ~bolt02~ #40 #0 #0 ~none~ ~quiver1~
 BUT_ONLY
 
 COPY_EXISTING ~DUECLA01.CRE~ override
- WRITE_LONG 0x14 4000 // XP Value
- WRITE_SHORT 0x24 138 // Current HP
- WRITE_SHORT 0x26 138 // Total HP
- WRITE_SHORT 0x46 1 // AC Natural
- WRITE_SHORT 0x48 1 // AC Effective
- WRITE_BYTE 0x52 4 // THAC0
- WRITE_BYTE 0x53 3 // APR
- SET_BG2_PROFICIENCY PROFICIENCYAXE 5
- SET_BG2_PROFICIENCY PROFICIENCYWARHAMMER 5
- WRITE_BYTE 0x234 14 // First Class Level
- WRITE_BYTE 0x238 19 // Strength
- WRITE_BYTE 0x23b 16 // Wisdom
- WRITE_BYTE 0x23d 21 // Constitution
- WRITE_LONG 0x244 0x4001 // Kit
-// WRITE_BYTE 0x27b 18 // Alignment
- REPLACE_CRE_ITEM ~plat02~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
- REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~hamm02~ #0 #0 #0 ~none~ ~weapon2~
+    WRITE_LONG 0x14 4000 // XP Value
+    WRITE_SHORT 0x24 138 // Current HP
+    WRITE_SHORT 0x26 138 // Total HP
+    WRITE_SHORT 0x46 1 // AC Natural
+    WRITE_SHORT 0x48 1 // AC Effective
+    WRITE_BYTE 0x52 4 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    SET_BG2_PROFICIENCY PROFICIENCYAXE 5
+    SET_BG2_PROFICIENCY PROFICIENCYWARHAMMER 5
+    WRITE_BYTE 0x234 14 // First Class Level
+    WRITE_BYTE 0x238 19 // Strength
+    WRITE_BYTE 0x23b 16 // Wisdom
+    WRITE_BYTE 0x23d 21 // Constitution
+    WRITE_LONG 0x244 0x4001 // Kit
+    // WRITE_BYTE 0x27b 18 // Alignment
+    REPLACE_CRE_ITEM ~plat02~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
+    REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~hamm02~ #0 #0 #0 ~none~ ~weapon2~
 BUT_ONLY
 
 COPY_EXISTING ~DUEGAU01.CRE~ override
- WRITE_SHORT 0x24 75 // Current HP
- WRITE_SHORT 0x26 75 // Total HP
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x234 7 // First Class Level
- WRITE_BYTE 0x238 17 // Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 20 // Constitution
-// WRITE_BYTE 0x27b 18 // Alignment
-// WRITE_ASCII 0x280 ~duegau01~ (8) // Death Variable
- REPLACE_CRE_ITEM ~leat05~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
- REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~slng02~ #0 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~bull02~ #20 #0 #0 ~none~ ~quiver1~
+    WRITE_SHORT 0x24 75 // Current HP
+    WRITE_SHORT 0x26 75 // Total HP
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x234 7 // First Class Level
+    WRITE_BYTE 0x238 17 // Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 20 // Constitution
+    // WRITE_BYTE 0x27b 18 // Alignment
+    // WRITE_ASCII 0x280 ~duegau01~ (8) // Death Variable
+    REPLACE_CRE_ITEM ~leat05~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
+    REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~slng02~ #0 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~bull02~ #20 #0 #0 ~none~ ~quiver1~
 BUT_ONLY
 
 COPY_EXISTING ~DUEGAU02.CRE~ override
- WRITE_SHORT 0x24 74 // Current HP
- WRITE_SHORT 0x26 74 // Total HP
- WRITE_SHORT 0x46 6 // AC Natural
- WRITE_SHORT 0x48 6 // AC Effective
- WRITE_BYTE 0x52 6 // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x234 7 // First Class Level
- WRITE_BYTE 0x238 17 // Strength
- WRITE_BYTE 0x23c 18 // Dexterity
- WRITE_BYTE 0x23d 19 // Constitution
-// WRITE_BYTE 0x27b 18 // Alignment
-// WRITE_ASCII 0x280 ~duegau02~ (8) // Death Variable
- REPLACE_CRE_ITEM ~leat05~ #0 #0 #0 ~none~ ~armor~
- REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
- REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~slng02~ #0 #0 #0 ~none~ ~weapon2~
- REPLACE_CRE_ITEM ~bull02~ #20 #0 #0 ~none~ ~quiver1~
+    WRITE_SHORT 0x24 74 // Current HP
+    WRITE_SHORT 0x26 74 // Total HP
+    WRITE_SHORT 0x46 6 // AC Natural
+    WRITE_SHORT 0x48 6 // AC Effective
+    WRITE_BYTE 0x52 6 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x234 7 // First Class Level
+    WRITE_BYTE 0x238 17 // Strength
+    WRITE_BYTE 0x23c 18 // Dexterity
+    WRITE_BYTE 0x23d 19 // Constitution
+    // WRITE_BYTE 0x27b 18 // Alignment
+    // WRITE_ASCII 0x280 ~duegau02~ (8) // Death Variable
+    REPLACE_CRE_ITEM ~leat05~ #0 #0 #0 ~none~ ~armor~
+    REPLACE_CRE_ITEM ~shld04~ #0 #0 #0 ~none~ ~shield~    
+    REPLACE_CRE_ITEM ~ax1h02~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~slng02~ #0 #0 #0 ~none~ ~weapon2~
+    REPLACE_CRE_ITEM ~bull02~ #20 #0 #0 ~none~ ~quiver1~
 BUT_ONLY
 
 COPY_EXISTING ~DUEMAG01.CRE~ override
- WRITE_LONG 0x14 2000 // XP Value
- WRITE_SHORT 0x24 36 // Current HP
- WRITE_SHORT 0x26 36 // Total HP
- WRITE_SHORT 0x46 6 // AC Natural
- WRITE_SHORT 0x48 6 // AC Effective
- WRITE_BYTE 0x52 12 // THAC0
- WRITE_BYTE 0x234 9 // First Class Level
-// WRITE_BYTE 0x27b 18 // Alignment
-// WRITE_ASCII 0x280 ~duemag01~ (8) // Death Variable
+    WRITE_LONG 0x14 2000 // XP Value
+    WRITE_SHORT 0x24 36 // Current HP
+    WRITE_SHORT 0x26 36 // Total HP
+    WRITE_SHORT 0x46 6 // AC Natural
+    WRITE_SHORT 0x48 6 // AC Effective
+    WRITE_BYTE 0x52 12 // THAC0
+    WRITE_BYTE 0x234 9 // First Class Level
+    // WRITE_BYTE 0x27b 18 // Alignment
+    // WRITE_ASCII 0x280 ~duemag01~ (8) // Death Variable
 BUT_ONLY
 
 COPY_EXISTING ~IDEMON02.CRE~ override
- WRITE_SHORT 0x24 160 // Current HP
- WRITE_SHORT 0x26 160 // Total HP
- WRITE_SHORT 0x46 "-1" // AC Natural
- WRITE_SHORT 0x48 "-1" // AC Effective
- WRITE_BYTE 0x52 6 // THAC0 
- WRITE_BYTE 0x53 3 // APR
- REPLACE_CRE_ITEM ~plat23~ #0 #0 #0 ~unstealable&undroppable~ ~armor~
- REPLACE_CRE_ITEM ~sw2h08~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP TWOHANDED
- REPLACE_CRE_ITEM ~boot01~ #0 #0 #0 ~unstealable&undroppable~ ~boots~
- REPLACE_CRE_ITEM ~brac10~ #0 #0 #0 ~unstealable&undroppable~ ~gloves~
- REPLACE_CRE_ITEM ~clck02~ #0 #0 #0 ~unstealable&undroppable~ ~cloak~
+    WRITE_SHORT 0x24 160 // Current HP
+    WRITE_SHORT 0x26 160 // Total HP
+    WRITE_SHORT 0x46 "-1" // AC Natural
+    WRITE_SHORT 0x48 "-1" // AC Effective
+    WRITE_BYTE 0x52 6 // THAC0 
+    WRITE_BYTE 0x53 3 // APR
+    REPLACE_CRE_ITEM ~plat23~ #0 #0 #0 ~unstealable&undroppable~ ~armor~
+    REPLACE_CRE_ITEM ~sw2h08~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP TWOHANDED
+    REPLACE_CRE_ITEM ~boot01~ #0 #0 #0 ~unstealable&undroppable~ ~boots~
+    REPLACE_CRE_ITEM ~brac10~ #0 #0 #0 ~unstealable&undroppable~ ~gloves~
+    REPLACE_CRE_ITEM ~clck02~ #0 #0 #0 ~unstealable&undroppable~ ~cloak~
 BUT_ONLY
 
 COPY_EXISTING ~IOTYUGH.CRE~ override
- WRITE_LONG 0x14 2000 // XP Value
- WRITE_SHORT 0x24 82 // Current HP
- WRITE_SHORT 0x26 82 // Total HP
- WRITE_SHORT 0x46 0 // AC Natural
- WRITE_SHORT 0x48 0 // AC Effective
- WRITE_BYTE 0x52 7 // THAC0
- WRITE_BYTE 0x53 3 // APR
- WRITE_BYTE 0x238 16 // Strength
- WRITE_BYTE 0x23c 16 // Dexterity
-// WRITE_ASCII 0x280 ~iotyugh~ (8) // Death Variable
+    WRITE_LONG 0x14 2000 // XP Value
+    WRITE_SHORT 0x24 82 // Current HP
+    WRITE_SHORT 0x26 82 // Total HP
+    WRITE_SHORT 0x46 0 // AC Natural
+    WRITE_SHORT 0x48 0 // AC Effective
+    WRITE_BYTE 0x52 7 // THAC0
+    WRITE_BYTE 0x53 3 // APR
+    WRITE_BYTE 0x238 16 // Strength
+    WRITE_BYTE 0x23c 16 // Dexterity
+    // WRITE_ASCII 0x280 ~iotyugh~ (8) // Death Variable
 BUT_ONLY
 
 // Additional Spawn on the 1st Floor

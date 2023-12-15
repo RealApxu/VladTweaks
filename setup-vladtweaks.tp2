@@ -9,111 +9,111 @@ END
 
 // Encounters
 BEGIN ~Improved Black Talon Elites~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod can be installed only on BG:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/blacktalon.tpa~
 
 BEGIN ~Improved Starting Dungeon (from Shar-Teel NPC)~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/chateau.tpa~
 
 BEGIN ~Improved Firkraag Dungeon (from Shar-Teel NPC)~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/firkraag.tpa~
 
 /*
 BEGIN ~Improved Nymph Script (by Goeran Rimen)~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG1:EE, BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/nymph.tpa~
 */
 
 BEGIN ~Improved Umar Hills Shadows~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/shadows.tpa~
 
 BEGIN ~Improved Slavers~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/slavers.tpa~
 
 BEGIN ~Improved Shadow Thieves Hideout (from Third Path)~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG1:EE, BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/thieves.tpa~
 
 BEGIN ~Improved De'Arnise Keep (from Improved Nalia)~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/trolls.tpa~
 
 BEGIN ~Improved Twisted Rune Encounter~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/twistedrune_encounter.tpa~
 
 BEGIN ~Improved Unseeing Eye (from Senka's Keldorn Romance)~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/unseeingeye.tpa~
 
 BEGIN ~Improved Abazigal~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/abazigal.tpa~
 
 BEGIN ~Improved Gromnir~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/gromnir.tpa~
 
 BEGIN ~Improved Illasera~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/illasera.tpa~
 
 BEGIN ~Improved Yaga-Shura~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Improved Encounters~
 INCLUDE ~%MOD_FOLDER%/encounters/yagashura.tpa~
 
 // Kits
 
 BEGIN ~Aerie Kit - Wildwanderer of Baervan~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/aerie.tpa~
 
 BEGIN ~Edwin Kit - Red Wizard~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG:EE, BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/edwin.tpa~
 
 BEGIN ~Imoen Kit - Charming Rogue~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG:EE, BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/imoen.tpa~
 
 BEGIN ~Jaheira Kit - Wildwanderer of Baervan~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG:EE, BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/jaheira.tpa~
 
 BEGIN ~Keldorn Kit - Redeemer~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/keldorn.tpa~
 
 BEGIN ~Boo - Familiar of Minsc~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG:EE, BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/minsc.tpa~
 
 BEGIN ~Viconia Kit - Darkcloak of Shar~
-REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod must be installed on BG:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This mod can be installed only on BG:EE, BG2:EE or EET.~
 GROUP ~NPC Changes~
 INCLUDE ~%MOD_FOLDER%/npc/viconia.tpa~
 
@@ -121,29 +121,29 @@ INCLUDE ~%MOD_FOLDER%/npc/viconia.tpa~
 
 /*
 BEGIN ~Third Path~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/thirdpath.tpa~
 */
 
 BEGIN ~BG1 - Merchant League Bank~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod can be installed only on BG:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/bank.tpa~
 
 BEGIN ~BG1 - Keys to Eternity~
-REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod must be installed on BG:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BGEE EET~) ~This mod can be installed only on BG:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/keystoeternity.tpa~
 
 BEGIN ~Upgradable Dakkon Blade~
-REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod must be installed on BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG2EE EET~) ~This mod can be installed only on BG2:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/items/itemupgrade.tpa~
 
 /*
 BEGIN ~Improved NPC Items~
-REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod must be installed on BG1:EE, BG2:EE or EET.~
+REQUIRE_PREDICATE (GAME_IS ~BG1EE BG2EE EET~) ~This mod can be installed only on BG1:EE, BG2:EE or EET.~
 GROUP ~Quests and Items~
 INCLUDE ~%MOD_FOLDER%/quests/npcitems.tpa~
 */

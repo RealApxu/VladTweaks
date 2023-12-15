@@ -2,22 +2,23 @@
 
 // Sword Change Scripts
 
-COMPILE ~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw1.baf~
-        ~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw2.baf~
-        ~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw3.baf~
-        ~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw4.baf~
+COMPILE
+~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw1.baf~
+~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw2.baf~
+~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw3.baf~
+~%MOD_FOLDER%/quests/dakkon/scripts/vpdaksw4.baf~
 
 // Adding script to the original sword
 
 COPY_EXISTING ~WA2DAK.ITM~ override
- ADD_ITEM_EFFECT INT_VAR opcode=82 target=1 parameter2=5 timing=2 STR_VAR resource=vpdaksw1
+    ADD_ITEM_EFFECT INT_VAR opcode=82 target=1 parameter2=5 timing=2 STR_VAR resource=vpdaksw1
 BUT_ONLY
 
 // New Swords
 
 COPY ~%MOD_FOLDER%/quests/dakkon/itm/vpdaksw2.itm~ override
- SAY NAME2 ~Dak'kon's Streaming Blade~
- SAY DESC ~Dak'kon's Streaming Blade +2
+    SAY NAME2 ~Dak'kon's Streaming Blade~
+    SAY DESC ~Dak'kon's Streaming Blade +2
 This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
  
 STATISTICS:
@@ -40,8 +41,8 @@ Requires:
 Weight: 4~
  
 COPY ~%MOD_FOLDER%/quests/dakkon/itm/vpdaksw3.itm~ override
- SAY NAME2 ~Dak'kon's Streaming Blade~
- SAY DESC ~Dak'kon's Streaming Blade +3
+    SAY NAME2 ~Dak'kon's Streaming Blade~
+    SAY DESC ~Dak'kon's Streaming Blade +3
 This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
  
 STATISTICS:
@@ -66,8 +67,8 @@ Requires:
 Weight: 4~
  
 COPY ~%MOD_FOLDER%/quests/dakkon/itm/vpdaksw4.itm~ override
- SAY NAME2 ~Dak'kon's Streaming Blade~
- SAY DESC ~Dak'kon's Streaming Blade +4
+    SAY NAME2 ~Dak'kon's Streaming Blade~
+    SAY DESC ~Dak'kon's Streaming Blade +4
 This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." 
  
 STATISTICS:
@@ -93,8 +94,8 @@ Requires:
 Weight: 4~
  
 COPY ~%MOD_FOLDER%/quests/dakkon/itm/vpdaksw5.itm~ override
- SAY NAME2 ~Dak'kon's Streaming Blade~
- SAY DESC ~Dak'kon's Streaming Blade +5
+    SAY NAME2 ~Dak'kon's Streaming Blade~
+    SAY DESC ~Dak'kon's Streaming Blade +5
 This sword was the weapon of choice of the famous githzerai Dak'kon. Dak'kon was killed by a powerful entity while working for a creature known as the "Nameless One." After the battle Nameless One restored Dak'kon to life and freed him of the oath he had. This is the blade that was formed after Dak'kon was free from his oath.
  
 STATISTICS:

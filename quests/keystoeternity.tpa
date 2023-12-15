@@ -2,13 +2,13 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
     PRINT ~BG:EE install detected~
     OUTER_SPRINT "AREA0516" "AR0516"
     OUTER_SPRINT "AREA1005" "AR1005"
-  END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
     PRINT ~EET install detected~
-      OUTER_SPRINT "AREA0700" "BG0516"
-      OUTER_SPRINT "AREA7228" "BG1005"
-  END ELSE BEGIN
+    OUTER_SPRINT "AREA0700" "BG0516"
+    OUTER_SPRINT "AREA7228" "BG1005"
+END ELSE BEGIN
     FAIL ~Please install on BG:EE or EET.~
-  END
+END
 
 // Dialogue
 
@@ -19,17 +19,17 @@ COMPILE ~%MOD_FOLDER%/quests/keystoeternity/dialogue/dialogue.d~
 EXTEND_TOP ~%AREA0516%.bcs~ ~%MOD_FOLDER%/quests/keystoeternity/scripts/ar0516.baf~
 
 COPY_EXISTING ~%AREA1005%.ARE~ override
-  WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
-BUT_ONLY_IF_IT_CHANGES
+    WRITE_ASCII 0x94 ~%AREA1005%~                 //setting area script
+BUT_ONLY
 
 ACTION_IF FILE_EXISTS ~%AREA1005%.BCS~ THEN BEGIN
-EXTEND_TOP ~%AREA1005%.BCS~ ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
+    EXTEND_TOP ~%AREA1005%.BCS~ ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
 END ELSE BEGIN
-COMPILE ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
+    COMPILE ~%MOD_FOLDER%/quests/keystoeternity/scripts/%AREA1005%.baf~
 END
 
 // Creatures
 
 COPY ~%MOD_FOLDER%/quests/keystoeternity/cre/vpginny.cre~ override
- SAY NAME1 ~Ginny~
- SAY NAME2 ~Ginny~
+    SAY NAME1 ~Ginny~
+    SAY NAME2 ~Ginny~

@@ -1,18 +1,14 @@
 // Improved Gromnir
 
 COPY_EXISTING ~AR5002.bcs~ override
-DECOMPILE_AND_PATCH BEGIN
-REPLACE_TEXTUALLY
-~ClearAllActions()~
-~TriggerActivation("TRAN5000",FALSE)
-TriggerActivation("TRAN5001",FALSE)
-ClearAllActions()~
-REPLACE_TEXTUALLY
-~AddXP2DA("Gromnir")~
-~AddXP2DA("Gromnir")
-TriggerActivation("TRAN5000",TRUE)
-TriggerActivation("TRAN5001",TRUE)~
-END
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY
+            ~ClearAllActions()~
+            ~TriggerActivation("TRAN5000",FALSE) TriggerActivation("TRAN5001",FALSE) ClearAllActions()~
+        REPLACE_TEXTUALLY
+            ~AddXP2DA("Gromnir")~
+            ~AddXP2DA("Gromnir") TriggerActivation("TRAN5000",TRUE) TriggerActivation("TRAN5001",TRUE)~
+    END
 BUT_ONLY
 
 COMPILE ~%MOD_FOLDER%/encounters/gromnir/scripts/karunf.baf~
@@ -20,89 +16,89 @@ COMPILE ~%MOD_FOLDER%/encounters/gromnir/scripts/karunf.baf~
 COPY ~%MOD_FOLDER%/encounters/gromnir/bam~ override
 
 COPY_EXISTING ~GROMG03.CRE~ override
- WRITE_SHORT 0x24 220 // Current HP
- WRITE_SHORT 0x26 220 // Total HP
- WRITE_SHORT 0x46 0xfff6 // AC Natural
- WRITE_SHORT 0x48 0xfff6 // AC Effective
- WRITE_BYTE 0x52 0xfa // THAC0
- WRITE_BYTE 0x53 10 // APR
- WRITE_BYTE 0x234 20 // First Class Level
- REMOVE_CRE_ITEM ~arow02~
- REPLACE_CRE_ITEM ~bow24~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- ADD_CRE_ITEM ~sw1h72~ #0 #0 #0 ~none~ ~weapon2~
- ADD_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
- ADD_CRE_ITEM ~arow15~ #20 #0 #0 ~none~ ~quiver1~
- ADD_CRE_ITEM ~arow05~ #20 #0 #0 ~none~ ~quiver2~
- ADD_CRE_ITEM ~arow08~ #20 #0 #0 ~none~ ~quiver3~ 
+    WRITE_SHORT 0x24 220 // Current HP
+    WRITE_SHORT 0x26 220 // Total HP
+    WRITE_SHORT 0x46 0xfff6 // AC Natural
+    WRITE_SHORT 0x48 0xfff6 // AC Effective
+    WRITE_BYTE 0x52 0xfa // THAC0
+    WRITE_BYTE 0x53 10 // APR
+    WRITE_BYTE 0x234 20 // First Class Level
+    REMOVE_CRE_ITEM ~arow02~
+    REPLACE_CRE_ITEM ~bow24~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    ADD_CRE_ITEM ~sw1h72~ #0 #0 #0 ~none~ ~weapon2~
+    ADD_CRE_ITEM ~leat07~ #0 #0 #0 ~none~ ~armor~
+    ADD_CRE_ITEM ~arow15~ #20 #0 #0 ~none~ ~quiver1~
+    ADD_CRE_ITEM ~arow05~ #20 #0 #0 ~none~ ~quiver2~
+    ADD_CRE_ITEM ~arow08~ #20 #0 #0 ~none~ ~quiver3~ 
 BUT_ONLY
 
 COPY_EXISTING ~GROMG05.CRE~ override
- WRITE_SHORT 0x24 246 // Current HP
- WRITE_SHORT 0x26 246 // Total HP
- WRITE_SHORT 0x46 0xfff6 // AC Natural
- WRITE_SHORT 0x48 0xfff6 // AC Effective
- WRITE_BYTE 0x52 0xf6 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x6d 1 // Luck
- WRITE_BYTE 0x234 18 // First Class Level 
+    WRITE_SHORT 0x24 246 // Current HP
+    WRITE_SHORT 0x26 246 // Total HP
+    WRITE_SHORT 0x46 0xfff6 // AC Natural
+    WRITE_SHORT 0x48 0xfff6 // AC Effective
+    WRITE_BYTE 0x52 0xf6 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x6d 1 // Luck
+    WRITE_BYTE 0x234 18 // First Class Level 
 BUT_ONLY
 
 COPY_EXISTING ~GROMG08.CRE~ override
- WRITE_SHORT 0x24 86 // Current HP
- WRITE_SHORT 0x26 86 // Total HP
- WRITE_SHORT 0x46 0xffff // AC Natural
- WRITE_SHORT 0x48 0xffff // AC Effective
- WRITE_BYTE 0x52 0xfb // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_ASCII 0x268 ~KARUNF~ (8)
- REPLACE_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
+    WRITE_SHORT 0x24 86 // Current HP
+    WRITE_SHORT 0x26 86 // Total HP
+    WRITE_SHORT 0x46 0xffff // AC Natural
+    WRITE_SHORT 0x48 0xffff // AC Effective
+    WRITE_BYTE 0x52 0xfb // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_ASCII 0x268 ~KARUNF~ (8)
+    REPLACE_CRE_ITEM ~moonblad~ #0 #0 #0 ~unstealable&undroppable~ ~weapon1~ EQUIP
 BUT_ONLY
 
 COPY_EXISTING ~GROMG09.CRE~ override
- WRITE_SHORT 0x24 225 // Current HP
- WRITE_SHORT 0x26 225 // Total HP
- WRITE_SHORT 0x46 0xfff6 // AC Natural
- WRITE_SHORT 0x48 0xfff6 // AC Effective
- WRITE_BYTE 0x52 0xf6 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x234 20 // First Class Level
- REMOVE_CRE_ITEM ~leat24~ ~dagg02~
- ADD_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~shield~
- ADD_CRE_ITEM ~sw1h52~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
- REPLACE_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~ 
+    WRITE_SHORT 0x24 225 // Current HP
+    WRITE_SHORT 0x26 225 // Total HP
+    WRITE_SHORT 0x46 0xfff6 // AC Natural
+    WRITE_SHORT 0x48 0xfff6 // AC Effective
+    WRITE_BYTE 0x52 0xf6 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x234 20 // First Class Level
+    REMOVE_CRE_ITEM ~leat24~ ~dagg02~
+    ADD_CRE_ITEM ~dagg20~ #0 #0 #0 ~none~ ~shield~
+    ADD_CRE_ITEM ~sw1h52~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+    REPLACE_CRE_ITEM ~leat12~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
 COPY_EXISTING ~GROMG10.CRE~ override
- WRITE_SHORT 0x24 225 // Current HP
- WRITE_SHORT 0x26 225 // Total HP
- WRITE_SHORT 0x46 0xfff6 // AC Natural
- WRITE_SHORT 0x48 0xfff6 // AC Effective
- WRITE_BYTE 0x52 0xf6 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x234 25 // First Class Level
- WRITE_BYTE 0x23a 14 // INT
- WRITE_BYTE 0x23b 13 // WIS
- WRITE_BYTE 0x23c 21 // DEX
- REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~ 
+    WRITE_SHORT 0x24 225 // Current HP
+    WRITE_SHORT 0x26 225 // Total HP
+    WRITE_SHORT 0x46 0xfff6 // AC Natural
+    WRITE_SHORT 0x48 0xfff6 // AC Effective
+    WRITE_BYTE 0x52 0xf6 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x234 25 // First Class Level
+    WRITE_BYTE 0x23a 14 // INT
+    WRITE_BYTE 0x23b 13 // WIS
+    WRITE_BYTE 0x23c 21 // DEX
+    REPLACE_CRE_ITEM ~plat05~ #0 #0 #0 ~none~ ~armor~ 
 BUT_ONLY
 
 COPY_EXISTING ~GROMNIR.CRE~ override
- WRITE_SHORT 0x24 390 // Current HP
- WRITE_SHORT 0x26 390 // Total HP
- WRITE_SHORT 0x46 0xfff6 // AC Natural
- WRITE_SHORT 0x48 0xfff6 // AC Effective
- WRITE_BYTE 0x52 0xf8 // THAC0
- WRITE_BYTE 0x53 4 // APR
- WRITE_BYTE 0x238 22 // STR
- WRITE_BYTE 0x23a 12 // INT
- WRITE_BYTE 0x23b 14 // WIS
- WRITE_BYTE 0x23d 21 // CON
- REPLACE_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
+    WRITE_SHORT 0x24 390 // Current HP
+    WRITE_SHORT 0x26 390 // Total HP
+    WRITE_SHORT 0x46 0xfff6 // AC Natural
+    WRITE_SHORT 0x48 0xfff6 // AC Effective
+    WRITE_BYTE 0x52 0xf8 // THAC0
+    WRITE_BYTE 0x53 4 // APR
+    WRITE_BYTE 0x238 22 // STR
+    WRITE_BYTE 0x23a 12 // INT
+    WRITE_BYTE 0x23b 14 // WIS
+    WRITE_BYTE 0x23d 21 // CON
+    REPLACE_CRE_ITEM ~vpaxcha2~ #0 #0 #0 ~none~ ~shield~
 BUT_ONLY
 
 COPY ~%MOD_FOLDER%/encounters/gromnir/itm/vpaxcha2.itm~ override
- SAY NAME2 ~Charged Battle Axe +5~
- SAY DESC ~Besides its superb craftsmanship, tiny runes of power can be seen etched all along the surface. It's obvious a lot of time and effort went into its creation and although not apparent at first, a slight blue glow can be seen emanating from the runes.
+    SAY NAME2 ~Charged Battle Axe +5~
+    SAY DESC ~Besides its superb craftsmanship, tiny runes of power can be seen etched all along the surface. It's obvious a lot of time and effort went into its creation and although not apparent at first, a slight blue glow can be seen emanating from the runes.
 
 STATISTICS:
 
